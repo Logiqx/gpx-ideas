@@ -218,4 +218,4 @@ Track points should always include course and speed when available. Ideally they
 
 Software developers should validate their GPX files during the development / testing process.
 
-Validation methods are described in a technical [overview](../../../../gpx/README.md) of the GPX format.
+Validation methods are described on the GPX home at [www.topografix.com](https://www.topografix.com/gpx_validation.asp).
