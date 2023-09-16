@@ -136,7 +136,7 @@ It is also likely that SoCs from the likes of Qualcomm and Samsung provide accur
 
 #### Location Services
 
-Since around 2016 or 2017, accuracy estimates (including speed accuracy) have been readily available on Android and Apple devices via their [location services](../../apis/location.md). The table below shows when the various accuracy estimates were added to the Android and Apple operating systems.
+Since around 2016 or 2017, accuracy estimates (including speed accuracy) have been readily available on Android and Apple devices via their [location services](../apis/location.md). The table below shows when the various accuracy estimates were added to the Android and Apple operating systems.
 
 A quick summary:
 
@@ -166,7 +166,7 @@ The vast majority of the available documentation refers to accuracy estimates be
 
 I suspect that Apple are multiplying the 1-sigma value provided by the GNSS chipset (e.g. Broadcom, Qualcomm or Intel) by a constant value to produce an estimate that is more intuitive to end users; e.g. 2-sigma (95% confidence) or 4-sigma (99.99% confidence).
 
-There is a separate page about the accuracy estimates available from the Android and Apple [location services](../../apis/location.md).
+There is a separate page about the accuracy estimates available from the Android and Apple [location services](../apis/location.md).
 
 
 

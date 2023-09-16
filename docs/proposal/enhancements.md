@@ -8,7 +8,7 @@ Shortly after drafting the [TrackPointExtras](../../xmlschemas/tpx/1/0/README.md
 This proposal is pretty simple, basically to incorporate the extensions from the [TrackPointExtras](../../xmlschemas/tpx/1/0/README.md) schema into the existing GPX 1.1 schema:
 
 - Re-introduce `<course>` and `<speed>`, fully compatible with GPX 1.0.
-- Introduce the accuracy estimates provided by numerous GPS / GNSS chipsets and [location](../../apis/location.md) services (e.g. [Apple](https://developer.apple.com/documentation/corelocation/cllocation) and [Android](https://developer.android.com/reference/android/location/Location)).
+- Introduce the accuracy estimates provided by numerous GPS / GNSS chipsets and [location](../apis/location.md) services (e.g. [Apple](https://developer.apple.com/documentation/corelocation/cllocation) and [Android](https://developer.android.com/reference/android/location/Location)).
 - Additional source information;  e.g. `<manufacturer>`, `<product>`, `<serial>`, and `<version>` in  `<hardware>` elements.
 - There is a reasonable argument for calling this GPX 1.1.1 as it is a small release in it's own right that does not replace well established extensions.
 - There are absolutely no breaking changes / compatibility issues with GPX 1.1.
