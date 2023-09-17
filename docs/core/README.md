@@ -2,19 +2,18 @@
 
 ### Basic Concepts
 
-- Enhancements which are deemed worthwhile for GPX 1.2 
+- Implement worthwhile schema enhancements to produce GPX 1.2 
 - Adhere to the existing GPX [standards](../standards.md)
-- Backwards compatibility
+- Ensure backwards compatibility
   - Make life easy for existing GPX 1.1 writers
-    - There are many GPX writers in the wild so adoption of GPX 1.2 should be as easy as possible
-    - Do not move or remove any existing elements / attributes
-      - This includes not changing the definition of `<magvar>`
+    - There are many GPX writers in the wild, so adoption of GPX 1.2 should be as easy as possible
+      - Do not move, remove or rename any existing elements / attributes
+      - Do not make changes to the schema that will cause compatibility issues
     - Only a namespace change should be required for GPX 1.1 compliant files to be GPX 1.2 compliant 
   - Make life easy for existing GPX 1.0 and 1.1 readers
     - Most GPX readers do not take any notice of the namespace, whether it refers to GPX 1.0 or 1.1
     - Most GPX readers simply ignore elements that they don't understand
-    - Do not move or remove any existing elements / attributes
-      - This includes not changing the definition of `<magvar>`
+    - Do not move, remove or rename any existing elements / attributes
 - Continue using the Topografix domain for GPX schema and documentation, assuming this is possible
   - Limit the potential confusion amongst GPX developers... many existing references to topografix.com in GPX files
   - See [comment](https://www.topografix.com/gpx_mailing_list.asp#pbqhps+1tskr5v@YahooGroups.com) from Dan Foster in Apr 2018, saying there is no reason for the topografix domain to become inaccessible
@@ -44,6 +43,8 @@ There are a number of changes and additions that can potentially be included in 
   - The "href "attribute of `<link>` elements and "license" of `<copyright>` elements are both defined as "xsd:anyURI"
 - Enforce "strict" validation within `<extensions>`
   - Change `<extensions>` to use "strict" validation of all elements relating to other schemas
+- Fix the definition of `<magvar>`
+  - Magnetic variation should be -180 and 180, although a workaround exists by adding 360 to negative values
 - XSD documentation tweaks
   - Make it clear that `<ele>` is relative to MSL
   - Make it clear that latitude and longitude values should not provide more than 9 decimal places
