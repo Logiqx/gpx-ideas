@@ -24,7 +24,7 @@ Air / aviation elements can be added to `<wpt>`, `<rtept>` and `<trkpt>`elements
 
 #### Background
 
-The “six pack” is the name given to the six main flight instruments in a cockpit. While three of the six instruments belong to the plane's pitot-static pressure system, the other three are inertial reference / gyroscope instruments.
+The “six pack” is the name given to the six main flight instruments in a cockpit. While three of the six instruments belong to the plane's pitot-static pressure system, the other three are inertial reference / gyroscopic instruments.
 
 ![six pack](img/Six_Pack_flight_instruments.jpg)
 
@@ -37,11 +37,11 @@ Pitot-static instruments
   - The altimeter will show pressure altitude when this setting is 1013.25 hPa / 29.92 Hg
 - The vertical speed indicator (VSI) displays the rate of climb or descent (usually in feet per minute) - see [gpx_pvt](../gpx_pvt/README.md) for ROC
 
-Gyroscope instruments
+Gyroscopic instruments
 
 - The attitude indicator (AI) shows the aircraft's attitude in relation to the horizon - see [gpx_imu](../gpx_imu/README.md) for pitch and roll
 - The turn coordinator (TC) shows direction, rate of turn (ROT) and indicates slip / skid - see [gpx_imu](../gpx_imu/README.md) for ROT
-- The heading indicator (HI) indicates direction in relation to magnetic north -  see [gpx_imu](../gpx_imu/README.md) for heading
+- The heading indicator (HI) shows direction in relation to magnetic north -  see [gpx_imu](../gpx_imu/README.md) for heading
 
 It is worth noting that a typical smart phone could realistically simulate the six pack, except for the ASI which requires dynamic pressure from the [pitot tube](https://en.wikipedia.org/wiki/Pitot_tube).
 
@@ -52,14 +52,15 @@ It is worth noting that a typical smart phone could realistically simulate the s
 Without going into great detail, the following statements can be made regarding the speed and elevation / altitude / height of an aircraft:
 
 - There are essentially 6 different types of speed for an aircraft
-  - [IAS](https://en.wikipedia.org/wiki/Indicated_airspeed), [CAS](https://en.wikipedia.org/wiki/Calibrated_airspeed), [EAS](https://en.wikipedia.org/wiki/Equivalent_airspeed), [TAS](https://en.wikipedia.org/wiki/True_airspeed), [mach number](https://en.wikipedia.org/wiki/Mach_number) and [ground speed](https://en.wikipedia.org/wiki/Ground_speed) (SOG)
+  - [IAS](https://en.wikipedia.org/wiki/Indicated_airspeed), [CAS](https://en.wikipedia.org/wiki/Calibrated_airspeed), [EAS](https://en.wikipedia.org/wiki/Equivalent_airspeed), [TAS](https://en.wikipedia.org/wiki/True_airspeed), [mach number](https://en.wikipedia.org/wiki/Mach_number) and [ground speed](https://en.wikipedia.org/wiki/Ground_speed) (SOG).
+  - The most important speeds during flight are IAS, mach number and ground speed but the others also serve a purpose.
 - There are essentially 6 different types of elevation / altitude / height for an aircraft
-  - Indicated altitude or height ([QNH or QNE](https://en.wikipedia.org/wiki/Altimeter_setting)), [pressure altitude](https://en.wikipedia.org/wiki/Pressure_altitude) (STD), [density altitude](https://en.wikipedia.org/wiki/Density_altitude), absolute altitude ([AGL](https://en.wikipedia.org/wiki/Height_above_ground_level)) or true altitude
-  - The pitot-static system and air data computer (ADC) can determine all of the above, except for true altitude
+  - Indicated altitude or height ([QNH or QNE](https://en.wikipedia.org/wiki/Altimeter_setting)), [pressure altitude](https://en.wikipedia.org/wiki/Pressure_altitude) (STD), [density altitude](https://en.wikipedia.org/wiki/Density_altitude), absolute altitude / height ([AGL](https://en.wikipedia.org/wiki/Height_above_ground_level)) and true altitude
+  - The pitot-static system and air data computer (ADC) can determine all of the above metrics, with the exception of true altitude
 
-Whilst it is possible to do approximate conversions after the flight, replicating the exact calculations of the air data computer (ADC) is not guaranteed.
+Whilst it is possible to do approximations after the flight, replicating the exact calculations of the air data computer (ADC) is not guaranteed.
 
-The gpx_air extension includes all variations of airspeed and elevation / altitude / height for an aircraft. The only two exceptions are ground speed (SOG) and true altitude / elevation which go elsewhere in GPX files, `<pvt:sog>` and `<ele>` respectively.
+The gpx_air extension therefore supports all types of airspeed and elevation / altitude / height for an aircraft. The only two exceptions are ground speed (SOG) and true altitude / elevation which go elsewhere in GPX files, `<pvt:sog>` and `<ele>` respectively.
 
 
 
