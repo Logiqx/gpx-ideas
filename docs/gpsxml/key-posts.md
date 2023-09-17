@@ -117,8 +117,14 @@ Line colours, polygons, text:
 - [Draft of proposed GPX 1.1 extensions](https://www.topografix.com/gpx_mailing_list.asp#82a839a50912231037x561947b9w351daeb2772f48d@mail.gmail.com) - Robert Lipe, 23 Dec 2009
   - Proposal for GPX 1.1 extensions or GPX 1.2
   - I've created a formatted version of the [RJL proposal](rjl-proposal.md)
+  - Garmin responses
+    - Initially a positive response to Steve Hales (azbithead) at Garmin - [link](https://www.topografix.com/gpx_mailing_list.asp#hhgg2h+10l5s@eGroups.com)
+    - Second response from Garmin offered their extensions - [link](https://www.topografix.com/gpx_mailing_list.asp#hi0dp8+740i@eGroups.com)
+    - Third response from Garmin suggested an extension schema for 1.1 and a new 1.2
+    - Final response from Garmin was that it was unlikely they'd adopt it - [link](https://www.topografix.com/gpx_mailing_list.asp#hiitni+a64o@eGroups.com)
+    - Summary in Apr 2018 talks about several vendors making contact privately, presumably back in 2010 - [link](https://www.topografix.com/gpx_mailing_list.asp#CAGJ6+wq4Pp9d2Qb-YVmkPtkG-h_sOiqR6d=PEpR-rinLuQ6T_Q@mail.gmail.com)
+      - Robert's response was described as "deflated" - [link](https://www.topografix.com/gpx_mailing_list.asp#CAGJ6+wq4Pp9d2Qb-YVmkPtkG-h_sOiqR6d=PEpR-rinLuQ6T_Q@mail.gmail.com)
   
 - [GPX version 2](https://www.topografix.com/gpx_mailing_list.asp#pbjvb2+h952tg@YahooGroups.com) by Topo GPS
   - Need to read
-
 
