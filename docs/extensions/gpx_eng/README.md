@@ -4,7 +4,7 @@
 
 #### Overview
 
-The engine elements listed below are important to yachts, boats, planes, and helicopters. They also apply to motor vehicles.
+The engine elements listed below are important to motor vehicles, yachts, boats, planes, and helicopters.
 
 | Name            | Values   | Description                                                  |
 | --------------- | -------- | ------------------------------------------------------------ |
@@ -17,3 +17,10 @@ The engine elements listed below are important to yachts, boats, planes, and hel
 | volts id="n"    | >= 0     | Battery level in volts (V)                                   |
 | amps id="n"     | >= 0     | Battery current which may be negative (charging) or positive (discharging) in amps (A) |
 
+All of these items may be required multiple times for a single moment in time.
+
+- `<tach>` might be required for boats with twin outboard motors
+- `<temp>` might be required for oil temperature and coolant temperature
+- `<level>` might be required for port and starboard fuel tanks
+
+Sources for each "id" are optional, but if provided would be in elements such as `<gpx>`, `<trk>` or `<trkseg>`, much like in the [gpx_fit](../gpx_fit/README.md) examples.
