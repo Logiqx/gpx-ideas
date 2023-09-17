@@ -7,12 +7,12 @@
 - Adhere to existing GPX [standards](../standards.md)
 
 - Backwards compatibility
-  - Make it easy for existing GPX 1.1 writers
+  - Make life easy for existing GPX 1.1 writers
     - There are many GPX writers in the wild and adoption of GPX 1.2 should be as easy as possible
     - Do not move or remove any existing elements / attributes
       - This includes not changing the definition of `<magvar>`
     - Only a namespace change should be required for GPX 1.1 compliant files to be GPX 1.2 compliant 
-  - Make it easy for existing GPX 1.0 and 1.1 readers
+  - Make life easy for existing GPX 1.0 and 1.1 readers
     - Most GPX readers do not take any noticed of the namespace, whether it refers to GPX 1.0 or 1.1
     - Most GPX readers simply ignore elements that they don't understand
     - Do not move or remove any existing elements / attributes
@@ -23,7 +23,7 @@
 
 
 
-#### Changes / Additions
+#### Schema Changes / Additions
 
 This document is yet to be written but some scruffy notes can be found amongst my [GPSXML](../gpsxml/additional.md) notes.
 

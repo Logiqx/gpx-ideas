@@ -1,33 +1,55 @@
 ## GPX Developers Mailing List and GPSXML Archive
 
-### Additional Suggestions
+### Possible Enhancements
 
-#### Schema endpoints - HTTPS support
+There have been a number of suggestions over the years and some of them are listed below.
 
-- Suggested by Dan in 2018 - [link](https://www.topografix.com/gpx_mailing_list.asp#698030247.20180425090713@topografix.com)
-  - See new [thread](https://groups.io/g/gpx/topic/tools_for_validating_gpx/95697089?p=,,,20,0,0,0::recentpostdate/sticky,,,20,2,0,95697089,previd%3D1693402933996920097,nextid%3D1607599082822356246&previd=1693402933996920097&nextid=1607599082822356246) about tools and HTTPS
-
-
-
-#### Compressed Files
-
-- gpz - supported by Robert Lipe and Jeremy Irish
-  - egroups+topografix.com on Mon Jan 05 12:04:36 2009 ([link](https://www.topografix.com/gpx_mailing_list.asp#796201311.20090105144640@topografix.com))
-    - "My implementation plan was to mimic KMZ as much as possible - the program that opened the compressed GPX archive would extract data from any and all GPX files contained therein.  I wasn't planning to use other data in the archive (.jpg, etc) but would probably support it if others caught on to the idea of compressed GPX archives."
-  - jeremy+groundspeak.com on Mon Jan 05 13:10:23 2009 ([link](https://www.topografix.com/gpx_mailing_list.asp#20090105211019.4ac0c100@rosie.groundspeak.biz))
-  - n.b. kmz is a kml file and resources in a zip file
+A fair few of these (but perhaps not all) seem worthwhile and can go into a GPX 1.2 proposal.
 
 
 
-#### Signed Keys
+#### Track Type
 
-#me - I saw signed keys mentioned but dismissed it due to the complexity and limited benefit
+- on6vd+yahoo.co.uk on Wed Apr 04 11:15:35 2018 ([link](https://www.topografix.com/gpx_mailing_list.asp#pbjvb2+h952tg@YahooGroups.com))
+  - track type information (i.e. cycling track, pedestrian track, flight track)
+  - it might be best to do this as an extension so that the list can be extended, without needing yet another core GPX release in the future?
+
+
+
+#### Complex Types
+
+Complex types should all support extensions
+
+- egroups+topografix.com on Fri Nov 12 09:06:19 2004 ([link](https://www.topografix.com/gpx_mailing_list.asp#703411000.20041112120550@topografix.com))
+
+  - copyrightType, linkType, emailType, personType, ptType, ptsegType, boundsType - see email on 22 Sept 2004
+
+- egroups+topografix.com on Wed Dec 30 09:46:45 2009 ([link](https://www.topografix.com/gpx_mailing_list.asp#817253482.20091230124632@topografix.com))
+
+  - "All complexType elements should end in `<extensions>` so they can be extended privately.  (I believe <link> in GPX 1.1 needs this fix)"
+
+
+
+#### Source Elements
+
+Extended `<src>` elements
+
+- Perhaps make `<src>` a complex type so that extended information can be defined using `<extensions>`
+- [textType](https://www.topografix.com/gpx_mailing_list.asp#dbjvr8+101af@eGroups.com)  might be a possible way of declaring `<src>` as mixed content?
+
+
+
+#### UUID
+
+- UUID information has been suggested a few times
+- Maybe consider placing it everywhere that `<src>` elements are allowed?
+- Should the field's content follow the string representation in RFC 4122 at http://www.ietf.org/rfc/rfc4122.txt?
 
 
 
 #### Relative Paths
 
-Relative paths in `<link>` elements
+Support for relative paths in `<link>` elements have been suggested but need to confirm if they are a problem
 
 - egroups+topografix.com on Mon Jan 04 10:42:16 2010 ([link](https://www.topografix.com/gpx_mailing_list.asp#953828510.20100104134157@topografix.com))
   - Proposal
@@ -44,51 +66,16 @@ Relative paths in `<link>` elements
 [Creation vs modification times](https://www.topografix.com/gpx_mailing_list.asp#885169760.20060825161206@topografix.com) - Dan F, 25 Aug 2006
 
 - "We do need to come up with some answers as to how GPX should handle things like photos embedded in waypoints, waypoints embedded in photos, and your hotspots and other map symbols."
+- This ties in particularly well with the use of file compression ("GPZ" files) where files can be bundled together.
 
 
 
 #### Base Types
 
-[Base definitions schema](https://www.topografix.com/gpx_mailing_list.asp#625504761.20050119143522@topografix.com) for gpx_style and gpx_overlay
+[Base definitions schema](https://www.topografix.com/gpx_mailing_list.asp#625504761.20050119143522@topografix.com) for gpx_style and gpx_overlay - TBC
 
 - Create a base definitions schema that only contains elements that will be referenced by other schemas
-
-
-
-#### Complex Types
-
-Complex types need to end in extensions
-
-- egroups+topografix.com on Fri Nov 12 09:06:19 2004 ([link](https://www.topografix.com/gpx_mailing_list.asp#703411000.20041112120550@topografix.com))
-  
-  - copyrightType, linkType, emailType, personType, ptType, ptsegType, boundsType - see email on 22 Sept 2004
-  
-- egroups+topografix.com on Wed Dec 30 09:46:45 2009 ([link](https://www.topografix.com/gpx_mailing_list.asp#817253482.20091230124632@topografix.com))
-
-  - "All complexType elements should end in `<extensions>` so they can be extended privately.  (I believe <link> in GPX 1.1 needs this fix)"
-
-
-
-#### Track Type
-
-- on6vd+yahoo.co.uk on Wed Apr 04 11:15:35 2018 ([link](https://www.topografix.com/gpx_mailing_list.asp#pbjvb2+h952tg@YahooGroups.com))
-  - track type information (i.e. cycling track, pedestrian track, flight track)
-
-
-
-#### Source Elements
-
-Extended `<src>` elements
-
-- Perhaps make it a complex type and add extensions?
-- [textType](https://www.topografix.com/gpx_mailing_list.asp#dbjvr8+101af@eGroups.com)  would be a possible way of declaring `<src>` as mixed content?
-
-
-
-#### UUID
-
-- Maybe consider it where `<src>` elements are allowed?
-- Should the field's content follow the string representation in RFC 4122 at http://www.ietf.org/rfc/rfc4122.txt?
+- This may be useful if sensors have common attributes like "src" and "acc", but may be overkill for this use-case.
 
 
 
@@ -117,7 +104,9 @@ Add clarification for the following topics
   - [Magnetic variation](https://www.topografix.com/gpx_mailing_list.asp#8efd358205010315274f43f5d4@mail.gmail.com)
     - Cannot change due to compatibility issues, just add 360 to negative values
   - Decimal places - lat and lon
-  - Explanation of elevation
+    - No more than 9 decimal places makes sense - precision of 1/10th of a millimeter
+
+  - Explanation of elevation which is above MSL so far as I know?
     - Post by Dan F, Apr 2009 - [link](https://www.topografix.com/gpx_mailing_list.asp#156410363.20090407134425@topografix.com) 
     - [Re: explanation of <ele> is unclear](https://www.topografix.com/gpx_mailing_list.asp#grnrhu+fcic@eGroups.com) by Dan A, Apr 2009
     - [summary](https://www.topografix.com/gpx_mailing_list.asp#49DBADDD.2040307@free.fr) by jrepetto+free.fr
@@ -129,33 +118,13 @@ Add clarification for the following topics
 
 
 
-### FYI
+### Miscellaneous
 
-#### 2009 / 2010 Proposal
-
-- GPX extensions [proposed](robert-ext.md) by Robert L, 23 Dec 2009 to 12 Jan 2010 - [link](https://www.topografix.com/gpx_mailing_list.asp#82a839a50912231037x561947b9w351daeb2772f48d@mail.gmail.com)
-  - Garmin responses - FYI
-    - Initially a positive response to Steve Hales (azbithead) at Garmin - [link](https://www.topografix.com/gpx_mailing_list.asp#hhgg2h+10l5s@eGroups.com)
-    - Second response from Garmin offered their extensions - [link](https://www.topografix.com/gpx_mailing_list.asp#hi0dp8+740i@eGroups.com)
-    - Third response from Garmin suggested an extension schema for 1.1 and a new 1.2
-    - Final response from Garmin was that it was unlikely they'd adopt it - [link](https://www.topografix.com/gpx_mailing_list.asp#hiitni+a64o@eGroups.com)
-    - Summary in Apr 2018 talks about several vendors contacting him privately, presumably back in 2010 - [link](https://www.topografix.com/gpx_mailing_list.asp#CAGJ6+wq4Pp9d2Qb-YVmkPtkG-h_sOiqR6d=PEpR-rinLuQ6T_Q@mail.gmail.com)
-      - Robert's response was "deflated" - [link](https://www.topografix.com/gpx_mailing_list.asp#CAGJ6+wq4Pp9d2Qb-YVmkPtkG-h_sOiqR6d=PEpR-rinLuQ6T_Q@mail.gmail.com)
-
-
-
-#### 2018 Proposal
-
-- [GPX version 2](https://www.topografix.com/gpx_mailing_list.asp#pbjvb2+h952tg@YahooGroups.com) by Topo GPS
-
+- [GPX version 2](https://www.topografix.com/gpx_mailing_list.asp#pbjvb2+h952tg@YahooGroups.com) by Topo GPS - pretty much covered by the list above and "standard" [extensions](../extensions/README.md)
   - Suggested [IETF](https://www.ietf.org) standard
 
-
-
-#### Miscellaneous
-
 - [Aviation Database Waypoint](https://www.topografix.com/gpx_mailing_list.asp#cs5n3f+jjlh@eGroups.com)
-  - P Tomblin has created an extension schema - http://navaid.com/GPX/
+  - P Tomblin has created the aviation database extension schema - http://navaid.com/GPX/
 - Points of interest?
   - [Re: POI/Waypoint Phone Number Attribute](https://www.topografix.com/gpx_mailing_list.asp#el3k6n+hmlu@eGroups.com) by Doug in Dec 2006. Distinguishes waypoints and POIs
 - Proximity waypoints / alerts
