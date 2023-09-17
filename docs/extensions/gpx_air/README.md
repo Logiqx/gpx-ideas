@@ -24,11 +24,9 @@ Air / aviation elements can be added to `<wpt>`, `<rtept>` and `<trkpt>`elements
 
 #### Background
 
-The “six pack” is the name given to the six main flight instruments in a cockpit. While three of the six instruments belong to the plane's pitot-static pressure system, the other three are inertial reference / gyroscopic instruments.
+The “six pack” is the name given to the six main flight instruments in a cockpit. While three of the six instruments belong to the plane's pitot-static pressure system, the other three are inertial reference / gyroscopic instruments. The traditional six pack instruments are analog but they are often controlled by digital systems nowadays, or shown within [glass cockpit](https://en.wikipedia.org/wiki/Glass_cockpit) displays.
 
 ![six pack](img/Six_Pack_flight_instruments.jpg)
-
-
 
 Pitot-static instruments
 
@@ -61,6 +59,14 @@ Without going into great detail, the following statements can be made regarding 
 Whilst it is possible to do approximations after the flight, replicating the exact calculations of the air data computer (ADC) is not guaranteed.
 
 The gpx_air extension therefore supports all types of airspeed and elevation / altitude / height for an aircraft. The only two exceptions are ground speed (SOG) and true altitude / elevation which go elsewhere in GPX files, `<pvt:sog>` and `<ele>` respectively.
+
+
+
+#### References
+
+Perhaps the best video reference(s) for flight instruments and flight data is a [playlist](https://www.youtube.com/playlist?list=PLJ-0SVdtegU-SS5Kp12Yw70iJbx4ApHhD) on the [Aviation Theory](https://www.youtube.com/@AviationTheory) YouTube channel.
+
+Once you are familiar with the various flight instruments and the underlying data it is easy to find additional sources of information.
 
 
 
