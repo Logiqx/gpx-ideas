@@ -3,7 +3,6 @@
 ### Basic Concepts
 
 - Adhere to existing GPX [standards](../standards.md)
-
 - Backwards compatibility
   - Make life easy for existing GPX 1.1 writers
     - There are many GPX writers in the wild and adoption of GPX 1.2 should be as easy as possible
