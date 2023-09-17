@@ -20,6 +20,25 @@ Sea / nautical elements can be added to `<wpt>`, `<rtept>` and `<trkpt>`  elemen
 
 
 
+#### Notes
+
+- Boat speed / speed through the water (STW) is typically measured using a paddlewheel or ultrasonic transducer
+- Distance through water is included to avoid possible accumulated errors when deriving from speed every second
+- True wind is typically wind-over-water (using heading and water speed sensor) but can be wind-over-ground (using heading, COG + SOG)
+  - Strictly speaking you do not need to record TWA and TWS.
+    - However, recording the true wind (TWA and TWS) will help to maintain precision
+  - There is no need to record true wind direction (TWD) which is relative to true north in degrees (°)
+    - It can easily be calculated from TWA and the heading
+      - TWD = (TWA + heading)  % 360
+- Tidal elements "drift" and "set" can be calculated from other elements but have been included to maintain precision
+  - See page about [set and drift][http://www.sailfastllc.com/AppNoteCurrentSetAndDrift] which explains how they are determined using a vector triangle, hence their exclusion
+- Rate of turn (ROT) is supported by the [gpx_imu](../gpx_imu/README.md) extension
+  - ROT represents the rate of change of heading, typically measured by external rate of turn turn indicator ([ROTI](https://en.wikipedia.org/wiki/Rate_of_turn_indicator))
+  - ROT should <u>not</u> be derived from COG information - [link](https://www.navcen.uscg.gov/ais-class-a-reports)
+- "Ground distance since reset" (VLW sentence) should go in `<pvt:dist>` - see [gpx_pvt](../gpx_pvt/README.md)
+
+
+
 #### Example Usage
 
 Sea / Nautical
