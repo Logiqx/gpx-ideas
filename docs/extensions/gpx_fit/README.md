@@ -4,7 +4,7 @@
 
 #### Overview
 
-Core outputs from fitness and cycling sensors / devices can be added to `<wpt>`, `<rtept>` and `<trkpt>` elements via GPX extensions.
+Core outputs from fitness and cycling sensors / devices are commonly added to GPX files via proprietary extensions.
 
 | Name        | Values   | Description                                                  |
 | ----------- | -------- | ------------------------------------------------------------ |
@@ -16,6 +16,15 @@ Core outputs from fitness and cycling sensors / devices can be added to `<wpt>`,
 | `<steps>`   | int >= 0 | Total steps during the session                               |
 
 Sources for the sensor metrics are optional, but if provided can be in elements such as `<gpx>`, `<trk>` or `<trkseg>` as per the examples.
+
+
+
+#### Notes
+
+- A universal cadence metric is included, since the term is universal across multiple sports
+  - Cadence is essentially a rhythm and is measure such as steps or strokes per minute
+- Energy is included to avoid the cumulative errors that might occur when converting from power
+- Elevation gain is included to avoid cumulative errors
 
 
 
