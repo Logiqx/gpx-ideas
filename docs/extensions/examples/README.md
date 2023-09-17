@@ -2,7 +2,9 @@
 
 ### Example Usage
 
-The examples below are to illustrate how different activities might use common extensions.
+There are a huge number of [activities](../../landscape/activities.md) that benefit from the use of GPS / GNSS receivers.
+
+The examples below are small in number but illustrate how a variety of activities might use a shared collection of common extensions.
 
 Further details and XML examples are available for each activity by clicking the links.
 

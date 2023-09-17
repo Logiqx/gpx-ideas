@@ -14,7 +14,9 @@
 
 ### Diving In
 
-Feel free to take a look at some of the [examples](examples/README.md) first, prior to looking at the extensions in more detail.
+There are a huge number of [activities](../landscape/activities.md) that can benefit from the use of GPS / GNSS receivers, many of which will be interested in similar data.
+
+Feel free to take a look at some simple [examples](examples/README.md) prior to looking at the extensions in more detail.
 
 | Schema                       | Description                |
 | ---------------------------- | -------------------------- |

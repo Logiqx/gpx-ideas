@@ -2,6 +2,12 @@
 
 ### Activities
 
+This is a simple list of activities that can potentially make of of GPS / GNSS technology, potentially combined with other sensors.
+
+They have been broadly categorised into land, sea and air to make potential similarities more apparent.
+
+
+
 #### Land
 
 - Athletics
