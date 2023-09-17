@@ -1,8 +1,6 @@
-## GPX Ideas
+## GPX Core
 
-### GPX Core
-
-#### Basic Concepts
+### Basic Concepts
 
 - Adhere to existing GPX [standards](../standards.md)
 
@@ -23,7 +21,7 @@
 
 
 
-#### Schema Changes / Additions
+### Schema Changes / Additions
 
 This document is yet to be written but some scruffy notes can be found amongst my [GPSXML](../gpsxml/additional.md) notes.
 

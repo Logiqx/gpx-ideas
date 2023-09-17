@@ -1,8 +1,6 @@
-## GPX Ideas
+## GPX Extensions
 
-### GPX Extensions
-
-#### Basic Concepts
+### Basic Concepts
 
 - Adhere to existing GPX [standards](../standards.md)
 - Identify general categories and group similar items together in separate schemas
@@ -12,7 +10,7 @@
 
 
 
-#### Diving In
+### Diving In
 
 Feel free to look at some of the [examples](examples/README.md) first, prior to looking at the extensions in more detail.
 
@@ -32,7 +30,7 @@ Don't forget to look at the [examples](examples/README.md) that have been provid
 
 
 
-#### Additional Concepts
+### Additional Concepts
 
 - Use of an optional "id" attribute for elements have multiple concurrent readings
   - Multiple tachometers; e.g. boats with two motors, helicopters, etc
