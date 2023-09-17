@@ -78,6 +78,14 @@ Support for relative paths in `<link>` elements has been suggested but it's not 
 
 
 
+#### Line Colors
+
+Perhaps it is appropriate to have something simple for colors within the GPX format itself?
+
+- Details TBC
+
+
+
 #### Base Types
 
 [Base definitions schema](https://www.topografix.com/gpx_mailing_list.asp#625504761.20050119143522@topografix.com) for gpx_style and gpx_overlay - TBC
