@@ -6,11 +6,10 @@ They are essentially standardisation / documentation activities.
 
 
 
-### Compressed Files
+### Compressed Archives
 
-Document file compression (GPZ) for GPX 1.0 / 1.1 / 1.2.
-
-- Essentially mimics the KMZ format of KML
+- Document compressed archives (GPZ) for GPX 1.0 / 1.1 / 1.2
+- Inspired by the KMZ format of KML which is based on the ZIP format
 - This idea was supported by Dan Foster, Robert Lipe, Jeremy Irish and numerous other people
 
 
@@ -18,7 +17,7 @@ Document file compression (GPZ) for GPX 1.0 / 1.1 / 1.2.
 ### Embedded Icons, Images, Photos, Videos
 
 - "We do need to come up with some answers as to how GPX should handle things like photos embedded in waypoints, waypoints embedded in photos, and your hotspots and other map symbols." - see [link](https://www.topografix.com/gpx_mailing_list.asp#885169760.20060825161206@topografix.com)
-- This ties in particularly well with compression files (GPZ) where multiple files can be bundled together
+- This ties in particularly well with compressed archives (GPZ) where multiple files can be bundled together
 - However, use of relative paths may have some issues as described in the possible [improvements](../core/README.md) to the GPX core
 
 
