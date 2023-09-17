@@ -11,7 +11,6 @@ They are essentially standardisation / documentation activities.
 Document file compression (GPZ) for GPX 1.0 / 1.1 / 1.2.
 
 - Essentially mimics the KMZ format of KML
-
 - This idea was supported by Dan Foster, Robert Lipe, Jeremy Irish and numerous other people
 
 
