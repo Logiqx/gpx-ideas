@@ -4,7 +4,7 @@
 
 #### Overview
 
-Meteorological data can be added to `<wpt>`, `<rtept>` and `<trkpt>` elements via GPX extensions.
+Meteorological data is straightforward to understand and is relevant to many activities; land, sea and air.
 
 All of the meteorological elements listed below are available in the [MDA](https://gpsd.gitlab.io/gpsd/NMEA.html#_mda_meteorological_composite) sentence of NMEA 0183.
 
