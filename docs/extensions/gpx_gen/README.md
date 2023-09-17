@@ -4,7 +4,7 @@
 
 #### Overview
 
-Generic elements that do not fit into other categories.
+This extensions includes generic elements that do not fit into any other categories.
 
 | Name     | Values | Description                                      |
 | -------- | ------ | ------------------------------------------------ |
