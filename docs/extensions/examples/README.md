@@ -21,7 +21,7 @@ Further details and XML examples are available for each activity by clicking the
 #### Sea / Nautical
 
 |                           | gpx_pvt | gpx_imu | gpx_sea | gpx_met |
-| ------------------------- | :-----: | :-----: | :-----: | ------- |
+| ------------------------- | :-----: | :-----: | :-----: | :-----: |
 | [GPS Speedsailing](sea/gpsss.md)   |    ✓    |    -    |    -    |    -    |
 | [Dinghy Racing](sea/dinghy.md) |    ✓    |    ✓    |    -    |    -    |
 | [Yachting](sea/yacht.md) |    ✓    |    ✓    |    ✓    |    ✓    |
@@ -31,7 +31,7 @@ Further details and XML examples are available for each activity by clicking the
 #### Air / Aviation
 
 |                           | gpx_pvt | gpx_imu | gpx_air | gpx_met |
-| ------------------------- | :-----: | :-----: | :-----: | ------- |
+| ------------------------- | :-----: | :-----: | :-----: | :-----: |
 | [Skydiver](air/skydiver.md)   |    ✓    |    ✓    |    -    |    -    |
 | [Microlight](air/microlight.md) |    ✓    |    ✓    |    ✓    |    -    |
 | [Light Aircraft](air/aircraft.md) |    ✓    |    ✓    |    ✓    |    ✓    |
@@ -39,8 +39,9 @@ Further details and XML examples are available for each activity by clicking the
 
 
 #### Meteorology
+
 |                           | gpx_pvt | gpx_imu | gpx_sea | gpx_met |
-| ------------------------- | :-----: | :-----: | :-----: | ------- |
+| ------------------------- | :-----: | :-----: | :-----: | :-----: |
 | [Weather Station](met/weather.md) |    ✓    |    ✓    |    ✓    |    ✓    |
 
 
