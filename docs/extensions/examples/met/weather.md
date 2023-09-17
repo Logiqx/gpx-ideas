@@ -4,7 +4,13 @@
 
 #### Overview
 
-Example of a weather station.
+Weather stations tend to combine data from a GPS / GNSS, IMU and meteorological instruments. They typically output the data as NMEA 0183 sentences.
+
+![img](img/airmar.png)
+
+
+
+Example of a weather station (see above) using GPX extensions
 
 - gpx_pvt - cog + sog
 - gpx_imu - head, rot, pitch, roll
@@ -14,6 +20,8 @@ Example of a weather station.
 
 
 #### Trackpoint
+
+n.b. This GPX example does not correspond to the image above.
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -46,3 +54,6 @@ Example of a weather station.
   </extensions>
 </trkpt>
 ```
+
+
+
