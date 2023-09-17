@@ -14,7 +14,7 @@ A number of GPX standards currently exist.
 - General guidance to developers
   - XML writers
     - "Protect other applications from yours by validating test files from your application against the schema."
-    - Do not include unknown elements when writing GPX files - e.g. if heartrate is unknown, do not include `<fit:hr>0</fit:hr>`
+    - Do not include unknown elements when writing GPX files - e.g. if elevation is unknown, do not include `<ele>0</ele>`
     - Do not calculate unknown elements when writing GPX files - e.g. if speed is unavailable, do not calculate it from lat + lon
   - XML readers
     - "Protect your application against schema changes by ignoring unknown elements."
