@@ -25,7 +25,7 @@ Additional fix types that aren't available in GPX 1.0 / GPX 1.1
 
 
 
-#### Extensions for all Complex Types
+#### Extensions for Complex Types
 
 All complex types should support extensions
 
