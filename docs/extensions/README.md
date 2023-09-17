@@ -24,8 +24,8 @@ Feel free to take a look at some simple [examples](examples/README.md) prior to 
 | [gpx_imu](gpx_imu/README.md) | Inertial measurement unit  |
 | [gpx_met](gpx_met/README.md) | Meteorological             |
 | [gpx_fit](gpx_fit/README.md) | Fitness                    |
-| [gpx_air](gpx_air/README.md) | Air / aviation             |
 | [gpx_sea](gpx_sea/README.md) | Sea / nautical             |
+| [gpx_air](gpx_air/README.md) | Air / aviation             |
 | [gpx_eng](gpx_eng/README.md) | Engine                     |
 | [gpx_gen](gpx_gen/README.md) | Generic                    |
 | [gpx_nav](gpx_nav/README.md) | Navigation - TODO          |
