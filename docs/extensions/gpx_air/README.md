@@ -64,16 +64,6 @@ The gpx_air extension therefore supports all types of airspeed and elevation / a
 
 
 
-#### References
-
-Perhaps the best video reference(s) for flight instruments and flight data is a [playlist](https://www.youtube.com/playlist?list=PLJ-0SVdtegU-SS5Kp12Yw70iJbx4ApHhD) on the [Aviation Theory](https://www.youtube.com/@AviationTheory) YouTube channel.
-
-Once you are familiar with the various flight instruments and the underlying data it is easy to find additional sources of information.
-
-It is also worth noting that the aviation industry is looking to switch from using magnetic north to true north - [Mag2True](https://www.aerosociety.com/news/time-for-a-change-of-direction)
-
-
-
 #### Exclusions
 
 - IMU data such as heading, pitch, roll and rate of turn is handled by the [gpx_imu](../gpx_imu/README.md) extension
@@ -87,6 +77,16 @@ It is also worth noting that the aviation industry is looking to switch from usi
   - e.g. tachometers, temperatures, pressures, fuel, batteries, etc
 - Angle-of-attack (AOA) sensors are not included at this time
 - Glide ratio / slope is not included because it can be determined from ground speed (SOG) and rate of descent (using ROC)
+
+
+
+#### References
+
+Perhaps the best video reference(s) for flight instruments and flight data is a [playlist](https://www.youtube.com/playlist?list=PLJ-0SVdtegU-SS5Kp12Yw70iJbx4ApHhD) on the [Aviation Theory](https://www.youtube.com/@AviationTheory) YouTube channel.
+
+Once you are familiar with the various flight instruments and the underlying data it is easy to find additional sources of information.
+
+It is also worth noting that the aviation industry is looking to switch from using magnetic north to true north - [Mag2True](https://www.aerosociety.com/news/time-for-a-change-of-direction)
 
 
 

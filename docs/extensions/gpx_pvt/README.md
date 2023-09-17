@@ -39,8 +39,8 @@ GPX 1.2 is also expected to support position and time accuracy estimates using t
 
 - The abbreviation COG has been used to avoid potential confusion caused by the word "course"
 - The abbreviation SOG has been used to avoid confusion due to the many kinds of speed; boat speed, air speed, wind speed, etc
-- Rate of climb ([ROC](https://en.wikipedia.org/wiki/Rate_of_climb)) is most applicable to aviation
-- Distance is included to avoid cumulative errors due to rounding
+- Rate of climb ([ROC](https://en.wikipedia.org/wiki/Rate_of_climb)) is most applicable to aviation and has been chosen instead of the phrase "vertical speed"
+- Distance is included to avoid cumulative errors which may occur due to rounding
 - Horizontal accuracy estimate can be calculated from latitude / longitude accuracy estimates using the formula hAcc = √ (latAcc<sup>2</sup> + lonAcc<sup>2</sup>)
 
 

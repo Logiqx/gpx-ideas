@@ -24,6 +24,11 @@ All of the meteorological elements listed below are available in the [MDA](https
 
 - Wind direction + speed use their nautical names, signifying "wind over ground" or "ground wind" (GWD + GWS)
 - Dew point is included because it can be directly measured, not just calculated from air temperature and relative humidity
+
+
+
+#### Exclusions
+
 - Wind chill is not included because it is calculated from the air temperature and wind speed
 - Heat index is not included because it is calculated from air temperature and relative humidity
 

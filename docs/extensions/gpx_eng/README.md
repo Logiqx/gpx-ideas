@@ -17,7 +17,11 @@ The engine elements listed below are important to motor vehicles, yachts, boats,
 | volts id="n"    | >= 0     | Battery level in volts (V)                                   |
 | amps id="n"     | >= 0     | Battery current which may be negative (charging) or positive (discharging) in amps (A) |
 
-All of these items may be required multiple times for a single moment in time.
+
+
+#### Notes
+
+All of these engine measurements may result in multiple values for a single moment in time, which is why elements have an "id" attribute.
 
 - `<tach>` might be required for boats with twin outboard motors
 - `<temp>` might be required for oil temperature and coolant temperature

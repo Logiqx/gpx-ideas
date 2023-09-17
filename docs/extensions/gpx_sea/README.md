@@ -4,7 +4,7 @@
 
 #### Overview
 
-Sea / nautical elements include speed through the water (STW), wind, tide and water depth.
+Sea / nautical elements include speed through the water (STW), wind measurements, tidal measurements and water depth.
 
 | Name      | Values      | Description                                                  |
 | --------- | ----------- | ------------------------------------------------------------ |
