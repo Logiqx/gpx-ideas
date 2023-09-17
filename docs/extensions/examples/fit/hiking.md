@@ -10,7 +10,7 @@ Example of a hiker with a handheld GNSS receiver.
 
 
 
- #### Trackpoint
+#### Trackpoint
 
 A simple trackpoint including GNSS-derived speed and total distance:
 

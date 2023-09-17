@@ -12,7 +12,7 @@ Example of a cyclist with a sports watch and bike computer.
 
 
 
- #### Trackpoint
+#### Trackpoint
 
 Individual trackpoints do not need to specify the source(s) for sensor metrics:
 

@@ -13,7 +13,7 @@ Example of a weather station.
 
 
 
- #### Trackpoint
+#### Trackpoint
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">

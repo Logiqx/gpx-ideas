@@ -11,7 +11,7 @@ Example of a runner with a sports watch, chest strap and pod.
 
 
 
- #### Trackpoint
+#### Trackpoint
 
 Individual trackpoints do not need to specify the source(s) for sensor metrics:
 

@@ -12,7 +12,7 @@ Example of a microlight with a custom GNSS receiver + INS device, air speed indi
 
 
 
- #### Trackpoint
+#### Trackpoint
 
 GPX 1.1 example:
 

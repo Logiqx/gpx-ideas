@@ -13,7 +13,7 @@ Example of a light aircraft with a GNSS receiver and standard cockpit indicators
 
 
 
- #### Trackpoint
+#### Trackpoint
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
