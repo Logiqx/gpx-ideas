@@ -1,6 +1,8 @@
 ## GPX Developers Mailing List and GPSXML Archive
 
-### Takeaways
+### Random Takeaways
+
+This list is by no means exhaustive, just a few posts that have some historical relevance.
 
 - General consensus that GPX should only hold geographic data, and not presentation data.
   - Dave Wissenbach was firmly of the opinion that styling belongs in extension schemas - [link](https://www.topografix.com/gpx_mailing_list.asp#co8olb+922q@eGroups.com)
@@ -24,3 +26,22 @@
   - "The original GPX schemas that I produced upto 1.1 has lowercase tags."
 - Sequencing was explained by Kevin Read in Feb 2002 - [link](https://www.topografix.com/gpx_mailing_list.asp#001801c1aef4$bba65d20$1900a8c0@krlap)
   - "Sequencing is used to sort and re-order waypoints as well as routes and tracks trather than manipulating the timestamp and modifying the base data."
+
+
+
+### Philosophy
+
+kerry.raymond+gmail.com on Mon Dec 04 12:07:07 2006 ([link](https://www.topografix.com/gpx_mailing_list.asp#02dc01c717df$a27bb2b0$3c13a8c0@cabernet))
+
+  - Quite thought provoking. I'd sum it up by saying that temporal data associated with a GPS fix belongs in GPX trackpoints.
+
+egroups+topografix.com on Wed Jan 17 16:53:17 2007 ([link](https://www.topografix.com/gpx_mailing_list.asp#8339231.20070117194852@topografix.com))
+
+> I'm going to suggest that GPX isn't really about exchanging GPS data. It may have started out that way, but it's really become a way to exchange spatial data - points and lines on the Earth.
+>
+> If we were starting from scratch, I would suggest that the base schema contain nothing more than the definition of a geographic point (lat/lon required, elevation and timestamp optional) and line, and that everything else be built (through extension schemas) on top of that.
+
+robertlipe+usa.net on Tue Jun 23 13:50:51 2009 ([link](https://www.topografix.com/gpx_mailing_list.asp#883NFwuxP4150S02.1245790215@cmsweb02.cms.usa.net))
+
+> It does strike me that above we have two different classes of data: one that's location or real-world temporal data measured by external sensors that's associated with a location, but not really GPS itself, and one that's just external data (phone numbers, etc.) that happens to be at a location.
+

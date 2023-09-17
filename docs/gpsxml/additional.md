@@ -133,10 +133,15 @@ Add clarification for the following topics
   - Suggested [IETF](https://www.ietf.org) standard
 
 - [Aviation Database Waypoint](https://www.topografix.com/gpx_mailing_list.asp#cs5n3f+jjlh@eGroups.com)
-  - P Tomblin has created the aviation database extension schema - http://navaid.com/GPX/
+  - Paul Tomblin has created the aviation database extension schema - http://navaid.com/GPX/
+    - Namespace http://navaid.com/GPX/NAVAID/0/8
+- Geo-caching for GPX 1.0
+  - [http://static.groundspeak.com/cache/1/0/cache.xsd](http://static.groundspeak.com/cache/1/0/cache.xsd)
+
 - Points of interest?
   - [Re: POI/Waypoint Phone Number Attribute](https://www.topografix.com/gpx_mailing_list.asp#el3k6n+hmlu@eGroups.com) by Doug in Dec 2006. Distinguishes waypoints and POIs
 - Proximity waypoints / alerts
   - slavins+hearsay.demon.co.uk on Sun Dec 31 15:08:05 2006 ([link](https://www.topografix.com/gpx_mailing_list.asp#en9fdj+su5p@eGroups.com))
-  - See garmin [xsd](https://www8.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd)
+  - See Garmin GpxExtensions [xsd](https://www8.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd)
+
 

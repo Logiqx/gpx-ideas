@@ -1,6 +1,6 @@
 ## GPX Developers Mailing List and GPSXML Archive
 
-### References
+### References to Feature Requests
 
 This document captures references to a number of the items being proposed as extensions for GPX 1.1 and possibly for the core of GPX 1.2.
 
@@ -197,7 +197,7 @@ Useful links
 
 
 
-#### Orientation
+#### Attitude / Orientation
 
 richard+jelbert.com on Tue Aug 01 11:57:40 2006 ([link](https://www.topografix.com/gpx_mailing_list.asp#eao840+ahnf@eGroups.com))
 
@@ -255,7 +255,7 @@ robertlipe+gmail.com on Wed Dec 23 10:37:27 2009 ([link](https://www.topografix.
 
 
 
-#### Environment
+#### Meteorological
 
 egroups+topografix.com on Wed Apr 24 08:02:08 2002 ([link](https://www.topografix.com/gpx_mailing_list.asp#190130438480.20020424105452@topografix.com))
 
@@ -430,7 +430,7 @@ egroups+topografix.com on Fri Nov 12 09:06:19 2004 ([link](https://www.topografi
 
 
 
-#### Source
+#### Enhanced Source
 
 jeremy+groundspeak.com on Wed Nov 06 17:23:09 2002 ([link](https://www.topografix.com/gpx_mailing_list.asp#00c301c285fc$3756bf80$84a79642@groundspeak.biz))
 
@@ -446,27 +446,4 @@ jeremy+groundspeak.com on Thu Nov 07 13:11:35 2002 ([link](https://www.topografi
 >
 > `<src mfr="Garmin" ver="1.2">eTrex Vista</src> `
 
-
-
-#### Extensions
-
-- Geo-caching for GPX 1.0 - http://static.groundspeak.com/cache/1/0/cache.xsd
-- Namespace http://navaid.com/GPX/NAVAID/0/8 
-- Aeronautical database - TBC
-
-
-
-### Philosophy
-
-kerry.raymond+gmail.com on Mon Dec 04 12:07:07 2006 ([link](https://www.topografix.com/gpx_mailing_list.asp#02dc01c717df$a27bb2b0$3c13a8c0@cabernet))
-  - Quite thought provoking. I'd sum it up by saying that temporal data associated with a GPS fix belongs in GPX trackpoints.
-
-egroups+topografix.com on Wed Jan 17 16:53:17 2007 ([link](https://www.topografix.com/gpx_mailing_list.asp#8339231.20070117194852@topografix.com))
-> I'm going to suggest that GPX isn't really about exchanging GPS data. It may have started out that way, but it's really become a way to exchange spatial data - points and lines on the Earth.
->
->  If we were starting from scratch, I would suggest that the base schema contain nothing more than the definition of a geographic point (lat/lon required, elevation and timestamp optional) and line, and that everything else be built (through extension schemas) on top of that.
-
-robertlipe+usa.net on Tue Jun 23 13:50:51 2009 ([link](https://www.topografix.com/gpx_mailing_list.asp#883NFwuxP4150S02.1245790215@cmsweb02.cms.usa.net))
-
-> It does strike me that above we have two different classes of data: one that's location or real-world temporal data measured by external sensors that's associated with a location, but not really GPS itself, and one that's just external data (phone numbers, etc.) that happens to be at a location.
 

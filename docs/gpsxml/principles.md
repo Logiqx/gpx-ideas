@@ -2,6 +2,8 @@
 
 ### Common Principles
 
+These posts provided some insight into some of the early design decisions.
+
 davewissenbach+yahoo.com on Thu Nov 08 21:36:07 2001 ([link](https://www.topografix.com/gpx_mailing_list.asp#9sfq05+ehv2@eGroups.com))
 
 > we have previously agreed that required attributes of an element would be coded with the XML attribute syntax, and that optional data would be coded as elements.

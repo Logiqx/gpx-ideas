@@ -29,7 +29,7 @@ Significant contributors:
 
 ### Participants
 
-To make sense of 18 years of the message list and the history of GPX, I found it helpful to look at the participants with the most posts.
+To make sense of 18 years of the message list and the history of GPX, I started out by looking at the participants who had made the most posts.
 
 | Count | Email                                        | Name                    | Notes                                                        |
 | ----- | -------------------------------------------- | ----------------------- | ------------------------------------------------------------ |
