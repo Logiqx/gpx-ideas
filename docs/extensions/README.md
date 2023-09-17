@@ -2,17 +2,19 @@
 
 ### Basic Concepts
 
-- Adhere to existing GPX [standards](../standards.md)
-- Identify general categories and group similar items together in separate schemas
-  - Use three letter abbreviations - e.g. "gpx_met.xsd" and `<met:xyz>` for meteorological extensions
+- Adhere to the existing GPX [standards](../standards.md)
+- Identify general categories and group related data items into the same schema(s)
+  - Use three letter abbreviations - e.g. "gpx_met.xsd" and `<met:xyz>` for meteorological data
 
-- Maintain 100% compatibility with existing GPX readers, including Garmin software such as Connect, MapSource, etc
+- Ensure 100% compatibility with existing GPX readers, including Garmin software such as Connect, MapSource, etc
+  - See [notes](../proposal/garmin.md) from previous proposal describing the behaviors of Garmin products
+
 
 
 
 ### Diving In
 
-Feel free to look at some of the [examples](examples/README.md) first, prior to looking at the extensions in more detail.
+Feel free to take a look at some of the [examples](examples/README.md) first, prior to looking at the extensions in more detail.
 
 | Schema                       | Description                |
 | ---------------------------- | -------------------------- |
@@ -32,7 +34,7 @@ Don't forget to look at the [examples](examples/README.md) that have been provid
 
 ### Additional Concepts
 
-- Use of an optional "id" attribute for elements have multiple concurrent readings
+- Use of an optional "id" attribute for elements that have multiple concurrent readings
   - Multiple tachometers; e.g. boats with two motors, helicopters, etc
   - The "id" attribute can also be used to record the same readings from multiple sensors, if required
     - Speed(s) from both a GPS / GNSS receiver and from a bike wheel

@@ -2,7 +2,7 @@
 
 ### Basic Concepts
 
-- Adhere to existing GPX [standards](../standards.md)
+- Adhere to the existing GPX [standards](../standards.md)
 - Backwards compatibility
   - Make life easy for existing GPX 1.1 writers
     - There are many GPX writers in the wild and adoption of GPX 1.2 should be as easy as possible
@@ -22,5 +22,5 @@
 
 ### Schema Changes / Additions
 
-This document is yet to be written but some scruffy notes can be found amongst my [GPSXML](../gpsxml/additional.md) notes.
+Candidates for GPX 1.2 are yet to be listed on this page but a list of possible enhancements can be found in my [GPSXML](../gpsxml/additional.md) notes.
 

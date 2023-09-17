@@ -2,9 +2,9 @@
 
 ### Possible Enhancements
 
-There have been a number of suggestions over the years and some of them are listed below.
+There have been a number of suggestions over the years, some of which are listed below.
 
-A fair few of these (but perhaps not all) seem worthwhile and can go into a GPX 1.2 proposal.
+A fair few of these (but perhaps not all) seem like worthwhile changes and should go into a GPX 1.2 proposal.
 
 
 
@@ -18,14 +18,14 @@ A fair few of these (but perhaps not all) seem worthwhile and can go into a GPX 
 
 #### Fix Type
 
-Additional fix types
+Additional fix types that aren't available in GPX 1.0 / GPX 1.1
 
 - "dr", "float", "manual", rtk", "sim"
-  - see [summary](../proposal/fix-type.md) from previous proposal
+  - see [summary](../proposal/fix-type.md) of fix type in previous proposal
 
 
 
-#### Complex Type Extensions
+#### Extensions for all Complex Types
 
 All complex types should support extensions
 
@@ -39,18 +39,18 @@ All complex types should support extensions
 
 
 
-#### Extended Source Elements
+#### Extensions for Source Elements
 
-Extended `<src>` elements
+Add support for extended `<src>` elements
 
-- Perhaps make `<src>` a complex type so that extended information can be defined using `<extensions>`
-- [textType](https://www.topografix.com/gpx_mailing_list.asp#dbjvr8+101af@eGroups.com)  might be a possible way of declaring `<src>` as mixed content?
+- Perhaps make `<src>` a complex type so that additional information can be supported using `<extensions>`
+- The example [textType](https://www.topografix.com/gpx_mailing_list.asp#dbjvr8+101af@eGroups.com)  might be an option for declaring `<src>` as mixed content?
 
 
 
 #### UUID
 
-- UUID information has been suggested a few times
+- UUID information has been suggested a few times and was included in RJL's 2009 proposal
 - Maybe consider placing it everywhere that `<src>` elements are allowed?
 - Should the field's content follow the string representation in RFC 4122 at http://www.ietf.org/rfc/rfc4122.txt?
 
@@ -58,7 +58,7 @@ Extended `<src>` elements
 
 #### Relative Paths
 
-Support for relative paths in `<link>` elements have been suggested but need to confirm if they are a problem
+Support for relative paths in `<link>` elements has been suggested but it's not clear if there is an actual problem - TBC
 
 - egroups+topografix.com on Mon Jan 04 10:42:16 2010 ([link](https://www.topografix.com/gpx_mailing_list.asp#953828510.20100104134157@topografix.com))
   - Proposal
@@ -66,7 +66,7 @@ Support for relative paths in `<link>` elements have been suggested but need to 
 - robertlipe+gmail.com on Mon Jan 04 10:54:01 2010 ([link](https://www.topografix.com/gpx_mailing_list.asp#82a839a51001041053u8541b76x8f36c0ed7e9329fe@mail.gmail.com))
   - "It's worth mentioning that during the process of formalizing KML for the OGC, there was a surprisingly large effort required to try to nail corner cases with relative paths and ssociated files.   It's harder to do well than it sounds."
 - #me
-  - Combine this with GPZ usage as it could be really useful?
+  - Combining this with file compression ("gpz" files) could be rather useful
 
 
 
@@ -89,7 +89,7 @@ Support for relative paths in `<link>` elements have been suggested but need to 
 
 
 
-#### Strict Extensions
+#### Validation of Extensions
 
 - [GPX 1.1 `<extensions>` allows broken GPX to validate](https://www.topografix.com/gpx_mailing_list.asp#124423616.20050119080422@topografix.com)
   - The <extensions> element in GPX 1.1 imposes "lax" processing on elements included from other schemas.
@@ -106,7 +106,7 @@ Support for relative paths in `<link>` elements have been suggested but need to 
 
 
 
-#### Documentation
+#### Tweaks to Documentation
 
 Add clarification for the following topics
 
@@ -125,9 +125,11 @@ Add clarification for the following topics
     - [GPS units need a geoid model](https://www.topografix.com/gpx_mailing_list.asp#49E099F8.7050907@free.fr) by jrepetto+free.fr
       - Claims SiRF Star II doesn't have this model. I can check if required using GT-11.
 
+See previous [proposal](../proposal/definitions.md) for additional details.
 
 
-### Miscellaneous
+
+### Miscellaneous Topics
 
 - [GPX version 2](https://www.topografix.com/gpx_mailing_list.asp#pbjvb2+h952tg@YahooGroups.com) by Topo GPS - pretty much covered by the list above and "standard" [extensions](../extensions/README.md)
   - Suggested [IETF](https://www.ietf.org) standard
@@ -143,5 +145,4 @@ Add clarification for the following topics
 - Proximity waypoints / alerts
   - slavins+hearsay.demon.co.uk on Sun Dec 31 15:08:05 2006 ([link](https://www.topografix.com/gpx_mailing_list.asp#en9fdj+su5p@eGroups.com))
   - See Garmin GpxExtensions [xsd](https://www8.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd)
-
 
