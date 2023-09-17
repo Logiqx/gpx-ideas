@@ -31,7 +31,7 @@ Sea / nautical elements can be added to `<wpt>`, `<rtept>` and `<trkpt>`  elemen
     - It can easily be calculated from TWA and the heading
       - TWD = (TWA + heading)  % 360
 - Tidal elements "drift" and "set" can be calculated from other elements but have been included to maintain precision
-  - See page about [set and drift][http://www.sailfastllc.com/AppNoteCurrentSetAndDrift] which explains how they are determined using a vector triangle, hence their exclusion
+  - See page about [set and drift](http://www.sailfastllc.com/AppNoteCurrentSetAndDrift) which explains how they are determined using a vector triangle, hence their exclusion
 - Rate of turn (ROT) is supported by the [gpx_imu](../gpx_imu/README.md) extension
   - ROT represents the rate of change of heading, typically measured by external rate of turn turn indicator ([ROTI](https://en.wikipedia.org/wiki/Rate_of_turn_indicator))
   - ROT should <u>not</u> be derived from COG information - [link](https://www.navcen.uscg.gov/ais-class-a-reports)
