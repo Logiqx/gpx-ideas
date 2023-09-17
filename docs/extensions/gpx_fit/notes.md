@@ -4,6 +4,18 @@
 
 #### Random Notes - UNEDITED
 
+- Cadence
+  - Cyclists call it "pedalling rate" , measured in rpm.
+    - It's the number of revolutions the pedals make per minute
+    - Not to be confused with the rotational rate of the wheel
+  - Runners call it "strike rate", measured in steps per minute
+    - Just for clarity, it is the number of single steps per minute
+  - Swimmers call "stroke rate", measured in strokes per minute
+    - Just for clarity, it is the number of single strokes per minute
+- Reps
+  - Steps
+  - Strokes
+  - Jumps
 - Elevation gain is included to avoid cumulative errors
 - Energy is included to avoid the cumulative errors that might occur when converting from power
   - n.b. Power and energy can be monitored / updated more frequently than the typical 1 second GNSS interval

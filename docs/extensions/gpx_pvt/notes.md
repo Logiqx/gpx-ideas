@@ -33,6 +33,10 @@ ROC is most important for aviation, hence the abbreviation - [wiki](https://en.w
 
 COG and SOG are nautical terms that are also used in aviation.
 
+- COG
+  - Sometimes referred to as course over ground (COG) or course made good (CMG)
+  - Sometimes referred to track or track made good (TMG)
+
 See [article](https://www.sailingissues.com/navcourse4.html) about naming of COG, SOG, etc.
 
 - COG is not the same as heading - consider sailing, flying, and car drifting
