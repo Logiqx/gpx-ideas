@@ -2,8 +2,11 @@
 
 ### Overview
 
-This document is yet to be written but you can find some extremely scruffy and verbose working notes:
+Some of this content is nothing more than my working notes and therefore require some serious editing!
 
-- General [approach](approach.md) - messy working notes that needs splitting into extensions / usage / core
-- Proposed [extensions](extensions.md) - messy working notes that need a simple writeup
-- Practical [examples](examples.md) - working notes but less messy than the above!
+I'd recommend looking at some of the examples first, prior to looking at my unedited working notes.
+
+- General [approach](approach.md) - **unedited** working notes relating to GPX extensions / usage / core
+- Proposed [extensions](extensions.md) - **unedited** working notes that need concise writeups
+- Practical [examples](examples/README.md) - various activities for land, sea, and air
+
