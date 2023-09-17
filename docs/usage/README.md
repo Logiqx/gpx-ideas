@@ -19,7 +19,3 @@ gpz - supported by Robert Lipe and Jeremy Irish
   - See new [thread](https://groups.io/g/gpx/topic/tools_for_validating_gpx/95697089?p=,,,20,0,0,0::recentpostdate/sticky,,,20,2,0,95697089,previd%3D1693402933996920097,nextid%3D1607599082822356246&previd=1693402933996920097&nextid=1607599082822356246) about tools and HTTPS
 
 
-
-### Signed Keys
-
-#me - I saw signed keys mentioned but dismissed it due to the complexity and limited benefit
