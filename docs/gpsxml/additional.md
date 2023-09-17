@@ -1,6 +1,6 @@
 ## GPX Developers Mailing List and GPSXML Archive
 
-### Possible Enhancements
+### Suggestions for GPX 1.2
 
 There have been a number of suggestions over the years, some of which are listed below.
 
