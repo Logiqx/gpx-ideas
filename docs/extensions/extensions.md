@@ -4,9 +4,7 @@
 
 #### Overview
 
-A collection of "standard" GPX extensions are listed below, grouping related elements into separate schemas.
-
-Click the links for more details.
+Click the links provided for further details about each extension.
 
 | Schema                       | Description                | Namespace Prefix | Elements |
 | ---------------------------- | -------------------------- | ---------------- | -------- |
@@ -19,5 +17,4 @@ Click the links for more details.
 | [gpx_nav](gpx_nav/README.md) | Navigation                 | nav              | -        |
 | [gpx_eng](gpx_eng/README.md) | Engine                     | eng              | 8        |
 | [gpx_gen](gpx_gen/README.md) | Generic                    | gen              | 1        |
-
 
