@@ -30,9 +30,9 @@ It is envisaged that this project will start off being a repository for material
 
 
 
-### Topics
+### Content
 
-The "GPX Ideas" project consists of 3 independent topics:
+The content of the project relates to 3 independent topics:
 
 1. GPX [Extensions](extensions/README.md) - GPX extension schemas for fitness, nautical, aviation, meteorological, etc
 2. GPX [Usage](usage/README.md) - topics relating to general usage such as validation and file compression (gpz)
