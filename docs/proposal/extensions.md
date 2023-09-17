@@ -1,4 +1,4 @@
-## GPX Proposal
+## Proposal for GPX
 
 ### Overview
 
