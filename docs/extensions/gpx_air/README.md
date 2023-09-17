@@ -49,17 +49,17 @@ It is worth noting that a typical smart phone could realistically simulate the s
 
 #### Summary
 
-Without going into great detail, the following statements can be made regarding speed and elevation / altitude / height of an aircraft:
+Without going into great detail, the following statements can be made regarding the speed and elevation / altitude / height of an aircraft:
 
 - There are essentially 6 different types of speed for an aircraft
   - [IAS](https://en.wikipedia.org/wiki/Indicated_airspeed), [CAS](https://en.wikipedia.org/wiki/Calibrated_airspeed), [EAS](https://en.wikipedia.org/wiki/Equivalent_airspeed), [TAS](https://en.wikipedia.org/wiki/True_airspeed), [mach number](https://en.wikipedia.org/wiki/Mach_number) and [ground speed](https://en.wikipedia.org/wiki/Ground_speed) (SOG)
 - There are essentially 6 different types of elevation / altitude / height for an aircraft
   - Indicated altitude or height ([QNH or QNE](https://en.wikipedia.org/wiki/Altimeter_setting)), [pressure altitude](https://en.wikipedia.org/wiki/Pressure_altitude) (STD), [density altitude](https://en.wikipedia.org/wiki/Density_altitude), absolute altitude ([AGL](https://en.wikipedia.org/wiki/Height_above_ground_level)) or true altitude
-  - The pitot-static system and air data computer (ADC) can determine all of the above, except for true altitude which will typically use GPS / GNSS
+  - The pitot-static system and air data computer (ADC) can determine all of the above, except for true altitude
 
 Whilst it is possible to do approximate conversions after the flight, replicating the exact calculations of the air data computer (ADC) is not guaranteed.
 
-The gpx_air extension therefore supports all variations of airspeed and elevation / altitude / height. The only two exceptions are ground speed (SOG) and true altitude / elevation which go elsewhere in GPX files, `<pvt:sog>` and `<ele>` respectively.
+The gpx_air extension includes all variations of airspeed and elevation / altitude / height for an aircraft. The only two exceptions are ground speed (SOG) and true altitude / elevation which go elsewhere in GPX files, `<pvt:sog>` and `<ele>` respectively.
 
 
 
