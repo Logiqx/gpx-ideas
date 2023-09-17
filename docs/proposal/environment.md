@@ -28,7 +28,7 @@ Omissions:
   - [Aug 24](https://groups.io/g/gpx/message/47)
   - [Aug 5](https://groups.io/g/gpx/message/35)
 - GPX proposal
-  - Summary of common GPX [extensions](../extensions.md)
+  - Summary of common GPX [extensions](extensions.md)
 - Garmin
   - TrackPointExtension v2 - [schema](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd)
   - Sailing Terminology and Definitions - [article](https://support.garmin.com/en-GB/?faq=e5LwusViLZ95VTDwn2Alt7)

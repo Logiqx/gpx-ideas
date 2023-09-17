@@ -63,7 +63,7 @@ Thought: This could also be used to state how elevation was derived, if known:
   - [Aug 24](https://groups.io/g/gpx/message/47)
   - [Aug 5](https://groups.io/g/gpx/message/35)
 - GPX proposal
-  - Summary of common GPX [extensions](../extensions.md)
+  - Summary of common GPX [extensions](extensions.md)
 - Garmin
   - GPX extensions
     - TrackPointExtension v2 - [schema](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd)

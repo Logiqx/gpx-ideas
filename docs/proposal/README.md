@@ -11,7 +11,7 @@ Feel free to browse is any order and use the browser back-button to return to th
   - [The use of estimated speed in sport](speed.md)
   - [Estimated accuracy / errors](estimates.md)
   - [History of GPX 1.1 and GPX extensions](history.md)
-    - [Common elements in GPX extensions](../extensions.md)
+    - [Common elements in GPX extensions](extensions.md)
 - Proposal
   - [Example schema](enhancements.md) for GPX 1.1.1
   - [New elements](elements.md) for GPX 1.1.1

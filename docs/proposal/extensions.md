@@ -1,4 +1,4 @@
-## GPX Landscape
+## GPX Proposal
 
 ### Overview
 
