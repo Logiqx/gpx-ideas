@@ -7,19 +7,8 @@
 - Abbreviations - [Wiki](https://en.wikipedia.org/wiki/List_of_aviation,_avionics,_aerospace_and_aeronautical_abbreviations) - [FAA](https://www.faa.gov/air_traffic/publications/atpubs/aip_html/part1_gen_section_2.2.html) - [Pegasus](https://www.flypgs.com/en/travel-glossary/abbreviations) - [UK gov](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1059508/Glossary_of_Abbreviations.pdf)
   - FAA, Pegasus and UK gov do not list PA / DA, hence my use of palt and dalt
 
-TBC - 2 x angle of attack (AOA) sensors
-
 Notes
 
-- True altitude should be recorded in `<ele>`
-- OAT / SAT should be recorded in `<met:atemp>`
-  - RAT / TAT can be recorded in `<met:atemp id="2">`
-
-- Engine stuff should use the engine extension
-  - e.g. Tachometer data should be recorded in `<eng:tach>`
-    - Use `<eng:tach id="2">` for helicopters, etc
-
-- pressure altitude would be recorded as `<alt set="1013.25">...</alt>`
 - On large jet aircraft the IAS is by far the most important speed indicator. Most aircraft speed limitations are based on IAS, as IAS closely reflects dynamic pressure. TAS is usually displayed as well, but purely for advisory information and generally not in a prominent location.
 - CAS can be calculated from TAS, OAT and pressure altitude - [link](https://en.wikipedia.org/wiki/Indicated_airspeed#IAS_and_navigation)
 - Easiest way to calculate EAS is from the mach number.
@@ -59,9 +48,6 @@ Airspeed indicator - [wiki](https://en.wikipedia.org/wiki/Airspeed_indicator)
   - mach is only dependent on dynamic and static pressure
 
 
-Hi Heather. Can I ask you a few basic aeronautical questions? I'm working on some proposed enhancements to the GPX file format, primarily for sports interested in speed but there is some basic sailing and aviation stuff included as well. I want to ensure that my understanding and use of terminology is correct with regards aviation. Firstly, there are obviously multiple conventions for airspeed (e.g. ias, cas, eas, tas). I am proposing that ias and tas be recorded and that cas / eas can be considered redundant because they can easily be calculated retrospectively when you also have the indicated altitude (plus the altimeter pressure setting) and outside air temperature. Does this make sense or have I overlooked something? Secondly, I am aware of 6 types of altitude (indicated, absolute, true, height, pressure, density). I'm proposing to include indicated altitude (plus the altimeter pressure setting) and the absolute altitude (i.e. radar altimeter reading) as I think the others can all be re-calculated when you also know the altitude and outside air temperature. Lastly, I've seen 6 names for temperature (iat / rat / tat, oat / sat / true) and I'm thinking of recording two values referred to as iat and oat. I'm assuming that as a pilot you are most interested in "indicated air temperature" and you sometimes tell passengers the "outside air temperature". Hopefully I've understood things correctly (please correct me if I am wrong, or if alternative names / conventions are more common) because you know, stuff on the internet can easily mislead. :D
-
-
 
 Air Data Computer (ADC) - [link](https://aviation.stackexchange.com/questions/1793/how-does-a-mach-meter-determine-the-speed-of-sound-at-a-given-altitude) and [wiki](https://en.wikipedia.org/wiki/Air_data_computer)
 
@@ -74,19 +60,6 @@ Air Data Computer (ADC) - [link](https://aviation.stackexchange.com/questions/17
 RAT and TAT are slightly different - [link](https://aviation.stackexchange.com/questions/1640/what-is-the-difference-between-oat-rat-tat-and-sat)
 
 ​	Another example with code and mentioning the difference of IAT and TAT - [link](https://www.hpmuseum.org/forum/thread-18073.html)
-
-
-
-
-- Standard abbreviations used where applicable; ias / tas, iat / oat
-
-
-
-There are multiple types of everything, I've chosen two of each as the others can be calculated:
-
-- 4 common conventions for airspeed - **ias**, cas, eas, **tas**
-- 6 types of altitude in aviation - **indicated**, **absolute**, true, height, pressure, density
-- 6 types of temperature - **iat** / rat / tat, **oat** / sat / true
 
 
 
@@ -116,15 +89,6 @@ Details
     - Altimeter setting - [wiki](https://en.wikipedia.org/wiki/Altimeter_setting)
     - The setting may be inches or mb
   - [Height above ground level](https://en.wikipedia.org/wiki/Height_above_ground_level#Aviation) (AGL) can be determined using a [radar altimeter](https://en.wikipedia.org/wiki/Radar_altimeter#)
-
-- 6 types of temperature
-
-
-    - Indicated air temperature (IAT) / ram air temperature (RAT) / total air temperature (TAT)
-
-
-    - Outside air temperature (OAT) / static air temperature (SAT) / true air temperature
-
 
 Kinda extra...
 

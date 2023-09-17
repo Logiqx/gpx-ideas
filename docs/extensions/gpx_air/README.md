@@ -4,15 +4,17 @@
 
 #### Overview
 
-Air / aviation elements can be added to `<wpt>`, `<rtept>` and `<trkpt>`elements via GPX extensions.
+Air / aviation elements include the various types of airspeed and the various types of elevation / altitude / height.
+
+They apply to all sorts of flight related activities; balloons, hang gliders, microlights, gliders, light aircraft, jet aircraft, drones and helicopters.
 
 
 | Name                         | Values       | Description                                                  |
 | ---------------------------- | ------------ | ------------------------------------------------------------ |
 | `<ias>`                      | >= 0         | Indicated airspeed (IAS) is measured by a pitot-static system in meters per second (m/s) |
-| `<cas>`                      | >= 0         | Calibrated airspeed (CAS) is a more accurate version of IAS and sometimes used instead of the indicated air speed. |
-| `<eas>`                      | >= 0         | Equivalent airspeed (EAS) is closely related to Mach number and can therefore be measured via pressure differences. It will sometimes be used to calculated TAS, accounting for non-standard pressure and temperature |
-| `<tas>`                      | >= 0         | True airspeed (TAS) is the speed of the aircraft relative to the airmass in which it is flying in meters per second (m/s). TAS can be calculated using EAS and air density (i.e. pressure altitude and OAT, ignoring humidity) or from mach number + OAT |
+| `<cas>`                      | >= 0         | Calibrated airspeed is the indicated airspeed adjusted for pitot system position and installation error in meters per second (m/s) |
+| `<eas>`                      | >= 0         | Equivalent airspeed is the calibrated airspeed adjusted for compressibility effects in meters per second (m/s). It is closely related to Mach number and can therefore be directly calculated using pressure differences. EAS can be used to calculated TAS, accounting for non-standard pressure and temperature |
+| `<tas>`                      | >= 0         | True airspeed (TAS) is the speed of the aircraft relative to the airmass in which it is flying in meters per second (m/s). TAS can be calculated using EAS and air density (i.e. pressure altitude and OAT, typically ignoring humidity) or from mach number + OAT |
 | `<mach>`                     | >= 0         | Mach number can be calculated directly from the pitot-static system, or from TAS and OAT |
 | `<ialt set="nnn" ref="xxx">` |              | Indicated altitude shows elevation / altitude / height of an aircraft in meters (m)<br />"set" is the pressure setting / sub-scale shown in the Kollsman window in hectopascals (hPa)<br />"ref" is the pressure reference and might be "qnh" (elevation / altitude), "qfe" (height) or "std" (pressure altitude) |
 | `<palt>`                     |              | Pressure altitude is the height above the standard datum plane (SDP) in meters (m). Pressure altitude uses a pressure setting of 1013.25 hPa and is used to determine the flight level (FL) of the aircraft above MSL. |
@@ -67,6 +69,24 @@ The gpx_air extension therefore supports all types of airspeed and elevation / a
 Perhaps the best video reference(s) for flight instruments and flight data is a [playlist](https://www.youtube.com/playlist?list=PLJ-0SVdtegU-SS5Kp12Yw70iJbx4ApHhD) on the [Aviation Theory](https://www.youtube.com/@AviationTheory) YouTube channel.
 
 Once you are familiar with the various flight instruments and the underlying data it is easy to find additional sources of information.
+
+It is also worth noting that the aviation industry is looking to switch from using magnetic north to true north - [Mag2True](https://www.aerosociety.com/news/time-for-a-change-of-direction)
+
+
+
+#### Exclusions
+
+- IMU data such as heading, pitch, roll and rate of turn is handled by the [gpx_imu](../gpx_imu/README.md) extension
+- Meteorological data is handled by the [gpx_met](../gpx_met/README.md) extension
+  - `<atemp>` should be used for outside air temperature ([OAT](https://en.wikipedia.org/wiki/Outside_air_temperature)) / static air temperature (SAT) / true air temperature
+    - `<atemp id="2">` can be used for total air temperature ([TAT](https://en.wikipedia.org/wiki/Total_air_temperature)) / ram air temperature (RAT) / indicated air temperature (IAT)
+    - ISA temperature is redundant as it can easily be calculated (if required)
+  - `<gwd>` and `<gws>` should be used for the wind direction and speed derived from COG, SOG, [heading](https://en.wikipedia.org/wiki/Heading_(navigation)) and [TAS](https://en.wikipedia.org/wiki/True_airspeed)
+  - `<baro>` should be used for [static pressure](https://en.wikipedia.org/wiki/Static_pressure)
+- Engine data is handled by the [gpx_eng](../gpx_eng/README.md) extension
+  - e.g. tachometers, temperatures, pressures, fuel, batteries, etc
+- Angle-of-attack (AOA) sensors are not included at this time
+- Glide ratio / slope is not included because it can be determined from ground speed (SOG) and rate of descent (using ROC)
 
 
 
