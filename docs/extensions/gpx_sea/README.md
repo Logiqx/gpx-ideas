@@ -4,7 +4,7 @@
 
 #### Overview
 
-Sea / nautical elements can be added to `<wpt>`, `<rtept>` and `<trkpt>`  elements via GPX extensions.
+Sea / nautical elements include speed through the water (STW), wind, tide and water depth.
 
 | Name      | Values      | Description                                                  |
 | --------- | ----------- | ------------------------------------------------------------ |
@@ -22,7 +22,7 @@ Sea / nautical elements can be added to `<wpt>`, `<rtept>` and `<trkpt>`  elemen
 
 #### Background
 
-- Non-sailors should learn about the various types of [wind](https://raymarine.custhelp.com/app/answers/detail/a_id/3794/~/apparent-wind%2C-true-wind-and-ground-wind%2C-and-data-required-to-calculate-them#:~:text=Apparent%20Wind%20will%20vary%20depending,(wind%20on%20the%20bow.)) to understand apparent wind, true wind, ground wind, etc.
+- Non-sailors can read a page written by [Raymarine](https://raymarine.custhelp.com/app/answers/detail/a_id/3794/~/apparent-wind%2C-true-wind-and-ground-wind%2C-and-data-required-to-calculate-them#:~:text=Apparent%20Wind%20will%20vary%20depending,(wind%20on%20the%20bow.)) to understand the difference between apparent wind, true wind, and ground wind.
 
 
 
