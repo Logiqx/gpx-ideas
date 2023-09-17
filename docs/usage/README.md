@@ -8,14 +8,19 @@ They are essentially standardisation / documentation activities.
 
 ### Compressed Files
 
-File compression using the "GPZ" idea for GPX 1.0 / 1.1 / 1.2.
+Document file compression (GPZ) for GPX 1.0 / 1.1 / 1.2.
 
-gpz - supported by Robert Lipe and Jeremy Irish
+- Essentially mimics the KMZ format of KML
 
-- egroups+topografix.com on Mon Jan 05 12:04:36 2009 ([link](https://www.topografix.com/gpx_mailing_list.asp#796201311.20090105144640@topografix.com))
-  - "My implementation plan was to mimic KMZ as much as possible - the program that opened the compressed GPX archive would extract data from any and all GPX files contained therein.  I wasn't planning to use other data in the archive (.jpg, etc) but would probably support it if others caught on to the idea of compressed GPX archives."
-- jeremy+groundspeak.com on Mon Jan 05 13:10:23 2009 ([link](https://www.topografix.com/gpx_mailing_list.asp#20090105211019.4ac0c100@rosie.groundspeak.biz))
-- n.b. kmz is a kml file and resources in a zip file
+- This idea was supported by Dan Foster, Robert Lipe, Jeremy Irish and numerous other people
+
+
+
+### Embedded Icons, Images, Photos, Videos
+
+- "We do need to come up with some answers as to how GPX should handle things like photos embedded in waypoints, waypoints embedded in photos, and your hotspots and other map symbols." - see [link](https://www.topografix.com/gpx_mailing_list.asp#885169760.20060825161206@topografix.com)
+- This ties in particularly well with compression files (GPZ) where multiple files can be bundled together
+- However, use of relative paths may have some issues as described in the possible [improvements](../core/README.md) to the GPX core
 
 
 

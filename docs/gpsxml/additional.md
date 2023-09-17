@@ -50,7 +50,7 @@ Add support for extended `<src>` elements
 #### UUID
 
 - UUID information has been suggested a few times and was included in RJL's 2009 proposal
-- Maybe consider placing it everywhere that `<src>` elements are allowed?
+- Maybe consider introducing `<uuid>`everywhere that `<src>` elements are allowed?
 - Should the field's content follow the string representation in RFC 4122 at http://www.ietf.org/rfc/rfc4122.txt?
 
 

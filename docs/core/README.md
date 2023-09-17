@@ -21,7 +21,29 @@
 
 
 
-### Schema Changes / Additions
+### Possible Improvements
 
-Candidates for GPX 1.2 are yet to be listed on this page but a list of possible enhancements can be found in my [GPSXML](../gpsxml/additional.md) notes.
+There are a number of changes and additions that can potentially be included in GPX 1.2
 
+- Add track type - e.g. walking, running, cycling, driving, sailing, flying, etc.
+  - It might be best to do this as an extension so the list of track types can be extended, without requiring future GPX releases
+- Additional fix types
+  - Add "dr", "float", "manual", rtk", "sim" to the existing list
+- Add display color
+  - A common request is a standard way to specify display colors for tracks, routes and waypoints - see [GpxExtensionsv3.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd)
+- Add UUID
+  - Maybe consider introducing `<uuid>` elements everywhere that `<src>` elements are currently allowed?
+- Improvements to complex types
+  - All complex types should support `<extensions>`
+    - This applies to copyrightType, linkType, emailType, personType, ptType, ptsegType, boundsType
+  - Change `<src>` elements to be a complex type
+    - This will allow more detailed / structured information to be stored in `<src>` elements via `<extensions>`
+  - Create a base definitions schema that can be referenced by the gpx, gpx_style and gpx_overlay
+    - See [post](https://stackoverflow.com/questions/8194112/basics-of-referencing-a-xsd-schema-from-another-schema/8197798#8197798) which describes the use of relative paths in schema locations
+- Add support for relative paths to `<link>` elements which will be useful for GPZ files with embedded icons / images, etc
+  - The "href "attribute of `<link>` elements and "license" of `<copyright>` elements are both defined as "xsd:anyURI"
+- Enforce "strict" validation within `<extensions>`
+  - Change `<extensions>` to use "strict" validation of all elements relating to other schemas
+- XSD documentation tweaks
+  - Make it clear that `<ele>` is relative to MSL
+  - Make it clear that latitude and longitude values should not provide more than 9 decimal places
