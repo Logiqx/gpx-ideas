@@ -24,9 +24,9 @@ Feel free to take a look at some of the [examples](examples/README.md) first, pr
 | [gpx_fit](gpx_fit/README.md) | Fitness                    |
 | [gpx_air](gpx_air/README.md) | Air / aviation             |
 | [gpx_sea](gpx_sea/README.md) | Sea / nautical             |
-| [gpx_nav](gpx_nav/README.md) | Navigation                 |
 | [gpx_eng](gpx_eng/README.md) | Engine                     |
 | [gpx_gen](gpx_gen/README.md) | Generic                    |
+| [gpx_nav](gpx_nav/README.md) | Navigation - TODO          |
 
 Don't forget to look at the [examples](examples/README.md) that have been provided for various activities; land, sea, and air. :)
 
