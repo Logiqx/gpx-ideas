@@ -20,6 +20,12 @@ Sea / nautical elements can be added to `<wpt>`, `<rtept>` and `<trkpt>`  elemen
 
 
 
+#### Background
+
+- Non-sailors should learn about the various types of [wind](https://raymarine.custhelp.com/app/answers/detail/a_id/3794/~/apparent-wind%2C-true-wind-and-ground-wind%2C-and-data-required-to-calculate-them#:~:text=Apparent%20Wind%20will%20vary%20depending,(wind%20on%20the%20bow.)) to understand apparent wind, true wind, ground wind, etc.
+
+
+
 #### Notes
 
 - Boat speed / speed through the water (STW) is typically measured using a paddlewheel or ultrasonic transducer
@@ -31,11 +37,24 @@ Sea / nautical elements can be added to `<wpt>`, `<rtept>` and `<trkpt>`  elemen
     - It can easily be calculated from TWA and the heading
       - TWD = (TWA + heading)  % 360
 - Tidal elements "drift" and "set" can be calculated from other elements but have been included to maintain precision
-  - See page about [set and drift](http://www.sailfastllc.com/AppNoteCurrentSetAndDrift) which explains how they are determined using a vector triangle, hence their exclusion
+  - See page about [set and drift](http://www.sailfastllc.com/AppNoteCurrentSetAndDrift) which explains how they are determined using a vector triangle
 - Rate of turn (ROT) is supported by the [gpx_imu](../gpx_imu/README.md) extension
   - ROT represents the rate of change of heading, typically measured by external rate of turn turn indicator ([ROTI](https://en.wikipedia.org/wiki/Rate_of_turn_indicator))
   - ROT should <u>not</u> be derived from COG information - [link](https://www.navcen.uscg.gov/ais-class-a-reports)
 - "Ground distance since reset" (VLW sentence) should go in `<pvt:dist>` - see [gpx_pvt](../gpx_pvt/README.md)
+
+
+
+#### Exclusions
+
+- IMU data such as heading, pitch and roll are handled by the [gpx_imu](../gpx_imu/README.md) extension
+- Meteorological data is handled by the [gpx_met](../gpx_met/README.md) extension
+  - `<atemp>` and `<wtemp>` should be used for air temperature and water temperature
+  - `<gwd>` and `<gws>` should be used for ground wind direction and speed, not to be confused with TWD and TWS
+- Engine data is handled by the [gpx_eng](../gpx_eng/README.md) extension
+  - e.g. tachometers, temperatures, pressures, fuel, batteries, etc
+
+- VMG relative to the wind is not included at this time because it can be calculated from SOG + COG and TWD
 
 
 
