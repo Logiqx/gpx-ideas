@@ -2,17 +2,16 @@
 
 ### Basic Concepts
 
-- Adhere to the existing GPX [standards](../standards.md)
 - Identify different data categories and group all related data items into the same schema(s)
   - Use three letter abbreviations - e.g. "gpx_met.xsd" and `<met:xyz>` for meteorological data
-
+- Adhere to the existing GPX [standards](../standards.md)
+  
 - Avoid duplication so that a specific data item can only be stored in one way within a GPX file
   - Speed over ground (SOG) is ground speed (GS) in aviation, but they are synonymous so there should be only one way to store them in GPX
-  
+
   - Likewise for yaw / heading, pitch / trim, and roll / bank / heel from an IMU which are just synonyms of each other
-  
+
   - Subtle examples exist such as outside air temperature (OAT) and static air temperature (SAT) which are essentially air temperature
-  
 - Ensure 100% compatibility with existing GPX readers, including Garmin software such as Connect, MapSource, etc
   - See [notes](../proposal/garmin.md) from previous GPX 1.1.1 proposal describing the behaviors of Garmin products
 

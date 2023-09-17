@@ -2,6 +2,7 @@
 
 ### Basic Concepts
 
+- Enhancements which are deemed worthwhile for GPX 1.2 
 - Adhere to the existing GPX [standards](../standards.md)
 - Backwards compatibility
   - Make life easy for existing GPX 1.1 writers
