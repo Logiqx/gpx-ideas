@@ -1,4 +1,4 @@
-## GPX Extensions
+## GPX Landscape
 
 ### Overview
 
