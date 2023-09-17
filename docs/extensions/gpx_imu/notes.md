@@ -6,7 +6,7 @@
 
 TODO - might add heave, surge, sway?
 
-Separate accuracy estimates are an old idea:
+Separate accuracy estimates have been superseded by the "acc" attribute.
 
 | Name     | Values   | Description                                                  |
 | -------- | -------- | ------------------------------------------------------------ |
@@ -40,7 +40,7 @@ Notes
   - Aircraft may also have the concept - [link](https://ntrs.nasa.gov/api/citations/20160013217/downloads/20160013217.pdf)
 - Reference for value ranges
   - Option 1 - yaw = 0 to 360, pitch = -90 to 90, roll = -90 to 90 - [link](https://www.skylineglobe.com/Legacy/TerraExplorer/v6.6.0/APIReferenceGuide/Yaw_Pitch_and_Roll_Angles.htm)
-  - Option 2 - yaw = -18 0to 180, pitch = -90 to 90, roll = -90 to 90 - [link](https://stackoverflow.com/questions/9143161/max-and-min-values-of-roll-pitch-and-yaw-of-the-capture-motion-of-iphone)
+  - Option 2 - yaw = -180 to 180, pitch = -90 to 90, roll = -180 to 180 - [link](https://stackoverflow.com/questions/9143161/max-and-min-values-of-roll-pitch-and-yaw-of-the-capture-motion-of-iphone)
 - Errors
   - overview of error estimates - [link](https://www.canalgeomatics.com/knowledgebase/imu-accuracy-error-definitions/)
 - Aviation refers to pitch and roll as "attitude" - see [artificial horizon](https://en.wikipedia.org/wiki/Attitude_indicator) and [stack exchange](https://aviation.stackexchange.com/questions/35933/what-is-the-exact-meaning-of-attitude-does-it-include-translational-movement)
