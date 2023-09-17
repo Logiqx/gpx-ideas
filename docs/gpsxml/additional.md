@@ -29,12 +29,11 @@ Additional fix types that aren't available in GPX 1.0 / GPX 1.1
 
 All complex types should support extensions
 
+- egroups+topografix.com on Wed Sep 22 09:26:43 2004 ([link](https://www.topografix.com/gpx_mailing_list.asp#1754117908.20040922123201@topografix.com))
+  - We left <extensions> out of the following GPX 1.1 complex types
 - egroups+topografix.com on Fri Nov 12 09:06:19 2004 ([link](https://www.topografix.com/gpx_mailing_list.asp#703411000.20041112120550@topografix.com))
-
   - copyrightType, linkType, emailType, personType, ptType, ptsegType, boundsType - see email on 22 Sept 2004
-
 - egroups+topografix.com on Wed Dec 30 09:46:45 2009 ([link](https://www.topografix.com/gpx_mailing_list.asp#817253482.20091230124632@topografix.com))
-
   - "All complexType elements should end in `<extensions>` so they can be extended privately.  (I believe <link> in GPX 1.1 needs this fix)"
 
 
@@ -114,7 +113,6 @@ Add clarification for the following topics
     - Cannot change due to compatibility issues, just add 360 to negative values
   - Decimal places - lat and lon
     - No more than 9 decimal places makes sense - precision of 1/10th of a millimeter
-
   - Explanation of elevation which is above MSL so far as I know?
     - Post by Dan F, Apr 2009 - [link](https://www.topografix.com/gpx_mailing_list.asp#156410363.20090407134425@topografix.com) 
     - [Re: explanation of <ele> is unclear](https://www.topografix.com/gpx_mailing_list.asp#grnrhu+fcic@eGroups.com) by Dan A, Apr 2009
@@ -133,13 +131,11 @@ See previous [proposal](../proposal/definitions.md) for additional details.
 
 - [GPX version 2](https://www.topografix.com/gpx_mailing_list.asp#pbjvb2+h952tg@YahooGroups.com) by Topo GPS - pretty much covered by the list above and "standard" [extensions](../extensions/README.md)
   - Suggested [IETF](https://www.ietf.org) standard
-
 - [Aviation Database Waypoint](https://www.topografix.com/gpx_mailing_list.asp#cs5n3f+jjlh@eGroups.com)
   - Paul Tomblin has created the aviation database extension schema - http://navaid.com/GPX/
     - Namespace http://navaid.com/GPX/NAVAID/0/8
 - Geo-caching for GPX 1.0
   - [http://static.groundspeak.com/cache/1/0/cache.xsd](http://static.groundspeak.com/cache/1/0/cache.xsd)
-
 - Points of interest?
   - [Re: POI/Waypoint Phone Number Attribute](https://www.topografix.com/gpx_mailing_list.asp#el3k6n+hmlu@eGroups.com) by Doug in Dec 2006. Distinguishes waypoints and POIs
 - Proximity waypoints / alerts

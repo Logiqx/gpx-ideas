@@ -14,6 +14,10 @@ egroups+topografix.com on Tue Sep 07 13:13:56 2004 ([link](https://www.topografi
 
 > Someone pointed out to me off-list that <course> and <speed> were removed from <trkpt> in GPX 1.1.
 
+egroups+topografix.com on Wed Sep 22 09:26:43 2004 ([link](https://www.topografix.com/gpx_mailing_list.asp#1754117908.20040922123201@topografix.com))
+
+> add <course> and <speed> back to <trkpt>
+
 egroups+topografix.com on Fri Nov 12 09:06:19 2004 ([link](https://www.topografix.com/gpx_mailing_list.asp#703411000.20041112120550@topografix.com))
 
 > I haven't read any arguments against having course and speed be expressable in GPX.  I'd like to see it possible to express them.  I'm not convinced they belong in the main GPX schema, though.  (In line with my current thinking that very very little belongs in the main schema)
@@ -89,6 +93,10 @@ krheinwald+web.de on Thu Dec 24 04:56:43 2009 ([link](https://www.topografix.com
 tanelilaine+yahoo.com on Fri Apr 23 06:32:34 2010 ([link](https://www.topografix.com/gpx_mailing_list.asp#hqri3o+gghg@eGroups.com))
 
 > I can't find <speed> in GPX1.1 schema but in the 1.0 manual it is listed. Does this mean that I should not use it if I develop an application that exports gpx files?
+
+cbyh+yahoo.com on Wed May 16 06:30:38 2012 ([link](https://www.topografix.com/gpx_mailing_list.asp#jp03qm+du7c@eGroups.com))
+
+> which seems to be saying that "course" is not an allowed element
 
 scbldmophahigrml5egqzwnaacg4b3utahmt2hp2+yahoo.com on Wed Aug 10 16:52:41 2016 ([link](https://www.topografix.com/gpx_mailing_list.asp#no9aa4+ba75f2@YahooGroups.com))
 
@@ -445,5 +453,4 @@ jeremy+groundspeak.com on Thu Nov 07 13:11:35 2002 ([link](https://www.topografi
 > or even...
 >
 > `<src mfr="Garmin" ver="1.2">eTrex Vista</src> `
-
 
