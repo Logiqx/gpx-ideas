@@ -5,12 +5,12 @@
 #### Random Notes - UNEDITED
 
 - Cadence
-  - Cyclists call it "pedalling rate" , measured in rpm.
+  - Cyclists sometimes call it "pedalling rate" , measured in rpm.
     - It's the number of revolutions the pedals make per minute
     - Not to be confused with the rotational rate of the wheel
-  - Runners call it "strike rate", measured in steps per minute
+  - Runners call it "stride rate", measured in steps per minute
     - Just for clarity, it is the number of single steps per minute
-  - Swimmers call "stroke rate", measured in strokes per minute
+  - Swimmers call it "stroke rate", measured in strokes per minute
     - Just for clarity, it is the number of single strokes per minute
 - Reps
   - Steps
