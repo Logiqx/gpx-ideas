@@ -4,16 +4,16 @@
 
 #### Overview
 
-Data derived from inertial measurement units (IMUs) can be added to `<wpt>`, `<rtept>` and `<trkpt>`  elements via GPX extensions.
+Data derived from inertial measurement units (IMUs) can be added to `<wpt>`, `<rtept>` and `<trkpt>` elements via GPX extensions.
 
 
 | Name      | Values       | Description                                                  |
 | --------- | ------------ | ------------------------------------------------------------ |
-| `<head>`  | 0 to 360     | Heading is the direction in which an object is pointed, relative to true north in degrees (°)<br />Sailors and pilots refer to yaw as "heading"<br />See THS, [HDT](https://gpsd.gitlab.io/gpsd/NMEA.html#_hdt_heading_true), [HDG](https://gpsd.gitlab.io/gpsd/NMEA.html#_hdg_heading_deviation_variation) and [VHW](https://gpsd.gitlab.io/gpsd/NMEA.html#_vhw_water_speed_and_heading) in NMEA 0183 |
-| `<rot>`   |              | Rate of turn (ROT) is the rate of change of heading, measured in degrees per minute (°/min)<br />Positive = clockwise, negative = counter-clockwise<br />See [ROT](https://gpsd.gitlab.io/gpsd/NMEA.html#_rot_rate_of_turn) in NMEA 0183 |
-| `<roll>`  | -180 to +180 | Roll is the side-to-side rotation of an object about its longitudinal / x axis in degrees (°)<br />Sailors refer to roll as "heel", pilots refer to it as "bank" |
-| `<pitch>` | -90 to +90   | Pitch is the up / down rotation of an object about its transverse / y axis in degrees (°)<br />Sailors often refer to pitch as "trim" |
-| `<stat>`  | 0 or 1       | INS status flag. 0 = SPAN pre-alignment INS status, 1 = SPAN post-alignment INS status<br />TBC |
+| `<head>`  | 0 to 360     | Heading is the direction in which an object is pointed, relative to true north in degrees (°). Sailors and pilots refer to yaw as "heading". See THS, [HDT](https://gpsd.gitlab.io/gpsd/NMEA.html#_hdt_heading_true), [HDG](https://gpsd.gitlab.io/gpsd/NMEA.html#_hdg_heading_deviation_variation) and [VHW](https://gpsd.gitlab.io/gpsd/NMEA.html#_vhw_water_speed_and_heading) in NMEA 0183 |
+| `<rot>`   |              | Rate of turn (ROT) is the rate of change of heading, measured in degrees per minute (°/min) where positive means clockwise and negative means counter-clockwise. See [ROT](https://gpsd.gitlab.io/gpsd/NMEA.html#_rot_rate_of_turn) in NMEA 0183 |
+| `<roll>`  | -180 to +180 | Roll is the side-to-side rotation of an object about its longitudinal / x axis in degrees (°). Sailors refer to roll as "heel", whereas pilots refer to it as "bank" |
+| `<pitch>` | -90 to +90   | Pitch is the up / down rotation of an object about its transverse / y axis in degrees (°).  Sailors will sometimes refer to pitch as "trim" |
+| `<stat>`  | 0 or 1       | INS status flag. 0 = SPAN pre-alignment INS status, 1 = SPAN post-alignment INS status |
 
 Accuracy estimates for heading, roll and pitch can be provided using the "acc" attribute.
 

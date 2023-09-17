@@ -15,6 +15,8 @@ Core outputs from fitness and cycling sensors / devices can be added to `<wpt>`,
 | `<elegain>` |          | Total elevation gain in meters (m)                           |
 | `<steps>`   | int >= 0 | Total steps during the session                               |
 
+Sources for the sensor metrics are optional, but if provided can be in elements such as `<gpx>`, `<trk>` or `<trkseg>` as per the examples.
+
 
 
 #### Example Usage

@@ -3,11 +3,11 @@
 ### Basic Concepts
 
 - Adhere to the existing GPX [standards](../standards.md)
-- Identify general categories and group related data items into the same schema(s)
+- Identify different data categories and group all related data items into the same schema(s)
   - Use three letter abbreviations - e.g. "gpx_met.xsd" and `<met:xyz>` for meteorological data
 
 - Ensure 100% compatibility with existing GPX readers, including Garmin software such as Connect, MapSource, etc
-  - See [notes](../proposal/garmin.md) from previous proposal describing the behaviors of Garmin products
+  - See [notes](../proposal/garmin.md) from previous GPX 1.1.1 proposal describing the behaviors of Garmin products
 
 
 
@@ -34,10 +34,12 @@ Don't forget to look at the [examples](examples/README.md) that have been provid
 
 ### Additional Concepts
 
+- Use of an optional "acc" attribute for elements that can provide accuracy estimates
 - Use of an optional "id" attribute for elements that have multiple concurrent readings
   - Multiple tachometers; e.g. boats with two motors, helicopters, etc
   - The "id" attribute can also be used to record the same readings from multiple sensors, if required
     - Speed(s) from both a GPS / GNSS receiver and from a bike wheel
     - Heart rates from both a sports watch and a chest strap
-- Use of an optional "acc" attribute for elements that can provide accuracy estimates
+- Sources for the sensor metrics are optional, but if provided can be in elements such as `<gpx>`, `<trk>` or `<trkseg>`
+  - See [running](examples/fit/running.md) and [cycling](examples/fit/cycling.md) examples for an illustration of how that could work
 - Use of file compression ("gpz" files) will significantly reduce any file storage overheads when using extensions

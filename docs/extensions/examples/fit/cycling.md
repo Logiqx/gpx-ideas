@@ -42,7 +42,7 @@ Individual trackpoints do not need to specify the source(s) for sensor metrics:
 
 #### Sensors
 
-Sources for the sensor metrics are optional, but if provided would be in `<gpx>`, `<trk>` or `<trkseg>`.
+Sources for the sensor metrics are optional, but if provided can be in elements such as `<gpx>`, `<trk>` or `<trkseg>`.
 
 ```xml
 <trk>
