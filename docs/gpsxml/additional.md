@@ -16,9 +16,18 @@ A fair few of these (but perhaps not all) seem worthwhile and can go into a GPX 
 
 
 
-#### Complex Types
+#### Fix Type
 
-Complex types should all support extensions
+Additional fix types
+
+- "dr", "float", "manual", rtk", "sim"
+  - see [summary](../proposal/fix-type.md) from previous proposal
+
+
+
+#### Complex Type Extensions
+
+All complex types should support extensions
 
 - egroups+topografix.com on Fri Nov 12 09:06:19 2004 ([link](https://www.topografix.com/gpx_mailing_list.asp#703411000.20041112120550@topografix.com))
 
@@ -30,7 +39,7 @@ Complex types should all support extensions
 
 
 
-#### Source Elements
+#### Extended Source Elements
 
 Extended `<src>` elements
 
