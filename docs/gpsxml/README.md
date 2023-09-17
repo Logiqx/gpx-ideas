@@ -1,4 +1,4 @@
-## History
+## GPX Developers Mailing List and GPSXML Archive
 
 ### Background
 
