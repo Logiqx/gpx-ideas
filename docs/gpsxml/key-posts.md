@@ -103,7 +103,9 @@ Line colours, polygons, text:
 - [Waypoints, Tracks, Routes](https://www.topografix.com/gpx_mailing_list.asp#fl9inu+s6eu@eGroups.com) (regarding Garmin logs) by Dan Anderson, Dec 2007
   - "The actual tracklog is stored in the "active log" and contains x, y, z, and timestamps. Saved is not saved but usually processed and reduced."
 - [Explanation of ele is unclear](https://www.topografix.com/gpx_mailing_list.asp#156410363.20090407134425@topografix.com) by Dan Foster, Apr 2009
-- "We intended it to be the same as GGA.  I went back to Kjeld's original request to include it"
+  - "We intended it to be the same as GGA.  I went back to Kjeld's original request to include it"
+  - Original clarification can be found from egroups+topografix.com on Mon Sep 16 10:14:53 2002 ([link](https://www.topografix.com/gpx_mailing_list.asp#080404685.20020916130853@topografix.com))
+
 
 
 
