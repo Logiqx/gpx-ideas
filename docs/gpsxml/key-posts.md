@@ -102,7 +102,7 @@ Line colours, polygons, text:
   - "I implemented temperature and depth in ExpertGPS when MapSource first added it to their GPX files.  A few months later my GPX files stopped validating, and I learned that Garmin had come out with a new version of their private schema, and deleted the old schema from their Web site!"
 - [Waypoints, Tracks, Routes](https://www.topografix.com/gpx_mailing_list.asp#fl9inu+s6eu@eGroups.com) (regarding Garmin logs) by Dan Anderson, Dec 2007
   - "The actual tracklog is stored in the "active log" and contains x, y, z, and timestamps. Saved is not saved but usually processed and reduced."
-- [Explanation of <ele> is unclear](https://www.topografix.com/gpx_mailing_list.asp#156410363.20090407134425@topografix.com) by Dan Foster, Apr 2009
+- [Explanation of ele is unclear](https://www.topografix.com/gpx_mailing_list.asp#156410363.20090407134425@topografix.com) by Dan Foster, Apr 2009
 - "We intended it to be the same as GGA.  I went back to Kjeld's original request to include it"
 
 

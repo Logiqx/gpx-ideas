@@ -1,10 +1,16 @@
 ## GPX 1.2
 
+### Overview
+
+In addition to the proposal for a collection of officially blessed GPX [extensions](../extensions/README.md) there are several possible enhancements that can be made to the core GPX schema. This page lists possible enhancements and how they might be implemented in a way that is beneficial and non-disruptive. If these improvements are implemented it would essentially be GPX 1.2 but with a strong emphasis on compatibility with GPX 1.1.
+
+
+
 ### Basic Concepts
 
 - Implement worthwhile schema enhancements to produce GPX 1.2 
 - Adhere to the existing GPX [standards](../standards.md)
-- Ensure backwards compatibility
+- Ensure backwards compatibility with GPX 1.1
   - Make life easy for existing GPX 1.1 writers
     - There are many GPX writers in the wild, so adoption of GPX 1.2 should be as easy as possible
       - Do not rename, move or remove any existing elements / attributes

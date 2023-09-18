@@ -4,23 +4,20 @@
 
 #### Overview
 
-Air / aviation elements include the various types of airspeed and the various types of elevation / altitude / height.
-
-They apply to all sorts of flight related activities; balloons, hang gliders, microlights, gliders, light aircraft, jet aircraft, drones and helicopters.
+The air / aviation elements include all of the different types of airspeed and the different types of elevation / altitude / height. Airspeed and altitude are important measures for all flight-related craft; balloons, hang gliders, microlights, gliders, light aircraft, jet aircraft, drones and helicopters.
 
 
-| Name                         | Values       | Description                                                  |
-| ---------------------------- | ------------ | ------------------------------------------------------------ |
-| `<ias>`                      | >= 0         | Indicated airspeed (IAS) is measured by a pitot-static system in meters per second (m/s) |
-| `<cas>`                      | >= 0         | Calibrated airspeed is the indicated airspeed adjusted for pitot system position and installation error in meters per second (m/s) |
-| `<eas>`                      | >= 0         | Equivalent airspeed is the calibrated airspeed adjusted for compressibility effects in meters per second (m/s). It is closely related to Mach number and can therefore be directly calculated using pressure differences. EAS can be used to calculated TAS, accounting for non-standard pressure and temperature |
-| `<tas>`                      | >= 0         | True airspeed (TAS) is the speed of the aircraft relative to the airmass in which it is flying in meters per second (m/s). TAS can be calculated using EAS and air density (i.e. pressure altitude and OAT, typically ignoring humidity) or from mach number + OAT |
-| `<mach>`                     | >= 0         | Mach number can be calculated directly from the pitot-static system, or from TAS and OAT |
-| `<ialt set="nnn" ref="xxx">` |              | Indicated altitude shows elevation / altitude / height of an aircraft in meters (m)<br />"set" is the pressure setting / sub-scale shown in the Kollsman window in hectopascals (hPa)<br />"ref" is the pressure reference and might be "qnh" (elevation / altitude), "qfe" (height) or "std" (pressure altitude) |
-| `<palt>`                     |              | Pressure altitude is the height above the standard datum plane (SDP) in meters (m). Pressure altitude uses a pressure setting of 1013.25 hPa and is used to determine the flight level (FL) of the aircraft above MSL. |
-| `<dalt>`                     |              | Density altitude is the altitude relative to standard atmospheric conditions at which the air density would be equal to the indicated air density in meters (m). Density altitude is affected by pressure, temperature and humidity. |
-| `<agl>`                      |              | Height above ground level (HAGL) is the vertical distance with respect the underlying terrain in meters (m). AGL is determined by a radar / radio altimeter as opposed to a barometric altimeter. |
-| `<slip>`                     | -180 to +180 | Slip / skid indicates whether the aircraft is in coordinated flight during a turn, measured in degrees (°)<br />positive = [slip]((https://en.wikipedia.org/wiki/Slip_(aerodynamic)), negative = [skid](https://en.wikipedia.org/wiki/Skid_(aerodynamic)) |
+| Name                         | Values | Description                                                  |
+| ---------------------------- | ------ | ------------------------------------------------------------ |
+| `<ias>`                      | >= 0   | Indicated airspeed (IAS) is measured by a pitot-static system in meters per second (m/s) |
+| `<cas>`                      | >= 0   | Calibrated airspeed is the indicated airspeed adjusted for pitot system position and installation error in meters per second (m/s) |
+| `<eas>`                      | >= 0   | Equivalent airspeed is the calibrated airspeed adjusted for compressibility effects in meters per second (m/s). It is closely related to Mach number and can therefore be directly calculated using pressure differences. EAS can be used to calculated TAS, accounting for non-standard pressure and temperature |
+| `<tas>`                      | >= 0   | True airspeed (TAS) is the speed of the aircraft relative to the airmass in which it is flying in meters per second (m/s). TAS can be calculated using EAS and air density (i.e. pressure altitude and OAT, typically ignoring humidity) or from mach number + OAT |
+| `<mach>`                     | >= 0   | Mach number is usually calculated directly from the pitot-static readings or indirectly from TAS and OAT. It is mainly used within jet aircraft and is a critical to safety when flying in subsonic aircraft at high speeds |
+| `<ialt set="nnn" ref="xxx">` |        | Indicated altitude shows elevation / altitude / height of an aircraft in meters (m)<br />"set" is the pressure setting / sub-scale shown in the Kollsman window in hectopascals (hPa)<br />"ref" is the pressure reference and might be "qnh" (elevation / altitude), "qfe" (height) or "std" (pressure altitude) |
+| `<palt>`                     |        | Pressure altitude is the height above the standard datum plane (SDP) in meters (m). Pressure altitude uses a pressure setting of 1013.25 hPa and is used to determine the flight level (FL) of the aircraft above MSL. |
+| `<dalt>`                     |        | Density altitude is the altitude relative to standard atmospheric conditions at which the air density would be equal to the indicated air density in meters (m). Density altitude is affected by pressure, temperature and humidity. |
+| `<agl>`                      |        | Height above ground level (HAGL) is the vertical distance with respect the underlying terrain in meters (m). AGL is determined by a radar / radio altimeter as opposed to a barometric altimeter. |
 
 
 
@@ -77,6 +74,7 @@ The gpx_air extension therefore supports all types of airspeed and elevation / a
   - e.g. tachometers, temperatures, pressures, fuel, batteries, etc
 - Angle-of-attack (AOA) sensors are not included at this time
 - Glide ratio / slope is not included because it can be determined from ground speed (SOG) and rate of descent (using ROC)
+- Slip / skid indicator shows whether the aircraft is in coordinated flight during a turn, using an inclinometer - e.g. ball in a tube or [yaw string](https://en.wikipedia.org/wiki/Yaw_string)
 
 
 

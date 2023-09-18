@@ -19,7 +19,7 @@ Accuracy estimates for heading, roll and pitch can be provided using the "acc" a
 
 | Name              | Values   | Description                                                  |
 | ----------------- | -------- | ------------------------------------------------------------ |
-| `<head acc="n">`  | 0 to 180 | Heading accuracy / error estimate in degrees, such that the difference between the true yaw and the reported yaw is less than the accuracy / error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
+| `<hdg acc="n">`   | 0 to 180 | Heading accuracy / error estimate in degrees, such that the difference between the true yaw and the reported yaw is less than the accuracy / error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
 | `<roll acc="n">`  | 0 to 180 | Roll accuracy / error estimate in degrees, such that the difference between the true roll and the reported roll is less than the accuracy / error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
 | `<pitch acc="n">` | 0 to 90  | Pitch accuracy / error estimate in degrees, such that the difference between the true pitch and the reported pitch is less than the accuracy / error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
 
@@ -27,10 +27,10 @@ Accuracy estimates for heading, roll and pitch can be provided using the "acc" a
 
 #### Notes
 
-- The words "heading" and "yaw" are synonymous. However, yaw can sometimes be -180 to 180, so heading = (yaw + 360) % 360
-- The abbreviation HDG is standard in the nautical and aviation communities
+- The standard abbreviation for heading is HDG in nautical and aviation environments, hence the naming of `<hdg>` in this schema
+  - The words heading and yaw are synonymous. However, yaw values are sometimes -180 to 180, so heading = (yaw + 360) % 360
+  - The aviation industry (worldwide) is currently preparing to switch from magnetic north to true north - [Mag2True](https://www.aerosociety.com/news/time-for-a-change-of-direction)
 - The availability of accuracy / error estimates is largely due to the use of a Kalman filter within the IMU
-- The aviation industry (worldwide) is currently preparing to switch heading from magnetic north to true north - [Mag2True](https://www.aerosociety.com/news/time-for-a-change-of-direction)
 
 
 

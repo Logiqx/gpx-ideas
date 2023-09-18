@@ -65,7 +65,7 @@ Support for relative paths in `<link>` elements has been suggested but it's not 
 - robertlipe+gmail.com on Mon Jan 04 10:54:01 2010 ([link](https://www.topografix.com/gpx_mailing_list.asp#82a839a51001041053u8541b76x8f36c0ed7e9329fe@mail.gmail.com))
   - "It's worth mentioning that during the process of formalizing KML for the OGC, there was a surprisingly large effort required to try to nail corner cases with relative paths and ssociated files.   It's harder to do well than it sounds."
 - #me
-  - Combining this with file compression ("gpz" files) could be rather useful
+  - Combining this with compressed archives ("gpz" files) could be rather useful
 
 
 
@@ -74,7 +74,7 @@ Support for relative paths in `<link>` elements has been suggested but it's not 
 [Creation vs modification times](https://www.topografix.com/gpx_mailing_list.asp#885169760.20060825161206@topografix.com) - Dan F, 25 Aug 2006
 
 - "We do need to come up with some answers as to how GPX should handle things like photos embedded in waypoints, waypoints embedded in photos, and your hotspots and other map symbols."
-- This ties in particularly well with the use of file compression ("GPZ" files) where files can be bundled together.
+- This ties in particularly well with the use of compressed archives ("GPZ" files) where files can be bundled together.
 
 
 

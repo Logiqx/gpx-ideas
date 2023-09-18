@@ -35,7 +35,7 @@ It is envisaged that this project will start off being a repository for material
 The content of the repository can been regarded as 3 independent initiatives:
 
 1. GPX [Extensions](extensions/README.md) - GPX extension schemas for fitness, nautical, aviation, meteorology, etc
-2. General [Usage](usage/README.md) - topics relating to general usage of GPX, such as file validation and file compression (gpz)
+2. GPX [Usage](usage/README.md) - topics relating to general usage of GPX, such as schema endpoints and compressed archives (gpz)
 3. GPX [Core](core/README.md) - improvements to the core GPX schema, essentially GPX 1.2
 
 Each of the topics above are documented separately, since they can be regarded as independent activities.

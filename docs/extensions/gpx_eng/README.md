@@ -4,7 +4,7 @@
 
 #### Overview
 
-The engine elements listed below are important to motor vehicles, yachts, boats, planes, and helicopters.
+The engine elements listed below are important to motor vehicles, yachts, boats, planes, and helicopters. When combined with other extensions such as [gpx_pvt](../gpx_pvt/README.md) / [gpx_imu](../gpx_imu/README.md) / [gpx_met](../gpx_met/README.md) / [gpx_air](../gpx_air/README.md) / [gpx_sea](../gpx_sea/README.md), every common gauge and indicator on yachts, boats, planes and helicopters can be represented by GPX.
 
 | Name            | Values   | Description                                                  |
 | --------------- | -------- | ------------------------------------------------------------ |
