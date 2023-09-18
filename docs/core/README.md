@@ -33,7 +33,9 @@ There are a number of changes and additions that can potentially be included in 
 
 - Add track type - e.g. walking, running, cycling, driving, sailing, flying, etc.
   - It might be best to do this as an extension so the list of track types can be extended, without requiring future GPX releases
-- Additional fix types
+- Add accuracy horizontal / vertical position and time accuracy estimates to `<trkpt>` `<rtept>` `<wpt>` elements
+  - See the [gpx_pvt](../extensions/gpx_pvt/README.md) proposal for further details
+- Add missing fix types
   - Add "dr", "float", "manual", rtk", "sim"
 - Add display color
   - Provide a standard way to specify display colors for tracks, routes and waypoints - see [GpxExtensionsv3.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd)
@@ -52,6 +54,8 @@ There are a number of changes and additions that can potentially be included in 
   - Change `<extensions>` from "lax" validation to "strict" validation
 - Fix the definition of `<magvar>`
   - Magnetic variation should really be -180 and 180, but is defined as 0 to 360 in the GPX 1.0 and 1.1 schemas
+- Standard use of whitespace
+  - The GPX schema currently uses a mixture of tabs and spaces for indentation. Perhaps use 2 spaces instead of tabs?
 - XSD documentation tweaks
   - Make it clear that `<ele>` is relative to MSL
   - Make it clear that latitude and longitude values should not provide more than 9 decimal places
