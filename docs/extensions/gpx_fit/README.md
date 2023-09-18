@@ -11,7 +11,7 @@ Core outputs from fitness and cycling sensors / devices are commonly added to GP
 | `<hr>`      | int > 0  | Heart rate in beats per minute (bpm)                         |
 | `<cad>`     | >= 0     | Cycling (cadence), running (stride rate), or swimming / rowing (stroke rate) |
 | `<power>`   | >= 0     | Power in watts (W)                                           |
-| `<kcal>`    | >= 0     | Total energy in kilo calories (kcal)                         |
+| `<energy>`  | >= 0     | Total energy in kilo calories (kcal)                         |
 | `<elegain>` |          | Total elevation gain in meters (m)                           |
 | `<steps>`   | int >= 0 | Total steps during the session                               |
 
