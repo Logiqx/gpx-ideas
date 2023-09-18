@@ -36,3 +36,15 @@ All of the topics listed in this document apply to multiple versions of GPX. Cur
 - Clarification about the use of WGS84
   - See "WGS84" discussion on [Github](https://github.com/Logiqx/gpx-ideas/discussions/2) for more information
 - Make it clear that latitude and longitude values should not provide more than 9 decimal places
+
+
+
+### General Guidance for Developers
+
+- XML writers
+  - "Protect other applications from yours by validating test files from your application against the schema."
+  - Do not include unknown elements when writing GPX files - e.g. if elevation is unknown, do not include `<ele>0</ele>`
+  - Do not calculate unknown elements when writing GPX files - e.g. if speed is unavailable, do not calculate it from lat + lon
+- XML readers
+  - "Protect your application against schema changes by ignoring unknown elements."
+  - This applied to XML elements and attributes that are not recognised
