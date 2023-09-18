@@ -4,7 +4,7 @@
 
 Ever since the release of GPX 1.1 there have been requests for specific types of sensor data to be included in the official GPX specification. Common requests have included things like course + speed, IMU data (e.g. heading / pitch / roll), meteorological data (e.g. air / water temperature), fitness data (e.g. heart rate / power / cadence) and nautical data (e.g. boat speed, water depth, etc).
 
-One of the ideas mused over the years has been a standard collection of extensions for different categories of data. After investigating what is important to a runner or cyclist, versus an airplane or helicopter pilot, versus a yachtsmen it seems that a standard collection of extensions has great merit. There are many data generic items that are common to multiple activities, and there are also many bespoke data items that are activity specific.
+One of the ideas mused over the years has been a standard collection of extensions for different categories of data. After investigating what is important to a runner or cyclist, versus an airplane or helicopter pilot, versus a yachtsmen it seems that a standard collection of extensions has great merit. There are many generic data items that are common to multiple activities, and there are also many bespoke data items that are activity specific.
 
 This page proposes a standard collection of extensions which can potentially be developed into officially blessed extensions. It should be noted that these pages are simply to convey information that is likely to be important when designing the actual schemas. The content of these pages has been created off the back of some long conversations with cyclists, pilots (commercial and military) and sailors (competitive and yacht masters).
 
@@ -57,4 +57,4 @@ Don't forget to look at the [examples](examples/README.md) that have been provid
     - Heart rates from both a sports watch and a chest strap
 - Sources for the different sensor IDs are optional, but if provided would be in elements such as `<gpx>`, `<trk>` or `<trkseg>`
   - See [running](examples/fit/running.md) and [cycling](examples/fit/cycling.md) examples for an illustration of how that could work
-- Use of compressed archives ("gpz" files) will significantly reduce any significant file storage overheads when using extensions
+- Use of compressed archives ("gpz" files) will significantly reduce any file storage overheads due to the use of extensions
