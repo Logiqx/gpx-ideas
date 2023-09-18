@@ -44,6 +44,11 @@ Feel free to take a look at some simple [examples](examples/README.md) prior to 
 
 Don't forget to look at the [examples](examples/README.md) that have been provided for various activities; land, sea, and air. :)
 
+Additional extensions worth discussion:
+
+- Camera specific information - see [post](https://groups.io/g/gpx/message/83) from Dan on 13 Sep 2023
+- Extended satellite information - azimuth, C/N<sub>0</sub>, pseudorange, doppler, carrier phase, etc
+
 
 
 ### Additional Concepts

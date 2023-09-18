@@ -30,6 +30,7 @@ Accuracy estimates for heading, roll and pitch can be provided using the "acc" a
 - The standard abbreviation for heading is HDG in nautical and aviation environments, hence the naming of `<hdg>` in this schema
   - The words heading and yaw are synonymous. However, yaw values are sometimes -180 to 180, so heading = (yaw + 360) % 360
   - The aviation industry (worldwide) is currently preparing to switch from magnetic north to true north - [Mag2True](https://www.aerosociety.com/news/time-for-a-change-of-direction)
+- The use of an optional "id" attribute (see [gpx_eng](../gpx_eng/README.md)) would allow for multiple IMUs (e.g. vehicle and camera) - see [requirement](https://groups.io/g/gpx/message/83)
 - The availability of accuracy / error estimates is largely due to the use of a Kalman filter within the IMU
 
 
