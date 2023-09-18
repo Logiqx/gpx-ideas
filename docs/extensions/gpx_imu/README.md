@@ -9,7 +9,7 @@ Heading (yaw) and attitude (pitch and roll) from inertial measurement units (IMU
 
 | Name      | Values       | Description                                                  |
 | --------- | ------------ | ------------------------------------------------------------ |
-| `<head>`  | 0 to 360     | Heading is the direction in which an object is pointed, relative to true north in degrees (°). Heading and yaw are synonymous but sailors and pilots will always refer to yaw as heading. See THS, [HDT](https://gpsd.gitlab.io/gpsd/NMEA.html#_hdt_heading_true), [HDG](https://gpsd.gitlab.io/gpsd/NMEA.html#_hdg_heading_deviation_variation) and [VHW](https://gpsd.gitlab.io/gpsd/NMEA.html#_vhw_water_speed_and_heading) in NMEA 0183 |
+| `<hdg>`   | 0 to 360     | Heading (HDG) is the direction in which an object is pointed, relative to true north in degrees (°). Heading and yaw are synonymous but sailors and pilots will always refer to yaw as heading. See THS, [HDT](https://gpsd.gitlab.io/gpsd/NMEA.html#_hdt_heading_true), [HDG](https://gpsd.gitlab.io/gpsd/NMEA.html#_hdg_heading_deviation_variation) and [VHW](https://gpsd.gitlab.io/gpsd/NMEA.html#_vhw_water_speed_and_heading) in NMEA 0183 |
 | `<pitch>` | -90 to +90   | Pitch is the up / down rotation of an object about its transverse / y axis in degrees (°).  Sailors will sometimes refer to pitch as "trim" |
 | `<roll>`  | -180 to +180 | Roll is the side-to-side rotation of an object about its longitudinal / x axis in degrees (°). Sailors refer to roll as "heel", whereas pilots refer to it as "bank". A value greater than 90 degrees indicates an inversion of the vessel / aircraft. |
 | `<stat>`  | 0 or 1       | INS status flag. 0 = SPAN pre-alignment INS status, 1 = SPAN post-alignment INS status |
@@ -28,6 +28,7 @@ Accuracy estimates for heading, roll and pitch can be provided using the "acc" a
 #### Notes
 
 - The words "heading" and "yaw" are synonymous. However, yaw can sometimes be -180 to 180, so heading = (yaw + 360) % 360
+- The abbreviation HDG is standard in the nautical and aviation communities
 - The availability of accuracy / error estimates is largely due to the use of a Kalman filter within the IMU
 - The aviation industry (worldwide) is currently preparing to switch heading from magnetic north to true north - [Mag2True](https://www.aerosociety.com/news/time-for-a-change-of-direction)
 

@@ -7,7 +7,7 @@
 Example of a skydiver with a custom GNSS receiver with INS capabilities (optional).
 
 - gpx_pvt - cog + sog + roc, plus accuracy estimates
-- gpx_imu (optional) - head, pitch, roll
+- gpx_imu (optional) - hdg, pitch, roll
 
 See short [video](https://www.youtube.com/watch?v=KBQXuzfNWjE) with custom GPS providing audio feedback.
 
@@ -29,7 +29,7 @@ GPX 1.1 example:
       <pvt:roc acc="0.781">50.678</pvt:roc>
     </pvt:ext>
     <imu:ext>
-      <imu:head>275.23</imu:head>
+      <imu:hdg>275.23</imu:hdg>
       <imu:roll>5.25</imu:roll>
       <imu:pitch>-10.15</imu:pitch>
     </imu:ext>
@@ -51,7 +51,7 @@ GPX 1.2 will allow for horizontal and vertical accuracy estimates:
       <pvt:roc acc="0.781">50.678</pvt:roc>
     </pvt:ext>
     <imu:ext>
-      <imu:head>275.23</imu:head>
+      <imu:hdg>275.23</imu:hdg>
       <imu:roll>5.25</imu:roll>
       <imu:pitch>-10.15</imu:pitch>
     </imu:ext>

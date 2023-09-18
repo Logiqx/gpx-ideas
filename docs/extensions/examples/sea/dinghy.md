@@ -7,7 +7,7 @@
 Example of a sailing dinghy with a custom GNSS training / racing instrument.
 
 - gpx_pvt - cog + sog, plus accuracy estimates
-- gpx_imu - head, trim (pitch), heel (roll)
+- gpx_imu - hdg, trim (pitch), heel (roll)
 
 See short [video](https://www.youtube.com/watch?v=hpqvp6MbXAQ) with data overlay at 1:28
 
@@ -28,7 +28,7 @@ GPX 1.1 example:
       <pvt:sog acc="0.542">3.542</pvt:sog>
     </pvt:ext>
     <imu:ext>
-      <imu:head>275.23</imu:head>
+      <imu:hdg>275.23</imu:hdg>
       <imu:roll>15.25</imu:roll>
       <imu:pitch>10.15</imu:pitch>
     </imu:ext>
@@ -49,7 +49,7 @@ GPX 1.2 will allow for horizontal and vertical accuracy estimates:
       <pvt:sog acc="0.542">3.542</pvt:sog>
     </pvt:ext>
     <imu:ext>
-      <imu:head>275.23</imu:head>
+      <imu:hdg>275.23</imu:hdg>
       <imu:roll>15.25</imu:roll>
       <imu:pitch>10.15</imu:pitch>
     </imu:ext>

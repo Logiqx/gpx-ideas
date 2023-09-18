@@ -7,7 +7,7 @@
 Example of a sailing yacht with a chartplotter / fish finder with external sensors - e.g. boat / water speed, temperature, depth.
 
 - gpx_pvt - cog + sog
-- gpx_imu - head, trim (pitch), heel (roll)
+- gpx_imu - hdg, trim (pitch), heel (roll)
 - gpx_sea - awa, aws, twa, tws, stw, 
 - gpx_met - gwd, gws, atemp, wtemp
 
@@ -28,7 +28,7 @@ See short [video](https://www.youtube.com/watch?v=14TYwonISH0) with data overlay
       <pvt:sog>8.542</pvt:sog>
     </pvt:ext>
     <imu:ext>
-      <imu:head>275.23</imu:head>
+      <imu:hdg>275.23</imu:hdg>
       <imu:roll>15.25</imu:roll>
       <imu:pitch>10.15</imu:pitch>
     </imu:ext>

@@ -13,7 +13,7 @@ Weather stations tend to combine data from a GPS / GNSS, IMU and meteorological 
 Example of a weather station (see above) using GPX extensions
 
 - gpx_pvt - cog + sog
-- gpx_imu - head, rot, pitch, roll
+- gpx_imu - hdg, rot, pitch, roll
 - gpx_sea - awa, aws
 - gpx_met - gwd, gws, atemp, wtemp, baro, hum
 
@@ -34,7 +34,7 @@ n.b. This GPX example does not correspond to the image above.
       <pvt:sog>0.542</pvt:sog>
     </pvt:ext>
     <imu:ext>
-      <imu:head>275.23</imu:head>
+      <imu:hdg>275.23</imu:hdg>
       <imu:rot>3.98</imu:rot>
       <imu:roll>1.25</imu:roll>
       <imu:pitch>1.15</imu:pitch>

@@ -7,7 +7,7 @@
 Example of a light aircraft with a GNSS receiver and standard cockpit indicators; traditional "steam engine" indicators or glass cockpit.
 
 - gpx_pvt - cog + sog + roc
-- gpx_imu - head, rot, pitch, bank (roll)
+- gpx_imu - hdg, rot, pitch, bank (roll)
 - gpx_air - ias, tas, alt, agl, slip
 - gpx_met - atemp, baro
 
@@ -27,7 +27,7 @@ Example of a light aircraft with a GNSS receiver and standard cockpit indicators
       <pvt:roc>5.678</pvt:roc>
     </pvt:ext>
     <imu:ext>
-      <imu:head>275.23</imu:head>
+      <imu:hdg>275.23</imu:hdg>
       <imu:rot>183.98</imu:rot>
       <imu:roll>15.25</imu:roll>
       <imu:pitch>10.15</imu:pitch>

@@ -7,7 +7,7 @@
 Example of a microlight with a custom GNSS receiver + INS device, air speed indicator and altitude indicator.
 
 - gpx_pvt - cog + sog + roc, plus accuracy estimates
-- gpx_imu - head, pitch, bank (roll)
+- gpx_imu - hdg, pitch, bank (roll)
 - gpx_air - ias, alt
 
 
@@ -28,7 +28,7 @@ GPX 1.1 example:
       <pvt:roc acc="0.781">5.678</pvt:roc>
     </pvt:ext>
     <imu:ext>
-      <imu:head>275.23</imu:head>
+      <imu:hdg>275.23</imu:hdg>
       <imu:roll>15.25</imu:roll>
       <imu:pitch>10.15</imu:pitch>
     </imu:ext>
@@ -54,7 +54,7 @@ GPX 1.2 will allow for horizontal and vertical accuracy estimates:
       <pvt:roc acc="0.781">5.678</pvt:roc>
     </pvt:ext>
     <imu:ext>
-      <imu:head>275.23</imu:head>
+      <imu:hdg>275.23</imu:hdg>
       <imu:roll>15.25</imu:roll>
       <imu:pitch>10.15</imu:pitch>
     </imu:ext>
