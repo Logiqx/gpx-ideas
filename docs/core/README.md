@@ -1,6 +1,6 @@
 ## GPX 1.2
 
-### Overview
+### Background
 
 In addition to the proposal for a collection of officially blessed GPX [extensions](../extensions/README.md) there are several possible enhancements that can be made to the core GPX schema. This page lists possible enhancements and how they might be implemented in a way that is beneficial and non-disruptive. If these improvements are implemented it would essentially be GPX 1.2 but with a strong emphasis on compatibility with GPX 1.1.
 
