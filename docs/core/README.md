@@ -57,7 +57,7 @@ There are a number of changes and additions that can potentially be included in 
 - Standard use of whitespace
   - The GPX schema currently uses a mixture of tabs and spaces for indentation. Perhaps use 2 spaces instead of tabs?
 - XSD documentation tweaks
-  - Clarification about `<ele>` which is relative to MSL
+  - Clarification about `<ele>` which is the "WGS84 orthometric height" for elevation and altitude
     - See "Definition of `<ele>` is unclear" discussion on [Github](https://github.com/Logiqx/gpx-ideas/discussions/1) for more information
   - Clarification about the use of WGS84
     - See "WGS84" discussion on [Github](https://github.com/Logiqx/gpx-ideas/discussions/2) for more information
