@@ -4,6 +4,7 @@
 
 Some useful links:
 
+- [Geoid vs. Ellipsoid: What’s the Difference?](https://www.propelleraero.com/geoids-vs-ellipsoids-whats-the-difference/) by Propeller Aero
 - [Mean Sea Level, GPS and Geoid](https://www.esri.com/news/arcuser/0703/geoid1of3.html) by Witold Fraczek Sep 2003
   - There are also several scanned versions such as the one on [scribd.com](https://www.scribd.com/document/452875103/Mean-Sea-Level-GPS-and-the-Geoid)
 - [How I created an API to correct GPS to Sea Level](https://medium.com/runic-software/how-i-created-an-api-to-correct-gps-to-sea-level-70b723767787) by Paul Harwood Sep 2022
