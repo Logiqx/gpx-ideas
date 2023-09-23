@@ -9,6 +9,7 @@ Core outputs from fitness and cycling sensors / devices are commonly added to GP
 | Name        | Values   | Description                                                  |
 | ----------- | -------- | ------------------------------------------------------------ |
 | `<hr>`      | int > 0  | Heart rate in beats per minute (bpm)                         |
+| `<spo2>`    | 0-100    | SpO2 (oxygen saturation) as a percentage (%)                 |
 | `<cad>`     | >= 0     | Cycling (cadence), running (stride rate), or swimming / rowing (stroke rate) |
 | `<power>`   | >= 0     | Power in watts (W)                                           |
 | `<energy>`  | >= 0     | Total energy in kilo calories (kcal)                         |
