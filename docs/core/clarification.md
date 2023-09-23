@@ -132,7 +132,7 @@ Propose to declare a new simple type for `<magvar>` and various GPX extensions:
   </xsd:annotation>
   <xsd:restriction base="xsd:decimal">
     <xsd:minInclusive value="-180.0"/>
-    <xsd:maxExclusive value="180.0"/>
+    <xsd:maxInclusive value="180.0"/>
   </xsd:restriction>
 </xsd:simpleType>
 ```
