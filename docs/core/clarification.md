@@ -89,7 +89,7 @@ Garmin Connect currently provides far too much precision:
 </trkpt>
 ```
 
-UBX-NAV-HPPOSLLH (high precision geodetic position solution) of the u-blox F9 high precision GNSS receiver was used for reference.
+Reference: UBX-NAV-HPPOSLLH (high precision geodetic position solution) of the u-blox F9 high precision GNSS receiver
 
 Perhaps suitable levels of precision can be clarified in `<xsd:documentation>`
 
@@ -97,7 +97,7 @@ Perhaps suitable levels of precision can be clarified in `<xsd:documentation>`
 
 #### Magnetic Variation
 
-This isn't simply a clarification, but rather the correction of an existing definition, and therefore a candidate for GPX 1.2:
+This isn't simply a clarification, but rather the correction of an existing definition, and is a candidate for GPX 1.2:
 
 ```xml
 <xsd:element name="magvar" type="degreesType" minOccurs="0">
@@ -117,7 +117,7 @@ This isn't simply a clarification, but rather the correction of an existing defi
 </xsd:simpleType>
 ```
 
-Proposed to use a new simple type for `<magvar>` and various GPX extensions:
+Propose to declare a new simple type for `<magvar>` and various GPX extensions:
 
 ```xml
 <xsd:element name="magvar" type="angleType" minOccurs="0">
