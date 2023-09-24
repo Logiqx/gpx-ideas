@@ -47,6 +47,8 @@ GPX 1.2 is also expected to support position and time accuracy estimates using t
 
 #### Exclusions
 
+- Individual north / east / down (NED) and east / north / up (ENU) velocity components are available from some GPS / GNSS chipsets
+  - These velocity components have been excluded because they can be determined from COG, SOG and ROC
 - Glide ratio / [slope](https://www.nasa.gov/pdf/582952main_Glide-Slope%20Ratio%20Explanation.pdf) is not included because it can be determined using simple formulas
   - glide ratio = horizontal distance /  change in altitude
   - glide ratio = horizontal speed (SOG) / descent speed (0 - ROC)
