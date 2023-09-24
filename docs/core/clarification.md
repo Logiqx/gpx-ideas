@@ -52,7 +52,7 @@ Proposed schema simply adds some more words to the documentation for `<ele>` and
       and some data consumers may want to reverse this to obtain height above the ellipsoid. Therefore, the value
       in this field should always be the value that the receiver used for the calculation of elevation, and not some
       other value. For some applications, geoid height will be a necessity, but for others it will not be required.
-      n.b. geoid height = height above the ellipsoid - height above the geoid (MSL)
+      n.b. geoid height = height above ellipsoid - height above geoid (MSL)
     </xsd:documentation>
   </xsd:annotation>
 </xsd:element>
