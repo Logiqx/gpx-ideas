@@ -32,6 +32,9 @@ Accuracy estimates for heading, roll and pitch can be provided using the "acc" a
   - The aviation industry (worldwide) is currently preparing to switch from magnetic north to true north - [Mag2True](https://www.aerosociety.com/news/time-for-a-change-of-direction)
 - The use of an optional "id" attribute (see [gpx_eng](../gpx_eng/README.md)) would allow for multiple IMUs (e.g. vehicle and camera) - see [requirement](https://groups.io/g/gpx/message/83)
 - The availability of accuracy / error estimates is largely due to the use of a Kalman filter within the IMU
+- Rate of turn (ROT) is important on board [ships](https://en.wikipedia.org/wiki/Rate_of_turn_indicator) and [aircraft](https://en.wikipedia.org/wiki/Turn_and_slip_indicator). Should it go into gpx_air and gpx_sea instead of gpx_imu?
+  - It is worth noting that ROT is determined by a gyroscopic instrument, and may thus belong in gpx_imu for generic use
+
 
 
 
