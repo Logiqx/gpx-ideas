@@ -38,13 +38,22 @@ Proposed schema simply adds some more words to the documentation for `<ele>` and
 ```xml
 <xsd:element name="ele" type="xsd:decimal" minOccurs="0">
   <xsd:annotation>
-    <xsd:documentation> Elevation (in meters) of the point above mean sea level (MSL). Specifically, this means the orthometric height above the WGS84 geoid. </xsd:documentation>
+    <xsd:documentation>
+      Elevation (in meters) of the point above mean sea level (MSL).
+      Specifically, this means the orthometric height above the WGS84 geoid. </xsd:documentation>
   </xsd:annotation>
 </xsd:element>
 
 <xsd:element name="geoidheight" type="xsd:decimal" minOccurs="0">
   <xsd:annotation>
-    <xsd:documentation> Height (in meters) of the geoid (mean sea level) above the WGS84 ellipsoid, as defined in the NMEA GGA sentence. Note that GPS / GNSS receivers use a geoid model to compute elevation from height above the ellipsoid, and some data consumers may want to reverse this to obtain height above the ellipsoid. Therefore, the value in this field should be the value that the receiver used for the calculation of elevation, and should not be some other value. It may be advisable to store the geoid height from the GPS / GNSS receiver, whenever storing the elevation element. </xsd:documentation>
+    <xsd:documentation>
+      Height (in meters) of the geoid (mean sea level) above the WGS84 ellipsoid, as defined in the NMEA GGA sentence.
+      Note that GPS / GNSS receivers use a geoid model to compute elevation from height above the ellipsoid,
+      and some data consumers may want to reverse this to obtain height above the ellipsoid. Therefore,
+      the value in this field should be the value that the receiver used for the calculation of elevation,
+      and should not be some other value. It may be advisable to store the geoid height from the GPS / GNSS receiver,
+      whenever storing the elevation element.
+    </xsd:documentation>
   </xsd:annotation>
 </xsd:element>
 
