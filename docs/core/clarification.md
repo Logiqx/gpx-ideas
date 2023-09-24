@@ -47,7 +47,7 @@ Proposed schema simply adds some more words to the documentation for `<ele>` and
 <xsd:element name="geoidheight" type="xsd:decimal" minOccurs="0">
   <xsd:annotation>
     <xsd:documentation>
-      Height (in meters) of the geoid (mean sea level) above the WGS84 ellipsoid, as defined in the NMEA GGA sentence.
+      Height (in meters) of the geoid (mean sea level) above the WGS84 ellipsoid, as defined in the NMEA GGA / GNS sentences.
       Note that GPS / GNSS receivers use a geoid model to compute elevation from height above the ellipsoid,
       and some data consumers may want to reverse this to obtain height above the ellipsoid. Therefore,
       the value in this field should be the value that the receiver used for the calculation of elevation,
