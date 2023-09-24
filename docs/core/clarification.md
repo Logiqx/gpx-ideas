@@ -51,8 +51,8 @@ Proposed schema simply adds some more words to the documentation for `<ele>` and
       Note that GPS / GNSS receivers use a geoid model to compute elevation from height above the ellipsoid,
       and some data consumers may want to reverse this to obtain height above the ellipsoid. Therefore,
       the value in this field should be the value that the receiver used for the calculation of elevation,
-      and should not be some other value. It may be advisable to store the geoid height from the GPS / GNSS receiver,
-      whenever storing the elevation element.
+      and should not be some other value. It may therefore be advisable to store the geoid height from the GPS / GNSS
+      receiver, whenever storing the elevation element.
     </xsd:documentation>
   </xsd:annotation>
 </xsd:element>
