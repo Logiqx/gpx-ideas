@@ -38,13 +38,13 @@ Proposed schema simply adds some more words to the documentation for `<ele>` and
 ```xml
 <xsd:element name="ele" type="xsd:decimal" minOccurs="0">
   <xsd:annotation>
-    <xsd:documentation> Elevation (in meters) of the point above the geoid (approximation of mean sea level). This is referred to as the orthometric height, and always in WGS84 datum.</xsd:documentation>
+    <xsd:documentation> Elevation (in meters) of the point above mean sea level (MSL). Specifically, this means the orthometric height above the WGS84 geoid. </xsd:documentation>
   </xsd:annotation>
 </xsd:element>
 
 <xsd:element name="geoidheight" type="xsd:decimal" minOccurs="0">
   <xsd:annotation>
-    <xsd:documentation> Height (in meters) of the geoid (approximation of mean sea level) above the WGS84 ellipsoid. As defined in the NMEA GGA sentence. </xsd:documentation>
+    <xsd:documentation> Height (in meters) of the geoid (mean sea level) above the WGS84 ellipsoid. As defined in the NMEA GGA sentence. </xsd:documentation>
   </xsd:annotation>
 </xsd:element>
 
