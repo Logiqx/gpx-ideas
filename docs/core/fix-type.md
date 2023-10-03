@@ -24,7 +24,7 @@ Proposed additions, alternative text can be considered:
 
 | Value | Alternatives                  | Description                                          |
 | ----- | ----------------------------- | ---------------------------------------------------- |
-| dr    | dead_recko                    | Dead reckoning / estimated                           |
+| dr    | d_recko                       | Dead reckoning / estimated                           |
 | float | rtk_float                     | Real-time kinematic (RTK) - floating point solution  |
 | ins   |                               | GNSS + dead reckoning - INS                          |
 | man   | manual                        | Manual input - fixed position                        |
