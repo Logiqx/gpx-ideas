@@ -36,7 +36,7 @@ There are a number of changes and additions that can potentially be included in 
 - Add accuracy horizontal / vertical position and time accuracy estimates to `<trkpt>` `<rtept>` `<wpt>` elements
   - See the [gpx_pvt](../extensions/gpx_pvt/README.md) proposal for further details
 - Add missing fix types
-  - Add "dr", "float", "manual", rtk", "sim"
+  - See separate [page](fix-type.md) for full details
 - Add display color
   - Provide a standard way to specify display colors for tracks, routes and waypoints - see [GpxExtensionsv3.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd)
 - Add UUID
