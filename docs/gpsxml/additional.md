@@ -21,7 +21,7 @@ A fair few of these (but perhaps not all) seem like worthwhile changes and shoul
 Additional fix types that aren't available in GPX 1.0 / GPX 1.1
 
 - "dr", "float", "manual", rtk", "sim"
-  - see [summary](../proposal/fix-type.md) of fix type in previous proposal
+  - see [summary](../core/fix-type.md) of fix type in previous proposal
 
 
 

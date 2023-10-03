@@ -139,7 +139,7 @@ To summarise:
 - `xmlns:extension` doesn't need to refer to a valid location
 - `xsi:schemaLocation` is completely ignored, even if it refers to a valid URL for the schema(s)
 - Restrictions are always enforced - e.g. `<fix>` only allows values of `none`, `2d`, `3d`, `dgps`, or `pps`
-  - This means that it's not possible to extend them for things like `float`, `rtk`, `dr` as has been [suggested](fix-type.md).
+  - This means that it's not possible to extend them for things like `float`, `rtk`, `dr` as has been [suggested](../core/fix-type.md).
 
 - Despite these issues, there may be a possible workaround, described at the end of this document.
 
