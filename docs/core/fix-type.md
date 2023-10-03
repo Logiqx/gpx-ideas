@@ -39,6 +39,16 @@ Notes:
 
 
 
+### Future
+
+Who knows what else will be possible in the future?
+
+We should probably consider things like Supercorrelation<sup>TM</sup> by FocalPoint as well.
+
+Background information and videos are available on their [website](https://focalpointpositioning.com/technologies/supercorrelation) and [YouTube](https://www.youtube.com/watch?v=WDATFeVTUHs).
+
+
+
 ### References
 
 #### GGA quality indicator
