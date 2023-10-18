@@ -1,6 +1,6 @@
 ## GPX Ideas
 
-### Schemas
+### Garmin Schemas
 
 All of these XSD files were downloaded from [JaVaWa](https://www.javawa.nl/advanced.html).
 
@@ -8,14 +8,7 @@ The XSD files have been copied into this GitHub repository to make searching eas
 
 
 
-#### Core GPX
-
-- [GPXv10.xsd](GPXv10.xsd)
-- [GPXv11.xsd](GPXv11.xsd)
-
-
-
-#### Garmin GPX
+#### GPX Extensions
 
 The following XSD files explicitly mention GPX 1.1:
 
@@ -38,7 +31,7 @@ The following XSD files explicitly mention GPX 1.1:
 
 
 
-#### Garmin TPX
+#### Training Center (TPX)
 
 The following XSD files relate to Training Center.
 
@@ -49,7 +42,7 @@ The following XSD files relate to Training Center.
 
 
 
-#### Garmin Extras
+#### Miscellaneous
 
 The following XSD files are yet to be classified:
 
@@ -73,19 +66,3 @@ The following XSD files are yet to be classified:
 - [UnlockCodesv1.xsd](UnlockCodesv1.xsd)
 
 
-
-#### Groundspeak
-
-Geocaching schema:
-
-- [GroundspeakCache10.xsd](GroundspeakCache10.xsd)
-  - [GpxGcExtensionsv10.xsd](GpxGcExtensionsv10.xsd) - alternative version
-- [GroundspeakCache101.xsd](GroundspeakCache101.xsd)
-
-
-
-#### Opencaching
-
-Opencaching schema:
-
-- [OpenCachingExtensionv1.xsd](OpenCachingExtensionv1.xsd)
