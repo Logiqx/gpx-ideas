@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.garmin.com/xmlschemas/UnlockCodes/v1" xmlns="http://www.garmin.com/xmlschemas/UnlockCodes/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="List" type="List_t"/>
+
+<xs:complexType name="List_t">
+<xs:sequence>
+<xs:element name="Unlock" type="Unlock_t" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="Special" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Unlock_t">
+<xs:sequence>
+<xs:element name="Code" type="Code_t"/>
+<xs:element name="Description" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="Code_t">
+<xs:restriction base="xs:string">
+<xs:pattern value="[A-Z0-9-[01OI]]{25}"/>
+</xs:restriction>
+</xs:simpleType>
+
+</xs:schema>

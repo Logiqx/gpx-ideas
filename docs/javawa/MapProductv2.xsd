@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.garmin.com/xmlschemas/MapProduct/v2" xmlns="http://www.garmin.com/xmlschemas/MapProduct/v2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="MapProduct" type="Family_t"/>
+
+<xs:complexType name="Family_t">
+    <xs:sequence>
+        <xs:element name="Name" type="xs:string"/>
+        <xs:element name="InstallationID" type="xs:positiveInteger" minOccurs="0">
+            <xs:annotation><xs:documentation>This element is a globally unique identifier to be used for equality comparison
+            to determine if an installed map product is an older/equal/newer version of a to-be-installed map product.</xs:documentation></xs:annotation>
+        </xs:element>
+        <xs:element name="DataVersion" type="xs:positiveInteger" minOccurs="0">
+            <xs:annotation><xs:documentation>If two instances have an equal InstallationID element then this element can be compared to determine
+            if this instance is older/equal/newer. Larger values are newer.</xs:documentation></xs:annotation>
+        </xs:element>
+        <xs:element name="DataFormat" type="DataFormat_t"/>
+        <xs:element name="ID" type="xs:positiveInteger" minOccurs="0">
+            <xs:annotation><xs:documentation>This element is not present for legacy products.</xs:documentation></xs:annotation>
+        </xs:element>
+        <xs:element name="Files" type="Files_t" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>
+              The path to files of this sub family.
+              This path is relative to the path given in the Directory element.
+              This normally means the core map files like IDX, MDR, TRF and TYP,
+              as well as possible additional files like LaneAssist, MD2, 3dMaps, TimeZoneMaps or SID.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="UnlockURL" type="xs:anyURI" minOccurs="0"/>
+        <xs:element name="SubProduct" type="Product_t" maxOccurs="unbounded"/>        
+        <xs:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Product_t">
+    <xs:sequence>
+        <xs:element name="Name" type="xs:string"/>
+        <xs:element name="ID" type="xs:positiveInteger"/>
+        <xs:element name="BaseMap" type="xs:string">
+            <xs:annotation><xs:documentation>The path to the base map directory of this sub product.
+            This path is relative to the path given in the Directory element.
+            Processors should be tolerant of the presence or lack of a trailing directory separator in this path.</xs:documentation></xs:annotation>
+        </xs:element>
+        <xs:element name="Directory" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>
+              The path to the directory containing detailed map directories and other files for this sub product.
+              This path is relative to the location of an instance document of this schema.
+              Processors should be tolerant of the presence or lack of a trailing directory separator in this path.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Files" type="Files_t">
+          <xs:annotation>
+            <xs:documentation>
+              The path to files of this sub product.
+              This path is relative to the path given in the Directory element.
+              This normally means at least a TDB file (required), and can contain a NoticeUtf8 file,
+              StartupLogo(s), AboutLogo(s) etc.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="MapLogosPath" type="xs:string" minOccurs="0">
+            <xs:annotation><xs:documentation>The path to a directory containing logo files to be displayed on maps for this sub product.
+            The names of the map logos are provided in the TDB file.
+            This path is relative to the path given in the Directory element.</xs:documentation></xs:annotation>
+        </xs:element>
+        <xs:element name="Extensions" type="Extensions_t" minOccurs="0"/>    
+    </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="DataFormat_t">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="Original"/>
+        <xs:enumeration value="NT"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="Extensions_t">
+	<xs:annotation>
+		<xs:documentation>This type provides the ability to extend any data type that includes it.</xs:documentation>
+	</xs:annotation>
+	<xs:sequence>
+		<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Files_t">
+  <xs:sequence>
+    <xs:element name="File" type="File_t" minOccurs="1" maxOccurs="unbounded"/>
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="File_t">
+  <xs:simpleContent>
+    <xs:extension  base="xs:string">
+      <xs:attribute name="id" type="xs:string" use="required"/>
+      <xs:attribute name="unit_id" type="xs:string" use="optional"/>
+    </xs:extension>
+  </xs:simpleContent>
+</xs:complexType>
+</xs:schema>

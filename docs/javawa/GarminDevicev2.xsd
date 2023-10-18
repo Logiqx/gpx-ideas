@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.garmin.com/xmlschemas/GarminDevice/v2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gd="http://www.garmin.com/xmlschemas/GarminDevice/v2" targetNamespace="http://www.garmin.com/xmlschemas/GarminDevice/v2" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:element name="Device" type="Device_t">
+		<xsd:unique name="UniqueUnlockCode">
+			<xsd:selector xpath="gd:Unlock"/>
+			<xsd:field xpath="gd:Code"/>
+		</xsd:unique>
+	</xsd:element>
+	<xsd:complexType name="Device_t">
+		<xsd:sequence>
+			<xsd:element name="Model" type="Model_t"/>
+			<xsd:element name="Id" type="xsd:unsignedInt">
+				<xsd:annotation>
+					<xsd:documentation>A globally unique identifier for this device.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RegistrationCode" type="RegistrationCode_t" minOccurs="0"/>
+			<xsd:element name="Unlock" type="UnlockCode_t" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DisplayName" type="xsd:token" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A user-editable name displayed by this device.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MassStorageMode" type="MassStorageMode_t" minOccurs="0">
+				<xsd:unique name="DataTypeName">
+					<xsd:selector xpath="gd:DataType"/>
+					<xsd:field xpath="gd:Name"/>
+				</xsd:unique>
+			</xsd:element>
+			<xsd:element name="GarminMode" type="GarminMode_t" minOccurs="0"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Protocols_t">
+		<xsd:annotation>
+			<xsd:documentation>A list of supported protocols and associated data types. This list shows the features a pda supports.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Link" type="Protocol_t" minOccurs="0"/>
+			<xsd:element name="Application" type="AppProtocol_t" maxOccurs="unbounded">
+				<xsd:unique name="UniqueDataType">
+					<xsd:selector xpath="gd:DataType"/>
+					<xsd:field xpath="."/>
+				</xsd:unique>
+			</xsd:element>
+			<xsd:element name="Transport" type="Protocol_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Protocol_t">
+		<xsd:annotation>
+			<xsd:documentation>A protocol number.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Id" type="xsd:unsignedShort" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="AppProtocol_t">
+		<xsd:annotation>
+			<xsd:documentation>An application protocol shows what applications are supported.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="DataType" type="xsd:unsignedShort" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="Id" type="xsd:unsignedShort" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="Model_t">
+		<xsd:annotation>
+			<xsd:documentation>Product information.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="PartNumber" type="PartNumber_t"/>
+			<xsd:element name="SoftwareVersion" type="xsd:unsignedShort"/>
+			<xsd:element name="Description" type="NonZeroToken_t"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="RegistrationCode_t">
+		<xsd:restriction base="xsd:token">
+			<xsd:pattern value="[\p{Lu}\d]{7}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="UnlockCode_t">
+		<xsd:annotation>
+			<xsd:documentation>A unlock code and it's comment.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Code" type="Code_t"/>
+			<xsd:element name="Comment" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="Code_t">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[\p{Lu}\d]{25}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="Version_t">
+		<xsd:sequence>
+			<xsd:element name="Major" type="xsd:unsignedShort"/>
+			<xsd:element name="Minor" type="xsd:unsignedShort"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="PartNumber_t">
+		<xsd:annotation>
+			<xsd:documentation>The formatted XXX-XXXXX-XX part number of a PC application.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:token">
+			<xsd:pattern value="[\p{Lu}\d]{3}-[\p{Lu}\d]{5}-[\p{Lu}\d]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="Extensions_t">
+		<xsd:annotation>
+			<xsd:documentation>This type provides the ability to extend any data type that includes it.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GarminMode_t">
+		<xsd:sequence>
+			<xsd:element name="Protocols" type="Protocols_t">
+				<xsd:unique name="UniqueAppProtocol">
+					<xsd:selector xpath="gd:Application"/>
+					<xsd:field xpath="@Id"/>
+				</xsd:unique>
+			</xsd:element>
+			<xsd:element name="MemoryRegion" type="MemoryRegion_t" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MassStorageMode_t">
+		<xsd:sequence>
+			<xsd:element name="DataType" type="DataType_t" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="UpdateFile" type="UpdateFile_t" maxOccurs="unbounded"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MemoryRegion_t">
+		<xsd:sequence>
+			<xsd:element name="Id" type="xsd:unsignedByte"/>
+			<xsd:element name="Version" type="Version_t" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PartNumber" type="PartNumber_t" minOccurs="0"/>
+			<xsd:element name="IsErased" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="IsRemoved" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="IsUserUpdateable" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DataType_t">
+		<xsd:sequence>
+			<xsd:element name="Name" type="NonZeroToken_t"/>
+			<xsd:element name="File" type="File_t" maxOccurs="unbounded"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="File_t">
+		<xsd:sequence>
+			<xsd:element name="Specification" type="Specification_t"/>
+			<xsd:element name="Location" type="Location_t"/>
+			<xsd:element name="TransferDirection" type="TransferDirection_t"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="InputToUnit_t">
+		<xsd:sequence>
+			<xsd:element name="Specification" type="Specification_t"/>
+			<xsd:element name="File" type="File_t"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="OutputFromUnit_t">
+		<xsd:sequence>
+			<xsd:element name="Specification" type="Specification_t"/>
+			<xsd:element name="File" type="File_t"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="NonZeroToken_t">
+		<xsd:restriction base="xsd:token">
+			<xsd:minLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="Specification_t">
+		<xsd:sequence>
+			<xsd:element name="Identifier" type="NonZeroToken_t" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A unique identifier for the type of data contained in this file, e.g. "MP3". If the file is XML and has an associated XML Schema put the namespace of the schema here.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Documentation" type="xsd:anyURI" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A URI pointing to documentation for this file type. If the file has an XML Schema this should be the location of the schema document.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Location_t">
+		<xsd:sequence>
+			<xsd:element name="Path" type="xsd:anyURI" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>If a Path is not specified, the file can be at any path on the device.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="BaseName" type="xsd:token" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>If a BaseName is not specified, the file can have any name. BaseName supports the * Wildcard. * matches zero or more characters.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="FileExtension" type="xsd:token"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="TransferDirection_t">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="InputOutput"/>
+			<xsd:enumeration value="InputToUnit"/>
+			<xsd:enumeration value="OutputFromUnit"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="UpdateFile_t">
+		<xsd:annotation>
+			<xsd:documentation>The updates that can be performed on this unit. Includes the system region update.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="PartNumber" type="PartNumber_t"/>
+			<xsd:element name="Version" type="Version_t"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Path" type="xsd:anyURI" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Specifies the folder to which the update file needs to be copied. Does not include the FileName or Extension.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="FileName" type="xsd:token" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>If FileName is specified, the file copied to the device will have this name.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+    xmlns="http://www.garmin.com/xmlschemas/GarminDeviceExtensions/v2" 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://www.garmin.com/xmlschemas/GarminDeviceExtensions/v2" 
+    elementFormDefault="qualified" 
+    attributeFormDefault="unqualified">
+    
+    <xsd:element name="DeviceExtension" type="DeviceExtension_t" />
+    
+    <xsd:complexType name="DeviceExtension_t">
+        <xsd:annotation>
+            <xsd:documentation>Garmin Device extension schema version 2.0 - For more information on Garmin Device schema, see http://www.garmin.com/xmlschemas/GarminDevice/v2</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Ifix" type="xsd:unsignedInt" minOccurs="0" />
+            <xsd:element name="PhoneNumber" type="PhoneNumber_t" minOccurs="0" />
+            <xsd:element name="IMEI" type="IMEI_t" minOccurs="0" />
+            <xsd:element name="IMSI" type="IMSI_t" minOccurs="0" />
+            <xsd:element name="ActiveItem" type="ActiveItem_t" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="PhoneNumber_t">
+        <xsd:annotation>
+            <xsd:documentation>Phone number string. This is not necessarily the actual phone number. The string can be empty or contain any combination of characters.</xsd:documentation> 
+        </xsd:annotation>
+        <xsd:restriction base="xsd:token">
+            <xsd:pattern value=".*" /> 
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="IMEI_t">
+        <xsd:annotation>
+            <xsd:documentation>15-17 digit IMEI number w/ or w/o separators.</xsd:documentation> 
+        </xsd:annotation>
+        <xsd:restriction base="xsd:token">
+            <xsd:pattern value="[0-9]{2}[\-\s]?[0-9]{6}[\-\s]?[0-9]{6}[\-\s]?[0-9]{1}[\-\s]?[0-9]{0,2}" /> 
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="IMSI_t">
+        <xsd:annotation>
+            <xsd:documentation>14-15 digit IMSI number w/ or w/o separators.</xsd:documentation> 
+        </xsd:annotation>
+        <xsd:restriction base="xsd:token">
+            <xsd:pattern value="[0-9]{3}[\-\s]?[0-9]{2}[\-\s]?[0-9]{0,1}[\-\s]?[0-9]{9}" /> 
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="ActiveItem_t">
+        <xsd:sequence>
+            <xsd:element name="Name" type="NonZeroToken_t"/>
+            <xsd:element name="Location" type="Location_t" maxOccurs="unbounded"/>
+            <xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="NonZeroToken_t">
+        <xsd:restriction base="xsd:token">
+            <xsd:minLength value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="Location_t">
+        <xsd:sequence>
+            <xsd:element name="Path" type="xsd:anyURI" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>If a Path is not specified, the file can be at any path on the device.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="BaseName" type="xsd:token" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>If a BaseName is not specified, the file can have any name. BaseName supports the * Wildcard. * matches zero or more characters.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="FileExtension" type="xsd:token"/>
+            <xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="Extensions_t">
+        <xsd:annotation>
+            <xsd:documentation>This type provides the ability to extend any data type that includes it.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

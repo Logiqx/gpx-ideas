@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.garmin.com/xmlschemas/GarminAdventure/v1"
+	targetNamespace="http://www.garmin.com/xmlschemas/GarminAdventure/v1" elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	xmlns:ns1="http://www.garmin.com/xmlschemas/GarminAdventure/v1">
+
+	<xsd:element name="Adventure" type="Adventure_t"/>
+	<xsd:complexType name="Adventure_t">
+		<xsd:sequence>
+		    <xsd:element name="GlobalId" type="xsd:token"/>
+			<xsd:element name="ServerId" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="Name" type="xsd:string"/>
+			<xsd:element name="Item" type="Item_t" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Author" type="xsd:token" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is an optional tag to identify the author that published the adventure.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AuthorDisplayName" type="xsd:token" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is an optional tag to provide the display name of author.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Description" type="xsd:string"/>
+            <xsd:element name="StartPosition" type="StartPosition_t" minOccurs="0">
+                <xsd:annotation>
+					<xsd:documentation>This is the starting position of the adventure. This is required for device but optional otherwise.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Activity" type="xsd:token">
+				<xsd:annotation>
+					<xsd:documentation>This is user-defined activity for categorizing the adventure.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+            <xsd:element name="Distance" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is a length of the adventure  measured in meters. This is required for device but optional otherwise.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+            <xsd:element name="Duration" type="xsd:double" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is the total time (in seconds) taken by the adventure owner to complete it on the field.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+            <xsd:element name="Ascent" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is the total ascent value of the adventure measured in meters.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+            <xsd:element name="Descent" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is the total descent value of the adventure  measured in meters.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Difficulty" type="xsd:positiveInteger">
+				<xsd:annotation>
+					<xsd:documentation>This is a number between one and five to describe the difficulty of the adventure.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Rating" type="xsd:float" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Current average rating of this adventure</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="NumRatings" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Number of people that have rated this adventure</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MainTrackId" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>This is the ID of the track that the adventure was created from.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Tags" type="Tags_t" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>These are optional user-defined metadata for supplying keywords to describe the adventure.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DeviceName" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is an optional tag to describe the device the main track was created from.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="WaypointOrder" type="Order_t" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>List of user waypoints in order</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CoverPhoto" type="CoverPhoto_t" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is an optional tag to store a cover photo for adventure.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Comment" type="Comment_t" maxOccurs="unbounded" minOccurs="0"/>
+                        <xsd:element name="DatePosted" type="xsd:dateTime" minOccurs="0"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+    <xsd:complexType name="StartPosition_t">
+		<xsd:sequence>
+			<xsd:element name="Lat" type="LatitudeType_t"/>
+            <xsd:element name="Lon" type="LongitudeType_t"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="LatitudeType_t">
+	    <xsd:annotation>
+	        <xsd:documentation>
+		        The latitude of the point.  Decimal degrees, WGS84 datum.
+	        </xsd:documentation>
+	    </xsd:annotation>
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="-90.0"/>
+            <xsd:maxInclusive value="90.0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="LongitudeType_t">
+	    <xsd:annotation>
+	        <xsd:documentation>
+		        The longitude of the point.  Decimal degrees, WGS84 datum.
+	        </xsd:documentation>
+	    </xsd:annotation>
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="-180.0"/>
+            <xsd:maxExclusive value="180.0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+  
+	<xsd:complexType name="Tags_t">
+		<xsd:sequence>
+			<xsd:element name="Tag" type="xsd:token" maxOccurs="unbounded"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Item_t">
+		<xsd:sequence>
+			<xsd:element name="DataType" type="NonZeroToken_t">
+				<xsd:annotation>
+					<xsd:documentation>DataType name used in GarminDevice.XML. Examples: UserDataSync, BirdsEye, CustomMaps, GpsData.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Location" type="xsd:token">
+				<xsd:annotation>
+					<xsd:documentation>Relative path the the file</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Order_t">
+		<xsd:sequence>
+			<xsd:element name="Waypoints" type="Waypoint_t" maxOccurs="unbounded"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Waypoint_t">
+		<xsd:sequence>
+			<xsd:element name="ID" type="xsd:string"/>
+			<xsd:element name="DistanceFromOrigin" type="xsd:nonNegativeInteger">
+			    <xsd:annotation>
+					<xsd:documentation>Distance in meters from the starting point.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="WptType" type="xsd:token">
+			<xsd:annotation>
+				<xsd:documentation>Optional attribute which specifies the waypoint type. 
+					Possible values of the attribute are 'Geocache', 'Photo', etc. </xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="CoverPhoto_t">
+		<xsd:sequence>
+			<xsd:element name="ID" type="xsd:string"/>
+			<xsd:element name="FileName" type="xsd:string">
+			    <xsd:annotation>
+					<xsd:documentation>Name of the picture file.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Comment_t">
+		<xsd:sequence>
+			<xsd:element name="Reviewer" type="xsd:token" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>myGarmin ID of reviewer</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TimeStamp" type="xsd:dateTime" minOccurs="0"/>
+			<xsd:element name="Title" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Text" type="xsd:string"/>
+			<xsd:element name="URL" type="xsd:anyURI" minOccurs="0"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Extensions_t">
+		<xsd:annotation>
+			<xsd:documentation>This type provides the ability to extend any
+		data type that includes it.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="NonZeroToken_t">
+		<xsd:restriction base="xsd:token">
+			<xsd:minLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>

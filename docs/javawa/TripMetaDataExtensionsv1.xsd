@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<xsd:schema targetNamespace="http://www.garmin.com/xmlschemas/TripMetaDataExtensions/v1"
+  elementFormDefault="qualified" xmlns="http://www.garmin.com/xmlschemas/TripMetaDataExtensions/v1"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:annotation>
+    <xsd:documentation> This schema defines the Garmin route extensions specific to trips to be used
+      with the GPX 1.1 schema. The GPX 1.1 schema is available at
+      http://www.topografix.com/GPX/1/1/gpx.xsd. </xsd:documentation>
+  </xsd:annotation>
+
+  <xsd:element name="TripMetaData" type="TripMetaDataExtension_t"/>
+
+  <xsd:complexType name="TripMetaDataExtension_t">
+    <xsd:annotation>
+      <xsd:documentation> This type contains data fields intended to be used as child elements of
+        the rte element in the GPX 1.1 schema </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="TripName" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>This name indicates the name of the trip that this route is part of.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Date" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Either this element or the DayNumber element should be set.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DayNumber" type="xsd:unsignedInt" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Either this element or the Date element should be set.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="Extensions_t">
+    <xsd:annotation>
+      <xsd:documentation>This type provides the ability to extend any data type that includes
+        it.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>

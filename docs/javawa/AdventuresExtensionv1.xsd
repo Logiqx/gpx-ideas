@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns="http://www.garmin.com/xmlschemas/AdventuresExtensions/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.garmin.com/xmlschemas/AdventuresExtensions/v1" elementFormDefault="qualified">
+	<xsd:annotation>
+		<xsd:documentation>
+  This schema defines Garmin extensions to be used with the GPX 1.1 schema.
+  The root element defined by this schema is intended to be used as a child
+  element of the "extensions" elements in the wpt/rte/trk elements in the GPX 1.1 schema. 
+  The GPX 1.1 schema is available at http://www.topografix.com/GPX/1/1/gpx.xsd.
+  </xsd:documentation>
+	</xsd:annotation>
+	<xsd:element name="AdventuresExtension" type="AdventuresExtension_t"/>
+	<xsd:complexType name="AdventuresExtension_t">
+		<xsd:sequence>
+			<xsd:element name="Adventure" type="Adventure_t" minOccurs="0"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Adventure_t">
+		<xsd:sequence>
+			<xsd:element name="Id" type="xsd:token">
+				<xsd:annotation>
+					<xsd:documentation>Id corresponds to the Adventure defined using the Adventure schema</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Extensions_t">
+		<xsd:annotation>
+			<xsd:documentation>This type provides the ability to extend any data type that includes it.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

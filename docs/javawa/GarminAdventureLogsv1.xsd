@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.garmin.com/xmlschemas/GarminAdventureLogs/v1"
+	targetNamespace="http://www.garmin.com/xmlschemas/GarminAdventureLogs/v1" elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	xmlns:ns1="http://www.garmin.com/xmlschemas/GarminAdventureLogs/v1">
+
+	<xsd:element name="logs" type="Logs_t"/>
+    	
+	<xsd:complexType name="Logs_t">
+		<xsd:sequence>
+			<xsd:element name="log" type="Log_t" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Log_t">
+		<xsd:sequence>
+		    <xsd:element name="adventure_id" type="xsd:token"/>
+			<xsd:element name="time" type="xsd:dateTime"/>
+			<xsd:element name="rating" type="xsd:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="comment" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="duration" type="xsd:nonNegativeInteger">
+				<xsd:annotation>
+					<xsd:documentation>Duration in seconds since user started this adventures.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="pct" type="xsd:decimal">
+				<xsd:annotation>
+					<xsd:documentation>Percentage of the total adventure distance completed by the user.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+			
+	    <xsd:attribute name="state" type="State_t" default="new">
+			<xsd:annotation>
+				<xsd:documentation>acceptable values: new, old. 
+				This attribute will help clients to check if log entries are already processed. </xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		
+	</xsd:complexType>
+	
+	<xsd:simpleType name="State_t">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="old"/>
+            <xsd:enumeration value="new"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+	
+	<xsd:complexType name="Extensions_t">
+		<xsd:annotation>
+			<xsd:documentation>This type provides the ability to extend any data type that includes it.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>

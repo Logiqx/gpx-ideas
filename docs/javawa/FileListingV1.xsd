@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+
+<xsd:schema xmlns="http://www.garmin.com/xmlschemas/FileListing/v1"
+		    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://www.garmin.com/xmlschemas/FileListing/v1"
+			elementFormDefault="qualified">
+
+  <xsd:element name="FileListing" type="FileListing_t">
+    <xsd:annotation>
+      <xsd:documentation>
+        A directory listing for a local or remote cloud storage location.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+  <xsd:complexType name="FileListing_t">
+    <xsd:sequence>
+      <xsd:element name="File" type="File_t" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+    </xsd:sequence>
+    <xsd:attribute name="Name" type="xsd:string" use="required" />
+    <xsd:attribute name="FolderDisplayName" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The name of the gCloud folder list item.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  
+  <xsd:complexType name="File_t">
+    <xsd:annotation><xsd:documentation>
+        A node in a directory listing which represents either a file or directory.
+    </xsd:documentation></xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="File" type="File_t" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+    </xsd:sequence>
+    <xsd:attribute name="Name" type="xsd:anyURI" use="required" />
+    <xsd:attribute name="IsDirectory" type="xsd:boolean" use="required" />
+    <xsd:attribute name="ModificationTime" type="xsd:dateTime" use="optional" />
+    <xsd:attribute name="Size" type="xsd:unsignedLong" use="optional" />
+    <xsd:attribute name="SHA1" type="xsd:string" use="optional" />
+    <xsd:attribute name="ETag" type="xsd:string" use="optional" />
+    <xsd:attribute name="NeedsDownload" type="xsd:boolean" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>This flag is set in our local copy of the remote listing if we haven't yet downloaded the file.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="NeedsUpload" type="xsd:boolean" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>This flag is set in our persisted local listing if we haven't yet uploaded the file.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="NeedsDelete" type="xsd:boolean" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>This flag is set in our persisted local listing if the file was present in a previous listing but hasn't yet been deleted on the server.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="Conflicted" type="xsd:boolean" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>This flag is set in our persisted local listing if the file has been modified both locally and remotely and the user has not yet decided what to do.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="Extensions_t">
+    <xsd:annotation>
+      <xsd:documentation>This type provides the ability to extend any data type that includes it.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>
+
+

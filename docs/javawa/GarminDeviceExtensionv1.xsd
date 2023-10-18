@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	xmlns="http://www.garmin.com/xmlschemas/GarminDeviceExtensions/v1" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.garmin.com/xmlschemas/GarminDeviceExtensions/v1" 
+	elementFormDefault="qualified" 
+	attributeFormDefault="unqualified">
+
+	<xsd:element name="DeviceExtension" type="DeviceExtension_t" />
+
+	<xsd:complexType name="DeviceExtension_t">
+	 <xsd:annotation><xsd:documentation>
+	  Garmin Device extension schema version 1.0 - For more information on Garmin Device schema, see http://www.garmin.com/xmlschemas/GarminDevice/v2
+	 </xsd:documentation></xsd:annotation>
+
+  	 <xsd:sequence>
+	  <xsd:element name="Ifix" type="xsd:unsignedInt" minOccurs="0" />
+	 </xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>

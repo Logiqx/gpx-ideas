@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<xsd:schema targetNamespace="http://www.garmin.com/xmlschemas/GpxExtensions/v2"
+  elementFormDefault="qualified"
+  xmlns="http://www.garmin.com/xmlschemas/GpxExtensions/v2"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:annotation><xsd:documentation>
+  This schema defines the Garmin extensions to be used with the GPX 1.1 schema.
+  The root elements defined by this schema are intended to be used as child
+  elements of the "extensions" elements in the GPX 1.1 schema. The GPX 1.1
+  schema is available at http://www.topografix.com/GPX/1/1/gpx.xsd.
+  </xsd:documentation></xsd:annotation>
+
+  <xsd:element name="WaypointExtension" type="WaypointExtension_t" />
+
+  <xsd:element name="RouteExtension" type="RouteExtension_t" />
+
+  <xsd:element name="TrackPointExtension" type="TrackPointExtension_t" />
+
+  <xsd:complexType name="WaypointExtension_t">
+    <xsd:annotation><xsd:documentation>
+    This type contains data fields available in Garmin GDB waypoints that cannot
+    be represented in waypoints in GPX 1.1 instances.
+    </xsd:documentation></xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="Proximity" type="Meters_t" minOccurs="0" />
+      <xsd:element name="Temperature" type="DegreesCelsius_t" minOccurs="0" />
+      <xsd:element name="Depth" type="Meters_t" minOccurs="0" />
+      <xsd:element name="DisplayMode" type="DisplayMode_t" minOccurs="0" />
+      <xsd:element name="Categories" type="Categories_t" minOccurs="0" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="Categories_t">
+    <xsd:annotation><xsd:documentation>
+    This type contains a list of categories to which a waypoint has been assigned.
+    Note that this list may contain categories which do not exist for a particular
+    application installation.
+    </xsd:documentation></xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="Category" type="xsd:string" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="RouteExtension_t">
+    <xsd:annotation><xsd:documentation>
+    This type contains data fields available in Garmin GDB routes that cannot
+    be represented in routes in GPX 1.1 instances.
+    </xsd:documentation></xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="IsAutoNamed" type="xsd:boolean" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="TrackPointExtension_t">
+    <xsd:annotation><xsd:documentation>
+    This type contains data fields available in Garmin GDB track points that cannot
+    be represented in track points in GPX 1.1 instances.
+    </xsd:documentation></xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="Temperature" type="DegreesCelsius_t" minOccurs="0" />
+      <xsd:element name="Depth" type="Meters_t" minOccurs="0" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="DegreesCelsius_t">
+    <xsd:annotation><xsd:documentation>
+    This type contains a temperature value measured in degrees Celsius.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:double"/>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="Meters_t">
+    <xsd:annotation><xsd:documentation>
+    This type contains a distance value measured in meters.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:double"/>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="DisplayMode_t">
+    <xsd:annotation><xsd:documentation>
+    This type contains a string that specifies how a waypoint should be
+    displayed on a map.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="SymbolOnly"/>
+      <xsd:enumeration value="SymbolAndName"/>
+      <xsd:enumeration value="SymbolAndDescription"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+</xsd:schema>

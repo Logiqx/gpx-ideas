@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.garmin.com/xmlschemas/GarminDeviceExtensions/DataTypeLocation/v1"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.garmin.com/xmlschemas/GarminDeviceExtensions/DataTypeLocation/v1"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+    
+    <xsd:element name="DataTypeLocationExtension" type="DataTypeLocationExtension_t"/>
+    
+    <xsd:complexType name="DataTypeLocationExtension_t">
+        <xsd:annotation>
+            <xsd:documentation>
+                For more information on Garmin Device schema, see http://www8.garmin.com/xmlschemas/GarminDevicev2.xsd
+            </xsd:documentation>
+        </xsd:annotation>
+        
+        <xsd:sequence>
+            <xsd:element name="ExternalPath" type="xsd:string" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Specifies the location on external memory to look for file(s) of this data type.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Extensions_t">
+        <xsd:annotation>
+            <xsd:documentation>This type provides the ability to extend any data type that includes it.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+</xsd:schema>

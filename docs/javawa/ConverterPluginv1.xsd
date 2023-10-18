@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="xs3p.xsl" type="text/xsl"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.garmin.com/xmlschemas/ConverterPlugin/v1"
+    targetNamespace="http://www.garmin.com/xmlschemas/ConverterPlugin/v1"
+    elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation xml:lang="en">This schema defines an XML structure used in conjunction with one or more XSLT stylesheets to perform data format conversions from within Garmin applications that are compatible with this schema.</xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="ConverterPlugin">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Creator" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>The name of the person or organization that created this plugin.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Description" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>A description of this plugin.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="AdditionalInfo" type="xs:anyURI" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>An optional link to additional information relating to this plugin.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="InputFormat">
+                    <xs:annotation>
+                        <xs:documentation>Information about the input XML format processed by the stylesheet associated with this plugin.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Namespace" type="xs:string" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>The XML namespace of the input format. Omit this element if the input XML format does not have a namespace.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="FilenameExtension" type="FilenameExtension_t" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="UserInterface" type="UserInterface_t" maxOccurs="unbounded"/>
+                            <xs:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="OutputFormat">
+                    <xs:annotation>
+                        <xs:documentation>Information about the output format produced by the stylesheet associated with this plugin.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Namespace" type="xs:string" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>The XML namespace of this output format. Non-XML formats and XML formats with no namespace can omit this element.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="FilenameExtension" type="FilenameExtension_t" minOccurs="0"/>
+                            <xs:element name="UserInterface" type="UserInterface_t" maxOccurs="unbounded"/>
+                            <xs:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Stylesheet" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation>Information about of an XSLT stylesheet associated with this plugin. If more than one stylesheeet is specified it is assumed that the stylesheets can be "chained" in the order in this document to produce the desired conversion of this plugin.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Location" type="xs:anyURI"/>
+                            <xs:element name="Parameter" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>A parameter to be passed to the stylesheet when the conversion is performed.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="Name" type="xs:token" use="required"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>                    
+                </xs:element>
+                <xs:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>A globally unique identifier for this plugin. A reverse domain name style identifier is recommended. For example: com.example.pluginname.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Version" type="xs:nonNegativeInteger" use="required">
+                <xs:annotation>
+                    <xs:documentation>The version of this plugin. As new versions are produced this value should increase monotonically.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="UserInterface_t">
+        <xs:annotation>
+            <xs:documentation>Strings to be used by an application's user interface in conjunction with a plugin.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="ChoiceItem" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>A string to be used by an application to populate a choice list to allow the user to choose among multiple available plugins.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Description" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>A more detailed description about a format. This description could include details about the data content that may or may not be processed or output by the plugin's associated stylesheet.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="lang" type="xs:language" use="required">
+            <xs:annotation>
+                <xs:documentation>The human language of the enclosing element's strings.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:simpleType name="FilenameExtension_t">
+        <xs:annotation>
+            <xs:documentation>An extension that may be appended to a filename. It must not include the delimiting period.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:token">
+            <xs:pattern value="[A-Za-z0-9]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Extensions_t">
+        <xs:annotation>
+            <xs:documentation>This type provides the ability to extend any complex type that includes it.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.garmin.com/xmlschemas/GarminDeviceExtensions/Limits/v1"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.garmin.com/xmlschemas/GarminDeviceExtensions/Limits/v1"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xsd:element name="LimitExtension" type="LimitExtension_t"/>
+    <xsd:complexType name="LimitExtension_t">
+        <xsd:annotation>
+            <xsd:documentation> This is designed to extend GarminDevicev2.xsd. It allows the device to specify limits for data that is sent to it. 
+                For more information on Garmin Device schema, see http://www8.garmin.com/xmlschemas/GarminDevicev2.xsd </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="MaxRoutes" type="xsd:unsignedLong"  minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation> Specifies the maximum number of routes that the device can hold at one time. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="MaxRoutePts" type="xsd:unsignedLong" minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation> Specifies the maximum number of via and shaping points a route can contain. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="MaxShapingPtsBetweenVias" type="xsd:unsignedLong" minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation> Specifies the maximum number of shaping points that can exist between two vias in a route. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="MaxRouteName" type="xsd:unsignedLong" minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation> Specifies the maximum length of a route name. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="MaxSysRtePts" type="xsd:unsignedLong" minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation> Specifies the maximum number of via and shaping points a device can hold at one time. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="MaxWaypoints" type="xsd:unsignedLong"  minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation> Specifies the maximum number of waypoints that the device can hold at one time. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="MaxWptName" type="xsd:unsignedLong" minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation> Specifies the maximum length of a waypoint name. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="WptNameUnique" type="xsd:boolean" minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation> Specifies if a waypoint ID must be unique. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="MaxTracks" type="xsd:unsignedLong"  minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation> Specifies the maximum number of tracks that the device can hold at one time. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="MaxTrackPts" type="xsd:unsignedLong" minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation> Specifies the maximum number of tracks that the device can hold at one time. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="MaxTrackName" type="xsd:unsignedLong" minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation> Specifies the maximum length of a track name. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="MaxMapTilesPerFile" type="xsd:unsignedLong" minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation> Specifies the maximum number of map tiles an IMG file should contain </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="MaxImgFileMbSize" type="xsd:unsignedLong" minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation> Specifies the maximum size of an IMG file in MB </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="MaxJnxFiles" type="xsd:unsignedLong" minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation> Specifies the maximum number of JNX (BirdsEye) files that the device can hold at one time. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="MaxJnxTiles" type="xsd:unsignedLong" minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation> Specifies the maximum number of tiles a JNX file should contain </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="Extensions_t">
+        <xsd:annotation>
+            <xsd:documentation> This type provides the ability to extend any data type that includes
+                it. </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

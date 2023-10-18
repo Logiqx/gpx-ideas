@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<xsd:schema targetNamespace="http://www.garmin.com/xmlschemas/PressureExtension/v1"
+  elementFormDefault="qualified" xmlns="http://www.garmin.com/xmlschemas/PressureExtension/v1"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:annotation>
+    <xsd:documentation> This schema defines Garmin extensions to be used with the GPX 1.1 schema.
+      The root element defined by this schema is intended to be used as a child element of the
+      "extensions" elements in the trkpt element in the GPX 1.1 schema. The GPX 1.1 schema is
+      available at http://www.topografix.com/GPX/1/1/gpx.xsd. </xsd:documentation>
+  </xsd:annotation>
+
+  <xsd:element name="PressureExtension" type="PressureExtension_t"/>
+
+  <xsd:complexType name="PressureExtension_t">
+    <xsd:annotation>
+      <xsd:documentation> This type contains data fields that cannot be represented in track points
+        in GPX 1.1 instances. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="apres" type="PressureInPascals_t" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation> This element represents an atmospheric pressure (a raw pressure value). </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="bpres" type="PressureInPascals_t" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation> This element represents a barometric pressure (a pressure value calibrated to sea level). </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="PressureInPascals_t">
+    <xsd:annotation>
+      <xsd:documentation> This type contains a pressure value measured in pascals (Pa).
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:double"/>
+  </xsd:simpleType>
+
+  <xsd:complexType name="Extensions_t">
+    <xsd:annotation>
+      <xsd:documentation>This type provides the ability to extend any data type that includes
+        it.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>

@@ -1,0 +1,137 @@
+<?xml version="1.0" ?>
+
+<xsd:schema xmlns="http://www.garmin.com/xmlschemas/PcSoftwareUpdate/v2"
+		    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://www.garmin.com/xmlschemas/PcSoftwareUpdate/v2"
+			elementFormDefault="qualified">
+
+	<xsd:element name="Requests" type="Requests_t" />
+	
+	<xsd:complexType name="Requests_t">
+        <xsd:annotation><xsd:documentation>
+        A list of queries sent from the update app to the web server
+        to check for software updates for each of the part numbers in the request.
+        </xsd:documentation></xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Request" type="Request_t" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Request_t">
+        <xsd:annotation><xsd:documentation>
+        A query sent from the update app to the web server to check for a
+        software update for a single part number.
+        </xsd:documentation></xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="PartNumber" type="PartNumber_t" />
+			<xsd:element name="Version" type="Version_t" />
+            <xsd:element name="LanguageID" type="xsd:unsignedShort">
+              <xsd:annotation><xsd:documentation>
+              The code that identifies the installed language of this application.
+              See LANGID in MSDN.
+              </xsd:documentation></xsd:annotation>
+            </xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="PartNumber_t">
+        <xsd:annotation><xsd:documentation>
+        The formatted XXX-XXXXX-XX part number of a PC application.
+        </xsd:documentation></xsd:annotation>
+		<xsd:restriction base="xsd:token">
+		    <xsd:pattern value="[\p{Lu}\d]{3}-[\p{Lu}\d]{5}-[\p{Lu}\d]{2}" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="Version_t">
+        <xsd:annotation><xsd:documentation>
+        The version number separated into 4 pieces.  PC software will use
+        all 4 pieces in a 6.3.1.0 format.
+        </xsd:documentation></xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="VersionMajor" type="xsd:unsignedShort" />
+			<xsd:element name="VersionMinor" type="xsd:unsignedShort" />
+			<xsd:element name="BuildMajor" type="xsd:unsignedShort" />
+			<xsd:element name="BuildMinor" type="xsd:unsignedShort" />
+			<xsd:element name="BuildType" type="BuildType_t" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="BuildType_t">
+        <xsd:annotation><xsd:documentation>
+        An enumeration for the build type of the software.  The server side
+        would only ever respond with "Beta" or "Release".
+        </xsd:documentation></xsd:annotation>
+		<xsd:restriction base="xsd:token">
+            <xsd:enumeration value="Internal"/>
+            <xsd:enumeration value="Alpha"/>
+            <xsd:enumeration value="Beta"/>
+            <xsd:enumeration value="Release"/>
+        </xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:element name="Responses" type="Responses_t" />
+	
+	<xsd:complexType name="Responses_t">
+        <xsd:annotation><xsd:documentation>
+        A list of information sent from the web server to the update app in
+        response to a Requests_t.
+        </xsd:documentation></xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Response" type="Response_t" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Response_t">
+        <xsd:annotation><xsd:documentation>
+        Information sent from the web server to the update app in response
+        to a Request_t.
+        </xsd:documentation></xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="RequestedPartNumber" type="PartNumber_t">
+                <xsd:annotation><xsd:documentation>
+                The part number in the Request_t that this is in response to.
+                </xsd:documentation></xsd:annotation>
+			</xsd:element>
+            <xsd:element name="AdditionalInfo" type="xsd:anyURI" minOccurs="0">
+                <xsd:annotation><xsd:documentation>
+                This URL provides optional additional information relevant
+                to this unit
+                </xsd:documentation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Update" type="Update_t" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Update_t">
+        <xsd:annotation><xsd:documentation>
+        Information needed to download the update.
+        </xsd:documentation></xsd:annotation>
+		<xsd:sequence>
+            <xsd:element name="AdditionalInfo" type="xsd:anyURI" minOccurs="0">
+                <xsd:annotation><xsd:documentation>
+                This URL provides optional additional information relevant
+                to this update
+                </xsd:documentation></xsd:annotation>
+            </xsd:element>
+			<xsd:element name="Version" type="Version_t" />
+			<xsd:element name="ChangeDescriptionFile" type="xsd:string" />
+			<xsd:element name="UpdateFile" type="DownloadFile_t" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="DownloadFile_t">
+        <xsd:annotation><xsd:documentation>
+        Information about a file that can be downloaded.
+        </xsd:documentation></xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Location" type="xsd:anyURI" />
+			<xsd:element name="Size" type="KiloBytes_t" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="KiloBytes_t">
+		<xsd:restriction base="xsd:unsignedInt"/>
+	</xsd:simpleType>
+
+</xsd:schema>

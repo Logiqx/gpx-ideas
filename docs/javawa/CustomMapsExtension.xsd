@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.garmin.com/xmlschemas/GarminDeviceExtensions/CustomMaps/v1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.garmin.com/xmlschemas/GarminDeviceExtensions/CustomMaps/v1"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xsd:element name="CustomMapsExtension" type="CustomMapsExtension_t"/>
+
+	<xsd:complexType name="CustomMapsExtension_t">
+		<xsd:annotation>
+			<xsd:documentation>
+	  For more information on Garmin Device schema, see http://www8.garmin.com/xmlschemas/GarminDevicev2.xsd
+	 </xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="MaxImageFileSize" type="xsd:unsignedInt" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="MaxImages" type="xsd:unsignedInt" minOccurs="0" maxOccurs="1"/>
+			<xsd:element minOccurs="0" name="MaxImageResolution" type="xsd:unsignedInt"/>
+			<xsd:element name="AllowedFileType" type="FileType_t" maxOccurs="unbounded"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Extensions_t">
+		<xsd:annotation>
+			<xsd:documentation>This type provides the ability to extend any data type that includes it.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="FileType_t">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="jpg"/>
+			<!-- jpg or jpeg -->
+			<xsd:enumeration value="png"/>
+			<xsd:enumeration value="tiff"/>
+			<xsd:enumeration value="bmp"/>
+			<xsd:enumeration value="gif"/>
+			<xsd:enumeration value="dib"/>
+			<xsd:enumeration value="jp2"/>
+			<!-- jpeg 2000 -->
+			<xsd:enumeration value="pcx"/>
+			<xsd:enumeration value="pict"/>
+			<xsd:enumeration value="raw"/>
+			<xsd:enumeration value="tga"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	xmlns="http://www.garmin.com/xmlschemas/GarminDeviceExtensions/v3" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.garmin.com/xmlschemas/GarminDeviceExtensions/v3" 
+	elementFormDefault="qualified" 
+	attributeFormDefault="unqualified">
+
+	<xsd:element name="GarminModeExtension" type="GarminModeExtension_t" />
+
+	<xsd:complexType name="GarminModeExtension_t">
+	 <xsd:annotation><xsd:documentation>
+	  Garmin Device extension schema version 3.0 - For more information on Garmin Device schema, see http://www.garmin.com/xmlschemas/GarminDevicev2.xsd
+	 </xsd:documentation></xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="MemoryRegion" type="MemoryRegion_t" maxOccurs="unbounded"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="MemoryRegion_t">
+		<xsd:sequence>
+			<xsd:element name="Id" type="xsd:unsignedByte"/>
+			<xsd:element name="Version" type="Version_t" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ExpectedPartNumber" type="xsd:token" minOccurs="0"/>
+			<xsd:element name="CurrentPartNumber" type="xsd:token" minOccurs="0"/>
+			<xsd:element name="IsErased" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="IsRemovable" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="IsRemoved" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="IsUserUpdateable" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="IsInProgress" type="xsd:boolean" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Version_t">
+		<xsd:sequence>
+			<xsd:element name="Major" type="xsd:unsignedShort"/>
+			<xsd:element name="Minor" type="xsd:unsignedShort"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Extensions_t">
+		<xsd:annotation>
+			<xsd:documentation>This type provides the ability to extend any data type that includes it.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

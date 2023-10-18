@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<xsd:schema targetNamespace="http://www.garmin.com/xmlschemas/GarminMobileAppPathExtension/v1"
+  elementFormDefault="qualified"
+  xmlns="http://www.garmin.com/xmlschemas/GarminMobileAppPathExtension/v1"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="AppPathExtension" type="AppPathExtension_t" />
+
+  <xsd:complexType name="AppPathExtension_t">
+    <xsd:annotation><xsd:documentation>
+    This type contains a path to the Garmin Mobile executable.
+    </xsd:documentation></xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="Path" type="xsd:anyURI" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>
