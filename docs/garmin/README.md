@@ -17,8 +17,8 @@ The following XSD files explicitly mention GPX 1.1:
 - [AccelerationExtensionv1.xsd](AccelerationExtensionv1.xsd)
 - [AdventuresExtensionv1.xsd](AdventuresExtensionv1.xsd)
 - [CreationTimeExtensionv1.xsd](CreationTimeExtensionv1.xsd)
-- [GpxExtensionsv2.xsd](GpxExtensionsv2.xsd)
-- [GpxExtensionsv3.xsd](GpxExtensionsv3.xsd)
+- [GpxExtensionsv2.xsd](GpxExtensionsv2.xsd) + XMLspy [documentation](https://www.javawa.nl/geo/schemas/spy/GpxExtensionsv2.htm)
+- [GpxExtensionsv3.xsd](GpxExtensionsv3.xsd) + XMLspy [documentation](https://www.javawa.nl/geo/schemas/spy/GpxExtensionsv3.htm)
 - [PowerExtensionv1.xsd](PowerExtensionv1.xsd)
 - [PressureExtensionv1.xsd](PressureExtensionv1.xsd)
 - [TrackMovieOffsetExtensionv1.xsd](TrackMovieOffsetExtensionv1.xsd)
@@ -37,9 +37,9 @@ The following XSD files explicitly mention GPX 1.1:
 
 The following XSD files relate to Training Center.
 
-- [TrainingCenterDatabasev1.xsd](TrainingCenterDatabasev1.xsd)
-- [TrainingCenterDatabasev2.xsd](TrainingCenterDatabasev2.xsd)
-- [ActivityExtensionv1.xsd](ActivityExtensionv1.xsd)
+- [TrainingCenterDatabasev1.xsd](TrainingCenterDatabasev1.xsd) + XMLspy [documentation](https://www.javawa.nl/geo/schemas/spy/TrainingCenterDatabasev1.htm)
+- [TrainingCenterDatabasev2.xsd](TrainingCenterDatabasev2.xsd) + XMLspy [documentation](https://www.javawa.nl/geo/schemas/spy/TrainingCenterDatabasev2.htm)
+- [ActivityExtensionv1.xsd](ActivityExtensionv1.xsd) + XMLspy [documentation](https://www.javawa.nl/geo/schemas/spy/activityExtensionv1.htm)
 - [ActivityExtensionv2.xsd](ActivityExtensionv2.xsd)
 
 
@@ -55,7 +55,7 @@ The following XSD files are yet to be classified:
 - [GarminAdventureLogsv1.xsd](GarminAdventureLogsv1.xsd)
 - [GarminAdventurev1.xsd](GarminAdventurev1.xsd)
 - [GarminDeviceExtensionv1.xsd](GarminDeviceExtensionv1.xsd)
-- [GarminDeviceExtensionv2.xsd](GarminDeviceExtensionv2.xsd)
+- [GarminDeviceExtensionv2.xsd](GarminDeviceExtensionv2.xsd) + XMLspy [documentation](https://www.javawa.nl/geo/schemas/spy/GarminDevicev2.htm)
 - [GarminDeviceExtensionv3.xsd](GarminDeviceExtensionv3.xsd)
 - [GarminDevicev1.xsd](GarminDevicev1.xsd)
 - [GarminDevicev2.xsd](GarminDevicev2.xsd)
@@ -64,6 +64,6 @@ The following XSD files are yet to be classified:
 - [MapProductv1.xsd](MapProductv1.xsd)
 - [MapProductv2.xsd](MapProductv2.xsd)
 - [PcSoftwareUpdatev2.xsd](PcSoftwareUpdatev2.xsd)
-- [UnitSoftwareUpdatev3.xsd](UnitSoftwareUpdatev3.xsd)
+- [UnitSoftwareUpdatev3.xsd](UnitSoftwareUpdatev3.xsd) + XMLspy [documentation](https://www.javawa.nl/geo/schemas/spy/UnitSoftwareUpdatev3.htm)
 - [UnlockCodesv1.xsd](UnlockCodesv1.xsd)
 
