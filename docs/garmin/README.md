@@ -4,7 +4,9 @@
 
 All of these XSD files were downloaded from [JaVaWa](https://www.javawa.nl/advanced.html).
 
-The XSD files have been copied into this GitHub repository to make searching easier.
+They appear to have been added to JaVaWa some time between Oct 2014 and Feb 2015 according to the [Wayback Machine](https://web.archive.org/web/20150415000000*/https://www.javawa.nl/advanced.html).
+
+The XSD files listed below have been copied from JaVaWa into this GitHub repository to make reviews and searches easier.
 
 
 
@@ -64,5 +66,4 @@ The following XSD files are yet to be classified:
 - [PcSoftwareUpdatev2.xsd](PcSoftwareUpdatev2.xsd)
 - [UnitSoftwareUpdatev3.xsd](UnitSoftwareUpdatev3.xsd)
 - [UnlockCodesv1.xsd](UnlockCodesv1.xsd)
-
 
