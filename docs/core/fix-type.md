@@ -62,9 +62,9 @@ Background information and videos are available on their [website](https://focal
 |    4    | Y       | Y      | Y       | RTK fixed / integer solution                                 |
 |    5    | Y       | Y      | Y       | RTK floating point solution<br />Converged PPP (NovAtel TerraStar-C, TerraStar-C PRO, TerraStar-X) |
 |    6    | Y       | Y      | Y       | Estimated / dead reckoning - e.g. INS                        |
-|    7    |         | -      | Y       | Manual input - fixed position                                |
-|    8    |         | -      | Y       | Simulation                                                   |
-|    9    |         | -      | Y       | SBAS - WAAS (NovAtel receivers)                              |
+|    7    | -       | -      | Y       | Manual input - fixed position                                |
+|    8    | -       | -      | Y       | Simulation                                                   |
+|    9    | -       | -      | Y       | SBAS - WAAS (NovAtel receivers)                              |
 
 Links
 
@@ -83,18 +83,18 @@ Links
 |  C   |    -    |   -    | -       | Quectel Querk, "Caution"                                     |
 |  D   |    Y    |   Y    | Y       | Differential mode - e.g. base station or SBAS (e.g. WAAS or EGNOS) |
 |  E   |    Y    |   Y    | Y       | Estimated / dead-reckoning                                   |
-|  F   |    -    |   Y    | -       | RTK floating point solution                                  |
+|  F   |    Y    |   Y    | -       | RTK floating point solution                                  |
 |  M   |    Y    |   -    | Y       | Manual input                                                 |
 |  N   |    Y    |   Y    | Y       | Data Not Valid                                               |
-|  P   |    -    |   -    | -       | Precise - presumably P(Y) code?                              |
-|  R   |    -    |   Y    | -       | RTK Integer solution                                         |
+|  P   |    Y    |   -    | -       | Precise - presumably P(Y) code?                              |
+|  R   |    Y    |   Y    | -       | RTK Integer solution                                         |
 |  S   |    Y    |   -    | -       | Simulation                                                   |
 |  U   |    -    |   -    | -       | Quectel Querk, "Unsafe"                                      |
 
 Links
 
 - [NMEA Revealed](https://gpsd.gitlab.io/gpsd/NMEA.html#_sentence_mixes_and_nmea_variations)
-- [Trimble](https://receiverhelp.trimble.com/alloy-gnss/en-us/NMEA-0183messages_VTG.html)
+- [Trimble](https://receiverhelp.trimble.com/alloy-gnss/en-us/NMEA-0183messages_GNS.html)
 - [NovAtel](https://docs.novatel.com/OEM7/Content/Logs/GPVTG.htm)
 
 
