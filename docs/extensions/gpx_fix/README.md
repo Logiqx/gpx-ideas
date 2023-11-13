@@ -147,7 +147,7 @@ Background information for all of the different augmentation systems will be inc
 
 #### Dead Reckoning (dr)
 
-A dead reckoning solution may use dead reckoning only, or combined GPS / GNSS + dead reckoning. Dead reckoning may use the last known GNSS position and velocity, wheel sensors, inertial sensors, and map matching. Dead reckoning is sometimes referred to as an estimated solution.
+A dead reckoning solution may use dead reckoning only, or combined GPS / GNSS + dead reckoning. Dead reckoning may use the last known GNSS position and velocity, wheel sensors, inertial sensors, or map matching. Dead reckoning is sometimes referred to as an estimated solution.
 
 | Value        | Description                                       |
 | ------------ | ------------------------------------------------- |
@@ -169,7 +169,7 @@ This first example shows a dead reckoning only solution:
 </trkpt>
 ```
 
-This second examples shows a combined GPS / GNSS + dead reckoning solution, also utilising DGPS / DGNSS corrections:
+This second example shows a combined GPS / GNSS + dead reckoning solution, also utilising DGPS / DGNSS corrections:
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -247,7 +247,7 @@ A solution may be deemed invalid either because a GNSS fix is unavailable, or be
 
 Validity can be reliably determined from the status in [GLL](https://gpsd.gitlab.io/gpsd/NMEA.html#_gll_geographic_position_latitudelongitude) or [RMC](https://gpsd.gitlab.io/gpsd/NMEA.html#_rmc_recommended_minimum_navigation_information) ("A" = valid, "V" = invalid).
 
-It is not safe to use the quality indicator in [GGA](https://gpsd.gitlab.io/gpsd/NMEA.html#_gga_global_positioning_system_fix_data) (value = 0), or mode indicator of [GLL](https://gpsd.gitlab.io/gpsd/NMEA.html#_gll_geographic_position_latitudelongitude), [VTG](https://gpsd.gitlab.io/gpsd/NMEA.html#_vtg_track_made_good_and_ground_speed), [RMC](https://gpsd.gitlab.io/gpsd/NMEA.html#_rmc_recommended_minimum_navigation_information) and [GNS](https://gpsd.gitlab.io/gpsd/NMEA.html#_gns_fix_data) (value = "N") as a proxy for validity when dead reckoning is being used. These sentences will typically report dead reckoning, regardless of whether the user limits have been exceeded.
+It is not safe to use the quality indicator in [GGA](https://gpsd.gitlab.io/gpsd/NMEA.html#_gga_global_positioning_system_fix_data) (value = 0), or mode indicator of [GLL](https://gpsd.gitlab.io/gpsd/NMEA.html#_gll_geographic_position_latitudelongitude), [VTG](https://gpsd.gitlab.io/gpsd/NMEA.html#_vtg_track_made_good_and_ground_speed), [RMC](https://gpsd.gitlab.io/gpsd/NMEA.html#_rmc_recommended_minimum_navigation_information) and [GNS](https://gpsd.gitlab.io/gpsd/NMEA.html#_gns_fix_data) (value = "N") as a proxy for validity when dead reckoning is in operation. These sentences will typically report dead reckoning, regardless of whether the user limits have been exceeded.
 
 Example of a dead reckoning only solution (without GNSS), where user limits have been exceeded:
 
@@ -376,7 +376,7 @@ GPX readers are free to use whatever logical constructs they wish, so long as th
 
 #### Handling Ambiguities
 
-In the event a GPX file containing an ambiguity the `<gpx_fix:fix>` element should be used in preference to `<fix>`. The pseudocode above describes a strict order for the evaluation of default values, `<fix>` and `<gpx_fix:fix>`, so the expected behavior is completely unambiguous.
+In the event of a GPX file containing an ambiguity the `<gpx_fix:fix>` element should be used in preference to `<fix>`. The pseudocode above describes a strict order for the evaluation of default values, `<fix>` and `<gpx_fix:fix>`, so the expected behavior is completely unambiguous.
 
 This first example is not actually an ambiguity, simply stating the specific type of GNSS augmentation:
 
@@ -391,7 +391,7 @@ This first example is not actually an ambiguity, simply stating the specific typ
 </trkpt>
 ```
 
-This second example is a contradiction, but the mode in `<gpx_fix:fix>` should take precedence over `<fix>`:
+This second example contains a contradiction, but the mode in `<gpx_fix:fix>` should take precedence over `<fix>`:
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -484,7 +484,7 @@ Use of RTK (fixed or float) can be determined by the quality indicator in [GGA](
 
 [Precise Point Positioning](https://novatel.com/an-introduction-to-gnss/resolving-errors/ppp) (PPP) solutions are high-precision solutions that typically utilise the carrier phase observables and can produce results approaching the accuracy of RTK, without the dependency on concurrent data from nearby reference stations.
 
-All three PPP techniques are supported by the GPX fix extension; PPP, PPP-AR and PPP-RTK. An insight into the differences between these 3 techniques can be gleaned by reading the definitions in section 2.2 of [PPP/PPP-RTK open formats](https://onlinelibrary.wiley.com/doi/full/10.1002/navi.452).
+All three PPP techniques are supported by the GPX fix extension; PPP, PPP-AR and PPP-RTK. An insight into the differences between these different techniques can be gleaned by reading the definitions in section 2.2 of [PPP/PPP-RTK open formats](https://onlinelibrary.wiley.com/doi/full/10.1002/navi.452).
 
 The GPX fix extension makes no distinction between converging and converged solutions, which is typically based on a user-specified threshold. Once a suitable GPX extension exists, horizontal / vertical accuracy estimates will be the best way to represent the accuracy of a PPP solution.
 
@@ -511,11 +511,11 @@ To avoid possible confusion with PPS, PPP solutions should be described as `<fix
 
 ### Multi-GNSS
 
-Multi-GNSS solutions may use any of the 4 global systems (GPS, GLONASS, Galileo / GAL and BeiDou / BDS) and regional systems (QZSS and IRNSS / NavIC). The use of multiple constellations increases the accuracy of GNSS solutions, such that they exceed DGPS and the military PPS.
+Multi-GNSS solutions may use several of the global systems (GPS, GLONASS, Galileo / GAL and BeiDou / BDS) and regional systems (QZSS and IRNSS / NavIC). The use of multiple constellations increases the accuracy of GNSS solutions, such that they exceed DGPS and the military PPS.
 
-Representing the systems in use is likely to be a common requirement, and also the number of satellites or specific signals. This proposal uses a dedicated XML element for each constellation, so that specifics such as frequency bands and their signals can be enumerated in the gpx_fix schema.
+Representing the systems in use can be seen as desirable, plus the number of satellites and maybe the specific signals. This proposal uses a dedicated XML element for each constellation, so that specifics such as frequency bands and their signals can be enumerated in the gpx_fix schema.
 
-The example shows how the GPS fix extensions can be used to list the constellations used in the PVT solution, and the number of satellites:
+The example shows how the GPS fix extensions can be used to list the constellations used in the PVT solution, plus the number of satellites:
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -542,9 +542,9 @@ Determining the number of satellites in use for each constellation can be found 
 
 Multi-band receivers have started to become widely available in the past few years which is another way that the accuracy of GNSS solutions can be improved. The use of multiple frequencies allows the ionospheric errors to be modelled / removed and some frequencies include signals with chipping rates matching the military PPS signals (10.23 MHz).
 
-Each of the global and regional constellations have their own set of frequency bands, within which there will be a number of different signals. I'm not 100% sure whether the "signal" attribute should be included in the GPX extension, but I do feel that "band" should be included. It should be recognised that both of these requirements are relatively niche, but they are supported by [NMEA](https://gpsd.gitlab.io/gpsd/NMEA.html#_nmea_4_11_system_id_and_signal_id) and the Android [Location](https://developer.android.com/reference/android/location/GnssMeasurement#getCodeType()) API.
+Each of the global and regional constellations have their own set of frequency bands, within which there will be a number of different signals. I'm not 100% sure whether the "signal" attribute should be included in the GPX extension, but I'm inclined to believe that "band" should be included. It should be recognised that both of these requirements are relatively niche, but they are supported by [NMEA](https://gpsd.gitlab.io/gpsd/NMEA.html#_nmea_4_11_system_id_and_signal_id) and the Android [Location](https://developer.android.com/reference/android/location/GnssMeasurement#getCodeType()) API.
 
-The example below shows the fix details for a multi-band GNSS receiver.
+The example below shows how the fix of a multi-band GNSS receiver might be represented:
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -583,6 +583,8 @@ It should be noted that "band" and "signal" should have default values of "all",
   </extensions>
 </trkpt>
 ```
+
+Notes:
 
 - Frequency bands can be determined from the carrier frequency
   - GPSTest by Barbeau - [description](https://github.com/barbeau/gpstest/blob/221e46cb30612021bc4804adee53af9754dddc39/fastlane/metadata/android/en-US/full_description.txt#L4) + [code](https://github.com/barbeau/gpstest/blob/221e46cb30612021bc4804adee53af9754dddc39/library/src/main/java/com/android/gpstest/library/util/CarrierFreqUtils.java)
