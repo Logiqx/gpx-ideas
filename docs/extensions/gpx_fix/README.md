@@ -81,7 +81,7 @@ Example of a 2D standard positioning solution, which is no different to an exist
 </trkpt>
 ```
 
-Example of a 2D precise positioning solution, which is no different to an existing GPX file:
+Example of a 2D precise positioning solution, which requires a `<gpx_fix:fix>` element:
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
