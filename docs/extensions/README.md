@@ -32,6 +32,7 @@ Feel free to take a look at some simple [examples](examples/README.md) prior to 
 
 | Schema                       | Description                |
 | ---------------------------- | -------------------------- |
+| [gpx_fix](gpx_fix/README.md) | Fix type                   |
 | [gpx_pvt](gpx_pvt/README.md) | Position / velocity / time |
 | [gpx_imu](gpx_imu/README.md) | Inertial measurement unit  |
 | [gpx_met](gpx_met/README.md) | Meteorological             |
