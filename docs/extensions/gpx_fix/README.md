@@ -386,7 +386,7 @@ This first example is not actually an ambiguity, simply stating the specific typ
   <time>2022-04-11T10:16:01Z</time>
   <fix>dgps</fix>
   <extensions>
-    <gpx_fix:fix aug="rtk-fix" />
+    <gpx_fix:fix aug="rtk-fixed" />
   </extensions>
 </trkpt>
 ```
