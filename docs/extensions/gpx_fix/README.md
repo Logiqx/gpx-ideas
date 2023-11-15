@@ -40,7 +40,7 @@ The table below is a summary of the attributes, each of which will be described 
 | dr        | no \| yes                                                    | no      | Dead reckoning    |
 | man       | no \| yes                                                    | no      | Manual input      |
 | sim       | no \| yes                                                    | no      | Simulation        |
-| status    | invalid \| valid                                             | valid   | Data validity     |
+| valid     | no \| yes                                                    | yes     | Data validity     |
 
 The following example illustrates a fixed RTK solution, which can be thought of as a high-precision version of DGPS / DGNSS:
 
@@ -236,14 +236,14 @@ Example of a GPS / GNSS + DGPS / DGNSS simulation:
 
 
 
-#### Status (status)
+#### Validity (valid)
 
 A solution may be deemed invalid either because a GNSS fix is unavailable, or because user limits have been exceeded (e.g. DOP, elevation mask, dynamic model, etc).
 
-| Value           | Description     |
-| --------------- | --------------- |
-| invalid         | Data is invalid |
-| valid (default) | Data is valid   |
+| Value         | Description     |
+| ------------- | --------------- |
+| no            | Data is invalid |
+| yes (default) | Data is valid   |
 
 Validity can be reliably determined from the status in [GLL](https://gpsd.gitlab.io/gpsd/NMEA.html#_gll_geographic_position_latitudelongitude) or [RMC](https://gpsd.gitlab.io/gpsd/NMEA.html#_rmc_recommended_minimum_navigation_information) ("A" = valid, "V" = invalid).
 
@@ -257,7 +257,7 @@ Example of a dead reckoning only solution (without GNSS), where user limits have
   <time>2022-04-11T10:16:01Z</time>
   <fix>none</fix>
   <extensions>
-    <gpx_fix:fix dr="yes" status="invalid" />
+    <gpx_fix:fix dr="yes" valid="no" />
   </extensions>
 </trkpt>
 ```
@@ -270,7 +270,7 @@ Example of a regular GNSS solution, where user limits have been exceeded:
   <time>2022-04-11T10:16:01Z</time>
   <fix>none</fix>
   <extensions>
-    <gpx_fix:fix status="invalid" />
+    <gpx_fix:fix valid="no" />
   </extensions>
 </trkpt>
 ```
@@ -340,13 +340,13 @@ Use of PPS can be determined from the quality indicator of [GGA](https://gpsd.gi
 
 GPX readers that support the `<gpx_fix:fix>` element should interpret the traditional `<fix>` element as follows:
 
-| `<fix>` | mode | aug    | dr   | man  | sim  | status  |
-| ------- | ---- | ------ | ---- | ---- | ---- | ------- |
-| none    | none | (none) | (no) | (no) | (no) | (valid) |
-| 2d      | 2d   | (none) | (no) | (no) | (no) | (valid) |
-| 3d      | 3d   | (none) | (no) | (no) | (no) | (valid) |
-| dgps    | (3d) | dgnss  | (no) | (no) | (no) | (valid) |
-| pps     | (3d) | (none) | (no) | (no) | (no) | (valid) |
+| `<fix>` | mode | aug    | dr   | man  | sim  | valid |
+| ------- | ---- | ------ | ---- | ---- | ---- | ----- |
+| none    | none | (none) | (no) | (no) | (no) | (yes) |
+| 2d      | 2d   | (none) | (no) | (no) | (no) | (yes) |
+| 3d      | 3d   | (none) | (no) | (no) | (no) | (yes) |
+| dgps    | (3d) | dgnss  | (no) | (no) | (no) | (yes) |
+| pps     | (3d) | (none) | (no) | (no) | (no) | (yes) |
 
 Note that the default values for `<gpx_fix:fix>` have been indicated using brackets.
 
@@ -358,7 +358,7 @@ GPX readers may use the following pseudocode to determine fix mode, augmentation
    - dr = "no"
    - man = "no"
    - sim = "no"
-   - status = "valid"
+   - valid= "yes"
 2. Interpret `<fix>`
    - if fix in ["none", "2d", "3d"] then mode = fix
    - elif fix == "dgps" then aug = "dgnss"
@@ -368,7 +368,7 @@ GPX readers may use the following pseudocode to determine fix mode, augmentation
    - if has_attribute("dr") then dr = get_attribute("dr")
    - if has_attribute("man") then man = get_attribute("man")
    - if has_attribute("sim") then sim = get_attribute("sim")
-   - if has_attribute("status") then status = get_attribute("status")
+   - if has_attribute("valid") then valid = get_attribute("valid")
 
 GPX readers are free to use whatever logical constructs they wish, so long as the final outcome matches the pseudocode above.
 
