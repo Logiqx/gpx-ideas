@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<gpx
+  version="1.1"
+  creator="Hand edited - https://logiqx.github.io/gpx-ideas/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:gpx_fix="http://logiqx.github.io/gpx-ideas/extensions/gpx_fix/0/1"
+  xsi:schemaLocation="
+    http://www.topografix.com/GPX/1/1
+    https://www.topografix.com/GPX/1/1/gpx.xsd
+    http://logiqx.github.io/gpx-ideas/extensions/gpx_fix/0/1
+    https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/0/1/gpx_fix.xsd">
+
+  <metadata>
+    <desc>Basic examples for the gpx_fix extension, matching the original proposal</desc>
+    <time>2023-11-30T12:00:00Z</time>
+  </metadata>
+
+  <trk>
+    <trkseg>
+      <!-- Classic fix type -->
+      <trkpt lat="42.438878" lon="-71.119277">
+        <time>2023-11-30T12:00:00Z</time>
+        <desc>No GPS fix - e.g. interpolation or just dead-reckoning</desc>
+        <fix>none</fix>
+      </trkpt>
+      <trkpt lat="42.438878" lon="-71.119277">
+        <time>2023-11-30T12:00:00Z</time>
+        <desc>2D fix - 3 satellites only, or a fixed altitude solution</desc>
+        <fix>2d</fix>
+      </trkpt>
+      <trkpt lat="42.438878" lon="-71.119277">
+        <time>2023-11-30T12:00:00Z</time>
+        <desc>3D fix - 4 satellites or more, not a fixed altitude solution</desc>
+        <fix>3d</fix>
+      </trkpt>
+      <trkpt lat="42.438878" lon="-71.119277">
+        <time>2023-11-30T12:00:00Z</time>
+        <desc>Differential GPS / GNSS corrections applied</desc>
+        <fix>dgps</fix>
+      </trkpt>
+      <trkpt lat="42.438878" lon="-71.119277">
+        <time>2023-11-30T12:00:00Z</time>
+        <desc>Precise Positioning Service - military users and authorised civilian users</desc>
+        <fix>pps</fix>
+      </trkpt>
+
+      <!-- Simple RTK example of the gpx_fix extension -->
+      <trkpt lat="42.438878" lon="-71.119277">
+        <time>2023-11-30T12:00:00Z</time>
+        <desc>Fixed RTK solution, which can be thought of as a high-precision version of DGPS / DGNSS</desc>
+        <fix>dgps</fix>
+        <extensions>
+          <gpx_fix:fix mode="rtk-fixed" />
+        </extensions>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

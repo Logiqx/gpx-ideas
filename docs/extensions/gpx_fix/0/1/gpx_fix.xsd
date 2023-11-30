@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<xsd:schema targetNamespace="http://logiqx.github.io/gpx-ideas/extensions/gpx_fix/0/1"
+  elementFormDefault="qualified"
+  xmlns="http://logiqx.github.io/gpx-ideas/extensions/gpx_fix/0/1"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:annotation><xsd:documentation>
+    This schema defines fix type extensions to be used with the GPX 1.1 schema.
+    The root element defined by this schema is intended to be used as a child
+    element of the "extensions" elements in the trkpt element in the GPX 1.1 schema. 
+    The GPX 1.1 schema is available at https://www.topografix.com/GPX/1/1/gpx.xsd.
+  </xsd:documentation></xsd:annotation>
+
+  <xsd:element name="fix" type="fixType" />
+
+  <xsd:complexType name="fixType">
+    <xsd:annotation>
+      <xsd:documentation>
+        Details of the GNSS fix type and any techniques or technologies augmenting the solution
+      </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:attribute name="mode" type="modeType" default="3d">
+      <xsd:annotation>
+        <xsd:documentation>
+          Fix mode of the GNSS solution
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:simpleType name="modeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        The GNSS fix mode can be found in the GSA sentence (1 = none, 2 = 2D fix, 3 = 3D fix)
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="none"/>
+      <xsd:enumeration value="2d"/>
+      <xsd:enumeration value="3d"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+</xsd:schema>
