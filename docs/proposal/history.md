@@ -26,7 +26,7 @@ Sadly, adoption of TrackPointExtension v2 for `<course>` and `<speed>`  in GPX 1
 
 #### TrackPointExtras (TPX)
 
-The [TPX](../../xmlschemas/tpx/1/0/README.md) schema was created in July 2023, primarily for sports and activities that depend upon course, speed and accuracy estimates (see [v1.0](../../xmlschemas/tpx10.xsd)).
+The [TPX](../xmlschemas/logiqx/tpx/1/0/README.md) schema was created in July 2023, primarily for sports and activities that depend upon course, speed and accuracy estimates (see [v1.0](../xmlschemas/logiqx/tpx/1/0/tpx.xsd)).
 
 The extension schema includes `<course>`, `<speed>`, `<roc>` (rate of climb), plus various accuracy estimates for use within `<trkpt>` `<extensions>`.
 
