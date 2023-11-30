@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<gpx
+  version="1.1"
+  creator="Hand edited - https://logiqx.github.io/gpx-ideas/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:gpx_fix="http://logiqx.github.io/gpx-ideas/extensions/gpx_fix/0/2"
+  xsi:schemaLocation="
+    http://www.topografix.com/GPX/1/1
+    https://www.topografix.com/GPX/1/1/gpx.xsd
+    http://logiqx.github.io/gpx-ideas/extensions/gpx_fix/0/2
+    https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/0/2/gpx_fix.xsd">
+
+  <metadata>
+    <desc>Examples showing usage of the gpx_fix extension, matching the original proposal</desc>
+  </metadata>
+
+  <trk>
+    <trkseg>
+
+      <!-- Classic fix element -->
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>No GPS fix - e.g. interpolation or just dead-reckoning</desc>
+        <fix>none</fix>
+      </trkpt>
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>2D fix - 3 satellites only, or a fixed altitude solution</desc>
+        <fix>2d</fix>
+      </trkpt>
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>3D fix - 4 satellites or more, not a fixed altitude solution</desc>
+        <fix>3d</fix>
+      </trkpt>
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>Differential GPS / GNSS corrections applied</desc>
+        <fix>dgps</fix>
+      </trkpt>
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>Precise Positioning Service - military users and authorised civilian users</desc>
+        <fix>pps</fix>
+      </trkpt>
+
+      <!-- Introductory example -->
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>Fixed RTK solution, which can be thought of as a high-precision version of DGPS / DGNSS</desc>
+        <fix>dgps</fix>
+        <extensions>
+          <gpx_fix:fix aug="rtk-fixed" />
+        </extensions>
+      </trkpt>
+
+      <!-- Mode example -->
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>2D precise positioning solution</desc>
+        <fix>pps</fix>
+        <extensions>
+          <gpx_fix:fix mode="2d" />
+        </extensions>
+      </trkpt>
+
+      <!-- Augmentation example -->
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>PPP with ambiguity resolution</desc>
+        <fix>dgps</fix>
+        <extensions>
+          <gpx_fix:fix aug="ppp-ar" />
+        </extensions>
+      </trkpt>
+
+      <!-- Dead reckoning examples -->
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>Dead reckoning only solution</desc>
+        <fix>none</fix>
+        <extensions>
+          <gpx_fix:fix dr="yes" />
+        </extensions>
+      </trkpt>
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>Combined GPS / GNSS + dead reckoning solution, also utilising DGPS / DGNSS corrections</desc>
+        <fix>dgps</fix>
+        <extensions>
+          <gpx_fix:fix dr="yes" />
+        </extensions>
+      </trkpt>
+
+      <!-- Manual input example -->
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>2D manual input</desc>
+        <fix>2d</fix>
+        <extensions>
+          <gpx_fix:fix man="yes" />
+        </extensions>
+      </trkpt>
+
+      <!-- Simulation example -->
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>GPS / GNSS + DGPS / DGNSS simulation</desc>
+        <fix>dgps</fix>
+        <extensions>
+          <gpx_fix:fix sim="yes" />
+        </extensions>
+      </trkpt>
+
+      <!-- Validity examples -->
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>Dead reckoning only solution (without GNSS), where user limits have been exceeded</desc>
+        <fix>none</fix>
+        <extensions>
+          <gpx_fix:fix dr="yes" valid="no" />
+        </extensions>
+      </trkpt>
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>Regular GNSS solution, where user limits have been exceeded</desc>
+        <fix>none</fix>
+        <extensions>
+          <gpx_fix:fix valid="no" />
+        </extensions>
+      </trkpt>
+
+      <!-- Representation examples -->
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>2D is deemed the most significant feature</desc>
+        <fix>2d</fix>
+        <extensions>
+          <gpx_fix:fix aug="dgnss" />
+        </extensions>
+      </trkpt>
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>PPS is be deemed most significant feature</desc>
+        <fix>pps</fix>
+        <extensions>
+          <gpx_fix:fix aug="dgnss" />
+        </extensions>
+      </trkpt>
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>PPS should be used solely for GNSS solutions based on the military P(Y) codes.</desc>
+        <fix>pps</fix>
+        <extensions>
+          <gpx_fix:fix mode="2d" aug="dgnss" />
+        </extensions>
+      </trkpt>
+
+      <!-- Handling Ambiguities -->
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>This is not actually an ambiguity, simply stating the specific type of GNSS augmentation</desc>
+        <fix>dgps</fix>
+        <extensions>
+          <gpx_fix:fix aug="rtk-fixed" />
+        </extensions>
+      </trkpt>
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>This contains a contradiction, but the mode in should take precedence over the fix</desc>
+        <fix>2d</fix>
+        <extensions>
+          <gpx_fix:fix mode="3d" />
+        </extensions>
+      </trkpt>
+
+      <!-- DGPS / DGNSS -->
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>DGPS / DGNSS can use the aug attribute as below but the traditional fix element is recommended</desc>
+        <fix>3d</fix>
+        <extensions>
+          <gpx_fix:fix aug="dgnss" />
+        </extensions>
+      </trkpt>
+
+      <!-- RTK and PPK -->
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>To avoid possible confusion with PPS, RTK and PPK solutions should be described as dgps, not pps</desc>
+        <fix>dgps</fix>
+        <extensions>
+          <gpx_fix:fix aug="ppk-fixed" />
+        </extensions>
+      </trkpt>
+
+      <!-- PPP -->
+
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <ele>7.90</ele>
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>To avoid possible confusion with PPS, PPP solutions should be described as dgps, not pps</desc>
+        <fix>dgps</fix>
+        <extensions>
+          <gpx_fix:fix aug="ppp-rtk" />
+        </extensions>
+      </trkpt>
+
+    </trkseg>
+  </trk>
+</gpx>
