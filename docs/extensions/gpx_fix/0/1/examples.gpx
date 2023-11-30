@@ -52,6 +52,7 @@
         <extensions>
           <gpx_fix:fix aug="rtk-fixed" />
         </extensions>
+      </trkpt>
 
       <!-- Mode example -->
       <trkpt lat="50.5710623" lon="-2.4563484">
