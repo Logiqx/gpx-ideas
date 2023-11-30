@@ -93,12 +93,12 @@
       <xsd:enumeration value="rtk-float"/>
     </xsd:restriction>
   </xsd:simpleType>
- 
+
   <xsd:simpleType name="deadReckoningType">
     <xsd:annotation>
       <xsd:documentation>
         A solution that only uses dead reckoning may be determined using the quality indicator in GGA (value = 6),
-		or the mode indicator of GLL, VTG, RMC and GNS (value = "E").
+        or the mode indicator of GLL, VTG, RMC and GNS (value = "E").
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
@@ -106,7 +106,7 @@
       <xsd:enumeration value="yes"/>
     </xsd:restriction>
   </xsd:simpleType>
- 
+
   <xsd:simpleType name="manualType">
     <xsd:annotation>
       <xsd:documentation>
@@ -118,7 +118,7 @@
       <xsd:enumeration value="yes"/>
     </xsd:restriction>
   </xsd:simpleType>
- 
+
   <xsd:simpleType name="simulationType">
     <xsd:annotation>
       <xsd:documentation>
@@ -130,7 +130,7 @@
       <xsd:enumeration value="yes"/>
     </xsd:restriction>
   </xsd:simpleType>
- 
+
   <xsd:simpleType name="validityType">
     <xsd:annotation>
       <xsd:documentation>
