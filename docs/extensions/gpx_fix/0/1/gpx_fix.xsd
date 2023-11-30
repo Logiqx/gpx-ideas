@@ -40,6 +40,11 @@
         <xsd:documentation> GNSS augmentation </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
+    <xsd:attribute name="dr" type="drType" default="no">
+      <xsd:annotation>
+        <xsd:documentation> Dead reckoning </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
   </xsd:complexType>
 
   <xsd:simpleType name="modeType">
@@ -74,6 +79,19 @@
     </xsd:restriction>
   </xsd:simpleType>
  
+  <xsd:simpleType name="drType">
+    <xsd:annotation>
+      <xsd:documentation>
+        A solution that only uses dead reckoning may be determined using the quality indicator in GGA (value = 6),
+		or the mode indicator of GLL, VTG, RMC and GNS (value = "E").
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="no"/>
+      <xsd:enumeration value="yes"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
   <xsd:complexType name="extensionsType">
     <xsd:annotation>
       <xsd:documentation>
