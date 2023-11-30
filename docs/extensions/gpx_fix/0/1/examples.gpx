@@ -73,6 +73,24 @@
           <gpx_fix:fix aug="ppp-ar" />
         </extensions>
       </trkpt>
+
+      <!-- Dead reckoning examples -->
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>Dead reckoning only solution</desc>
+        <fix>none</fix>
+        <extensions>
+          <gpx_fix:fix dr="yes" />
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>combined GPS / GNSS + dead reckoning solution, also utilising DGPS / DGNSS corrections</desc>
+        <fix>dgps</fix>
+        <extensions>
+          <gpx_fix:fix dr="yes" />
+        </extensions>
+      </trkpt>
     </trkseg>
   </trk>
 </gpx>
