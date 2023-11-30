@@ -40,9 +40,24 @@
         <xsd:documentation> GNSS augmentation </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="dr" type="drType" default="no">
+    <xsd:attribute name="dr" type="deadReckoningType" default="no">
       <xsd:annotation>
         <xsd:documentation> Dead reckoning </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="man" type="manualType" default="no">
+      <xsd:annotation>
+        <xsd:documentation> Manual input </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="sim" type="simulationType" default="no">
+      <xsd:annotation>
+        <xsd:documentation> Simulation </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="valid" type="validityType" default="yes">
+      <xsd:annotation>
+        <xsd:documentation> Data validity </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -79,11 +94,48 @@
     </xsd:restriction>
   </xsd:simpleType>
  
-  <xsd:simpleType name="drType">
+  <xsd:simpleType name="deadReckoningType">
     <xsd:annotation>
       <xsd:documentation>
         A solution that only uses dead reckoning may be determined using the quality indicator in GGA (value = 6),
 		or the mode indicator of GLL, VTG, RMC and GNS (value = "E").
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="no"/>
+      <xsd:enumeration value="yes"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+ 
+  <xsd:simpleType name="manualType">
+    <xsd:annotation>
+      <xsd:documentation>
+        Manual input is fairly self-explanatory. The position is not derived from a GPS / GNSS solution.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="no"/>
+      <xsd:enumeration value="yes"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+ 
+  <xsd:simpleType name="simulationType">
+    <xsd:annotation>
+      <xsd:documentation>
+        A simulation is also fairly self-explanatory, but will primarily be used by researchers and GNSS engineers.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="no"/>
+      <xsd:enumeration value="yes"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+ 
+  <xsd:simpleType name="validityType">
+    <xsd:annotation>
+      <xsd:documentation>
+        A solution may be deemed invalid either because a GNSS fix is unavailable,
+        or because user limits have been exceeded (e.g. DOP, elevation mask, dynamic model, etc).
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
