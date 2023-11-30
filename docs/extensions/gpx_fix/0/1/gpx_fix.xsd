@@ -20,13 +20,15 @@
       </xsd:documentation>
     </xsd:annotation>
 
-    <xsd:element name="extensions" type="extensionsType" minOccurs="0">
-      <xsd:annotation>
-        <xsd:documentation>
-          You can add extend GPX by adding your own elements from another schema here.
-        </xsd:documentation>
-      </xsd:annotation>
-    </xsd:element>
+    <xsd:sequence>
+      <xsd:element name="extensions" type="extensionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            You can add extend GPX by adding your own elements from another schema here.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
 
     <xsd:attribute name="mode" type="modeType" default="3d">
       <xsd:annotation>
