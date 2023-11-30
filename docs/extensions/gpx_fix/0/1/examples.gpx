@@ -17,6 +17,7 @@
 
   <trk>
     <trkseg>
+
       <!-- Classic fix element -->
       <trkpt lat="50.5710623" lon="-2.4563484">
         <time>2022-04-11T10:16:01Z</time>
@@ -85,12 +86,51 @@
       </trkpt>
       <trkpt lat="50.5710623" lon="-2.4563484">
         <time>2022-04-11T10:16:01Z</time>
-        <desc>combined GPS / GNSS + dead reckoning solution, also utilising DGPS / DGNSS corrections</desc>
+        <desc>Combined GPS / GNSS + dead reckoning solution, also utilising DGPS / DGNSS corrections</desc>
         <fix>dgps</fix>
         <extensions>
           <gpx_fix:fix dr="yes" />
         </extensions>
       </trkpt>
+
+      <!-- Manual input example -->
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>2D manual input</desc>
+        <fix>2d</fix>
+        <extensions>
+          <gpx_fix:fix man="yes" />
+        </extensions>
+      </trkpt>
+
+      <!-- Simulation example -->
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>GPS / GNSS + DGPS / DGNSS simulation</desc>
+        <fix>dgps</fix>
+        <extensions>
+          <gpx_fix:fix sim="yes" />
+        </extensions>
+      </trkpt>
+
+      <!-- Validity examples -->
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>Dead reckoning only solution (without GNSS), where user limits have been exceeded</desc>
+        <fix>none</fix>
+        <extensions>
+          <gpx_fix:fix dr="yes" valid="no" />
+        </extensions>
+      </trkpt>
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>Regular GNSS solution, where user limits have been exceeded</desc>
+        <fix>none</fix>
+        <extensions>
+          <gpx_fix:fix valid="no" />
+        </extensions>
+      </trkpt>
+
     </trkseg>
   </trk>
 </gpx>
