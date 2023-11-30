@@ -62,6 +62,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="none"/>
       <xsd:enumeration value="dgnss"/>
       <xsd:enumeration value="ppk-fixed"/>
       <xsd:enumeration value="ppk-float"/>
