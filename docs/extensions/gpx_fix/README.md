@@ -619,10 +619,10 @@ The following topics have not been included in this proposal:
 
 ### Schema
 
-The latest draft schema and examples matching this proposal are available online:
+The latest provisional schema (XSD), plus examples (GPX) reflecting this proposal are available:
 
-- [gpx_fix.xsd](0/1/gpx_fix.xsd)
-- [examples.gpx](0/1/examples.gpx)
+- [gpx_fix.xsd](0/2/gpx_fix.xsd)
+- [examples.gpx](0/2/examples.gpx)
 
 
 
