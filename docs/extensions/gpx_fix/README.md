@@ -471,7 +471,7 @@ To avoid possible confusion with PPS, RTK and PPK solutions should be described 
   <time>2022-04-11T10:16:01Z</time>
   <fix>dgps</fix>
   <extensions>
-    <gpx_fix:fix aug="rtk-fixed" />
+    <gpx_fix:fix aug="ppk-fixed" />
   </extensions>
 </trkpt>
 ```
@@ -502,7 +502,7 @@ To avoid possible confusion with PPS, PPP solutions should be described as `<fix
   <time>2022-04-11T10:16:01Z</time>
   <fix>dgps</fix>
   <extensions>
-    <gpx_fix:fix aug="ppp-ar" />
+    <gpx_fix:fix aug="ppp-rtk" />
   </extensions>
 </trkpt>
 ```
