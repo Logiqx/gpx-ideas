@@ -525,10 +525,10 @@ The example shows how the GPS fix extensions can be used to list the constellati
   <sat>35</sat>
   <extensions>
     <gpx_fix:fix>
-      <gps sat="9" />
-      <glonass sat="8" />
-      <galileo sat="9" />
-      <beidou sat="7" />
+      <gpx_fix:gps sat="9" />
+      <gpx_fix:glonass sat="8" />
+      <gpx_fix:galileo sat="9" />
+      <gpx_fix:beidou sat="7" />
     </gpx_fix:fix>
   </extensions>
 </trkpt>
@@ -554,12 +554,12 @@ The example below shows how the fix of a multi-band GNSS receiver might be repre
   <sat>35</sat>
   <extensions>
     <gpx_fix:fix>
-      <gps band="L1" signal="C/A" sat="6" />
-      <gps band="L5" sat="3" />
-      <glonass band="G1" signal="C/A" sat="8" />
-      <galileo band="E1" signal="B+C" sat="6" />
-      <galileo band="E5a" sat="3" />
-      <beidou band="B1I" sat="7" />
+      <gpx_fix:gps band="L1" signal="C/A" sat="6" />
+      <gpx_fix:gps band="L5" sat="3" />
+      <gpx_fix:glonass band="G1" signal="C/A" sat="8" />
+      <gpx_fix:galileo band="E1" signal="B+C" sat="6" />
+      <gpx_fix:galileo band="E5a" sat="3" />
+      <gpx_fix:beidou band="B1I" sat="7" />
     </gpx_fix:fix>
   </extensions>
 </trkpt>
@@ -575,10 +575,10 @@ It should be noted that "band" and "signal" should have default values of "all",
   <sat>35</sat>
   <extensions>
     <gpx_fix:fix>
-      <gps sat="9" />
-      <glonass sat="8" />
-      <galileo sat="9" />
-      <beidou sat="7" />
+      <gpx_fix:gps sat="9" />
+      <gpx_fix:glonass sat="8" />
+      <gpx_fix:galileo sat="9" />
+      <gpx_fix:beidou sat="7" />
     </gpx_fix:fix>
   </extensions>
 </trkpt>
