@@ -617,6 +617,15 @@ The following topics have not been included in this proposal:
 
 
 
+### Schema
+
+The latest draft schema and examples matching this proposal are available online:
+
+- [gpx_fix.xsd](0/1/gpx_fix.xsd)
+- [examples.gpx](0/1/examples.gpx)
+
+
+
 ### References
 
 Some useful links that relate to some of the topics in this document:
