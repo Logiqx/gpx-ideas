@@ -12,46 +12,64 @@
     https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/0/1/gpx_fix.xsd">
 
   <metadata>
-    <desc>Basic examples for the gpx_fix extension, matching the original proposal</desc>
-    <time>2023-11-30T12:00:00Z</time>
+    <desc>Examples showing usage of the gpx_fix extension, matching the original proposal</desc>
   </metadata>
 
   <trk>
     <trkseg>
-      <!-- Classic fix type -->
-      <trkpt lat="42.438878" lon="-71.119277">
-        <time>2023-11-30T12:00:00Z</time>
+      <!-- Classic fix element -->
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <time>2022-04-11T10:16:01Z</time>
         <desc>No GPS fix - e.g. interpolation or just dead-reckoning</desc>
         <fix>none</fix>
       </trkpt>
-      <trkpt lat="42.438878" lon="-71.119277">
-        <time>2023-11-30T12:00:00Z</time>
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <time>2022-04-11T10:16:01Z</time>
         <desc>2D fix - 3 satellites only, or a fixed altitude solution</desc>
         <fix>2d</fix>
       </trkpt>
-      <trkpt lat="42.438878" lon="-71.119277">
-        <time>2023-11-30T12:00:00Z</time>
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <time>2022-04-11T10:16:01Z</time>
         <desc>3D fix - 4 satellites or more, not a fixed altitude solution</desc>
         <fix>3d</fix>
       </trkpt>
-      <trkpt lat="42.438878" lon="-71.119277">
-        <time>2023-11-30T12:00:00Z</time>
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <time>2022-04-11T10:16:01Z</time>
         <desc>Differential GPS / GNSS corrections applied</desc>
         <fix>dgps</fix>
       </trkpt>
-      <trkpt lat="42.438878" lon="-71.119277">
-        <time>2023-11-30T12:00:00Z</time>
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <time>2022-04-11T10:16:01Z</time>
         <desc>Precise Positioning Service - military users and authorised civilian users</desc>
         <fix>pps</fix>
       </trkpt>
 
-      <!-- Simple RTK example of the gpx_fix extension -->
-      <trkpt lat="42.438878" lon="-71.119277">
-        <time>2023-11-30T12:00:00Z</time>
+      <!-- Introductory example -->
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <time>2022-04-11T10:16:01Z</time>
         <desc>Fixed RTK solution, which can be thought of as a high-precision version of DGPS / DGNSS</desc>
         <fix>dgps</fix>
         <extensions>
-          <gpx_fix:fix mode="rtk-fixed" />
+          <gpx_fix:fix aug="rtk-fixed" />
+        </extensions>
+
+      <!-- Mode example -->
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>2D precise positioning solution</desc>
+        <fix>pps</fix>
+        <extensions>
+          <gpx_fix:fix mode="2d" />
+        </extensions>
+      </trkpt>
+
+      <!-- Augmentation example -->
+      <trkpt lat="50.5710623" lon="-2.4563484">
+        <time>2022-04-11T10:16:01Z</time>
+        <desc>PPP with ambiguity resolution</desc>
+        <fix>dgps</fix>
+        <extensions>
+          <gpx_fix:fix aug="ppp-ar" />
         </extensions>
       </trkpt>
     </trkseg>
