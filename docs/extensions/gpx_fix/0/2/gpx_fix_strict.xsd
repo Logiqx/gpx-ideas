@@ -1,0 +1,447 @@
+<?xml version="1.0"?>
+<xsd:schema targetNamespace="http://logiqx.github.io/gpx-ideas/extensions/gpx_fix/0/2"
+  elementFormDefault="qualified"
+  xmlns="http://logiqx.github.io/gpx-ideas/extensions/gpx_fix/0/2"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:annotation><xsd:documentation>
+    This schema defines fix type extensions to be used with the GPX 1.1 schema.
+    The root element defined by this schema is intended to be used as a child
+    element of the "extensions" elements in the trkpt element in the GPX 1.1 schema. 
+    The GPX 1.1 schema is available at https://www.topografix.com/GPX/1/1/gpx.xsd.
+  </xsd:documentation></xsd:annotation>
+
+  <xsd:element name="fix" type="fixType" />
+
+  <xsd:complexType name="fixType">
+    <xsd:annotation>
+      <xsd:documentation>
+        Details of the GNSS fix type and any techniques or technologies augmenting the solution.
+      </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:sequence>
+      <xsd:element name="gps" type="gpsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            GPS satellites count, either overall or for a specific frequency band.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="glonass" type="glonassType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            GLONASS satellites count, either overall or for a specific frequency band.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="galileo" type="galileoType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Galileo satellites count, either overall or for a specific frequency band.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="beidou" type="beidouType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            BeiDou / BDS satellites count, either overall or for a specific frequency band.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="qzss" type="qzssType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            QZSS satellites count, either overall or for a specific frequency band.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="navic" type="navicType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            NavIC / IRNSS satellites count, either overall or for a specific frequency band.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+      <xsd:element name="extensions" type="extensionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            You can add extend gpx_fix by adding your own elements from another schema here.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+
+    <xsd:attribute name="mode" type="modeType" default="3d">
+      <xsd:annotation>
+        <xsd:documentation> GNSS fix mode. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="aug" type="augmentationType" default="none">
+      <xsd:annotation>
+        <xsd:documentation> GNSS augmentation. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="dr" type="deadReckoningType" default="no">
+      <xsd:annotation>
+        <xsd:documentation> Dead reckoning. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="man" type="manualType" default="no">
+      <xsd:annotation>
+        <xsd:documentation> Manual input. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="sim" type="simulationType" default="no">
+      <xsd:annotation>
+        <xsd:documentation> Simulation. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="valid" type="validityType" default="yes">
+      <xsd:annotation>
+        <xsd:documentation> Data validity. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="gpsType">
+    <xsd:annotation>
+      <xsd:documentation>
+        GPS satellites count, either overall or for a specific frequency band.
+      </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:sequence>
+      <xsd:element name="extensions" type="extensionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            You can add extend gpx_fix by adding your own elements from another schema here.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+
+    <xsd:attribute name="band" type="gpsBandType" default="all">
+      <xsd:annotation>
+        <xsd:documentation> GPS frequency band. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
+      <xsd:annotation>
+        <xsd:documentation> Number of GPS satellites used in the GNSS solution. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="glonassType">
+    <xsd:annotation>
+      <xsd:documentation>
+        GLONASS satellites count, either overall or for a specific frequency band.
+      </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:sequence>
+      <xsd:element name="extensions" type="extensionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            You can add extend gpx_fix by adding your own elements from another schema here.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+
+    <xsd:attribute name="band" type="glonassBandType" default="all">
+      <xsd:annotation>
+        <xsd:documentation> GLONASS frequency band. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
+      <xsd:annotation>
+        <xsd:documentation> Number of GLONASS satellites used in the GNSS solution. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="galileoType">
+    <xsd:annotation>
+      <xsd:documentation>
+        Galileo satellites count, either overall or for a specific frequency band.
+      </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:sequence>
+      <xsd:element name="extensions" type="extensionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            You can add extend gpx_fix by adding your own elements from another schema here.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+
+    <xsd:attribute name="band" type="galileoBandType" default="all">
+      <xsd:annotation>
+        <xsd:documentation> Galileo frequency band. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
+      <xsd:annotation>
+        <xsd:documentation> Number of Galileo satellites used in the GNSS solution. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="beidouType">
+    <xsd:annotation>
+      <xsd:documentation>
+        BeiDou / BDS satellites count, either overall or for a specific frequency band.
+      </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:sequence>
+      <xsd:element name="extensions" type="extensionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            You can add extend gpx_fix by adding your own elements from another schema here.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+
+    <xsd:attribute name="band" type="beidouBandType" default="all">
+      <xsd:annotation>
+        <xsd:documentation> BeiDou / BDS frequency band. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
+      <xsd:annotation>
+        <xsd:documentation> Number of BeiDou / BDS satellites used in the GNSS solution. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="qzssType">
+    <xsd:annotation>
+      <xsd:documentation>
+        QZSS satellites count, either overall or for a specific frequency band.
+      </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:sequence>
+      <xsd:element name="extensions" type="extensionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            You can add extend gpx_fix by adding your own elements from another schema here.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+
+    <xsd:attribute name="band" type="qzssBandType" default="all">
+      <xsd:annotation>
+        <xsd:documentation> QZSS frequency band. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
+      <xsd:annotation>
+        <xsd:documentation> Number of QZSS satellites used in the GNSS solution. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="navicType">
+    <xsd:annotation>
+      <xsd:documentation>
+        NavIC / IRNSS satellites count, either overall or for a specific frequency band.
+      </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:sequence>
+      <xsd:element name="extensions" type="extensionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            You can add extend gpx_fix by adding your own elements from another schema here.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+
+    <xsd:attribute name="band" type="navicBandType" default="all">
+      <xsd:annotation>
+        <xsd:documentation> NavIC / IRNSS frequency band. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
+      <xsd:annotation>
+        <xsd:documentation> Number of NavIC / IRNSS satellites used in the GNSS solution. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="extensionsType">
+    <xsd:annotation>
+      <xsd:documentation>
+        You can add extend gpx_fix by adding your own elements from another schema here.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:any namespace="##other" processContents="strict" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation>
+            You can add extend gpx_fix by adding your own elements from another schema here.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:any>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="modeType">
+    <xsd:annotation>
+      <xsd:documentation>
+        The GNSS fix mode can be found in the GSA sentence (1 = none, 2 = 2D fix, 3 = 3D fix).
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="none"/>
+      <xsd:enumeration value="2d"/>
+      <xsd:enumeration value="3d"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="augmentationType">
+    <xsd:annotation>
+      <xsd:documentation>
+        A regular DGPS / DGNSS solution using SBAS corrections only requires the traditional fix element.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="none"/>
+      <xsd:enumeration value="dgnss"/>
+      <xsd:enumeration value="ppk-fixed"/>
+      <xsd:enumeration value="ppk-float"/>
+      <xsd:enumeration value="ppp"/>
+      <xsd:enumeration value="ppp-ar"/>
+      <xsd:enumeration value="ppp-rtk"/>
+      <xsd:enumeration value="rtk-fixed"/>
+      <xsd:enumeration value="rtk-float"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="deadReckoningType">
+    <xsd:annotation>
+      <xsd:documentation>
+        A solution that only uses dead reckoning may be determined using the quality indicator in GGA (value = 6),
+        or the mode indicator of GLL, VTG, RMC and GNS (value = "E").
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="no"/>
+      <xsd:enumeration value="yes"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="manualType">
+    <xsd:annotation>
+      <xsd:documentation>
+        Manual input is fairly self-explanatory. The position is not derived from a GPS / GNSS solution.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="no"/>
+      <xsd:enumeration value="yes"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="simulationType">
+    <xsd:annotation>
+      <xsd:documentation>
+        A simulation is also fairly self-explanatory, but will primarily be used by researchers and GNSS engineers.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="no"/>
+      <xsd:enumeration value="yes"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="validityType">
+    <xsd:annotation>
+      <xsd:documentation>
+        A solution may be deemed invalid either because a GNSS fix is unavailable,
+        or because user limits have been exceeded (e.g. DOP, elevation mask, dynamic model, etc).
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="no"/>
+      <xsd:enumeration value="yes"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="gpsBandType">
+    <xsd:annotation>
+      <xsd:documentation>
+        GPS frequency band.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="all"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="glonassBandType">
+    <xsd:annotation>
+      <xsd:documentation>
+        GLONASS frequency band.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="all"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="galileoBandType">
+    <xsd:annotation>
+      <xsd:documentation>
+        Galileo frequency band.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="all"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="beidouBandType">
+    <xsd:annotation>
+      <xsd:documentation>
+        BeiDou / BDS frequency band.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="all"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="qzssBandType">
+    <xsd:annotation>
+      <xsd:documentation>
+        QZSS frequency band.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="all"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="navicBandType">
+    <xsd:annotation>
+      <xsd:documentation>
+        NavIC / IRNSS frequency band.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="all"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+</xsd:schema>

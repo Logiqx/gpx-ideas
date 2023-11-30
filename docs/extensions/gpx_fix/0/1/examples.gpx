@@ -9,7 +9,7 @@
     http://www.topografix.com/GPX/1/1
     https://www.topografix.com/GPX/1/1/gpx-strict.xsd
     http://logiqx.github.io/gpx-ideas/extensions/gpx_fix/0/1
-    https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/0/1/gpx_fix.xsd">
+    https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/0/1/gpx_fix_strict.xsd">
 
   <metadata>
     <desc>Examples showing usage of the gpx_fix extension, matching the original proposal</desc>
