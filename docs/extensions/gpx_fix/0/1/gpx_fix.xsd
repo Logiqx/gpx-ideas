@@ -16,7 +16,7 @@
   <xsd:complexType name="fixType">
     <xsd:annotation>
       <xsd:documentation>
-        Details of the GNSS fix type and any techniques or technologies augmenting the solution
+        Details of the GNSS fix type and any techniques or technologies augmenting the solution.
       </xsd:documentation>
     </xsd:annotation>
 
@@ -24,7 +24,7 @@
       <xsd:element name="extensions" type="extensionsType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            You can add extend GPX by adding your own elements from another schema here.
+            You can add extend gpx_fix by adding your own elements from another schema here.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -32,32 +32,32 @@
 
     <xsd:attribute name="mode" type="modeType" default="3d">
       <xsd:annotation>
-        <xsd:documentation> GNSS fix mode </xsd:documentation>
+        <xsd:documentation> GNSS fix mode. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="aug" type="augmentationType" default="none">
       <xsd:annotation>
-        <xsd:documentation> GNSS augmentation </xsd:documentation>
+        <xsd:documentation> GNSS augmentation. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="dr" type="deadReckoningType" default="no">
       <xsd:annotation>
-        <xsd:documentation> Dead reckoning </xsd:documentation>
+        <xsd:documentation> Dead reckoning. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="man" type="manualType" default="no">
       <xsd:annotation>
-        <xsd:documentation> Manual input </xsd:documentation>
+        <xsd:documentation> Manual input. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="sim" type="simulationType" default="no">
       <xsd:annotation>
-        <xsd:documentation> Simulation </xsd:documentation>
+        <xsd:documentation> Simulation. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="valid" type="validityType" default="yes">
       <xsd:annotation>
-        <xsd:documentation> Data validity </xsd:documentation>
+        <xsd:documentation> Data validity. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -65,7 +65,7 @@
   <xsd:simpleType name="modeType">
     <xsd:annotation>
       <xsd:documentation>
-        The GNSS fix mode can be found in the GSA sentence (1 = none, 2 = 2D fix, 3 = 3D fix)
+        The GNSS fix mode can be found in the GSA sentence (1 = none, 2 = 2D fix, 3 = 3D fix).
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
@@ -78,7 +78,7 @@
   <xsd:simpleType name="augmentationType">
     <xsd:annotation>
       <xsd:documentation>
-        A regular DGPS / DGNSS solution using SBAS corrections only requires the traditional fix element
+        A regular DGPS / DGNSS solution using SBAS corrections only requires the traditional fix element.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
@@ -154,7 +154,7 @@
       <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
           <xsd:documentation>
-            You can add extend GPX by adding your own elements from another schema here.
+            You can add extend gpx_fix by adding your own elements from another schema here.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:any>
