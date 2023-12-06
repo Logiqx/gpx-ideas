@@ -601,13 +601,13 @@ The following topics have not been included in this proposal:
 
 - DGPS / DGNSS technology
   - Differentiation between SBAS, GBAS and ABAS
-- SBAS system(s) in use - WAAS, EGNOS, MSAS, GAGAN, etc
-  - Perhaps these should be listed once within the track?
+- SBAS in use - WAAS, EGNOS, MSAS, GAGAN, L1Sb (QZSS), etc
+  - The latest list of systems can be found in the [L1 C/A](https://www.gps.gov/technical/prn-codes/) PRN code assignments
 - RTK technology
   - Differentiation between RTK, Network RTK ([NRTK](https://gssc.esa.int/navipedia/index.php?title=RTK_Systems#RTK_Networks)) and Wide-Area RTK ([WARTK](https://gssc.esa.int/navipedia/index.php?title=Wide_Area_RTK_(WARTK))).
 
-- QZSS Indoor Messaging System (IMES)
-  - Perhaps it be considered a specific type of GNSS - [background](https://insidegnss.com/qzsss-indoor-messaging-system/)
+- QZSS Indoor Messaging System ([IMES](https://www.unoosa.org/documents/pdf/icg/activities/2008/icg3/32.pdf)) seems to have fallen by the wayside?
+  - Articles dating from 2009 to 2014 - [Inside GNSS](https://insidegnss.com/qzsss-indoor-messaging-system/) + [GPS World](https://www.gpsworld.com/wirelessindoor-positioningopening-up-indoors-11603/) + [GPS World](https://www.gpsworld.com/danger-will-robinson-beware-the-imes-of-japan/)
 - Navigation status from the GNS sentence, and extended FAA mode indicator
   - S = Safe, C = Caution, U = Unsafe, V = Not valid for navigation
 - Assisted GPS / GNSS, commonly referred to as A-GPS / A-GNSS
