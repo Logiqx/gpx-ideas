@@ -350,7 +350,7 @@
   <xsd:complexType name="gpsSignalType">
     <xsd:annotation>
       <xsd:documentation>
-        GPS satellite counts, overall and (optionally) for specific signals.
+        GPS satellite counts for a specific signal.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
@@ -382,7 +382,7 @@
   <xsd:complexType name="glonassSignalType">
     <xsd:annotation>
       <xsd:documentation>
-        GLONASS satellite counts, overall and (optionally) for specific signals.
+        GLONASS satellite counts for a specific signal.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
@@ -414,7 +414,7 @@
   <xsd:complexType name="galileoSignalType">
     <xsd:annotation>
       <xsd:documentation>
-        Galileo satellite counts, overall and (optionally) for specific signals.
+        Galileo satellite counts for a specific signal.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
@@ -446,7 +446,7 @@
   <xsd:complexType name="beidouSignalType">
     <xsd:annotation>
       <xsd:documentation>
-        BeiDou / BDS satellite counts, overall and (optionally) for specific signals.
+        BeiDou / BDS satellite counts for a specific signal.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
@@ -478,7 +478,7 @@
   <xsd:complexType name="qzssSignalType">
     <xsd:annotation>
       <xsd:documentation>
-        QZSS satellite counts, overall and (optionally) for specific signals.
+        QZSS satellite counts for a specific signal.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
@@ -510,7 +510,7 @@
   <xsd:complexType name="navicSignalType">
     <xsd:annotation>
       <xsd:documentation>
-        NavIC / IRNSS satellite counts, overall and (optionally) for specific signals.
+        NavIC / IRNSS satellite counts for a specific signal.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
@@ -542,7 +542,7 @@
   <xsd:complexType name="sbasSignalType">
     <xsd:annotation>
       <xsd:documentation>
-        SBAS satellite counts, overall and (optionally) for specific signals.
+        SBAS satellite counts for a specific signal.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
