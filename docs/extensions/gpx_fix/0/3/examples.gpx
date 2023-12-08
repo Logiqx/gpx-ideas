@@ -255,7 +255,7 @@
         <ele>7.90</ele>
         <time>2022-04-11T10:16:01Z</time>
         <fix>dgps</fix>
-        <sat>7</sat>
+        <sat>6</sat>
         <extensions>
           <gpx_fix:fix>
             <gpx_fix:gps view="9" lock="7" />
@@ -269,7 +269,7 @@
         <ele>7.90</ele>
         <time>2022-04-11T10:16:01Z</time>
         <fix>dgps</fix>
-        <sat>26</sat>
+        <sat>20</sat>
         <extensions>
           <gpx_fix:fix>
             <gpx_fix:gps view="9" lock="7" />
@@ -287,7 +287,7 @@
         <ele>7.90</ele>
         <time>2022-04-11T10:16:01Z</time>
         <fix>dgps</fix>
-        <sat>26</sat>
+        <sat>20</sat>
         <extensions>
           <gpx_fix:fix>
             <gpx_fix:gps view="8" lock="7">
