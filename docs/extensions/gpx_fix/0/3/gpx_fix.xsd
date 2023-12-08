@@ -369,12 +369,12 @@
     </xsd:attribute>
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of GPS satellites in view for specific signal type. </xsd:documentation>
+        <xsd:documentation> Number of GPS satellites in view for this signal. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of GPS satellites with lock for specific signal type. </xsd:documentation>
+        <xsd:documentation> Number of GPS satellites with lock for this signal. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -401,12 +401,12 @@
     </xsd:attribute>
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of GLONASS satellites in view for specific signal type. </xsd:documentation>
+        <xsd:documentation> Number of GLONASS satellites in view for this signal. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of GLONASS satellites with lock for specific signal type. </xsd:documentation>
+        <xsd:documentation> Number of GLONASS satellites with lock for this signal. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -433,12 +433,12 @@
     </xsd:attribute>
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of Galileo satellites in view for specific signal type. </xsd:documentation>
+        <xsd:documentation> Number of Galileo satellites in view for this signal. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of Galileo satellites with lock for specific signal type. </xsd:documentation>
+        <xsd:documentation> Number of Galileo satellites with lock for this signal. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -465,12 +465,12 @@
     </xsd:attribute>
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of BeiDou / BDS satellites in view for specific signal type. </xsd:documentation>
+        <xsd:documentation> Number of BeiDou / BDS satellites in view for this signal. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of BeiDou / BDS satellites with lock for specific signal type. </xsd:documentation>
+        <xsd:documentation> Number of BeiDou / BDS satellites with lock for this signal. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -497,12 +497,12 @@
     </xsd:attribute>
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of QZSS satellites in view for specific signal type. </xsd:documentation>
+        <xsd:documentation> Number of QZSS satellites in view for this signal. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of QZSS satellites with lock for specific signal type. </xsd:documentation>
+        <xsd:documentation> Number of QZSS satellites with lock for this signal. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -529,12 +529,12 @@
     </xsd:attribute>
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of NavIC / IRNSS satellites in view for specific signal type. </xsd:documentation>
+        <xsd:documentation> Number of NavIC / IRNSS satellites in view for this signal. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of NavIC / IRNSS satellites with lock for specific signal type. </xsd:documentation>
+        <xsd:documentation> Number of NavIC / IRNSS satellites with lock for this signal. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -561,12 +561,12 @@
     </xsd:attribute>
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of SBAS satellites in view for specific signal type. </xsd:documentation>
+        <xsd:documentation> Number of SBAS satellites in view for this signal. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of SBAS satellites with lock for specific signal type. </xsd:documentation>
+        <xsd:documentation> Number of SBAS satellites with lock for this signal. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -673,7 +673,7 @@
   <xsd:simpleType name="gpsSignalIdType">
     <xsd:annotation>
       <xsd:documentation>
-        GPS signal ID.
+        GPS signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/signals.html
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
@@ -691,7 +691,7 @@
   <xsd:simpleType name="glonassSignalIdType">
     <xsd:annotation>
       <xsd:documentation>
-        GLONASS signal ID.
+        GLONASS signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/signals.html
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
@@ -710,7 +710,7 @@
   <xsd:simpleType name="galileoSignalIdType">
     <xsd:annotation>
       <xsd:documentation>
-        Galileo signal ID.
+        Galileo signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/signals.html
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
@@ -727,7 +727,7 @@
   <xsd:simpleType name="beidouSignalIdType">
     <xsd:annotation>
       <xsd:documentation>
-        BeiDou / BDS signal ID.
+        BeiDou / BDS signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/signals.html
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
@@ -749,7 +749,7 @@
   <xsd:simpleType name="qzssSignalIdType">
     <xsd:annotation>
       <xsd:documentation>
-        QZSS signal ID.
+        QZSS signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/signals.html
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
@@ -769,7 +769,7 @@
   <xsd:simpleType name="navicSignalIdType">
     <xsd:annotation>
       <xsd:documentation>
-        NavIC / IRNSS signal ID.
+        NavIC / IRNSS signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/signals.html
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
@@ -784,7 +784,7 @@
   <xsd:simpleType name="sbasSignalIdType">
     <xsd:annotation>
       <xsd:documentation>
-        SBAS signal ID.
+        SBAS signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/signals.html
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
