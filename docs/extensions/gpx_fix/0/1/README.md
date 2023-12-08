@@ -11,10 +11,6 @@ Links to the provisional schema (XSD), plus examples (GPX) reflecting the origin
 
 ### Change History
 
-#### 0.2
-
-- Added GNSS elements - GPS, GLONASS, Galileo, BeiDou, QZSS, NavIC
-
 #### 0.1
 
 - Initial draft
