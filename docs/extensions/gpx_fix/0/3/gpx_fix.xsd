@@ -734,7 +734,6 @@
       <xsd:enumeration value="l2oc"/>
       <xsd:enumeration value="l2sc"/>
       <xsd:enumeration value="l3oc"/>
-      <xsd:enumeration value="all"/>
     </xsd:restriction>
   </xsd:simpleType>
 
