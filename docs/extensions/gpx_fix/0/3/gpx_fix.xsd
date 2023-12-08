@@ -19,7 +19,6 @@
         Details of the GNSS fix type and any techniques or technologies augmenting the solution.
       </xsd:documentation>
     </xsd:annotation>
-
     <xsd:sequence>
       <xsd:element name="gps" type="gpsType" minOccurs="0">
         <xsd:annotation>
@@ -78,7 +77,6 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-
     <xsd:attribute name="mode" type="modeType" default="3d">
       <xsd:annotation>
         <xsd:documentation> GNSS fix mode. </xsd:documentation>
@@ -117,7 +115,6 @@
         GPS satellite counts, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
-
     <xsd:sequence>
       <xsd:element name="sig" type="gpsSignalType" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
@@ -134,7 +131,6 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
         <xsd:documentation> Number of GPS satellites in view. </xsd:documentation>
@@ -153,7 +149,6 @@
         GLONASS satellite counts, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
-
     <xsd:sequence>
       <xsd:element name="sig" type="glonassSignalType" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
@@ -170,7 +165,6 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
         <xsd:documentation> Number of GLONASS satellites in view. </xsd:documentation>
@@ -189,7 +183,6 @@
         Galileo satellite counts, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
-
     <xsd:sequence>
       <xsd:element name="sig" type="galileoSignalType" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
@@ -206,7 +199,6 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
         <xsd:documentation> Number of Galileo satellites in view. </xsd:documentation>
@@ -225,7 +217,6 @@
         BeiDou / BDS satellite counts, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
-
     <xsd:sequence>
       <xsd:element name="sig" type="beidouSignalType" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
@@ -242,7 +233,6 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
         <xsd:documentation> Number of BeiDou / BDS satellites in view. </xsd:documentation>
@@ -261,7 +251,6 @@
         QZSS satellite counts, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
-
     <xsd:sequence>
       <xsd:element name="sig" type="qzssSignalType" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
@@ -278,7 +267,6 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
         <xsd:documentation> Number of QZSS satellites in view. </xsd:documentation>
@@ -297,7 +285,6 @@
         NavIC / IRNSS satellite counts, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
-
     <xsd:sequence>
       <xsd:element name="sig" type="navicSignalType" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
@@ -314,7 +301,6 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
         <xsd:documentation> Number of NavIC / IRNSS satellites in view. </xsd:documentation>
@@ -333,7 +319,6 @@
         SBAS satellite counts, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
-
     <xsd:sequence>
       <xsd:element name="sig" type="sbasSignalType" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
@@ -350,7 +335,6 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
         <xsd:documentation> Number of SBAS satellites in view. </xsd:documentation>
@@ -369,17 +353,15 @@
         GPS satellite counts, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
-
     <xsd:sequence>
       <xsd:element name="extensions" type="extensionsType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            You can add extend gpsType by adding your own elements from another schema here.
+            You can add extend gpsSignalType by adding your own elements from another schema here.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-
     <xsd:attribute name="id" type="gpsSignalIdType">
       <xsd:annotation>
         <xsd:documentation> GPS signal ID. </xsd:documentation>
@@ -387,12 +369,12 @@
     </xsd:attribute>
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of GPS satellites in view. </xsd:documentation>
+        <xsd:documentation> Number of GPS satellites in view for specific signal type. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of GPS satellites with lock. </xsd:documentation>
+        <xsd:documentation> Number of GPS satellites with lock for specific signal type. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -403,17 +385,15 @@
         GLONASS satellite counts, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
-
     <xsd:sequence>
       <xsd:element name="extensions" type="extensionsType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            You can add extend glonassType by adding your own elements from another schema here.
+            You can add extend glonassSignalType by adding your own elements from another schema here.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-
     <xsd:attribute name="id" type="glonassSignalIdType">
       <xsd:annotation>
         <xsd:documentation> GLONASS signal ID. </xsd:documentation>
@@ -421,12 +401,12 @@
     </xsd:attribute>
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of GLONASS satellites in view. </xsd:documentation>
+        <xsd:documentation> Number of GLONASS satellites in view for specific signal type. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of GLONASS satellites with lock. </xsd:documentation>
+        <xsd:documentation> Number of GLONASS satellites with lock for specific signal type. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -437,17 +417,15 @@
         Galileo satellite counts, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
-
     <xsd:sequence>
       <xsd:element name="extensions" type="extensionsType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            You can add extend galileoType by adding your own elements from another schema here.
+            You can add extend galileoSignalType by adding your own elements from another schema here.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-
     <xsd:attribute name="id" type="galileoSignalIdType">
       <xsd:annotation>
         <xsd:documentation> Galileo signal ID. </xsd:documentation>
@@ -455,12 +433,12 @@
     </xsd:attribute>
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of Galileo satellites in view. </xsd:documentation>
+        <xsd:documentation> Number of Galileo satellites in view for specific signal type. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of Galileo satellites with lock. </xsd:documentation>
+        <xsd:documentation> Number of Galileo satellites with lock for specific signal type. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -471,17 +449,15 @@
         BeiDou / BDS satellite counts, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
-
     <xsd:sequence>
       <xsd:element name="extensions" type="extensionsType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            You can add extend beidouType by adding your own elements from another schema here.
+            You can add extend beidouSignalType by adding your own elements from another schema here.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-
     <xsd:attribute name="id" type="beidouSignalIdType">
       <xsd:annotation>
         <xsd:documentation> BeiDou / BDS signal ID. </xsd:documentation>
@@ -489,12 +465,12 @@
     </xsd:attribute>
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of BeiDou / BDS satellites in view. </xsd:documentation>
+        <xsd:documentation> Number of BeiDou / BDS satellites in view for specific signal type. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of BeiDou / BDS satellites with lock. </xsd:documentation>
+        <xsd:documentation> Number of BeiDou / BDS satellites with lock for specific signal type. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -505,17 +481,15 @@
         QZSS satellite counts, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
-
     <xsd:sequence>
       <xsd:element name="extensions" type="extensionsType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            You can add extend qzssType by adding your own elements from another schema here.
+            You can add extend qzssSignalType by adding your own elements from another schema here.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-
     <xsd:attribute name="id" type="qzssSignalIdType">
       <xsd:annotation>
         <xsd:documentation> QZSS signal ID. </xsd:documentation>
@@ -523,12 +497,12 @@
     </xsd:attribute>
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of QZSS satellites in view. </xsd:documentation>
+        <xsd:documentation> Number of QZSS satellites in view for specific signal type. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of QZSS satellites with lock. </xsd:documentation>
+        <xsd:documentation> Number of QZSS satellites with lock for specific signal type. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -539,17 +513,15 @@
         NavIC / IRNSS satellite counts, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
-
     <xsd:sequence>
       <xsd:element name="extensions" type="extensionsType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            You can add extend navicType by adding your own elements from another schema here.
+            You can add extend navicSignalType by adding your own elements from another schema here.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-
     <xsd:attribute name="id" type="navicSignalIdType">
       <xsd:annotation>
         <xsd:documentation> NavIC / IRNSS signal ID. </xsd:documentation>
@@ -557,12 +529,12 @@
     </xsd:attribute>
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of NavIC / IRNSS satellites in view. </xsd:documentation>
+        <xsd:documentation> Number of NavIC / IRNSS satellites in view for specific signal type. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of NavIC / IRNSS satellites with lock. </xsd:documentation>
+        <xsd:documentation> Number of NavIC / IRNSS satellites with lock for specific signal type. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -573,17 +545,15 @@
         SBAS satellite counts, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
-
     <xsd:sequence>
       <xsd:element name="extensions" type="extensionsType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            You can add extend sbasType by adding your own elements from another schema here.
+            You can add extend sbasSignalType by adding your own elements from another schema here.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-
     <xsd:attribute name="id" type="sbasSignalIdType">
       <xsd:annotation>
         <xsd:documentation> SBAS signal ID. </xsd:documentation>
@@ -591,12 +561,12 @@
     </xsd:attribute>
     <xsd:attribute name="view" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of SBAS satellites in view. </xsd:documentation>
+        <xsd:documentation> Number of SBAS satellites in view for specific signal type. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of SBAS satellites with lock. </xsd:documentation>
+        <xsd:documentation> Number of SBAS satellites with lock for specific signal type. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
