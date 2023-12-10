@@ -255,10 +255,10 @@
         <ele>7.90</ele>
         <time>2022-04-11T10:16:01Z</time>
         <fix>dgps</fix>
-        <sat>6</sat>
+        <sat>7</sat>
         <extensions>
           <gpx_fix:fix>
-            <gpx_fix:gps view="9" lock="7" />
+            <gpx_fix:gps sat="7" />
           </gpx_fix:fix>
         </extensions>
       </trkpt>
@@ -269,14 +269,14 @@
         <ele>7.90</ele>
         <time>2022-04-11T10:16:01Z</time>
         <fix>dgps</fix>
-        <sat>20</sat>
+        <sat>26</sat>
         <extensions>
           <gpx_fix:fix>
-            <gpx_fix:gps view="9" lock="7" />
-            <gpx_fix:glonass view="8" lock="6" />
-            <gpx_fix:galileo view="6" lock="5" />
-            <gpx_fix:beidou view="7" lock="5" />
-            <gpx_fix:qzss view="4" lock="3" />
+            <gpx_fix:gps sat="7" />
+            <gpx_fix:glonass sat="6" />
+            <gpx_fix:galileo sat="5" />
+            <gpx_fix:beidou sat="5" />
+            <gpx_fix:qzss sat="3" />
           </gpx_fix:fix>
         </extensions>
       </trkpt>
@@ -287,26 +287,26 @@
         <ele>7.90</ele>
         <time>2022-04-11T10:16:01Z</time>
         <fix>dgps</fix>
-        <sat>20</sat>
+        <sat>26</sat>
         <extensions>
           <gpx_fix:fix>
-            <gpx_fix:gps view="8" lock="7">
-              <gpx_fix:sig id="l1ca" view="8" lock="6" />
-              <gpx_fix:sig id="l5" view="4" lock="3" />
+            <gpx_fix:gps sat="7">
+              <gpx_fix:sig id="l1ca" sat="6" />
+              <gpx_fix:sig id="l5" sat="3" />
             </gpx_fix:gps>
-            <gpx_fix:glonass view="7" lock="6">
-              <gpx_fix:sig id="l1of" view="7" lock="6" />
+            <gpx_fix:glonass sat="6">
+              <gpx_fix:sig id="l1of" sat="6" />
             </gpx_fix:glonass>
-            <gpx_fix:galileo view="6" lock="5">
-              <gpx_fix:sig id="e1bc" view="6" lock="4" />
-              <gpx_fix:sig id="e5a" view="3" lock="2" />
+            <gpx_fix:galileo sat="5">
+              <gpx_fix:sig id="e1bc" sat="4" />
+              <gpx_fix:sig id="e5a" sat="2" />
             </gpx_fix:galileo>
-            <gpx_fix:beidou view="5" lock="5">
-              <gpx_fix:sig id="b1i" view="5" lock="5" />
+            <gpx_fix:beidou sat="5">
+              <gpx_fix:sig id="b1i" sat="5" />
             </gpx_fix:beidou>
-            <gpx_fix:qzss view="4" lock="3">
-              <gpx_fix:sig id="l1ca" view="4" lock="3" />
-              <gpx_fix:sig id="l5" view="2" lock="2" />
+            <gpx_fix:qzss sat="3">
+              <gpx_fix:sig id="l1ca" sat="3" />
+              <gpx_fix:sig id="l5" sat="2" />
             </gpx_fix:qzss>
           </gpx_fix:fix>
         </extensions>
