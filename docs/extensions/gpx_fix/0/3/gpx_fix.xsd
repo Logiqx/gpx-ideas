@@ -23,49 +23,49 @@
       <xsd:element name="gps" type="gpsType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            GPS satellite counts, overall and (optionally) for specific signals.
+            Number of GPS satellites used in the GNSS solution, overall and (optionally) for specific signals.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="glonass" type="glonassType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            GLONASS satellite counts, overall and (optionally) for specific signals.
+            Number of GLONASS satellites used in the GNSS solution, overall and (optionally) for specific signals.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="galileo" type="galileoType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Galileo satellite counts, overall and (optionally) for specific signals.
+            Number of Galileo satellites used in the GNSS solution, overall and (optionally) for specific signals.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="beidou" type="beidouType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            BeiDou / BDS satellite counts, overall and (optionally) for specific signals.
+            Number of BeiDou / BDS satellites used in the GNSS solution, overall and (optionally) for specific signals.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="qzss" type="qzssType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            QZSS satellite counts, overall and (optionally) for specific signals.
+            Number of QZSS satellites used in the GNSS solution, overall and (optionally) for specific signals.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="navic" type="navicType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            NavIC / IRNSS satellite counts, overall and (optionally) for specific signals.
+            Number of NavIC / IRNSS satellites used in the GNSS solution, overall and (optionally) for specific signals.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="sbas" type="sbasType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            SBAS satellite counts, overall and (optionally) for specific signals.
+            Number of SBAS satellites used in the GNSS solution, overall and (optionally) for specific signals.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -112,14 +112,14 @@
   <xsd:complexType name="gpsType">
     <xsd:annotation>
       <xsd:documentation>
-        GPS satellite counts, overall and (optionally) for specific signals.
+        Number of GPS satellites used in the GNSS solution, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="sig" type="gpsSignalType" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
           <xsd:documentation>
-            GPS satellite counts for a specific signal.
+            Number of GPS satellites used in the GNSS solution for a specific signal.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -131,14 +131,9 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="view" type="xsd:nonNegativeInteger">
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of GPS satellites in view. </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
-      <xsd:annotation>
-        <xsd:documentation> Number of GPS satellites with lock. </xsd:documentation>
+        <xsd:documentation> Number of GPS satellites used in the GNSS solution. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -146,14 +141,14 @@
   <xsd:complexType name="glonassType">
     <xsd:annotation>
       <xsd:documentation>
-        GLONASS satellite counts, overall and (optionally) for specific signals.
+        Number of GLONASS satellites used in the GNSS solution, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="sig" type="glonassSignalType" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
           <xsd:documentation>
-            GLONASS satellite counts for a specific signal.
+            Number of GLONASS satellites used in the GNSS solution for a specific signal.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -165,14 +160,9 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="view" type="xsd:nonNegativeInteger">
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of GLONASS satellites in view. </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
-      <xsd:annotation>
-        <xsd:documentation> Number of GLONASS satellites with lock. </xsd:documentation>
+        <xsd:documentation> Number of GLONASS satellites used in the GNSS solution. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -180,14 +170,14 @@
   <xsd:complexType name="galileoType">
     <xsd:annotation>
       <xsd:documentation>
-        Galileo satellite counts, overall and (optionally) for specific signals.
+        Number of Galileo satellites used in the GNSS solution, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="sig" type="galileoSignalType" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
           <xsd:documentation>
-            Galileo satellite counts for a specific signal.
+            Number of Galileo satellites used in the GNSS solution for a specific signal.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -199,14 +189,9 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="view" type="xsd:nonNegativeInteger">
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of Galileo satellites in view. </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
-      <xsd:annotation>
-        <xsd:documentation> Number of Galileo satellites with lock. </xsd:documentation>
+        <xsd:documentation> Number of Galileo satellites used in the GNSS solution. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -214,14 +199,14 @@
   <xsd:complexType name="beidouType">
     <xsd:annotation>
       <xsd:documentation>
-        BeiDou / BDS satellite counts, overall and (optionally) for specific signals.
+        Number of BeiDou / BDS satellites used in the GNSS solution, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="sig" type="beidouSignalType" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
           <xsd:documentation>
-            BeiDou / BDS satellite counts for a specific signal.
+            Number of BeiDou / BDS satellites used in the GNSS solution for a specific signal.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -233,14 +218,9 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="view" type="xsd:nonNegativeInteger">
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of BeiDou / BDS satellites in view. </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
-      <xsd:annotation>
-        <xsd:documentation> Number of BeiDou / BDS satellites with lock. </xsd:documentation>
+        <xsd:documentation> Number of BeiDou / BDS satellites used in the GNSS solution. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -248,14 +228,14 @@
   <xsd:complexType name="qzssType">
     <xsd:annotation>
       <xsd:documentation>
-        QZSS satellite counts, overall and (optionally) for specific signals.
+        Number of QZSS satellites used in the GNSS solution, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="sig" type="qzssSignalType" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
           <xsd:documentation>
-            QZSS satellite counts for a specific signal.
+            Number of QZSS satellites used in the GNSS solution for a specific signal.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -267,14 +247,9 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="view" type="xsd:nonNegativeInteger">
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of QZSS satellites in view. </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
-      <xsd:annotation>
-        <xsd:documentation> Number of QZSS satellites with lock. </xsd:documentation>
+        <xsd:documentation> Number of QZSS satellites used in the GNSS solution. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -282,14 +257,14 @@
   <xsd:complexType name="navicType">
     <xsd:annotation>
       <xsd:documentation>
-        NavIC / IRNSS satellite counts, overall and (optionally) for specific signals.
+        Number of NavIC / IRNSS satellites used in the GNSS solution, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="sig" type="navicSignalType" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
           <xsd:documentation>
-            NavIC / IRNSS satellite counts for a specific signal.
+            Number of NavIC / IRNSS satellites used in the GNSS solution for a specific signal.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -301,14 +276,9 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="view" type="xsd:nonNegativeInteger">
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of NavIC / IRNSS satellites in view. </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
-      <xsd:annotation>
-        <xsd:documentation> Number of NavIC / IRNSS satellites with lock. </xsd:documentation>
+        <xsd:documentation> Number of NavIC / IRNSS satellites used in the GNSS solution. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -316,14 +286,14 @@
   <xsd:complexType name="sbasType">
     <xsd:annotation>
       <xsd:documentation>
-        SBAS satellite counts, overall and (optionally) for specific signals.
+        Number of SBAS satellites used in the GNSS solution, overall and (optionally) for specific signals.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="sig" type="sbasSignalType" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
           <xsd:documentation>
-            SBAS satellite counts for a specific signal.
+            Number of SBAS satellites used in the GNSS solution for a specific signal.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -335,14 +305,9 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="view" type="xsd:nonNegativeInteger">
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of SBAS satellites in view. </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
-      <xsd:annotation>
-        <xsd:documentation> Number of SBAS satellites with lock. </xsd:documentation>
+        <xsd:documentation> Number of SBAS satellites used in the GNSS solution. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -350,7 +315,7 @@
   <xsd:complexType name="gpsSignalType">
     <xsd:annotation>
       <xsd:documentation>
-        GPS satellite counts for a specific signal.
+        Number of GPS satellites used in the GNSS solution for a specific signal.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
@@ -367,14 +332,9 @@
         <xsd:documentation> GPS signal ID. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="view" type="xsd:nonNegativeInteger">
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of GPS satellites in view for this signal. </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
-      <xsd:annotation>
-        <xsd:documentation> Number of GPS satellites with lock for this signal. </xsd:documentation>
+        <xsd:documentation> Number of GPS satellites used in the GNSS solution. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -382,7 +342,7 @@
   <xsd:complexType name="glonassSignalType">
     <xsd:annotation>
       <xsd:documentation>
-        GLONASS satellite counts for a specific signal.
+        Number of GLONASS satellites used in the GNSS solution for a specific signal.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
@@ -399,14 +359,9 @@
         <xsd:documentation> GLONASS signal ID. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="view" type="xsd:nonNegativeInteger">
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of GLONASS satellites in view for this signal. </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
-      <xsd:annotation>
-        <xsd:documentation> Number of GLONASS satellites with lock for this signal. </xsd:documentation>
+        <xsd:documentation> Number of GLONASS satellites used in the GNSS solution. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -414,7 +369,7 @@
   <xsd:complexType name="galileoSignalType">
     <xsd:annotation>
       <xsd:documentation>
-        Galileo satellite counts for a specific signal.
+        Number of Galileo satellites used in the GNSS solution for a specific signal.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
@@ -431,14 +386,9 @@
         <xsd:documentation> Galileo signal ID. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="view" type="xsd:nonNegativeInteger">
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of Galileo satellites in view for this signal. </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
-      <xsd:annotation>
-        <xsd:documentation> Number of Galileo satellites with lock for this signal. </xsd:documentation>
+        <xsd:documentation> Number of Galileo satellites used in the GNSS solution. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -446,7 +396,7 @@
   <xsd:complexType name="beidouSignalType">
     <xsd:annotation>
       <xsd:documentation>
-        BeiDou / BDS satellite counts for a specific signal.
+        Number of BeiDou / BDS satellites used in the GNSS solution for a specific signal.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
@@ -463,14 +413,9 @@
         <xsd:documentation> BeiDou / BDS signal ID. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="view" type="xsd:nonNegativeInteger">
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of BeiDou / BDS satellites in view for this signal. </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
-      <xsd:annotation>
-        <xsd:documentation> Number of BeiDou / BDS satellites with lock for this signal. </xsd:documentation>
+        <xsd:documentation> Number of BeiDou / BDS satellites used in the GNSS solution. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -478,7 +423,7 @@
   <xsd:complexType name="qzssSignalType">
     <xsd:annotation>
       <xsd:documentation>
-        QZSS satellite counts for a specific signal.
+        Number of QZSS satellites used in the GNSS solution for a specific signal.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
@@ -495,14 +440,9 @@
         <xsd:documentation> QZSS signal ID. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="view" type="xsd:nonNegativeInteger">
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of QZSS satellites in view for this signal. </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
-      <xsd:annotation>
-        <xsd:documentation> Number of QZSS satellites with lock for this signal. </xsd:documentation>
+        <xsd:documentation> Number of QZSS satellites used in the GNSS solution. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -510,7 +450,7 @@
   <xsd:complexType name="navicSignalType">
     <xsd:annotation>
       <xsd:documentation>
-        NavIC / IRNSS satellite counts for a specific signal.
+        Number of NavIC / IRNSS satellites used in the GNSS solution for a specific signal.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
@@ -527,14 +467,9 @@
         <xsd:documentation> NavIC / IRNSS signal ID. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="view" type="xsd:nonNegativeInteger">
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of NavIC / IRNSS satellites in view for this signal. </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
-      <xsd:annotation>
-        <xsd:documentation> Number of NavIC / IRNSS satellites with lock for this signal. </xsd:documentation>
+        <xsd:documentation> Number of NavIC / IRNSS satellites used in the GNSS solution. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -542,7 +477,7 @@
   <xsd:complexType name="sbasSignalType">
     <xsd:annotation>
       <xsd:documentation>
-        SBAS satellite counts for a specific signal.
+        Number of SBAS satellites used in the GNSS solution for a specific signal.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
@@ -559,14 +494,9 @@
         <xsd:documentation> SBAS signal ID. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="view" type="xsd:nonNegativeInteger">
+    <xsd:attribute name="sat" type="xsd:nonNegativeInteger">
       <xsd:annotation>
-        <xsd:documentation> Number of SBAS satellites in view for this signal. </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="lock" type="xsd:nonNegativeInteger">
-      <xsd:annotation>
-        <xsd:documentation> Number of SBAS satellites with lock for this signal. </xsd:documentation>
+        <xsd:documentation> Number of SBAS satellites used in the GNSS solution. </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
