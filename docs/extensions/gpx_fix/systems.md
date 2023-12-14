@@ -116,7 +116,7 @@ Notes
 - RINEX attributes for z-tracking, [codeless and semi-codeless](https://gssc.esa.int/navipedia/index.php/GPS_C1,_P1_and_P2_Codes_and_Receiver_Types) tracking of the P(Y) code have been omitted.
   - n.b. Z-tracking, codeless and semi-codeless tracking of P(Y) should no [longer be required](https://www.gps.gov/technical/codeless/), due to availability of the L2C signal.
 
-- There is obvious need for the distinction of an [RMP](https://www.gps.gov/governance/advisory/meetings/2016-12/voce.pdf) antenna being used for the M code in the GPX extension.
+- There is no obvious need for the distinction of an [RMP](https://www.gps.gov/governance/advisory/meetings/2016-12/voce.pdf) antenna being used for the M code in the GPX extension.
 
 
 
