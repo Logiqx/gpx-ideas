@@ -31,7 +31,7 @@ The gpx_fix extension supports signal information in GPX files:
       <gpx_fix:glonass sat="6">
         <gpx_fix:sig id="l1of" sat="6" />
       </gpx_fix:glonass>
-      <gpx_fix:galileo sat"5">
+      <gpx_fix:galileo sat="5">
         <gpx_fix:sig id="e1bc" sat="4" />
         <gpx_fix:sig id="e5a" sat="2" />
       </gpx_fix:galileo>
