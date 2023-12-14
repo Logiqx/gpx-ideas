@@ -423,7 +423,12 @@ GPX readers should be coded such that they can tolerate future additions within 
 
 The simplest and most common type of [differential GPS / GNSS](https://gssc.esa.int/navipedia/index.php?title=Differential_GNSS#Differential_GNSS) is known as DGPS / DGNSS. In essence, ground-based reference stations are able to calculate the errors affecting the [pseudorange](https://gssc.esa.int/navipedia/index.php/GNSS_Basic_Observables#Pseudorange) observables, which can then be used by other receivers to calculate more accurate solutions. DGPS / DGNSS may refer to [GBAS](https://gssc.esa.int/navipedia/index.php?title=Ground-Based_Augmentation_System_(GBAS)) or [SBAS](https://gssc.esa.int/navipedia/index.php?title=SBAS_Fundamentals) solutions.
 
-The best way to indicate that DGPS / DGNSS is being used is via the original `<fix>` element:
+Some examples of satellite based DGNSS:
+
+- SBAS which includes WAAS, EGNOS, MSAS, GAGAN, BDSBAS, etc.
+- QZSS Sub-meter Level Augmentation Service ([SLAS](https://qzss.go.jp/en/overview/services/sv05_slas.html)) which is compatible with DGPS code phase positioning.
+
+The best way to indicate that DGPS / DGNSS / SBAS / SLAS is being used is via the original `<fix>` element:
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -446,6 +451,8 @@ It would be equally valid to represent DGPS / DGNSS as shown below, but the simp
 </trkpt>
 ```
 
+Use of DGPS can be determined by the quality indicator in [GGA](https://gpsd.gitlab.io/gpsd/NMEA.html#_gga_global_positioning_system_fix_data) (value = 2) and the mode indicator / navigation status of [GNS](https://gpsd.gitlab.io/gpsd/NMEA.html#_gns_fix_data), [GLL](https://gpsd.gitlab.io/gpsd/NMEA.html#_gll_geographic_position_latitudelongitude), [VTG](https://gpsd.gitlab.io/gpsd/NMEA.html#_vtg_track_made_good_and_ground_speed), and [RMC](https://gpsd.gitlab.io/gpsd/NMEA.html#_rmc_recommended_minimum_navigation_information) (value = "D").
+
 
 
 #### RTK and PPK
@@ -454,7 +461,7 @@ It would be equally valid to represent DGPS / DGNSS as shown below, but the simp
 
 Positions are calculated relative to one or more reference stations which have precisely known positions, thus providing a very precise position for the receiver. RTK can produce either float solutions or fixed solutions, and PPK has the exact equivalents.
 
-Much like DGNSS / SBAS / GBAS, no distinction is proposed for RTK, Network RTK ([NRTK](https://gssc.esa.int/navipedia/index.php?title=RTK_Systems#RTK_Networks)) or Wide-Area RTK ([WARTK](https://gssc.esa.int/navipedia/index.php?title=Wide_Area_RTK_(WARTK))).
+Much like DGNSS / SBAS / GBAS, no distinction is proposed for RTK, Network RTK ([NRTK](https://gssc.esa.int/navipedia/index.php?title=RTK_Systems#RTK_Networks) or NTK) or Wide-Area RTK ([WARTK](https://gssc.esa.int/navipedia/index.php?title=Wide_Area_RTK_(WARTK))).
 
 | Augmentation | Description                                  |
 | ------------ | -------------------------------------------- |
@@ -494,6 +501,11 @@ The GPX fix extension makes no distinction between converging and converged solu
 | ppp-ar       | PPP with phase ambiguity resolution. PPP-AR provides a centimeter level positioning solution by correcting signal phase bias to resolve the integer ambiguity of the carrier phase. Convergence time can be up to 30 minutes. |
 | ppp-rtk      | PPP with accuracy close to RTK. PPP-RTK is able to provide position solutions at centimeter level with convergence times similar to RTK using atmospheric corrections. Convergence time can be as little as 1 minute. |
 
+Examples of PPP capabilities for GNSS / RNSS:
+
+- QZSS [MADOCA](https://qzss.go.jp/en/overview/services/sv13_madoca.html) enables PPP / PPP-AR.
+- QZSS [CLAS](https://qzss.go.jp/en/overview/services/sv06_clas.html) and Galileo [HAS](https://www.euspa.europa.eu/european-space/galileo/services/galileo-high-accuracy-service-has) enables PPP-RTK.
+
 To avoid possible confusion with PPS, PPP solutions should be described as `<fix>dgps</fix>`, not `<fix>pps</fix>`.
 
 ```xml
@@ -507,78 +519,37 @@ To avoid possible confusion with PPS, PPP solutions should be described as `<fix
 </trkpt>
 ```
 
-
-
-### Multi-GNSS
-
-Multi-GNSS solutions may use several of the global systems (GPS, GLONASS, Galileo / GAL and BeiDou / BDS) and regional systems (QZSS and IRNSS / NavIC). The use of multiple constellations increases the accuracy of GNSS solutions, such that they exceed DGPS and the military PPS.
-
-Representing the systems in use can be seen as desirable, plus the number of satellites and maybe the specific signals. This proposal uses a dedicated XML element for each constellation, so that specifics such as frequency bands and their signals can be enumerated in the gpx_fix schema.
-
-The example shows how the GPS fix extensions can be used to list the constellations used in the PVT solution, plus the number of satellites:
-
-```xml
-<trkpt lat="50.5710623" lon="-2.4563484">
-  <ele>7.90</ele>
-  <time>2022-04-11T10:16:01Z</time>
-  <fix>dgps</fix>
-  <sat>35</sat>
-  <extensions>
-    <gpx_fix:fix>
-      <gpx_fix:gps sat="9" />
-      <gpx_fix:glonass sat="8" />
-      <gpx_fix:galileo sat="9" />
-      <gpx_fix:beidou sat="7" />
-    </gpx_fix:fix>
-  </extensions>
-</trkpt>
-```
-
-Determining the number of satellites in use for each constellation can be found in the GSA messages (various talker IDs).
+Use of PPP may be determined from the correction source (e.g. corrSource) in binary messages such as UBX-NAV-SIG.
 
 
 
-### Multi-Band
+### GNSS Constellations
 
-Multi-band receivers have started to become widely available in the past few years which is another way that the accuracy of GNSS solutions can be improved. The use of multiple frequencies allows the ionospheric errors to be modelled / removed and some frequencies include signals with chipping rates matching the military PPS signals (10.23 MHz).
+This section describes how the number of active GNSS satellites may be recorded using the gpx_fix extension. The number of satellites for each constellation can be represented in the GPX file, both overall and also broken down by signal type.
 
-Each of the global and regional constellations have their own set of frequency bands, within which there will be a number of different signals. I'm not 100% sure whether the "signal" attribute should be included in the GPX extension, but I'm inclined to believe that "band" should be included. It should be recognised that both of these requirements are relatively niche, but they are supported by [NMEA](https://gpsd.gitlab.io/gpsd/NMEA.html#_nmea_4_11_system_id_and_signal_id) and the Android [Location](https://developer.android.com/reference/android/location/GnssMeasurement#getCodeType()) API.
+The elements described in this section are to be used in addition to the existing `<sat>` element, which should still be included in GPX files for backwards compatibility.
 
-The example below shows how the fix of a multi-band GNSS receiver might be represented:
+#### Multi-GNSS
+
+Multi-GNSS solutions may use several of the global systems (GPS, GLONASS, Galileo and BeiDou / BDS) and regional systems (QZSS and NavIC / IRNSS). The use of multiple constellations increases the accuracy of GNSS solutions, such that they exceed DGPS and the military PPS.
+
+Representing the number of active satellites for each system is desirable, and even the specific signals on dual-band receivers. This proposal uses a dedicated XML element for each constellation, so that specifics such as the different signals can be enumerated in the gpx_fix schema.
+
+This example describes the number of satellites used in the PVT solution, essentially providing a breakdown for the `<sat>` element:
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
   <ele>7.90</ele>
   <time>2022-04-11T10:16:01Z</time>
   <fix>dgps</fix>
-  <sat>35</sat>
+  <sat>26</sat>
   <extensions>
     <gpx_fix:fix>
-      <gpx_fix:gps band="L1" signal="C/A" sat="6" />
-      <gpx_fix:gps band="L5" sat="3" />
-      <gpx_fix:glonass band="G1" signal="C/A" sat="8" />
-      <gpx_fix:galileo band="E1" signal="B+C" sat="6" />
-      <gpx_fix:galileo band="E5a" sat="3" />
-      <gpx_fix:beidou band="B1I" sat="7" />
-    </gpx_fix:fix>
-  </extensions>
-</trkpt>
-```
-
-It should be noted that "band" and "signal" should have default values of "all", allowing for simplified usage listing only the number of satellites:
-
-```xml
-<trkpt lat="50.5710623" lon="-2.4563484">
-  <ele>7.90</ele>
-  <time>2022-04-11T10:16:01Z</time>
-  <fix>dgps</fix>
-  <sat>35</sat>
-  <extensions>
-    <gpx_fix:fix>
-      <gpx_fix:gps sat="9" />
-      <gpx_fix:glonass sat="8" />
-      <gpx_fix:galileo sat="9" />
-      <gpx_fix:beidou sat="7" />
+      <gpx_fix:gps sat="7" />
+      <gpx_fix:glonass sat="6" />
+      <gpx_fix:galileo sat="5" />
+      <gpx_fix:beidou sat="5" />
+      <gpx_fix:qzss sat="3" />
     </gpx_fix:fix>
   </extensions>
 </trkpt>
@@ -586,12 +557,57 @@ It should be noted that "band" and "signal" should have default values of "all",
 
 Notes:
 
-- Frequency bands can be determined from the carrier frequency
-  - GPSTest by Barbeau - [description](https://github.com/barbeau/gpstest/blob/221e46cb30612021bc4804adee53af9754dddc39/fastlane/metadata/android/en-US/full_description.txt#L4) + [code](https://github.com/barbeau/gpstest/blob/221e46cb30612021bc4804adee53af9754dddc39/library/src/main/java/com/android/gpstest/library/util/CarrierFreqUtils.java)
+- Determining the number of active satellites for each system can use GSA sentences, or binary payloads such UBX-NAV-SAT.
+- Further information about the GSA sentence and how it should be interpreted can be found on another [page](https://logiqx.github.io/gps-wizard/nmea/messages/gsa.html).
 
-- The most authoritative source for GNSS signals is probably the RINEX file format
-  - [Wikipedia](https://en.wikipedia.org/wiki/RINEX#External_links) - see [v4.01](https://files.igs.org/pub/data/format/rinex_4.01.pdf) of the specification (tables 10-16)
 
+
+#### Multi-Band
+
+Multi-band receivers have started to become widely available in the past few years which is another way that the accuracy of GNSS solutions can be improved. The use of multiple frequencies allows the ionospheric errors to be modelled / removed and some frequencies include signals with chipping rates matching the military PPS signals (10.23 MHz).
+
+Each of the global and regional constellations have their own frequency bands and signals. Including details of the signal(s) in use is probably quite niche, but they are readily available from [NMEA](https://gpsd.gitlab.io/gpsd/NMEA.html#_nmea_4_11_system_id_and_signal_id) sentences, binary formats such as UBX and the Android [Location](https://developer.android.com/reference/android/location/GnssMeasurement#getCodeType()) API.
+
+The example below shows how the fix of a multi-band GNSS receiver may be represented:
+
+```xml
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <fix>dgps</fix>
+  <sat>26</sat>
+  <extensions>
+    <gpx_fix:fix>
+      <gpx_fix:gps sat="7">
+        <gpx_fix:sig id="l1ca" sat="6" />
+        <gpx_fix:sig id="l5" sat="3" />
+      </gpx_fix:gps>
+      <gpx_fix:glonass sat="6">
+        <gpx_fix:sig id="l1of" sat="6" />
+      </gpx_fix:glonass>
+      <gpx_fix:galileo sat"5">
+        <gpx_fix:sig id="e1bc" sat="4" />
+        <gpx_fix:sig id="e5a" sat="2" />
+      </gpx_fix:galileo>
+      <gpx_fix:beidou sat="5">
+        <gpx_fix:sig id="b1i" sat="5" />
+      </gpx_fix:beidou>
+      <gpx_fix:qzss sat="3">
+        <gpx_fix:sig id="l1ca" sat="3" />
+        <gpx_fix:sig id="l5" sat="2" />
+      </gpx_fix:qzss>
+    </gpx_fix:fix>
+  </extensions>
+</trkpt>
+```
+
+Notes:
+
+- Determination of systems and signals can be done using [GSA](https://gpsd.gitlab.io/gpsd/NMEA.html#_gsa_gps_dop_and_active_satellites) sentences, or [UBX](https://portal.u-blox.com/s/question/0D52p0000A8lz6oCQA/is-there-a-way-of-knowing-which-satellites-an-f9p-module-is-using-in-an-rtk-solution) payloads such UBX-NAV-SAT or UBX-NAV-SIG.
+  - Detailed explanations of GSA sentences and how they may be interpreted can be found on another [page](https://logiqx.github.io/gps-wizard/nmea/messages/gsa.html).
+- Android provides satellite and signal information via the [GnssStatus](https://developer.android.com/reference/android/location/GnssStatus) and [GnssMeasurement](https://developer.android.com/reference/android/location/GnssMeasurement#getCodeType()) classes.
+- Ordering of `<gpx_fix:sig>` elements cannot be enforced by the XSD, but they should match the order in the enumerated types.
+- Full details about the different GNSS signals and the relevant mappings are also on another [page](systems.md).
 
 
 
@@ -600,13 +616,14 @@ Notes:
 The following topics have not been included in this proposal:
 
 - DGPS / DGNSS technology
-  - Differentiation between SBAS, GBAS and ABAS
-- SBAS in use - WAAS, EGNOS, MSAS, GAGAN, L1Sb (QZSS), etc
+  - Differentiation between SBAS, SLAS, GBAS and ABAS
+  
+- SBAS in use - WAAS, EGNOS, MSAS, GAGAN, BDSBAS, etc - see [Navipedia](https://gssc.esa.int/navipedia/index.php/SBAS_Systems)
   - The latest list of systems can be found in the [L1 C/A](https://www.gps.gov/technical/prn-codes/) PRN code assignments
 - RTK technology
   - Differentiation between RTK, Network RTK ([NRTK](https://gssc.esa.int/navipedia/index.php?title=RTK_Systems#RTK_Networks)) and Wide-Area RTK ([WARTK](https://gssc.esa.int/navipedia/index.php?title=Wide_Area_RTK_(WARTK))).
 
-- QZSS Indoor Messaging System ([IMES](https://www.unoosa.org/documents/pdf/icg/activities/2008/icg3/32.pdf)) seems to have fallen by the wayside?
+- QZSS Indoor Messaging System ([IMES](https://www.unoosa.org/documents/pdf/icg/activities/2008/icg3/32.pdf)) which does not appear to be widely adopted
   - Articles dating from 2009 to 2014 - [Inside GNSS](https://insidegnss.com/qzsss-indoor-messaging-system/) + [GPS World](https://www.gpsworld.com/wirelessindoor-positioningopening-up-indoors-11603/) + [GPS World](https://www.gpsworld.com/danger-will-robinson-beware-the-imes-of-japan/)
 - Navigation status from the GNS sentence, and extended FAA mode indicator
   - S = Safe, C = Caution, U = Unsafe, V = Not valid for navigation
@@ -619,10 +636,10 @@ The following topics have not been included in this proposal:
 
 ### Schema
 
-The latest provisional schema (XSD), plus examples (GPX) reflecting this proposal are available:
+The latest provisional schema 0.3 (XSD), plus examples (GPX) reflecting this proposal are available:
 
-- [gpx_fix.xsd](0/2/gpx_fix.xsd)
-- [examples.gpx](0/2/examples.gpx)
+- [gpx_fix.xsd](0/3/gpx_fix.xsd)
+- [examples.gpx](0/3/examples.gpx)
 
 
 
@@ -639,6 +656,6 @@ Some useful links that relate to some of the topics in this document:
   - [Assessment of the performance of GPS/Galileo PPP-RTK convergence using ionospheric corrections from networks with different scales](https://earth-planets-space.springeropen.com/articles/10.1186/s40623-022-01602-9)
   - [PPP–RTK functional models formulated with undifferenced and uncombined GNSS observations](https://satellite-navigation.springeropen.com/articles/10.1186/s43020-022-00064-4)
 - Signals
-  - Signal plans on ESA Navipedia - [GPS](https://gssc.esa.int/navipedia/index.php?title=GPS_Signal_Plan), [GLONASS](https://gssc.esa.int/navipedia/index.php?title=GLONASS_Signal_Plan), [Galileo](https://gssc.esa.int/navipedia/index.php/Galileo_Signal_Plan#Galileo_E1_Band) (GAL), [BeiDou](https://gssc.esa.int/navipedia/index.php?title=BeiDou_Signal_Plan) (BDS), [QZSS](https://gssc.esa.int/navipedia/index.php?title=QZSS_Signal_Plan), [IRNSS](https://gssc.esa.int/navipedia/index.php?title=IRNSS_Signal_Plan) (NavIC)
+  - Signal plans on ESA Navipedia - [GPS](https://gssc.esa.int/navipedia/index.php?title=GPS_Signal_Plan), [GLONASS](https://gssc.esa.int/navipedia/index.php?title=GLONASS_Signal_Plan), [Galileo](https://gssc.esa.int/navipedia/index.php/Galileo_Signal_Plan#Galileo_E1_Band), [BeiDou](https://gssc.esa.int/navipedia/index.php?title=BeiDou_Signal_Plan) (BDS), [QZSS](https://gssc.esa.int/navipedia/index.php?title=QZSS_Signal_Plan), [IRNSS](https://gssc.esa.int/navipedia/index.php?title=IRNSS_Signal_Plan) (NavIC)
   - [Everything RF](https://www.everythingrf.com/community/navigating-the-l1-l2-and-l5-band-options-for-gnss) - overview of the various frequency bands
   - GPSTest by Barbeau - [description](https://github.com/barbeau/gpstest/blob/221e46cb30612021bc4804adee53af9754dddc39/fastlane/metadata/android/en-US/full_description.txt#L4) + [code](https://github.com/barbeau/gpstest/blob/221e46cb30612021bc4804adee53af9754dddc39/library/src/main/java/com/android/gpstest/library/util/CarrierFreqUtils.java)
