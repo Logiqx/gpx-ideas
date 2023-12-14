@@ -603,7 +603,7 @@
   <xsd:simpleType name="gpsSignalIdType">
     <xsd:annotation>
       <xsd:documentation>
-        GPS signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/signals.html
+        GPS signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/systems.html#gps
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
@@ -621,7 +621,7 @@
   <xsd:simpleType name="glonassSignalIdType">
     <xsd:annotation>
       <xsd:documentation>
-        GLONASS signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/signals.html
+        GLONASS signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/systems.html#glonass
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
@@ -640,7 +640,7 @@
   <xsd:simpleType name="galileoSignalIdType">
     <xsd:annotation>
       <xsd:documentation>
-        Galileo signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/signals.html
+        Galileo signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/systems.html#galileo
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
@@ -657,7 +657,7 @@
   <xsd:simpleType name="beidouSignalIdType">
     <xsd:annotation>
       <xsd:documentation>
-        BeiDou / BDS signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/signals.html
+        BeiDou / BDS signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/systems.html#beidou
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
@@ -679,7 +679,7 @@
   <xsd:simpleType name="qzssSignalIdType">
     <xsd:annotation>
       <xsd:documentation>
-        QZSS signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/signals.html
+        QZSS signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/systems.html#qzss
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
@@ -699,7 +699,7 @@
   <xsd:simpleType name="navicSignalIdType">
     <xsd:annotation>
       <xsd:documentation>
-        NavIC / IRNSS signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/signals.html
+        NavIC / IRNSS signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/systems.html#navic
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
@@ -714,7 +714,7 @@
   <xsd:simpleType name="sbasSignalIdType">
     <xsd:annotation>
       <xsd:documentation>
-        SBAS signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/signals.html
+        SBAS signals - see https://logiqx.github.io/gpx-ideas/extensions/gpx_fix/systems.html#sbas
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
