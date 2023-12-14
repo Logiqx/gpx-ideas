@@ -13,17 +13,17 @@ Links to the provisional schema (XSD), plus examples (GPX) reflecting the origin
 
 #### 0.3
 
-- Add GNSS signals, replacing frequency bands
-- Add SBAS element after the existing GNSS elements
-- Change validation within extensions from "lax" to "strict"
-- Tweak comments for extensions
-- Remove blank lines within complex types, hopefully improving readability
+- Add GNSS signals, replacing frequency bands.
+- Add SBAS element after the existing GNSS elements.
+- Change validation within extensions from "lax" to "strict".
+- Tweak comments for extensions.
+- Remove blank lines within complex types, hopefully improving readability.
 
 #### 0.2
 
-- Add GNSS elements - GPS, GLONASS, Galileo, BeiDou, QZSS, NavIC
+- Add GNSS elements - GPS, GLONASS, Galileo, BeiDou, QZSS, NavIC.
 
 #### 0.1
 
-- Initial draft
+- Initial draft.
 

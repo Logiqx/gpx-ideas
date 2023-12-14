@@ -13,4 +13,4 @@ Links to the provisional schema (XSD), plus examples (GPX) reflecting the origin
 
 #### 0.1
 
-- Initial draft
+- Initial draft.
