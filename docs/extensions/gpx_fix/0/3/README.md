@@ -15,6 +15,8 @@ Links to the provisional schema (XSD), plus examples (GPX) reflecting the origin
 
 - Add GNSS signals, replacing frequency bands.
 - Add SBAS element after the existing GNSS elements.
+  - SBAS observables (pseudo-range, doppler, carrier) can be used in PVT solutions.
+
 - Change validation within extensions from "lax" to "strict".
 - Tweak comments for extensions.
 - Remove blank lines within complex types, hopefully improving readability.
