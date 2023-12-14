@@ -557,16 +557,17 @@ This example describes the number of satellites used in the PVT solution, essent
 
 Notes:
 
-- Determining the number of active satellites for each system can use GSA sentences, or binary payloads such UBX-NAV-SAT.
-- Further information about the GSA sentence and how it should be interpreted can be found on another [page](https://logiqx.github.io/gps-wizard/nmea/messages/gsa.html).
+- Determining the number of active satellites for each system is possible using GSA sentences, or binary payloads such UBX-NAV-SAT.
+  - Further information about the GSA sentence and how it may be interpreted can be found on another [page](https://logiqx.github.io/gps-wizard/nmea/messages/gsa.html).
+
 
 
 
 #### Multi-Band
 
-Multi-band receivers have started to become widely available in the past few years which is another way that the accuracy of GNSS solutions can be improved. The use of multiple frequencies allows the ionospheric errors to be modelled / removed and some frequencies include signals with chipping rates matching the military PPS signals (10.23 MHz).
+Multi-band receivers have started to become widely available in the past few years which is another way that the accuracy of GNSS solutions can be improved. The use of multiple frequencies allows the ionospheric errors to be modelled and removed, thus increasing positional accuracy. Some frequencies also include signals with chipping rates matching the military PPS signals (10.23 MHz).
 
-Each of the global and regional constellations have their own frequency bands and signals. Including details of the signal(s) in use is probably quite niche, but they are readily available from [NMEA](https://gpsd.gitlab.io/gpsd/NMEA.html#_nmea_4_11_system_id_and_signal_id) sentences, binary formats such as UBX and the Android [Location](https://developer.android.com/reference/android/location/GnssMeasurement#getCodeType()) API.
+Each of the global and regional constellations have their own frequency bands and signals. Including signal details in a GPX file is probably quite niche, but the information is readily available from [NMEA](https://gpsd.gitlab.io/gpsd/NMEA.html#_nmea_4_11_system_id_and_signal_id) sentences, binary formats such as UBX and the Android [Location](https://developer.android.com/reference/android/location/GnssMeasurement#getCodeType()) API.
 
 The example below shows how the fix of a multi-band GNSS receiver may be represented:
 
@@ -604,10 +605,10 @@ The example below shows how the fix of a multi-band GNSS receiver may be represe
 Notes:
 
 - Determination of systems and signals can be done using [GSA](https://gpsd.gitlab.io/gpsd/NMEA.html#_gsa_gps_dop_and_active_satellites) sentences, or [UBX](https://portal.u-blox.com/s/question/0D52p0000A8lz6oCQA/is-there-a-way-of-knowing-which-satellites-an-f9p-module-is-using-in-an-rtk-solution) payloads such UBX-NAV-SAT or UBX-NAV-SIG.
-  - Detailed explanations of GSA sentences and how they may be interpreted can be found on another [page](https://logiqx.github.io/gps-wizard/nmea/messages/gsa.html).
+  - Detailed explanations of GSA sentence and how it may be interpreted can be found on another [page](https://logiqx.github.io/gps-wizard/nmea/messages/gsa.html).
 - Android provides satellite and signal information via the [GnssStatus](https://developer.android.com/reference/android/location/GnssStatus) and [GnssMeasurement](https://developer.android.com/reference/android/location/GnssMeasurement#getCodeType()) classes.
-- Ordering of `<gpx_fix:sig>` elements cannot be enforced by the XSD, but they should match the order in the enumerated types.
-- Full details about the different GNSS signals and the relevant mappings are also on another [page](systems.md).
+- Ordering of `<gpx_fix:sig>` elements cannot be enforced by the XSD, but they should match the order within the enumerated type.
+- Full details about the different GNSS signals and the relevant mappings are also described on another [page](systems.md).
 
 
 
