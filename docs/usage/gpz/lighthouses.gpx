@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<gpx
+  version="1.1"
+  creator="Hand edited - https://logiqx.github.io/gpx-ideas/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xsi:schemaLocation="
+    http://www.topografix.com/GPX/1/1
+    https://www.topografix.com/GPX/1/1/gpx.xsd">
+
+  <metadata>
+    <desc>Example GPZ containing a very simple GPX file and photos</desc>
+  </metadata>
+
+  <wpt lat="50.513380" lon="-2.456620">
+    <desc>View point</desc>
+    <link href="photos/20160723_155428.jpg"><text>Portland Bill Lighthouse</text><type>image/jpeg</type></link>
+  </wpt>
+  
+  <wpt lat="50.222776" lon="-3.642783">
+    <desc>View point</desc>
+    <link href="photos/20230702_135410.jpg"><text>Portland Bill Lighthouse</text><type>image/jpeg</type></link>
+  </wpt>
+</gpx>
