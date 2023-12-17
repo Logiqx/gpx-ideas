@@ -81,9 +81,9 @@ Here is an example of an absolute reference to a file stored on a central server
 
 ### Resolving Relative References
 
-In general, relative references are resolved in relation to the *activity.gpx* file. Any relative URL is resolved against the directory that contains this file, which is considered the root of the GPZ file. In the lighthouse example, the base URL is similar to the following (depending on where you download the GPZ file):
+In general, relative references are resolved in relation to the *activity.gpx* file. Any relative URL is resolved against the directory that contains this file, which is considered the root of the GPZ file. In the lighthouses example, the base URL is similar to the following (depending on where you download the GPZ file):
 
-`example.gpx`
+`lighthouses.gpx`
 
 If you wanted to refer to a file located in a different GPZ file (for example, to *photos/20160723_155428.jpg* contained in *another-example.gpz*, you would use the ".." notation to go up one level in the directory structure, which would take you out of the current GPZ file (*example.gpz*):
 
