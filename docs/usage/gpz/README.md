@@ -41,7 +41,10 @@ Here is the GPX code for one of the photo references:
 ```xml
 <wpt lat="50.513380" lon="-2.456620">
   <desc>View point</desc>
-  <link href="photos/20160723_155428.jpg"><text>Portland Bill Lighthouse</text><type>image/jpeg</type></link>
+  <link href="photos/20160723_155428.jpg">
+    <text>Portland Bill Lighthouse</text>
+    <type>image/jpeg</type>
+  </link>
 </wpt>
 ```
 
@@ -67,7 +70,10 @@ Here is an example of an absolute reference to a file stored on a central server
 ```xml
 <wpt lat="50.513380" lon="-2.456620">
   <desc>View point</desc>
-  <link href="https://logiqx.github.io/gpx-ideas/usage/gpz/photos/20160723_155428.jpg"><text>Portland Bill Lighthouse</text><type>image/jpeg</type></link>
+  <link href="https://logiqx.github.io/gpx-ideas/usage/gpz/photos/20160723_155428.jpg">
+    <text>Portland Bill Lighthouse</text>
+    <type>image/jpeg</type>
+  </link>
 </wpt>
 ```
 

@@ -13,12 +13,18 @@
   </metadata>
 
   <wpt lat="50.513380" lon="-2.456620">
-    <desc>View point</desc>
-    <link href="photos/20160723_155428.jpg"><text>Portland Bill Lighthouse</text><type>image/jpeg</type></link>
+    <desc>View point 1</desc>
+    <link href="photos/20160723_155428.jpg">
+      <text>Portland Bill Lighthouse</text>
+      <type>image/jpeg</type>
+    </link>
   </wpt>
   
   <wpt lat="50.222776" lon="-3.642783">
-    <desc>View point</desc>
-    <link href="photos/20230702_135410.jpg"><text>Portland Bill Lighthouse</text><type>image/jpeg</type></link>
+    <desc>View point 2</desc>
+    <link href="photos/20230702_135410.jpg">
+      <text>Start Point Lighthouse</text>
+      <type>image/jpeg</type>
+    </link>
   </wpt>
 </gpx>
