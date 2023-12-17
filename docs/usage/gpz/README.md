@@ -87,7 +87,12 @@ In general, relative references are resolved in relation to the *activity.gpx* f
 
 If you wanted to refer to a file located in a different GPZ file (for example, to *photos/20160723_155428.jpg* contained in *another-example.gpz*, you would use the ".." notation to go up one level in the directory structure, which would take you out of the current GPZ file (*example.gpz*):
 
-`<link href="../another-example.gpz/photos/20160723_155428.jpg"><text>Another Lighthouse</text><type>image/jpeg</type></link>`
+```xml
+<link href="../another-example.gpz/photos/20160723_155428.jpg">
+  <text>Another Lighthouse</text>
+  <type>image/jpeg</type>
+</link>
+```
 
 ![img](img/relative.png)
 
