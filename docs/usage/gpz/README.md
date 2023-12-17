@@ -1,5 +1,13 @@
 ## GPZ Files
 
+This page describing GPZ files is an adaption of the Google developers page describing [KMZ files](https://developers.google.com/kml/documentation/kmzarchives).
+
+The main structure and wording has been retained, but the original examples have been replaced with GPX/GPZ content.
+
+The pages describing KMZ files and GPZ files are both licensed under the [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/).
+
+
+
 ### What is a GPZ File?
 
 A GPZ file consists of a main GPX file and zero or more supporting files that are packaged using a [Zip utility](http://en.wikipedia.org/wiki/ZIP_(file_format)) into one unit, called an *archive*. The GPZ file can then be stored and emailed as a single entity. When the GPZ file is unzipped, the main *.gpx* file and its supporting files are separated into their original formats and directory structure, with their original filenames and extensions. In addition to being an archive format, the Zip format is also compressed, so an archive can include only a single large GPX file. Depending on the content of the GPX file, this process typically results in 10:1 compression. Your 10 Kbyte GPX file can be served with a 1 Kbyte GPZ file.
@@ -12,9 +20,9 @@ You should create a GPZ file if your *activity.gpx* file is larger than 10 Kbyte
 
 ### Recommended Directory Structure
 
-This section provides a few simple recommendations for the creators of GPX/GPZ files. The example used in this section uses the GPX format to show the inclusion of two photos in addition to the GPX file.
+This section provides a few simple recommendations for the creators of GPX/GPZ files. The example used in this section uses the GPX format to show the inclusion of two photos which accompany the GPX file.
 
-![img](photos/20160723_155428.jpg)
+![img](photos/portland-bill.jpg)
 
 Download the example *[GPZ file](example.gpz)* which contains the GPX and example photos.
 
@@ -30,7 +38,7 @@ Follow these guidelines when creating GPZ files:
 
 4. **Use relative references.** See "References to External Files" for more details. All relative paths begin inside the base folder described above in item 1. For example, if a GPZ file *coastal-walk.gpz* is on the desktop, and its *activity.gpx* file refers to a file *lighthouse.jpg*, which is also on the desktop, the `href` attribute of the `<link>` in the *activity.gpx* file is `../lighthouse.jpg`.
 
-5. Do not use the *.gpz* extension for any of the subfolders within a GPZ file. The *.gpz* extension is reserved for the name of the archive itself. For example, here is the file structure of the lighthouses GPZ file:
+5. Do not use the *.gpz* extension for any of the subfolders within a GPZ file. The *.gpz* extension is reserved for the name of the archive itself. For example, here is the file structure of the example GPZ file:
 
 ![img](img/example.png)
 
@@ -40,10 +48,9 @@ Here is the GPX code for one of the photo references:
 
 ```xml
 <wpt lat="50.513380" lon="-2.456620">
-  <desc>View point</desc>
-  <link href="photos/20160723_155428.jpg">
+  <desc>View from Portland Bill</desc>
+  <link href="photos/portland-bill.jpg">
     <text>Portland Bill Lighthouse</text>
-    <type>image/jpeg</type>
   </link>
 </wpt>
 ```
@@ -56,6 +63,7 @@ The *activity.gpx* file may contain a number of links to other files - images, i
 
 - the `<link href>` element of `<metadata>`,  `<author>`, `<wpt>`, `<rte>`, `<rtept>`, `<trk>`, `<trkseg>`, `<trkpt>`
 - the `<license>` element of `<copyright>`
+- any links within `<extensions>`
 
 These external links can be either *absolute* or *relative* references, as described in the following section. They can refer to files within the same GPZ file, or to files contained in other GPZ files or stored elsewhere on the web. Relative references are always resolved in relation to the *activity.gpx* file, as explained in the section "Resolving Relative References".
 
@@ -69,10 +77,9 @@ Here is an example of an absolute reference to a file stored on a central server
 
 ```xml
 <wpt lat="50.513380" lon="-2.456620">
-  <desc>View point</desc>
-  <link href="https://logiqx.github.io/gpx-ideas/usage/gpz/photos/20160723_155428.jpg">
+  <desc>View from Portland Bill</desc>
+  <link href="https://logiqx.github.io/gpx-ideas/usage/gpz/photos/portland-bill.jpg">
     <text>Portland Bill Lighthouse</text>
-    <type>image/jpeg</type>
   </link>
 </wpt>
 ```
@@ -85,12 +92,11 @@ In general, relative references are resolved in relation to the *activity.gpx* f
 
 `lighthouses.gpx`
 
-If you wanted to refer to a file located in a different GPZ file (for example, to *photos/20160723_155428.jpg* contained in *another-example.gpz*, you would use the ".." notation to go up one level in the directory structure, which would take you out of the current GPZ file (*example.gpz*):
+If you wanted to refer to a file located in a different GPZ file (for example, to *photos/fraggle-rock.jpg* contained in *another.gpz*, you would use the ".." notation to go up one level in the directory structure, which would take you out of the current GPZ file (*example.gpz*):
 
 ```xml
-<link href="../another-example.gpz/photos/20160723_155428.jpg">
+<link href="../another.gpz/photos/fraggle-rock.jpg">
   <text>Another Lighthouse</text>
-  <type>image/jpeg</type>
 </link>
 ```
 

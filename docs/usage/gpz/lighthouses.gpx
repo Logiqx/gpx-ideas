@@ -9,22 +9,20 @@
     https://www.topografix.com/GPX/1/1/gpx.xsd">
 
   <metadata>
-    <desc>Example GPZ containing a very simple GPX file and photos</desc>
+    <desc>Example GPZ containing two waypoints and photographs</desc>
   </metadata>
 
   <wpt lat="50.513380" lon="-2.456620">
-    <desc>View point 1</desc>
-    <link href="photos/20160723_155428.jpg">
+    <desc>View from Portland Bill</desc>
+    <link href="photos/portland-bill.jpg">
       <text>Portland Bill Lighthouse</text>
-      <type>image/jpeg</type>
     </link>
   </wpt>
   
   <wpt lat="50.222776" lon="-3.642783">
-    <desc>View point 2</desc>
-    <link href="photos/20230702_135410.jpg">
+    <desc>View of Start Point</desc>
+    <link href="photos/start-point.jpg">
       <text>Start Point Lighthouse</text>
-      <type>image/jpeg</type>
     </link>
   </wpt>
 </gpx>
