@@ -20,11 +20,11 @@ You should create a GPZ file if your *activity.gpx* file is larger than 10 Kbyte
 
 ### Recommended Directory Structure
 
-This section provides a few simple recommendations for the creators of GPX/GPZ files. The example used in this section uses the GPX format to show the inclusion of two photos which accompany the GPX file.
+This section provides a few simple recommendations for the creators of GPX/GPZ files. The example used in this section uses the GPZ format for the inclusion of two photos which accompany the GPX file.
 
 ![img](photos/portland-bill.jpg)
 
-Download the example *[GPZ file](example.gpz)* which contains the GPX and example photos.
+Download the *[GPZ file](example.gpz)* which contains the example GPX and photos.
 
 **Note:** Applications should strictly enforce the following set of guidelines when resolving relative references in a GPZ file (especially see item 4 in the following list).
 
@@ -36,7 +36,7 @@ Follow these guidelines when creating GPZ files:
 
 3. Include one or more subfolders within the main folder to collect images, icons, sound files, or other resources referenced in the *activity.gpx* file. The complexity of this directory structure depends on the number of supporting files and your preferences for organization.
 
-4. **Use relative references.** See "References to External Files" for more details. All relative paths begin inside the base folder described above in item 1. For example, if a GPZ file *coastal-walk.gpz* is on the desktop, and its *activity.gpx* file refers to a file *lighthouse.jpg*, which is also on the desktop, the `href` attribute of the `<link>` in the *activity.gpx* file is `../lighthouse.jpg`.
+4. **Use relative references.** See [References to External Files](#references-to-external-files) for more details. All relative paths begin inside the base folder described above in item 1. For example, if a GPZ file *coastal-walk.gpz* is on the desktop, and its *activity.gpx* file refers to a file *lighthouse.jpg*, which is also on the desktop, the `href` attribute of the `<link>` in the *activity.gpx* file is `../lighthouse.jpg`.
 
 5. Do not use the *.gpz* extension for any of the subfolders within a GPZ file. The *.gpz* extension is reserved for the name of the archive itself. For example, here is the file structure of the example GPZ file:
 
@@ -59,13 +59,13 @@ Here is the GPX code for one of the photo references:
 
 ### References to External Files
 
-The *activity.gpx* file may contain a number of links to other files - images, icons, sound files, etc. The references to these files are contained in the href attribute (or sometimes, within an element such as `<license>`), which can be found in the following GPX elements:
+The *activity.gpx* file may contain a number of links to other files - images, icons, sound files, etc. The references to these files are contained in the href attribute (or sometimes, within another element), which can be found in the following GPX elements:
 
-- the `<link href>` element of `<metadata>`,  `<author>`, `<wpt>`, `<rte>`, `<rtept>`, `<trk>`, `<trkseg>`, `<trkpt>`
-- the `<license>` element of `<copyright>`
-- any links within `<extensions>`
+- `<link href>` elements within `<metadata>`,  `<author>`, `<wpt>`, `<rte>`, `<rtept>`, `<trk>`, `<trkseg>`, `<trkpt>`
+- `<license>` elements within `<copyright>`
+- link elements within `<extensions>`
 
-These external links can be either *absolute* or *relative* references, as described in the following section. They can refer to files within the same GPZ file, or to files contained in other GPZ files or stored elsewhere on the web. Relative references are always resolved in relation to the *activity.gpx* file, as explained in the section "Resolving Relative References".
+These external links can be either *absolute* or *relative* references, as described in the following section. They can refer to files within the same GPZ file, or to files contained in other GPZ files or stored elsewhere on the web. Relative references are always resolved in relation to the *activity.gpx* file, as explained in the section [Resolving Relative References](#resolving-relative-references).
 
 
 
@@ -90,7 +90,7 @@ Here is an example of an absolute reference to a file stored on a central server
 
 In general, relative references are resolved in relation to the *activity.gpx* file. Any relative URL is resolved against the directory that contains this file, which is considered the root of the GPZ file. In the lighthouses example, the base URL is similar to the following (depending on where you download the GPZ file):
 
-`lighthouses.gpx`
+`example.gpz`
 
 If you wanted to refer to a file located in a different GPZ file (for example, to *photos/fraggle-rock.jpg* contained in *another.gpz*, you would use the ".." notation to go up one level in the directory structure, which would take you out of the current GPZ file (*example.gpz*):
 
