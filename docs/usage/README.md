@@ -8,9 +8,9 @@ All of the topics listed in this document apply to multiple versions of GPX. Cur
 
 ### Compressed Archives
 
-- Document compressed archives (GPZ) for GPX 1.0 / 1.1 / 1.2
+- Support for compressed archives (GPZ) for GPX 1.0 / 1.1 / 1.2
 - Inspired by the KMZ format of KML which is based on the ZIP format
-- This idea was supported by Dan Foster, Robert Lipe, Jeremy Irish and numerous other people
+- Full details are available on a separate [page](gpz/README.md)
 
 
 
