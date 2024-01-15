@@ -41,6 +41,8 @@ The following XSD files relate to Training Center.
 - [TrainingCenterDatabasev2.xsd](TrainingCenterDatabasev2.xsd) + XMLspy [documentation](https://www.javawa.nl/geo/schemas/spy/TrainingCenterDatabasev2.htm)
 - [ActivityExtensionv1.xsd](ActivityExtensionv1.xsd) + XMLspy [documentation](https://www.javawa.nl/geo/schemas/spy/activityExtensionv1.htm)
 - [ActivityExtensionv2.xsd](ActivityExtensionv2.xsd)
+- [UserProfileExtensionv1.xsd](UserProfileExtensionv1.xsd)
+- [UserProfileExtensionv2.xsd](UserProfileExtensionv2.xsd)
 
 
 
