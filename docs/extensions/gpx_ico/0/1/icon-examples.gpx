@@ -9,7 +9,7 @@
     http://www.topografix.com/GPX/1/1
     https://www.topografix.com/GPX/1/1/gpx-strict.xsd
     http://logiqx.github.io/gpx-ideas/extensions/gpx_ico/0/1
-    https://logiqx.github.io/gpx-ideas/extensions/gpx_ico/0/1/gpx-ico.xsd">
+    https://logiqx.github.io/gpx-ideas/extensions/gpx_ico/0/1/gpx_ico.xsd">
 
   <metadata>
     <desc>Example GPZ containing two waypoints with icons</desc>

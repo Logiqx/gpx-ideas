@@ -80,12 +80,12 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="x" type="xsd:pixelsType" use="required">
+    <xsd:attribute name="x" type="pixelsType" use="required">
 	  <xsd:annotation>
 	    <xsd:documentation> Width of the available icons in pixels. </xsd:documentation>
 	  </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="y" type="xsd:pixelsType" use="required">
+    <xsd:attribute name="y" type="pixelsType" use="required">
 	  <xsd:annotation>
 	    <xsd:documentation> Height of the available icons in pixels. </xsd:documentation>
 	  </xsd:annotation>
@@ -103,16 +103,33 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="x" type="xsd:offsetType" use="required">
+    <xsd:attribute name="x" type="offsetType" use="required">
 	  <xsd:annotation>
 	    <xsd:documentation> Number of pixels indicating the x component of the anchor point within the icon. </xsd:documentation>
 	  </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="y" type="xsd:offsetType" use="required">
+    <xsd:attribute name="y" type="offsetType" use="required">
 	  <xsd:annotation>
 	    <xsd:documentation> Number of pixels indicating the y component of the anchor point within the icon. </xsd:documentation>
 	  </xsd:annotation>
     </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="extensionsType">
+    <xsd:annotation>
+      <xsd:documentation>
+        Extensions allow for additional elements from outside of this schema.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:any namespace="##other" processContents="strict" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation>
+            You can add extend complex types by adding your own elements from another schema here.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:any>
+    </xsd:sequence>
   </xsd:complexType>
 
   <xsd:simpleType name="suffixType">
@@ -125,6 +142,7 @@
       <xsd:enumeration value="svg"/>
     </xsd:restriction>
   </xsd:simpleType>
+
   <xsd:simpleType name="pixelsType">
     <xsd:annotation>
       <xsd:documentation> Pixel size of the icons. </xsd:documentation>
@@ -134,6 +152,7 @@
       <xsd:maxInclusive value="256"/>
     </xsd:restriction>
   </xsd:simpleType>
+
   <xsd:simpleType name="offsetType">
     <xsd:annotation>
       <xsd:documentation> Pixel offset of the anchor point within the icons. </xsd:documentation>
