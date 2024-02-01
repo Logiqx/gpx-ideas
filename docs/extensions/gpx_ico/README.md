@@ -116,7 +116,7 @@ The metadata extension can be summarised as follows:
 - Two different icon styles that can be referenced by the `<type>` element of `<wpt>` / `<trkpt>` / `<rtept>`.
 - A single file format (PNG) just like the example 1, but more than one image format may be specified.
 - The sizes of icons are optional, but can be stated explicitly. Explicit sizes are probably quite desirable for applications supporting icons.
-- The anchor points / hotspots are unique to each icon style. All images in the same path / folder will share the same anchor point / hotspot.
+- The anchor points / hotspots are unique to each icon style. All images in the same path / folder share the same anchor point / hotspot.
 
 For example, pushpin icons have an anchor point / hotspot which is towards the bottom-left of the icon, right at the sharp point.
 
@@ -250,6 +250,8 @@ In most GPZ files it is expected that icon styles will be the most simple case -
 However, icon styles may reference multiple paths / folders, multiple file types / suffixes and multiple icon sizes.
 
 Applications will ultimately have the ability to choose the most appropriate icons for their display resolution / platform.
+
+The absence of an anchor point / hotspot means the icon should simply be centered over the `<wpt>` / `<trkpt>` / `<rtept>`.
 
 
 
