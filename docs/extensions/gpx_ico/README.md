@@ -173,7 +173,7 @@ The `<metadata>` section provides all of the information within the single `icon
 
 This single `icon` style is slightly neater implementation of example 2, which used two icon styles;  `pushpin-ico` and `paddle-ico`.
 
-It should be noted that the pushin and paddle icons still have their own anchor points / hotspots.
+It should be noted that the pushpin and paddle icons still have their own anchor points / hotspots.
 
 
 

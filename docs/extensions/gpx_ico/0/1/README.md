@@ -1,6 +1,6 @@
 ## GPX Extensions
 
-### ico/0/1
+### gpx_ico/0/1
 
 Links to the illustrative schema (XSD), plus examples of usage (GPX + GPZ):
 
