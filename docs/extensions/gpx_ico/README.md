@@ -251,7 +251,7 @@ However, icon styles may reference multiple paths / folders, multiple file types
 
 Applications will ultimately have the ability to choose the most appropriate icons for their display resolution / platform.
 
-The absence of an anchor point / hotspot means the icon should simply be centered over the `<wpt>` / `<trkpt>` / `<rtept>`.
+In the absence of an anchor point / hotspot the icons should simply be centered over the `<wpt>` / `<trkpt>` / `<rtept>`.
 
 
 
