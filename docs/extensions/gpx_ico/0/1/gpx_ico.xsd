@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<xsd:schema targetNamespace="http://logiqx.github.io/gpx-ideas/extensions/gpx_ico/0/1"
+  elementFormDefault="qualified"
+  xmlns="http://logiqx.github.io/gpx-ideas/extensions/gpx_ico/0/1"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:annotation><xsd:documentation>
+    This schema defines icon extensions to be used with the GPX 1.1 schema.
+    The root element defined by this schema is intended to be used as a child
+    element within extensions and is suitable for metadata / rte / trk elements. 
+    The GPX 1.1 schema is available at https://www.topografix.com/GPX/1/1/gpx.xsd.
+  </xsd:documentation></xsd:annotation>
+
+  <xsd:element name="style" type="styleType" />
+
+  <xsd:complexType name="styleType">
+    <xsd:annotation>
+      <xsd:documentation> Details of an icon collection within one or more paths / folders. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="path" type="pathType" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation> Path / folder containing a collection of icons. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="extensions" type="extensionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation> You can add extend gpx_ico by adding your own elements from another schema here. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:string" use="required">
+	  <xsd:annotation>
+	    <xsd:documentation> Icon style identifier. This identifier will be referenced by wpt elements via their type element </xsd:documentation>
+	  </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="pathType">
+    <xsd:annotation>
+      <xsd:documentation> Details of an icon collection within a single path / folder. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="suffix" type="suffixType" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation> File extension / suffix of the available icons. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="size" type="sizeType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation> Size in pixels of the available icons. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="hotspot" type="hotspotType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation> Hotspot / anchor point of the available icons. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="extensions" type="extensionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation> You can add extend gpx_ico by adding your own elements from another schema here. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="href" type="xsd:anyURI" use="required">
+	  <xsd:annotation>
+	    <xsd:documentation> Path / folder containing the available icons. </xsd:documentation>
+	  </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="sizeType">
+    <xsd:annotation>
+      <xsd:documentation> Size of the available icons. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="extensions" type="extensionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation> You can add extend gpx_ico by adding your own elements from another schema here. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="x" type="xsd:pixelsType" use="required">
+	  <xsd:annotation>
+	    <xsd:documentation> Width of the available icons in pixels. </xsd:documentation>
+	  </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="y" type="xsd:pixelsType" use="required">
+	  <xsd:annotation>
+	    <xsd:documentation> Height of the available icons in pixels. </xsd:documentation>
+	  </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="hotspotType">
+    <xsd:annotation>
+      <xsd:documentation> Specifies the position of the anchor point within the icon. The origin is the lower left corner of the icon. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="extensions" type="extensionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation> You can add extend gpx_ico by adding your own elements from another schema here. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="x" type="xsd:offsetType" use="required">
+	  <xsd:annotation>
+	    <xsd:documentation> Number of pixels indicating the x component of the anchor point within the icon. </xsd:documentation>
+	  </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="y" type="xsd:offsetType" use="required">
+	  <xsd:annotation>
+	    <xsd:documentation> Number of pixels indicating the y component of the anchor point within the icon. </xsd:documentation>
+	  </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:simpleType name="suffixType">
+    <xsd:annotation>
+      <xsd:documentation> File extension / suffix of the available icons. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="png"/>
+      <xsd:enumeration value="gif"/>
+      <xsd:enumeration value="svg"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="pixelsType">
+    <xsd:annotation>
+      <xsd:documentation> Pixel size of the icons. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="1"/>
+      <xsd:maxInclusive value="256"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="offsetType">
+    <xsd:annotation>
+      <xsd:documentation> Pixel offset of the anchor point within the icons. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="255"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+</xsd:schema>
