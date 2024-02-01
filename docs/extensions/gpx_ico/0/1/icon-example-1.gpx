@@ -12,7 +12,7 @@
     https://logiqx.github.io/gpx-ideas/extensions/gpx_ico/0/1/gpx_ico.xsd">
 
   <metadata>
-    <desc>Example GPZ containing two waypoints with icons</desc>
+    <desc>Example GPZ containing a single waypoint with an icon</desc>
     <extensions>
       <ico:style id="icon">
         <ico:path href="shapes">
@@ -24,7 +24,7 @@
 
   <wpt lat="50.514898" lon="-2.455531">
     <name>Lobster Pot</name>
-    <desc>The Lobster Pot has been at the heart of the iconic Portland Bill since the late 1940’s in one form or another, and is still owned by the same family, now in the third generation. It is very much a part of the local community, and many Portlanders (and Kimberlins!*) have either worked at The Lobster Pot, are regular customers with their families, or indeed both. Although The Lobster Pot building may have changed since the early days, our values have remained firmly the same – the customer is at the heart of everything we do, and we strive to offer consistency, good value and excellent service always.</desc>
+    <desc>The Lobster Pot has been at the heart of the iconic Portland Bill since the late 1940’s in one form or another, and is still owned by the same family, now in the third generation. It is very much a part of the local community, and many Portlanders (and Kimberlins!*) have either worked at The Lobster Pot, are regular customers with their families, or indeed both.</desc>
 	<link href="https://thelobsterpotportland.co.uk/">
       <text>Lobster Pot Website</text>
 	</link>
