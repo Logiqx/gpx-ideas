@@ -73,13 +73,6 @@
     <xsd:annotation>
       <xsd:documentation> Size of the available icons. </xsd:documentation>
     </xsd:annotation>
-    <xsd:sequence>
-      <xsd:element name="extensions" type="extensionsType" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation> You can add extend gpx_ico by adding your own elements from another schema here. </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-    </xsd:sequence>
     <xsd:attribute name="x" type="pixelsType" use="required">
 	  <xsd:annotation>
 	    <xsd:documentation> Width of the available icons in pixels. </xsd:documentation>
@@ -96,13 +89,6 @@
     <xsd:annotation>
       <xsd:documentation> Specifies the position of the anchor point within the icon. The origin is the lower left corner of the icon. </xsd:documentation>
     </xsd:annotation>
-    <xsd:sequence>
-      <xsd:element name="extensions" type="extensionsType" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation> You can add extend gpx_ico by adding your own elements from another schema here. </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-    </xsd:sequence>
     <xsd:attribute name="x" type="offsetType" use="required">
 	  <xsd:annotation>
 	    <xsd:documentation> Number of pixels indicating the x component of the anchor point within the icon. </xsd:documentation>
