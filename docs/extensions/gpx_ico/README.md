@@ -2,7 +2,7 @@
 
 ### Background
 
-This document has been written to illustrate the possibility of a generic approach for icons within GPZ files.
+This document has been written to illustrate the possibility of a generic approach for icon usage within GPX / GPZ files.
 
 There are at least a couple of Android apps which already support GPZ files and custom icons via the `<sym>` element.
 
@@ -18,7 +18,7 @@ This extension has been drafted to illustrate some desirable features / capabili
 
 - Support for multiple icon folders, allowing the creators of GPZ files to logically group their icons.
 - Support for anchor points / hot spots, applied to groups of icons via a single definition in the GPX metadata.
-- Support for multiple resolutions of icons, thus catering for different display resolutions and platforms.
+- Support for multiple resolutions of icons, thus catering for different display resolutions and devices.
 - Support for multiple image formats, such as PNG and SVG.
 
 These features can all be confined to the `<metadata>` section of the GPX file, allowing for simple  `<wpt>` / `<trkpt>` / `<rtept>` elements.
@@ -39,7 +39,7 @@ This first example will simply demonstrate the use of a generic `dining` icon:
 </wpt>
 ```
 
-The  `<metadata>` element below defines a single icon style, providing the information required to locate the `dining` icon within the GPZ file:
+The  `<metadata>` element includes a single icon style, providing the information required to locate the `dining` icon within the GPZ file:
 
 ```xml
 <metadata>
@@ -104,10 +104,12 @@ The metadata can be summarised as follows:
 
 - A single icon style that can be referenced by the `<type>` element of `<wpt>` / `<trkpt>` / `<rtept>`.
 - The sizes of icons are optional, but can be stated explicitly. Although optional, icon size is probably to be recommended.
-- The anchor points / hotspots are specific to a group of icons. All images in the same path / folder share the same anchor point / hotspot.
+- The anchor points / hotspots are specific to a group of icons. All images in the group essentially share the same anchor point.
 - The image format (PNG) has been explicitly stated, but more than one image format may be specified.
 
-This example demonstrates how a single icon style in the GPX metadata enables the simple usage within `<wpt>` / `<trkpt>` / `<rtept>`. The two waypoints simply include `<sym>ylw-pushpin</sym>` / `<sym>grn-pushpin</sym>`, and `<type>icon</type>`.
+This example demonstrates how a single icon style in the GPX metadata enables the simple usage within `<wpt>` / `<trkpt>` / `<rtept>`.
+
+The two example waypoints only need to include `<sym>ylw-pushpin</sym>` / `<sym>grn-pushpin</sym>`, and `<type>icon</type>`.
 
 
 
@@ -131,7 +133,7 @@ The final example demonstrates how multiple categories of icon (e.g. pushpins an
 </wpt>
 ```
 
-The `<metadata>` section provides all of the information for the pushpins and paddles within the single `icon` style:
+The `<metadata>` section provides all of the information for the pushpins and paddles within a single `icon` style:
 
 ```xml
 <metadata>
@@ -151,7 +153,7 @@ The `<metadata>` section provides all of the information for the pushpins and pa
 </metadata>
 ```
 
-This single `icon` style is a simple demonstration of multiple categories of icon (e.g. pushpins and paddles) within a single style.
+This single `icon` style is a demonstrated how to include multiple categories of icon (e.g. pushpins and paddles) within a single style.
 
 It should however be noted that the pushpin and paddle icons still have their own anchor points / hotspots.
 
@@ -161,9 +163,9 @@ It should however be noted that the pushpin and paddle icons still have their ow
 
 #### Basic Concepts
 
-Applications capable of reading GPZ files and displaying icons should not require any complicated logic to support the concept of icon styles.
+Applications capable of reading GPX / GPZ files and capable of displaying icons do not need to implement any complicated logic.
 
-The `<sym>` element in the following `<wpt>` indicates the icon name, and the `<type>` element indicates the icon style.
+The `<sym>` element in this `<wpt>` indicates the icon name, and the `<type>` element indicates the icon style.
 
 ```xml
 <wpt lat="50.513380" lon="-2.456620">
@@ -174,9 +176,9 @@ The `<sym>` element in the following `<wpt>` indicates the icon name, and the `<
 </wpt>
 ```
 
-The snippet above shows the icon name `lw-pushpin` in `<sym>`, and the icon style `pushpin-ico` in `<type>`.
+The snippet above includes an icon name of `lw-pushpin` in `<sym>`, and an icon style called `icon` in `<type>`.
 
-The application must therefore look at the corresponding icon style, which in this example is simply `icon`.
+The application must therefore look at the corresponding icon style, which in this example is simply called `icon`.
 
 ```xml
 <metadata>
@@ -192,7 +194,7 @@ The application must therefore look at the corresponding icon style, which in th
 </metadata>
 ```
 
-In the majority of GPZ files it is expected that icon styles will be relatively simple.
+In the majority of GPZ files that include icons it should be expected that the associated icon styles will be relatively simple.
 
 
 
@@ -206,9 +208,9 @@ In the absence of an anchor point / hotspot the icons should simply be centered 
 
 Icon styles may reference multiple paths / folders, multiple image formats / suffixes, and / or multiple icon sizes.
 
-Applications will ultimately have the ability to choose the most appropriate icons for their display resolution / platform.
+Applications will ultimately have the ability to choose the most appropriate icons for their display resolution / device.
 
-It is even conceivable that icons can be acquired from external sources (and cached locally), if a URL is in the icon style.
+It is also conceivable that icons may also be acquired from external sources (e.g. via URL is in the icon style), and cached locally.
 
 
 
@@ -216,9 +218,9 @@ It is even conceivable that icons can be acquired from external sources (and cac
 
 #### Icon Styles
 
-The examples above used a single icon style with an ID of `icon` but the creator of the GPX / GPZ may name the style however they wish.
+The examples above used a single icon style with called `icon` but the creator of the GPX / GPZ may name the icon style as they desire.
 
-Different creators of GPX / GPZ files may have different requirements, including the desire to use multiple icon styles within a single GPX file.
+Different creators of GPX / GPZ files may have different requirements, including the desire for multiple icon styles within a single GPX file.
 
 
 
@@ -226,9 +228,9 @@ Different creators of GPX / GPZ files may have different requirements, including
 
 It has been shown that metadata allows for icon sizes to be specified for individual paths / folders.
 
-One of the main benefits of explicit sizes is the provision for different icon sizes for various display resolutions and platforms.
+One of the main benefits of explicit sizes is the provision for different icon sizes for various display resolutions and devices.
 
-Applications can decide for themselves how the paths / folders should be searched for the most suitable size(s) available.
+Applications can decide for themselves how the paths / folders should be searched for the most suitable size available.
 
 
 
@@ -236,7 +238,7 @@ Applications can decide for themselves how the paths / folders should be searche
 
 This extension only supports pixel units for icon sizes and the specification of anchor points / hotspots.
 
-KML / KMZ supports pixels, fractions and combinations, but it is worth remembering that it will always be possible to determine a pixel offset.
+KML supports pixels, fractions (and combinations) for hotspots, but it should always be possible to determine pixel units.
 
 The decision to only use pixel units for anchor points / hotspots keeps things simple and avoids unnecessary complexity.
 
@@ -244,9 +246,9 @@ The decision to only use pixel units for anchor points / hotspots keeps things s
 
 #### Scalable Vector Graphics (SVG)
 
-It is conceivable that some creators of GPZ files may wish to include icons in SVG format.
+It is conceivable that some creators of GPX / GPZ files may wish to use SVG icons.
 
-When using SVG icons and wanting to define anchor points / hotspots, simply define a "virtual" size, plus the equivalent hotspot.
+When using SVG icons and requiring anchor points / hotspots, simply specify a "virtual" size, plus the equivalent hotspot.
 
 ```xml
 <ico:path href="icons/svg">
@@ -256,7 +258,7 @@ When using SVG icons and wanting to define anchor points / hotspots, simply defi
 <ico:suffix>svg</ico:suffix>
 ```
 
-However, it is recommended that the creators of GPX / GPZ files consider the inclusion of PNG (or GIF) icons in addition to the SVG icons, thus allowing applications unable to support SVG to use the PNG (or GIF) icons.
+GPX / GPZ files that use SVG icons may also include PNG (or GIF) icons, thus providing an alternative for applications unable to support SVG.
 
 
 
@@ -264,9 +266,9 @@ However, it is recommended that the creators of GPX / GPZ files consider the inc
 
 It is worth noting that an external source for the icon files can also be provided within the metadata.
 
-If applications wish to support external icons then they should look to cache them locally.
+If applications wish to support external icons (i.e. downloaded from a URL) then they should consider caching them locally.
 
-One of the benefits of these external sources is in the instance where the GPX someone becomes separated from its icons.
+One of the benefits of external sources is that they cater for a GPX somehow becoming separated from its icons, outside of a GPZ file.
 
 ```xml
 <metadata>
@@ -286,7 +288,7 @@ One of the benefits of these external sources is in the instance where the GPX s
 </metadata>
 ```
 
-Note that due to the definition of GPZ it is also possible to reference paths outside of the GPZ:
+The current GPZ [proposal](../../usage/gpz/README.md) is near identical to KMZ and thus it would also possible to reference paths outside of the GPZ:
 
 ```xml
 <metadata>
@@ -310,7 +312,7 @@ Note that due to the definition of GPZ it is also possible to reference paths ou
 </metadata>
 ```
 
-The above snipped shows what is possible using different paths, and could prove to be useful for a variety of application requirements.
+The above snipped shows what is possible using different paths, which could prove to be useful for a variety of application requirements.
 
 
 
@@ -320,7 +322,9 @@ This page and the examples have been created to demonstrate some basic icon feat
 
 Through the use of icon styles the creator of the GPX / GPZ can classify their icons in whatever way they deem appropriate. It may be a single folder called "icons", or it may be a number of different folders, perhaps providing different icon sizes or image formats.
 
-Links to an illustrative schema (XSD), plus examples of usage (GPX + GPZ) are available on a separate page - click the [link](0/1/README.md) to access.
+Links to a draft schema, plus GPX 1.1 compliant examples (GPX + GPZ) are available on a separate page - click the [link](0/1/README.md) to access.
+
+The latest draft schema is [gpx_ico.xsd](0/1/gpx_ico.xsd) and it enables full verification of all the examples using [freeformatter.com](https://www.freeformatter.com/xml-validator-xsd.html).
 
 
 
