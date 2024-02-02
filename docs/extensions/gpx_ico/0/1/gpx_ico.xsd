@@ -23,6 +23,11 @@
           <xsd:documentation> Path / folder containing a collection of icons. </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
+      <xsd:element name="suffix" type="suffixType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation> File extension / suffix of the available icons. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
       <xsd:element name="extensions" type="extensionsType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation> You can add extend gpx_ico by adding your own elements from another schema here. </xsd:documentation>
@@ -41,11 +46,6 @@
       <xsd:documentation> Details of an icon collection within a single path / folder. </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element name="suffix" type="suffixType" maxOccurs="unbounded">
-        <xsd:annotation>
-          <xsd:documentation> File extension / suffix of the available icons. </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
       <xsd:element name="size" type="sizeType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation> Size in pixels of the available icons. </xsd:documentation>
