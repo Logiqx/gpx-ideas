@@ -53,8 +53,8 @@ The  `<metadata>` element includes a single icon style, providing the informatio
 
 The metadata can be summarised as follows:
 
-- `<ico:style id="icon">` defines a single `icon` style, which can be used in `<type>` of `<wpt>` / `<trkpt>` / `<rtept>`.
-- `<ico:path href="icons/shapes">` specifies the path / folder containing the icon file(s).
+- `<ico:style>` defines a single style, which can be used in the `<type>` of `<wpt>` / `<trkpt>` / `<rtept>`.
+- `<ico:path>` specifies the path / folder containing the icon file(s).
 
 The information in this first example allows an app to easily display the dining icon, centered over a `<wpt>` / `<trkpt>` / `<rtept>`.
 
@@ -62,7 +62,7 @@ The information in this first example allows an app to easily display the dining
 
 #### Example 2
 
-This example shows how a collection of similar icons with identical anchor points / hotspots can be used by `<wpt>` / `<trkpt>` / `<rtept>`,
+This example shows how a collection of similar icons with identical anchor points / hotspots can be used by `<wpt>` / `<trkpt>` / `<rtept>`.
 
 ![pushpins](img/pushpins.png)
 
@@ -71,14 +71,12 @@ The waypoints themselves are no different to the first example, simply providing
 ```xml
 <wpt lat="50.513380" lon="-2.456620">
   <name>Portland Bill</name>
-  <desc>Recommended viewpoint for Portland Bill</desc>
   <sym>ylw-pushpin</sym>
   <type>icon</type>
 </wpt>
   
 <wpt lat="50.222776" lon="-3.642783">
   <name>Start Point</name>
-  <desc>Recommended viewpoint for Start Point</desc>
   <sym>grn-pushpin</sym>
   <type>icon</type>
 </wpt>
@@ -102,14 +100,14 @@ The `<metadata>` includes a single icon style providing not only the path / fold
 
 The metadata can be summarised as follows:
 
-- A single icon style that can be referenced by the `<type>` element of `<wpt>` / `<trkpt>` / `<rtept>`.
-- The sizes of icons are optional, but can be stated explicitly. Although optional, icon size is probably to be recommended.
+- A single icon style that can be referenced by the `<type>` of `<wpt>` / `<trkpt>` / `<rtept>`.
+- The size of the icons is optional, but can be stated explicitly. Although optional, icon size is probably to be recommended.
 - The anchor points / hotspots are specific to a group of icons. All images in the group essentially share the same anchor point.
 - The image format (PNG) has been explicitly stated, but more than one image format may be specified.
 
 This example demonstrates how a single icon style in the GPX metadata enables the simple usage within `<wpt>` / `<trkpt>` / `<rtept>`.
 
-The two example waypoints only need to include `<sym>ylw-pushpin</sym>` / `<sym>grn-pushpin</sym>`, and `<type>icon</type>`.
+The two example waypoints only need to include `<sym>ylw-pushpin</sym>` or `<sym>grn-pushpin</sym>`, and `<type>icon</type>`.
 
 
 
@@ -120,14 +118,12 @@ The final example demonstrates how multiple categories of icon (e.g. pushpins an
 ```xml
 <wpt lat="50.513380" lon="-2.456620">
   <name>Portland Bill</name>
-  <desc>Recommended viewpoint for Portland Bill</desc>
   <sym>ylw-pushpin</sym>
   <type>icon</type>
 </wpt>
   
 <wpt lat="50.222776" lon="-3.642783">
   <name>Start Point</name>
-  <desc>Recommended viewpoint for Start Point</desc>
   <sym>ylw-blank</sym>
   <type>icon</type>
 </wpt>
@@ -153,7 +149,7 @@ The `<metadata>` section provides all of the information for the pushpins and pa
 </metadata>
 ```
 
-This single `icon` style is a demonstrated how to include multiple categories of icon (e.g. pushpins and paddles) within a single style.
+This single `icon` style demonstrates how to include multiple categories of icon (e.g. pushpins and paddles) within a single style.
 
 It should however be noted that the pushpin and paddle icons still have their own anchor points / hotspots.
 
@@ -165,18 +161,17 @@ It should however be noted that the pushpin and paddle icons still have their ow
 
 Applications capable of reading GPX / GPZ files and capable of displaying icons do not need to implement any complicated logic.
 
-The `<sym>` element in this `<wpt>` indicates the icon name, and the `<type>` element indicates the icon style.
+The `<sym>` element in a `<wpt>` / `<trkpt>` / `<rtept>` indicates the icon name, and the `<type>` element indicates the icon style.
 
 ```xml
 <wpt lat="50.513380" lon="-2.456620">
   <name>Portland Bill</name>
-  <desc>Recommended viewpoint for Portland Bill</desc>
   <sym>ylw-pushpin</sym>
   <type>icon</type>
 </wpt>
 ```
 
-The snippet above includes an icon name of `lw-pushpin` in `<sym>`, and an icon style called `icon` in `<type>`.
+The snippet above references an icon called `lw-pushpin` in `<sym>`, and an icon style called `icon` in `<type>`.
 
 The application must therefore look at the corresponding icon style, which in this example is simply called `icon`.
 
@@ -194,7 +189,7 @@ The application must therefore look at the corresponding icon style, which in th
 </metadata>
 ```
 
-In the majority of GPZ files that include icons it should be expected that the associated icon styles will be relatively simple.
+In the majority of GPX / GPZ files that include icons it should be expected that the icon styles will be relatively simple.
 
 
 
@@ -210,7 +205,7 @@ Icon styles may reference multiple paths / folders, multiple image formats / suf
 
 Applications will ultimately have the ability to choose the most appropriate icons for their display resolution / device.
 
-It is also conceivable that icons may also be acquired from external sources (e.g. via URL is in the icon style), and cached locally.
+It is also conceivable that icons may be acquired from external sources (e.g. URL in `<ico:path>`) and cached locally.
 
 
 
@@ -218,7 +213,7 @@ It is also conceivable that icons may also be acquired from external sources (e.
 
 #### Icon Styles
 
-The examples above used a single icon style with called `icon` but the creator of the GPX / GPZ may name the icon style as they desire.
+The examples above used a single icon style called `icon`, but the creator of the GPX / GPZ may name the icon style however they desire.
 
 Different creators of GPX / GPZ files may have different requirements, including the desire for multiple icon styles within a single GPX file.
 
@@ -230,7 +225,7 @@ It has been shown that metadata allows for icon sizes to be specified for indivi
 
 One of the main benefits of explicit sizes is the provision for different icon sizes for various display resolutions and devices.
 
-Applications can decide for themselves how the paths / folders should be searched for the most suitable size available.
+Applications can decide for themselves how the paths / folders should be searched for the most suitable icons available.
 
 
 
@@ -238,7 +233,7 @@ Applications can decide for themselves how the paths / folders should be searche
 
 This extension only supports pixel units for icon sizes and the specification of anchor points / hotspots.
 
-KML supports pixels, fractions (and combinations) for hotspots, but it should always be possible to determine pixel units.
+KML supports pixels or fractions (and combinations) for hotspots, but it should always be possible to determine pixel units.
 
 The decision to only use pixel units for anchor points / hotspots keeps things simple and avoids unnecessary complexity.
 
@@ -258,17 +253,17 @@ When using SVG icons and requiring anchor points / hotspots, simply specify a "v
 <ico:suffix>svg</ico:suffix>
 ```
 
-GPX / GPZ files that use SVG icons may also include PNG (or GIF) icons, thus providing an alternative for applications unable to support SVG.
+GPX / GPZ files that use SVG icons may also wish to include PNG (or GIF) icons, thus providing an alternative for applications unable to support SVG.
 
 
 
 #### External Links
 
-It is worth noting that an external source for the icon files can also be provided within the metadata.
+It is worth noting that an external links for the icon files can also be provided within the metadata.
 
-If applications wish to support external icons (i.e. downloaded from a URL) then they should consider caching them locally.
+If applications wish to support external links (i.e. downloaded from a URL) then they should consider caching them locally.
 
-One of the benefits of external sources is that they cater for a GPX somehow becoming separated from its icons, outside of a GPZ file.
+One of the benefits of external links would be when a GPX somehow becomes separated from its icons, outside of a GPZ file.
 
 ```xml
 <metadata>
@@ -321,6 +316,8 @@ The above snipped shows what is possible using different paths, which could prov
 This page and the examples have been created to demonstrate some basic icon features, without mandating a specific folder structure within GPZ files. The creator of the GPX / GPZ file is ultimately free to decide the most applicable folder structure for their own requirements.
 
 Through the use of icon styles the creator of the GPX / GPZ can classify their icons in whatever way they deem appropriate. It may be a single folder called "icons", or it may be a number of different folders, perhaps providing different icon sizes or image formats.
+
+Applications are not required to support all of the features such as SVG support, external links, or external GPZ files. These concepts have only been documented to illustrate what is possible, should an application wish to make use of such advanced features.
 
 Links to a draft schema, plus GPX 1.1 compliant examples (GPX + GPZ) are available on a separate page - click the [link](0/1/README.md) to access.
 
