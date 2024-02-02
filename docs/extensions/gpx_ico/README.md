@@ -24,11 +24,11 @@ These features can all be confined to the `<metadata>` section of the GPX file, 
 
 
 
-### Examples
+### Basic Examples
 
 #### Example 1
 
-A simple example can show the use of a `dining` icon:
+This first example will simply demonstrate the use of a generic `dining` icon:
 
 ```xml
 <wpt lat="50.514898" lon="-2.455531">
@@ -38,7 +38,7 @@ A simple example can show the use of a `dining` icon:
 </wpt>
 ```
 
-The `<metadata>` section provides the information required to locate the `dining` icon within the GPZ file:
+The `<metadata>` provides information required to locate the `dining` icon within the GPZ file:
 
 ```xml
 <metadata>
@@ -52,12 +52,10 @@ The `<metadata>` section provides the information required to locate the `dining
 
 The metadata above can be summarised as follows:
 
-- `<ico:style id="icon">` defines a single `icon` style, which can be used by `<type>` of `<wpt>` / `<trkpt>` / `<rtept>`.
+- `<ico:style id="icon">` defines a single `icon` style, which can be used in `<type>` of `<wpt>` / `<trkpt>` / `<rtept>`.
 - `<ico:path href="icons/shapes">` specifies the path / folder containing the icon file(s).
 
-Based on the information in this example an app can then be expected to display the dining icon, centered over the waypoint.
-
-![dining](0/1/icons/shapes/dining.png)
+The information in this first example allows an app to display the dining icon, centered over the waypoint.
 
 
 
@@ -168,6 +166,59 @@ It should be noted that the pushpin and paddle icons still have their own anchor
 
 
 
+### Application Development
+
+#### Basic Concepts
+
+Applications capable of reading GPZ files and displaying icons should not require any complicated logic to support the concept of icon styles.
+
+The `<sym>` element in the following `<wpt>` indicates the icon name, and the `<type>` element indicates the icon style.
+
+```xml
+<wpt lat="50.513380" lon="-2.456620">
+  <name>Portland Bill</name>
+  <desc>Recommended viewpoint for Portland Bill</desc>
+  <sym>ylw-pushpin</sym>
+  <type>pushpin-ico</type>
+</wpt>
+```
+
+The snippet above shows the icon name `lw-pushpin` in `<sym>`, and the icon style `pushpin-ico` in `<type>`.
+
+The application must therefore look at the corresponding icon style.
+
+```xml
+<metadata>
+  <extensions>
+    <ico:style id="pushpin-ico">
+      <ico:path href="icons/pushpin">
+        <ico:size x="64" y="64" />
+        <ico:hotspot x="20" y="2" />
+      </ico:path>
+      <ico:suffix>png</ico:suffix>
+    </ico:style>
+  </extensions>
+</metadata>
+```
+
+In the majority of GPZ files it is expected that icon styles will be the most simple case - i.e. single path / folder, single image format / suffix.
+
+
+
+#### Multiple Possibilities
+
+However, icon styles may reference multiple paths / folders, multiple image formats / suffixes, and / or multiple icon sizes.
+
+Applications will ultimately have the ability to choose the most appropriate icons for their display resolution / platform.
+
+
+
+#### Default Hotspots
+
+In the absence of an anchor point / hotspot the icons should simply be centered over the `<wpt>` / `<trkpt>` / `<rtept>`.
+
+
+
 ### Further Discussion
 
 #### Icon Sizes
@@ -203,47 +254,6 @@ When using SVG icons and wanting to define anchor points / hotspots, simply defi
 </ico:path>
 <ico:suffix>svg</ico:suffix>
 ```
-
-
-
-### Application Development
-
-Applications capable of reading GPZ files and displaying icons will not require any complicated logic to support the concept of icon styles.
-
-The presence of a `<sym>` element indicates an icon and the `<type>` element indicates the icon style - e.g. `pushpin-ico`.
-
-```xml
-<wpt lat="50.513380" lon="-2.456620">
-  <name>Portland Bill</name>
-  <desc>Recommended viewpoint for Portland Bill</desc>
-  <sym>ylw-pushpin</sym>
-  <type>pushpin-ico</type>
-</wpt>
-```
-
-The icon `lw-pushpin` appeared in the `<wpt>`, so the application needs to examine `<type>` and the corresponding icon style `pushpin-ico`.
-
-```xml
-<metadata>
-  <extensions>
-    <ico:style id="pushpin-ico">
-      <ico:path href="icons/pushpin">
-        <ico:size x="64" y="64" />
-        <ico:hotspot x="20" y="2" />
-      </ico:path>
-      <ico:suffix>png</ico:suffix>
-    </ico:style>
-  </extensions>
-</metadata>
-```
-
-In most GPZ files it is expected that icon styles will be the most simple case - i.e. single folder, single suffix.
-
-However, icon styles may reference multiple paths / folders, multiple file types / suffixes and multiple icon sizes.
-
-Applications will ultimately have the ability to choose the most appropriate icons for their display resolution / platform.
-
-In the absence of an anchor point / hotspot the icons should simply be centered over the `<wpt>` / `<trkpt>` / `<rtept>`.
 
 
 
