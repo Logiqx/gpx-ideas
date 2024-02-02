@@ -283,30 +283,6 @@ One of the benefits of external links would be when a GPX somehow becomes separa
 </metadata>
 ```
 
-The current GPZ [proposal](../../usage/gpz/README.md) is near identical to KMZ and thus it would also possible to reference paths outside of the GPZ:
-
-```xml
-<metadata>
-  <extensions>
-    <ico:style id="icon">
-      <ico:path href="icons/pushpin">
-        <ico:size x="64" y="64" />
-        <ico:hotspot x="20" y="2" />
-      </ico:path>
-      <ico:path href="../shared.gpz/icons/pushpin">
-        <ico:size x="64" y="64" />
-        <ico:hotspot x="20" y="2" />
-      </ico:path>
-      <ico:path href="http://maps.google.com/mapfiles/kml/pushpin">
-        <ico:size x="64" y="64" />
-        <ico:hotspot x="20" y="2" />
-      </ico:path>
-      <ico:suffix>png</ico:suffix>
-    </ico:style>
-  </extensions>
-</metadata>
-```
-
 The above snipped shows what is possible using different paths, which could prove to be useful for a variety of application requirements.
 
 
