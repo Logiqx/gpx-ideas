@@ -14,16 +14,10 @@
   <metadata>
     <desc>Example GPZ containing two waypoints with icons</desc>
 	<extensions>
-      <ico:style id="pushpin-ico">
+      <ico:style id="icon">
         <ico:path href="icons/pushpin">
           <ico:size x="64" y="64" />
           <ico:hotspot x="20" y="2" />
-        </ico:path>
-      </ico:style>
-      <ico:style id="paddle-ico">
-        <ico:path href="icons/paddle">
-          <ico:size x="64" y="64" />
-          <ico:hotspot x="32" y="1" />
         </ico:path>
         <ico:suffix>png</ico:suffix>
       </ico:style>
@@ -34,13 +28,13 @@
     <name>Portland Bill</name>
     <desc>Recommended viewpoint for Portland Bill</desc>
     <sym>ylw-pushpin</sym>
-    <type>pushpin-ico</type>
+    <type>icon</type>
   </wpt>
   
   <wpt lat="50.222776" lon="-3.642783">
     <name>Start Point</name>
     <desc>Recommended viewpoint for Start Point</desc>
-    <sym>ylw-blank</sym>
-    <type>paddle-ico</type>
+    <sym>grn-pushpin</sym>
+    <type>icon</type>
   </wpt>
 </gpx>

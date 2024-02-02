@@ -16,7 +16,6 @@
     <extensions>
       <ico:style id="icon">
         <ico:path href="icons/shapes" />
-        <ico:suffix>png</ico:suffix>
       </ico:style>
     </extensions>
   </metadata>
