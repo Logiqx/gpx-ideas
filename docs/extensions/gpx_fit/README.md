@@ -1,8 +1,6 @@
-## GPX Extensions
+## GPX Extensions - Fitness
 
-#### Fitness - gpx_fit
-
-#### Overview
+### Overview
 
 Core outputs from fitness and cycling sensors / devices are commonly added to GPX files via proprietary extensions.
 
@@ -20,7 +18,7 @@ Sources for these metrics are optional, but if provided would be in elements suc
 
 
 
-#### Notes
+### Notes
 
 - A universal cadence metric is included in this extension, since the word "cadence" is universal across multiple sports
   - Cadence is essentially a rhythm and is typically measure of how many times something happens (e.g. steps, strokes) in a minute
@@ -29,7 +27,7 @@ Sources for these metrics are optional, but if provided would be in elements suc
 
 
 
-#### Example Usage
+### Example Usage
 
 Land / Fitness
 

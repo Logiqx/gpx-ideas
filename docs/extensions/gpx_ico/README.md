@@ -1,8 +1,6 @@
-## GPX Extensions
+## GPX Extensions - Icons
 
-### Icons - gpx_ico
-
-#### Background
+### Background
 
 This document has been written to illustrate the possibility of a generic approach for icons within GPZ files.
 
@@ -14,9 +12,7 @@ This basic functionality has been demonstrated to work very nicely, but there ar
 
 
 
-
-
-#### Features / Capabilities
+### Features / Capabilities
 
 This extension has been drafted to illustrate some desirable features / capabilities:
 
@@ -28,9 +24,9 @@ These features can all be confined to the `<metadata>` section of the GPX file, 
 
 
 
-#### Examples
+### Examples
 
-##### Example 1
+#### Example 1
 
 A simple example can show the use of a `dining` icon:
 
@@ -65,7 +61,7 @@ Based on the information in this example an app can then be expected to display 
 
 
 
-##### Example 2
+#### Example 2
 
 A slightly more complex example uses two different types of icon (pushpin and paddle) with different anchor points / hotspots:
 
@@ -126,7 +122,7 @@ Although the difference between the pushpin and paddle icons is relatively small
 
 
 
-##### Example 3
+#### Example 3
 
 An alterative approach for example 2 is to use a single `icon` style, instead of `pushpin-ico` and `paddle-ico`.
 
@@ -172,9 +168,9 @@ It should be noted that the pushpin and paddle icons still have their own anchor
 
 
 
-#### Further Discussion
+### Further Discussion
 
-##### Icon Sizes
+#### Icon Sizes
 
 It has been shown that metadata allows for icon sizes to be specified for individual paths / folders.
 
@@ -184,7 +180,7 @@ Applications can decide for themselves how the paths / folders should be searche
 
 
 
-##### Anchor Points / Hotspots
+#### Anchor Points / Hotspots
 
 This extension only uses pixel units for icon sizes and the specification of anchor points / hotspots.
 
@@ -194,7 +190,7 @@ The decision to only use pixel units for anchor points / hotspots keeps things s
 
 
 
-##### Scalable Vector Graphics (SVG)
+#### Scalable Vector Graphics (SVG)
 
 It is conceivable that some creators of GPZ files may wish to include icons in SVG format.
 
@@ -210,7 +206,7 @@ When using SVG icons and wanting to define anchor points / hotspots, simply defi
 
 
 
-#### Application Development
+### Application Development
 
 Applications capable of reading GPZ files and displaying icons will not require any complicated logic to support the concept of icon styles.
 
@@ -251,7 +247,7 @@ In the absence of an anchor point / hotspot the icons should simply be centered 
 
 
 
-#### Summary
+### Summary
 
 This page and the examples have been created to demonstrate some basic icon features, without mandating a folder structure for GPZ files. The creator of the GPZ file is ultimately free to decide the most applicable folder structure for their own requirements.
 

@@ -1,8 +1,6 @@
-## GPX Extensions
+## GPX Extensions - Sea / Nautical
 
-### Sea / Nautical - gpx_sea
-
-#### Overview
+### Overview
 
 Sea / nautical elements include speed through the water (STW), wind measurements, tidal measurements and water depth.
 
@@ -20,13 +18,13 @@ Sea / nautical elements include speed through the water (STW), wind measurements
 
 
 
-#### Background
+### Background
 
 - Non-sailors can read a page written by [Raymarine](https://raymarine.custhelp.com/app/answers/detail/a_id/3794/~/apparent-wind%2C-true-wind-and-ground-wind%2C-and-data-required-to-calculate-them#:~:text=Apparent%20Wind%20will%20vary%20depending,(wind%20on%20the%20bow.)) to understand the difference between apparent wind, true wind, and ground wind.
 
 
 
-#### Notes
+### Notes
 
 - Boat speed / speed through the water (STW) is typically measured using a paddlewheel or ultrasonic transducer
 - Distance through water is included to avoid possible accumulated errors when deriving from speed every second
@@ -45,7 +43,7 @@ Sea / nautical elements include speed through the water (STW), wind measurements
 
 
 
-#### Exclusions
+### Exclusions
 
 - IMU data such as heading, pitch and roll are handled by the [gpx_imu](../gpx_imu/README.md) extension
 - Meteorological data is handled by the [gpx_met](../gpx_met/README.md) extension
@@ -58,7 +56,7 @@ Sea / nautical elements include speed through the water (STW), wind measurements
 
 
 
-#### Example Usage
+### Example Usage
 
 Sea / Nautical
 

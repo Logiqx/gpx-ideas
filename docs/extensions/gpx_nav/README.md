@@ -1,7 +1,5 @@
-## GPX Extensions
+## GPX Extensions - Navigation
 
-### Navigation - gpx_nav
-
-#### Overview
+### Overview
 
 TODO - Navigational information for nautical vessels and airplanes.

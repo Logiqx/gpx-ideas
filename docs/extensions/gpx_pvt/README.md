@@ -1,8 +1,6 @@
-## GPX Extensions
+## GPX Extensions - Position / Velocity / Time (PVT)
 
-### Position / Velocity / Time - gpx_pvt
-
-#### Overview
+### Overview
 
 Position / velocity / time (PVT) elements are outputs of GPS / GNSS chipsets and location APIs.
 
@@ -35,7 +33,7 @@ GPX 1.2 is also expected to support position and time accuracy estimates using t
 
 
 
-#### Notes
+### Notes
 
 - The abbreviation COG has been used to avoid potential confusion caused by the word "course"
 - The abbreviation SOG has been used to avoid confusion due to the many kinds of speed; boat speed, air speed, wind speed, etc
@@ -45,7 +43,7 @@ GPX 1.2 is also expected to support position and time accuracy estimates using t
 
 
 
-#### Exclusions
+### Exclusions
 
 - Individual north / east / down (NED) and east / north / up (ENU) velocity components are available from some GPS / GNSS chipsets
   - These velocity components have been excluded because they can be determined from COG, SOG and ROC
@@ -55,7 +53,7 @@ GPX 1.2 is also expected to support position and time accuracy estimates using t
 
 
 
-#### Example Usage
+### Example Usage
 
 Land / Fitness
 

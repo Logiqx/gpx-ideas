@@ -1,8 +1,6 @@
-## GPX Extensions
+## GPX Extensions - Generic
 
-### Generic - gpx_gen
-
-#### Overview
+### Overview
 
 This extensions includes generic elements that do not fit into any other categories.
 
@@ -12,7 +10,7 @@ This extensions includes generic elements that do not fit into any other categor
 
 
 
-#### Notes
+### Notes
 
 Load cells have various applications but here are just two examples:
 

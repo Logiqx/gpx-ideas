@@ -1,8 +1,6 @@
-## GPX Extensions
+## GPX Extensions - Inertial Measurement Unit
 
-### Inertial Measurement Unit  - gpx_imu
-
-#### Overview
+### Overview
 
 Heading (yaw) and attitude (pitch and roll) from inertial measurement units (IMUs) is relevant to a huge number of activities; land, sea and air.
 
@@ -25,7 +23,7 @@ Accuracy estimates for heading, roll and pitch can be provided using the "acc" a
 
 
 
-#### Notes
+### Notes
 
 - The standard abbreviation for heading is HDG in nautical and aviation environments, hence the naming of `<hdg>` in this schema
   - The words heading and yaw are synonymous. However, yaw values are sometimes -180 to 180, so heading = (yaw + 360) % 360
@@ -38,14 +36,14 @@ Accuracy estimates for heading, roll and pitch can be provided using the "acc" a
 
 
 
-#### Exclusions
+### Exclusions
 
 - Instantaneous heave (up / down), sway (left / right) and surge (front / back)
   - Instantaneous heave is sometimes calculated in GNSS + INS solutions, but not sway or surge?
 
 
 
-#### Example Usage
+### Example Usage
 
 Sea / Nautical
 

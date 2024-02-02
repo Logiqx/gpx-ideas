@@ -1,8 +1,6 @@
-## GPX Extensions
+## GPX Extensions - Meteorological 
 
-### Meteorological - gpx_met
-
-#### Overview
+### Overview
 
 Meteorological data is straightforward to understand and is relevant to many activities; land, sea and air.
 
@@ -20,21 +18,21 @@ All of the meteorological elements listed below are available in the [MDA](https
 
 
 
-#### Notes
+### Notes
 
 - Wind direction + speed use their nautical names, signifying "wind over ground" or "ground wind" (GWD + GWS)
 - Dew point is included because it can be directly measured, not just calculated from air temperature and relative humidity
 
 
 
-#### Exclusions
+### Exclusions
 
 - Wind chill is not included because it is calculated from the air temperature and wind speed
 - Heat index is not included because it is calculated from air temperature and relative humidity
 
 
 
-#### Example Usage
+### Example Usage
 
 Land / Fitness
 

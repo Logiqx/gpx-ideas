@@ -1,8 +1,6 @@
-## GPX Extensions
+## GPX Extensions - Fix Type
 
-### Fix Type - gpx_fix
-
-#### Background
+### Background
 
 The existing `<fix>` element within GPX files supports the following fix types:
 
