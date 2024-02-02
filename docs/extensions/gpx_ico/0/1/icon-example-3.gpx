@@ -15,12 +15,12 @@
     <desc>Example GPZ containing two waypoints with icons</desc>
 	<extensions>
       <ico:style id="icon">
-        <ico:path href="pushpin">
+        <ico:path href="icons/pushpin">
           <ico:suffix>png</ico:suffix>
           <ico:size x="64" y="64" />
           <ico:hotspot x="20" y="2" />
         </ico:path>
-        <ico:path href="paddle">
+        <ico:path href="icons/paddle">
           <ico:suffix>png</ico:suffix>
           <ico:size x="64" y="64" />
           <ico:hotspot x="32" y="1" />

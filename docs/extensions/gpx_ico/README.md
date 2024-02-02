@@ -48,7 +48,7 @@ The `<metadata>` section provides the information required to locate the `dining
 <metadata>
   <extensions>
     <ico:style id="icon">
-      <ico:path href="shapes">
+      <ico:path href="icons/shapes">
         <ico:suffix>png</ico:suffix>
       </ico:path>
     </ico:style>
@@ -59,12 +59,12 @@ The `<metadata>` section provides the information required to locate the `dining
 The metadata above can be summarised as follows:
 
 - `<ico:style id="icon">` defines a single `icon` style, which can be used by `<type>` of `<wpt>` / `<trkpt>` / `<rtept>`.
-- `<ico:path href="shapes">` specifies the path / folder containing the icon file(s).
+- `<ico:path href="icons/shapes">` specifies the path / folder containing the icon file(s).
 - `<ico:suffix>png</ico:suffix>` indicates that PNG files are available in the folder, but more than one image format may be specified.
 
 Based on the information in this example an app can then be expected to display the dining icon, centered over the waypoint.
 
-![dining](0/1/shapes/dining.png)
+![dining](0/1/icons/shapes/dining.png)
 
 
 
@@ -94,14 +94,14 @@ The `<metadata>` includes all of the information relating to pushpin and paddle 
 <metadata>
   <extensions>
     <ico:style id="pushpin-ico">
-      <ico:path href="pushpin">
+      <ico:path href="icons/pushpin">
         <ico:suffix>png</ico:suffix>
         <ico:size x="64" y="64" />
         <ico:hotspot x="20" y="2" />
       </ico:path>
     </ico:style>
     <ico:style id="paddle-ico">
-      <ico:path href="paddle">
+      <ico:path href="icons/paddle">
         <ico:suffix>png</ico:suffix>
         <ico:size x="64" y="64" />
         <ico:hotspot x="32" y="1" />
@@ -120,11 +120,11 @@ The metadata extension can be summarised as follows:
 
 For example, pushpin icons have an anchor point / hotspot which is towards the bottom-left of the icon, right at the sharp point.
 
-![dining](0/1/pushpin/ylw-pushpin.png)
+![dining](0/1/icons/pushpin/ylw-pushpin.png)
 
 Likewise, paddle icons have an anchor point / hotspot with is bottom-center of the icon.
 
-![dining](0/1/paddle/ylw-blank.png)
+![dining](0/1/icons/paddle/ylw-blank.png)
 
 Although the difference between the pushpin and paddle icons is relatively small, anchor points / hotspots provide obvious benefits.
 
@@ -156,12 +156,12 @@ The `<metadata>` section provides all of the information within the single `icon
 <metadata>
   <extensions>
     <ico:style id="icon">
-      <ico:path href="pushpin">
+      <ico:path href="icons/pushpin">
         <ico:suffix>png</ico:suffix>
         <ico:size x="64" y="64" />
         <ico:hotspot x="20" y="2" />
       </ico:path>
-      <ico:path href="paddle">
+      <ico:path href="icons/paddle">
         <ico:suffix>png</ico:suffix>
         <ico:size x="64" y="64" />
         <ico:hotspot x="32" y="1" />
@@ -206,7 +206,7 @@ It is conceivable that some creators of GPZ files may wish to include icons in S
 When using SVG icons and wanting to define anchor points / hotspots, simply define a "virtual" size, plus the equivalent hotspot.
 
 ```xml
-<ico:path href="paddle">
+<ico:path href="icons/paddle">
   <ico:suffix>svg</ico:suffix>
   <ico:size x="256" y="256" />
   <ico:hotspot x="128" y="0" />
@@ -236,7 +236,7 @@ The icon `lw-pushpin` appeared in the `<wpt>`, so the application needs to exami
 <metadata>
   <extensions>
     <ico:style id="pushpin-ico">
-      <ico:path href="pushpin">
+      <ico:path href="icons/pushpin">
         <ico:suffix>png</ico:suffix>
         <ico:size x="64" y="64" />
         <ico:hotspot x="20" y="2" />

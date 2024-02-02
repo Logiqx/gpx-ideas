@@ -15,7 +15,7 @@
     <desc>Example GPZ containing a single waypoint with an icon</desc>
     <extensions>
       <ico:style id="icon">
-        <ico:path href="shapes">
+        <ico:path href="icons/shapes">
           <ico:suffix>png</ico:suffix>
         </ico:path>
       </ico:style>
