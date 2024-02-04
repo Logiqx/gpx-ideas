@@ -37,7 +37,7 @@
     </xsd:sequence>
     <xsd:attribute name="id" type="xsd:string" use="required">
 	  <xsd:annotation>
-	    <xsd:documentation> Icon style identifier. This identifier will be referenced by wpt elements via their type element. </xsd:documentation>
+	    <xsd:documentation> Icon style identifier. This will be referenced by icons via their style attribute. </xsd:documentation>
 	  </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -113,7 +113,7 @@
     </xsd:attribute>
     <xsd:attribute name="style" type="xsd:string" default="default">
 	  <xsd:annotation>
-	    <xsd:documentation> Icon style ID can be omitted when using the default style. </xsd:documentation>
+	    <xsd:documentation> Icon style identifier can be omitted when using the default style. </xsd:documentation>
 	  </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
