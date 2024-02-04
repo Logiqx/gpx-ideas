@@ -28,7 +28,7 @@
     <name>Portland Bill</name>
     <desc>Recommended viewpoint for Portland Bill</desc>
     <extensions>
-      <ico:icon name="ylw-pushpin" \>
+      <ico:icon name="ylw-pushpin" />
     </extensions>
   </wpt>
 
@@ -36,7 +36,7 @@
     <name>Start Point</name>
     <desc>Recommended viewpoint for Start Point</desc>
     <extensions>
-      <ico:icon name="grn-pushpin" \>
+      <ico:icon name="grn-pushpin" />
     </extensions>
   </wpt>
 </gpx>
