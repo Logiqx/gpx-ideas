@@ -16,7 +16,7 @@ This basic functionality has been demonstrated to work quite nicely, but there a
 
 This extension has been drafted to illustrate some desirable icon features / capabilities:
 
-- Support for multiple icon folders, allowing the creators of GPZ files to logically group their icons.
+- Support for multiple icon folders, allowing the creators of GPX / GPZ files to logically group their icons.
 - Support for anchor points / hot spots, applied to groups of icons via a single definition in the GPX metadata.
 - Support for multiple resolutions of icons, thus catering for different display resolutions and devices.
 - Support for multiple image formats, such as PNG and SVG.
@@ -299,11 +299,11 @@ The above snipped shows what is possible using different folders, which could pr
 
 ### Summary
 
-This page and the examples have been created to demonstrate some basic icon features, without mandating a specific folder structure within GPZ files. The creator of the GPX / GPZ file is ultimately free to decide the most applicable folder structure for their own requirements.
+This page and the examples have been created to demonstrate some basic icon features, without mandating a specific folder structure. The creator of the GPX / GPZ file is ultimately free to decide the most applicable folder structure for their own requirements.
 
 Through the use of icon styles the creator of the GPX / GPZ can classify their icons in whatever way they deem appropriate. It may be a single folder called "icons", or it may be a number of different folders, perhaps providing different icon sizes or image formats.
 
-Applications are not required to support all of the features such as SVG support, external links, or external GPZ files. These concepts have only been documented to illustrate what is possible, should an application wish to make use of such advanced features.
+Applications are not required to support all of the features such as anchor points / hotspots, SVG support or external links. These concepts have only been documented to illustrate what is possible, should an application wish to make use of such advanced features.
 
 Links to a draft schema, plus GPX 1.1 compliant examples (GPX + GPZ) are available on a separate page - click the [link](0/2/README.md) to access.
 
