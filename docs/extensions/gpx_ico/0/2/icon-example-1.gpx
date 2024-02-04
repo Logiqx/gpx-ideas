@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<gpx
+  version="1.1"
+  creator="Hand edited - https://logiqx.github.io/gpx-ideas/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:ico="http://logiqx.github.io/gpx-ideas/extensions/gpx_ico/0/2"
+  xsi:schemaLocation="
+    http://www.topografix.com/GPX/1/1
+    https://www.topografix.com/GPX/1/1/gpx-strict.xsd
+    http://logiqx.github.io/gpx-ideas/extensions/gpx_ico/0/2
+    https://logiqx.github.io/gpx-ideas/extensions/gpx_ico/0/2/gpx_ico.xsd">
+
+  <metadata>
+    <desc>Example GPZ containing a single waypoint with an icon</desc>
+    <extensions>
+      <ico:style id="default">
+        <ico:path href="icons/shapes" />
+      </ico:style>
+    </extensions>
+  </metadata>
+
+  <wpt lat="50.514898" lon="-2.455531">
+    <name>Lobster Pot</name>
+    <desc>The Lobster Pot has been at the heart of the iconic Portland Bill since the late 1940’s in one form or another, and is still owned by the same family, now in the third generation. It is very much a part of the local community, and many Portlanders (and Kimberlins!*) have either worked at The Lobster Pot, are regular customers with their families, or indeed both.</desc>
+    <link href="https://thelobsterpotportland.co.uk/">
+      <text>Lobster Pot Website</text>
+    </link>
+    <extensions>
+      <ico:icon name="dining" />
+    </extensions>
+  </wpt>
+</gpx>

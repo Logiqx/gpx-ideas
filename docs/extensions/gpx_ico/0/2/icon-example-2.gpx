@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<gpx
+  version="1.1"
+  creator="Hand edited - https://logiqx.github.io/gpx-ideas/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:ico="http://logiqx.github.io/gpx-ideas/extensions/gpx_ico/0/2"
+  xsi:schemaLocation="
+    http://www.topografix.com/GPX/1/1
+    https://www.topografix.com/GPX/1/1/gpx-strict.xsd
+    http://logiqx.github.io/gpx-ideas/extensions/gpx_ico/0/2
+    https://logiqx.github.io/gpx-ideas/extensions/gpx_ico/0/2/gpx_ico.xsd">
+
+  <metadata>
+    <desc>Example GPZ containing two waypoints with icons</desc>
+    <extensions>
+      <ico:style id="default">
+        <ico:path href="icons/pushpin">
+          <ico:size x="64" y="64" />
+          <ico:hotspot x="20" y="2" />
+        </ico:path>
+        <ico:suffix>png</ico:suffix>
+      </ico:style>
+    </extensions>
+  </metadata>
+
+  <wpt lat="50.513380" lon="-2.456620">
+    <name>Portland Bill</name>
+    <desc>Recommended viewpoint for Portland Bill</desc>
+    <extensions>
+      <ico:icon name="ylw-pushpin" \>
+    </extensions>
+  </wpt>
+
+  <wpt lat="50.222776" lon="-3.642783">
+    <name>Start Point</name>
+    <desc>Recommended viewpoint for Start Point</desc>
+    <extensions>
+      <ico:icon name="grn-pushpin" \>
+    </extensions>
+  </wpt>
+</gpx>
