@@ -16,12 +16,12 @@
 
   <xsd:complexType name="styleType">
     <xsd:annotation>
-      <xsd:documentation> Details of an icon collection within one or more paths / folders. </xsd:documentation>
+      <xsd:documentation> Details of an icon collection within one or more folders. </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element name="path" type="pathType" maxOccurs="unbounded">
+      <xsd:element name="folder" type="folderType" maxOccurs="unbounded">
         <xsd:annotation>
-          <xsd:documentation> Path / folder containing a collection of icons. </xsd:documentation>
+          <xsd:documentation> Folder containing a group / collection of icons. </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="suffix" type="suffixType" minOccurs="0" maxOccurs="unbounded">
@@ -42,9 +42,9 @@
     </xsd:attribute>
   </xsd:complexType>
 
-  <xsd:complexType name="pathType">
+  <xsd:complexType name="folderType">
     <xsd:annotation>
-      <xsd:documentation> Details of an icon collection within a single path / folder. </xsd:documentation>
+      <xsd:documentation> Folder containing a group / collection of icons. </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="size" type="sizeType" minOccurs="0">
@@ -63,9 +63,9 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
-    <xsd:attribute name="href" type="xsd:anyURI" use="required">
+    <xsd:attribute name="url" type="xsd:anyURI" use="required">
 	  <xsd:annotation>
-	    <xsd:documentation> Path / folder containing the available icons. </xsd:documentation>
+	    <xsd:documentation> Relative path or URL of the folder containing the group / collection of icons. </xsd:documentation>
 	  </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>

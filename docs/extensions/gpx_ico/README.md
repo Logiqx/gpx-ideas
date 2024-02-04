@@ -46,7 +46,7 @@ The  `<metadata>` element includes a single icon style, providing the informatio
 <metadata>
   <extensions>
     <ico:style id="default">
-      <ico:path href="icons/shapes" />
+      <ico:folder url="icons/shapes" />
     </ico:style>
   </extensions>
 </metadata>
@@ -55,7 +55,7 @@ The  `<metadata>` element includes a single icon style, providing the informatio
 The metadata can be summarised as follows:
 
 - `<ico:style>` defines the default style for `<ico:icon>` elements.
-- `<ico:path>` specifies the path / folder containing the icon file(s).
+- `<ico:folder>` specifies the folder containing the icon file(s).
 
 The information in this first example allows an app to easily display the dining icon, centered over a `<wpt>` / `<trkpt>` / `<rtept>`.
 
@@ -85,16 +85,16 @@ The waypoints themselves are no different to the first example, simply providing
 </wpt>
 ```
 
-The `<metadata>` includes a single icon style providing not only the path / folder, but also the icon sizes and anchor points / hotspots:
+The `<metadata>` includes a single icon style providing not only the folder, but also the icon sizes and anchor points / hotspots:
 
 ```xml
 <metadata>
   <extensions>
     <ico:style id="default">
-      <ico:path href="icons/pushpin">
+      <ico:folder url="icons/pushpin">
         <ico:size x="64" y="64" />
         <ico:hotspot x="20" y="2" />
-      </ico:path>
+      </ico:folder>
       <ico:suffix>png</ico:suffix>
     </ico:style>
   </extensions>
@@ -140,14 +140,14 @@ The `<metadata>` section includes all of the information for the pushpins and pa
 <metadata>
   <extensions>
     <ico:style id="default">
-      <ico:path href="icons/pushpin">
+      <ico:folder url="icons/pushpin">
         <ico:size x="64" y="64" />
         <ico:hotspot x="20" y="2" />
-      </ico:path>
-      <ico:path href="icons/paddle">
+      </ico:folder>
+      <ico:folder url="icons/paddle">
         <ico:size x="64" y="64" />
         <ico:hotspot x="32" y="1" />
-      </ico:path>
+      </ico:folder>
       <ico:suffix>png</ico:suffix>
     </ico:style>
   </extensions>
@@ -187,10 +187,10 @@ The application must therefore use the corresponding icon style, which in this e
 <metadata>
   <extensions>
     <ico:style id="demo">
-      <ico:path href="icons/pushpin">
+      <ico:folder url="icons/pushpin">
         <ico:size x="64" y="64" />
         <ico:hotspot x="20" y="2" />
-      </ico:path>
+      </ico:folder>
       <ico:suffix>png</ico:suffix>
     </ico:style>
   </extensions>
@@ -209,11 +209,11 @@ In the absence of an anchor point / hotspot the icons should simply be centered 
 
 #### Additional Concepts
 
-Icon styles may reference multiple paths / folders, multiple image formats / suffixes, and / or multiple icon sizes.
+Icon styles may reference multiple folders, multiple image formats / suffixes, and / or multiple icon sizes.
 
 Applications will ultimately have the ability to choose the most appropriate icons for their display resolution / device.
 
-It is also conceivable that icons may be acquired from external sources (e.g. URL in `<ico:path>`) and cached locally, described later.
+It is also conceivable that icons may be acquired from external sources (e.g. URL in `<ico:folder>`) and cached locally, described later.
 
 
 
@@ -229,11 +229,11 @@ Different creators of GPX / GPZ files may have different requirements, including
 
 #### Icon Sizes
 
-It has been shown that metadata allows for icon sizes to be specified for individual paths / folders.
+It has been shown that metadata allows for icon sizes to be specified for individual folders.
 
 One of the main benefits of explicit sizes is the provision for different icon sizes for various display resolutions and devices.
 
-Applications can decide for themselves how the paths / folders should be searched for the most suitable icons available.
+Applications can decide for themselves how the folders should be searched for the most suitable icons available.
 
 
 
@@ -256,10 +256,10 @@ It is conceivable that some creators of GPX / GPZ files may wish to use SVG icon
 When using SVG icons and requiring anchor points / hotspots, simply specify a "virtual" size, plus the equivalent hotspot.
 
 ```xml
-<ico:path href="icons/svg">
+<ico:folder url="icons/svg">
   <ico:size x="256" y="256" />
   <ico:hotspot x="128" y="0" />
-</ico:path>
+</ico:folder>
 <ico:suffix>svg</ico:suffix>
 ```
 
@@ -279,21 +279,21 @@ One of the benefits of external links would be when a GPX somehow becomes separa
 <metadata>
   <extensions>
     <ico:style id="default">
-      <ico:path href="icons/pushpin">
+      <ico:folder url="icons/pushpin">
         <ico:size x="64" y="64" />
         <ico:hotspot x="20" y="2" />
-      </ico:path>
-      <ico:path href="http://maps.google.com/mapfiles/kml/pushpin">
+      </ico:folder>
+      <ico:folder url="http://maps.google.com/mapfiles/kml/pushpin">
         <ico:size x="64" y="64" />
         <ico:hotspot x="20" y="2" />
-      </ico:path>
+      </ico:folder>
       <ico:suffix>png</ico:suffix>
     </ico:style>
   </extensions>
 </metadata>
 ```
 
-The above snipped shows what is possible using different paths, which could prove to be useful for a variety of application requirements.
+The above snipped shows what is possible using different folders, which could prove to be useful for a variety of application requirements.
 
 
 
