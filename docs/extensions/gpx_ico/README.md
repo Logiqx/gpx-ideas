@@ -15,9 +15,9 @@ This basic functionality has been demonstrated to work quite nicely, but there a
 This extension has been drafted to illustrate some desirable icon features / capabilities:
 
 - Support for multiple icon folders, allowing the creators of GPX / GPZ files to logically group their icons.
-- Support for anchor points / hot spots, applied to groups of icons via a single definition in the GPX metadata.
 - Support for multiple resolutions of icons, thus catering for different display resolutions and devices.
 - Support for multiple image formats and transparency / alpha channels, such as PNG and SVG.
+- Support for anchor points / hot spots, applied to related icons via a single definition.
 
 These features should all be confined to the `<metadata>` section of the GPX file, allowing for simple  `<wpt>` / `<trkpt>` / `<rtept>` elements.
 
@@ -25,11 +25,9 @@ These features should all be confined to the `<metadata>` section of the GPX fil
 
 ### Simple Examples
 
-This document kicks off with some simple examples, rather than explaining everything in detail upfront.
+This document kicks off with some simple examples, rather than explaining everything in detail upfront. Many creators of GPX / GPZ files that wish to include icons are not expected to require functionality beyond the first example.
 
-Many creators of GPX / GPZ files that wish to include icons are not expected to require functionality beyond the first example.
-
-The remainder of the document will provide additional technical detail about the icon functionality.
+The remainder of the document will provide additional technical details relating to the icon functionality.
 
 
 
@@ -61,8 +59,8 @@ The  `<metadata>` element defines the default icon style, providing the informat
 
 The metadata can be summarised as follows:
 
-- `<ico:style>` defines the default style for `<ico:icon>` elements.
-- `<ico:folder>` specifies the folder containing the icon file(s).
+- `<ico:style id="default">` defines the default style for `<ico:icon>` elements.
+- `<ico:folder url="icons/shapes">` specifies the folder containing the icon file(s).
 - `<ico:suffix>` specifies the image format of the icon file(s).
 
 The information in this first example allows an app to easily display the dining icon, centered over a `<wpt>` / `<trkpt>` / `<rtept>`.
@@ -221,7 +219,7 @@ Remote files should be cached locally by the application, thus avoiding repeat d
 
 #### Default Suffixes
 
-The creator of a GPX / GPZ file is advised to include one or more `<suffix>` elements in the icon style. However, In the absence of one or more `<suffix>` elements the application should search for image files with a suffix of `png`, `gif`, or `svg`.
+The creator of a GPX / GPZ file is advised to include one or more `<suffix>` elements in the icon style. If there are no `<suffix>` elements within the icon style the application should search for icon files with a suffix of `png`, `gif`, or `svg`.
 
 
 
@@ -233,7 +231,7 @@ In the absence of an anchor point / hotspot the icons should simply be centered 
 
 #### Additional Concepts
 
-Icon styles may reference multiple folders, multiple image formats / suffixes, and / or multiple icon sizes.
+Icon styles may have multiple folders, multiple image formats / suffixes, and / or multiple icon sizes.
 
 Applications will ultimately have the ability to choose the most appropriate icons for their display resolution / device.
 
@@ -245,7 +243,7 @@ It is also possible that icons may be acquired from external sources (e.g. URL i
 
 #### Icon Styles
 
-The examples above used a `default` icon style, but the creator of the GPX / GPZ may include several different icon styles.
+The examples only had a `default` icon style, but the creator of the GPX / GPZ may include several different icon styles.
 
 Different creators of GPX / GPZ files may have different requirements, including the desire for multiple icon styles within a single GPX file.
 
@@ -284,7 +282,7 @@ Notes:
 - 24 x 24 and 48 x 48 are also common fixes for multiple platforms.
 - 18 x 18, 20 x 20, 36 x 36 and 40 x 40 are less common but often found.
 
-Applications can decide for themselves how the folders should be searched, according to the most suitable icon sizes at the time.
+Applications can decide for themselves how the folders should be searched, according to the most suitable icon sizes for the display.
 
 
 
@@ -296,7 +294,7 @@ Legacy icons in BMP format should be converted to PNG, ensuring that relevant tr
 
 TIFF will not be supported by GPX / GPZ, although the TIFF format does allow for an alpha channel. Any icons in TIFF format should also be converted to PNG format, ensuring the alpha channel is preserved.
 
-The JPEG format is not suitable for icons. Miniature versions of JPEG photos should be referred to as [thumbnails](https://en.wikipedia.org/wiki/Thumbnail) and not considered to be icons. 
+The JPEG format is not suitable for icons. Miniature versions of JPEG photos are [thumbnails](https://en.wikipedia.org/wiki/Thumbnail) and should not be considered icons. 
 
 
 
@@ -320,13 +318,13 @@ GPX / GPZ files that use SVG icons may also wish to include PNG (or GIF) icons, 
 
 #### Transparency
 
-Icons are typically square but some of the pixels may be transparent, or semi-transparent.
+Icons are typically square and often opaque but individual pixels may sometimes be transparent, or semi-transparent.
 
-The use of an alpha channel results in excellent results when the icon is displayed over a variety of different backgrounds / colors. It is therefore recommended that [raster](https://en.wikipedia.org/wiki/Raster_graphics) icons with transparent / semi-transparent pixels are 32-bit PNG files (or SVG files), thus including an [alpha](https://en.wikipedia.org/wiki/Alpha_compositing) channel.
+The use of an alpha channel results in excellent results when the icon is displayed over a variety of different backgrounds / colors. It is therefore recommended that [raster](https://en.wikipedia.org/wiki/Raster_graphics) icons with transparent / semi-transparent pixels are 32-bit PNG files or SVG files, thus including an [alpha](https://en.wikipedia.org/wiki/Alpha_compositing) channel.
 
-PNG files with indexed colors can have an alpha value for each palette index which may suffice, as per the [specification](https://www.w3.org/TR/2003/REC-PNG-20031110/#6AlphaRepresentation). GIF files can also mark a single palette index as transparent which is not the same as an alpha channel, but does support transparency as per the [specification](https://www.w3.org/Graphics/GIF/spec-gif89a.txt)
+PNG files with indexed colors can also have an alpha value for each palette index which may suffice, as per the [specification](https://www.w3.org/TR/2003/REC-PNG-20031110/#6AlphaRepresentation). GIF files can only mark a single palette index as transparent which is not the same as an alpha channel, but does facilitate transparency as per the [specification](https://www.w3.org/Graphics/GIF/spec-gif89a.txt)
 
-Image files which use solid colors such as magenta, cyan, or white to indicate transparency are not endorsed for GPX / GPZ files. Such images should be converted into PNG or GIF files that includes an alpha channel, or transparency information / alpha value for the specific palette index (or RGB value).
+Image files that use solid colors such as magenta, cyan, or white to indicate transparency are not to be supported. Such images should be converted to PNG or GIF files that include an alpha channel, or transparency information / alpha value for the specific palette index (or RGB value).
 
 
 
@@ -346,7 +344,7 @@ URLs may be relative paths to icons that are held locally (e.g. local folder or 
 
 In the case of relative paths they may (or may not) start with `./` and they may (or may not) end with `/`. The creator of the GPX / GPZ file may use a leading `./` and trailing `/` if desired but it is not mandated.
 
-There may be occasions when it is advantageous to provide remote links for icon folders in addition to the relative paths within a GPX / GPZ.
+There may be occasions when it is advantageous to provide remote links to icon folders, additional to the relative paths within the GPZ.
 
 
 
