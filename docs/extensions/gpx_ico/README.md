@@ -17,17 +17,17 @@ This extension has been drafted to illustrate some desirable icon features / cap
 - Support for multiple icon folders, allowing the creators of GPX / GPZ files to logically group their icons.
 - Support for anchor points / hot spots, applied to groups of icons via a single definition in the GPX metadata.
 - Support for multiple resolutions of icons, thus catering for different display resolutions and devices.
-- Support for multiple image formats, such as PNG and SVG.
+- Support for multiple image formats and transparency / alpha channels, such as PNG and SVG.
 
-These features can all be confined to the `<metadata>` section of the GPX file, allowing for simple  `<wpt>` / `<trkpt>` / `<rtept>` elements.
+These features should all be confined to the `<metadata>` section of the GPX file, allowing for simple  `<wpt>` / `<trkpt>` / `<rtept>` elements.
 
 
 
-### Basic Examples
+### Simple Examples
 
 This document kicks off with some simple examples, rather than explaining everything in detail upfront.
 
-Most creators of GPX / GPZ files including icons are not expected to require functionality beyond the first example.
+Many creators of GPX / GPZ files that wish to include icons are not expected to require functionality beyond the first example.
 
 The remainder of the document will provide additional technical detail about the icon functionality.
 
@@ -46,7 +46,7 @@ This first example will simply demonstrate the use of a generic `dining` icon:
 </wpt>
 ```
 
-The  `<metadata>` element includes a single icon style, providing the information required to locate the `dining` icon:
+The  `<metadata>` element defines the default icon style, providing the information required to locate the `dining` icon:
 
 ```xml
 <metadata>
@@ -93,7 +93,7 @@ The waypoints themselves are no different to the first example, simply providing
 </wpt>
 ```
 
-The `<metadata>` includes a single icon style providing not only the folder, but also the icon sizes and anchor points / hotspots:
+The `<metadata>` includes a single icon style providing not only the folder, but also the size of the icons an anchor point / hotspot:
 
 ```xml
 <metadata>
@@ -112,7 +112,7 @@ The `<metadata>` includes a single icon style providing not only the folder, but
 The metadata can be summarised as follows:
 
 - The default icon style for individual `<ico:icon>` elements.
-- The size of the icons is optional, but can be stated explicitly. Although optional, icon size is probably to be recommended.
+- The size of the icons is optional, but can be stated explicitly. Although optional, inclusion of icon size is recommended.
 - The anchor points / hotspots are specific to a group of icons. All images in the group essentially share the same anchor point.
 - The image format (PNG) has been explicitly stated, but more than one image format may be specified.
 
@@ -174,9 +174,9 @@ It should however be noted that the pushpin and paddle icons still have their ow
 
 Applications capable of reading GPX / GPZ files and capable of displaying icons do not need to implement any complicated logic.
 
-The `<ico:icon>` element in a `<wpt>` / `<trkpt>` / `<rtept>` indicates the icon name, and the `style` attribute indicates the icon style.
+The `<ico:icon>` element in a `<wpt>` / `<trkpt>` / `<rtept>` indicates the icon name, and the `style` attribute provides necessary details.
 
-Note that the style attribute has a default value of `default`, allowing the style attribute to be omitted for most icons.
+Note that the style attribute has a default value of `default`, allowing the style attribute to be omitted for most `<icon>` elements.
 
 ```xml
 <wpt lat="50.513380" lon="-2.456620">
@@ -189,7 +189,7 @@ Note that the style attribute has a default value of `default`, allowing the sty
 
 The snippet above references an icon called `lw-pushpin` and an icon style of `demo`, rather than the `default` style.
 
-The application must therefore use the corresponding icon style, which in this example is simply called `demo`.
+The application must refer to the corresponding icon style, which in this example is simply called `demo`.
 
 ```xml
 <metadata>
@@ -205,7 +205,7 @@ The application must therefore use the corresponding icon style, which in this e
 </metadata>
 ```
 
-The majority of GPX / GPZ files using icons are expected to use a single `default` icon style.
+n.b. The majority of GPX / GPZ files using icons are expected to use a single `default` icon style.
 
 
 
@@ -237,7 +237,7 @@ Icon styles may reference multiple folders, multiple image formats / suffixes, a
 
 Applications will ultimately have the ability to choose the most appropriate icons for their display resolution / device.
 
-It is also conceivable that icons may be acquired from external sources (e.g. URL in `<ico:folder>`) and should be cached locally.
+It is also possible that icons may be acquired from external sources (e.g. URL in `<ico:folder>`) but then cached locally.
 
 
 
@@ -245,19 +245,19 @@ It is also conceivable that icons may be acquired from external sources (e.g. UR
 
 #### Icon Styles
 
-The examples above used a default icon style, but the creator of the GPX / GPZ may include several different icon styles.
+The examples above used a `default` icon style, but the creator of the GPX / GPZ may include several different icon styles.
 
 Different creators of GPX / GPZ files may have different requirements, including the desire for multiple icon styles within a single GPX file.
 
-It is highly recommended that icon styles in a GPX / GPZ file list the appropriate file suffixes.
+It is highly recommended that icon styles in a GPX / GPZ file list the appropriate file suffixes, to save checking URLs for an unknown suffix.
 
 
 
 #### Icon Sizes
 
-It has been shown that metadata allows for icon sizes to be specified for individual folders.
+It has been shown that icon styles allow the icon sizes to be specified for individual folders.
 
-One of the main benefits of explicit sizes is the provision for different icon sizes for various display resolutions and devices.
+One of the main benefits of explicit sizes is the provision of different icon sizes for various display resolutions and devices.
 
 ```xml
 <metadata>
@@ -280,23 +280,23 @@ One of the main benefits of explicit sizes is the provision for different icon s
 
 Notes:
 
-- 16 x 16, 32 x 32, 64 x 64 are the most common / popular.
-- 24 x 24 and 48 x 48 are also quite common / popular.
-- 18 x 18, 20 x 20, 36 x 36 and 40 x 40 are somewhat less common.
+- 16 x 16, 32 x 32, 64 x 64 are the most common sizes for multiple platforms.
+- 24 x 24 and 48 x 48 are also common fixes for multiple platforms.
+- 18 x 18, 20 x 20, 36 x 36 and 40 x 40 are less common but often found.
 
-Applications can decide for themselves how the folders should be searched, according to the most suitable icon sizes.
+Applications can decide for themselves how the folders should be searched, according to the most suitable icon sizes at the time.
 
 
 
 #### Image Formats
 
-The icon extension supports PNG, GIF and SVG files. 32-bit PNG (including an alpha channel) or SVG are recommended.
+The icon extension supports PNG, GIF and SVG files. 32-bit PNG files (including an alpha channel) or SVG are recommended.
 
-Legacy icons sets in BMP format should be converted to PNG, ensuring that transparency (magenta / cyan / white background) is converted to full transparency via an alpha channel.
+Legacy icons in BMP format should be converted to PNG, ensuring that relevant transparency information is present in the PNG. Use of magenta / cyan / white backgrounds to represent transparency is not going to be supported, hence the conversion from BMP.
 
-TIFF is not supported by GPX / GPZ, although the TIFF format does allow for an alpha channel. Any icons in TIFF format should also be converted to PNG format, ensuring the alpha channel is retained.
+TIFF will not be supported by GPX / GPZ, although the TIFF format does allow for an alpha channel. Any icons in TIFF format should also be converted to PNG format, ensuring the alpha channel is preserved.
 
-The JPEG format is not suitable for icons. Miniature versions of photos are [thumbnails](https://en.wikipedia.org/wiki/Thumbnail) and a separate discussion. 
+The JPEG format is not suitable for icons. Miniature versions of JPEG photos should be referred to as [thumbnails](https://en.wikipedia.org/wiki/Thumbnail) and not considered to be icons. 
 
 
 
@@ -326,7 +326,7 @@ The use of an alpha channel results in excellent results when the icon is displa
 
 PNG files with indexed colors can have an alpha value for each palette index which may suffice, as per the [specification](https://www.w3.org/TR/2003/REC-PNG-20031110/#6AlphaRepresentation). GIF files can also mark a single palette index as transparent which is not the same as an alpha channel, but does support transparency as per the [specification](https://www.w3.org/Graphics/GIF/spec-gif89a.txt)
 
-Image files which use solid colors such as magenta, cyan, or white to indicate transparency are not endorsed for GPX / GPZ files. Such images should be converted into PNG or GIF files that includes an alpha channel, or alpha value / transparency for the specific palette index (or RGB value).
+Image files which use solid colors such as magenta, cyan, or white to indicate transparency are not endorsed for GPX / GPZ files. Such images should be converted into PNG or GIF files that includes an alpha channel, or transparency information / alpha value for the specific palette index (or RGB value).
 
 
 
@@ -363,13 +363,11 @@ Note: If applications wish to support external links they should seriously consi
 <metadata>
   <extensions>
     <ico:style id="default">
-      <ico:folder url="icons/pushpin">
+      <ico:folder url="icons/shapes">
         <ico:size x="64" y="64" />
-        <ico:hotspot x="20" y="2" />
       </ico:folder>
-      <ico:folder url="http://maps.google.com/mapfiles/kml/pushpin">
+      <ico:folder url="http://maps.google.com/mapfiles/kml/shapes">
         <ico:size x="64" y="64" />
-        <ico:hotspot x="20" y="2" />
       </ico:folder>
       <ico:suffix>png</ico:suffix>
     </ico:style>
@@ -387,7 +385,7 @@ This page and the examples have been created to demonstrate some basic icon feat
 
 Through the use of icon styles the creator of the GPX / GPZ can classify their icons in whatever way they deem appropriate. It may be a single folder called "icons", or it may be a number of different folders, perhaps providing different icon sizes or image formats.
 
-Applications are not required to support all of the features such as anchor points / hotspots, SVG support or external links. These concepts have only been documented to illustrate what is possible, should an application wish to make use of such advanced features.
+Applications are not required to support all of the features such as anchor points / hotspots, SVG support or external links. These concepts have been documented to illustrate what is possible, should an application wish to make use of such features.
 
 Links to a draft schema, plus GPX 1.1 compliant examples (GPX + GPZ) are available on a separate page - click the [link](0/2/README.md) to access.
 
