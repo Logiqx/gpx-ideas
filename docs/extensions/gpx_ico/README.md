@@ -241,6 +241,30 @@ n.b. The majority of GPX / GPZ files using icons are expected to use a single `d
 
 
 
+#### Icons without Style
+
+It is possible to have icons in a GPX / GPZ that do not use an icon style, or simply override the associated style.
+
+```xml
+<wpt lat="50.513380" lon="-2.456620">
+  <name>Portland Bill</name>
+  <extensions>
+    <ico:icon name="ylw-pushpin">
+      <ico:folder url="icons/pushpin">
+        <ico:size x="64" y="64" />
+        <ico:hotspot x="20" y="2" />
+      </ico:folder>
+    </ico:icon>
+  </extensions>
+</wpt>
+```
+
+The `<ico:folder>` element in the `<wpt>` is no different to `<ico:folder>` elements in `<ico:style>` .
+
+Applications should evaluate any `<ico:folder>`  element(s) in `<wpt>` / `<trkpt>` / `<rtept>`, before evaluating the `<ico:style>` element.
+
+
+
 #### Folder URLs
 
 URLs may be relative paths to icons that are held locally (e.g. local folder or inside GPZ), or a `http` / `https` URL.
