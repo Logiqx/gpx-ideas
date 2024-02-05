@@ -6,8 +6,6 @@ This document has been written to illustrate the possibility of a generic approa
 
 There are at least a couple of Android apps which already support GPZ files and custom icons via the `<sym>` element.
 
-If `<sym>dining</sym>` is found within `<wpt>` / `<trkpt>` / `<rtept>` then `icons/dining.png` will be displayed at those locations.
-
 This basic functionality has been demonstrated to work quite nicely, but there are some additional capabilities which are desirable.
 
 
@@ -26,6 +24,14 @@ These features can all be confined to the `<metadata>` section of the GPX file, 
 
 
 ### Basic Examples
+
+This document kicks off with some simple examples, rather than explaining everything in detail upfront.
+
+Most creators of GPX / GPZ files including icons are not expected to require functionality beyond the first example.
+
+The remainder of the document will provide additional technical detail about the icon functionality.
+
+
 
 #### Example 1
 
@@ -47,6 +53,7 @@ The  `<metadata>` element includes a single icon style, providing the informatio
   <extensions>
     <ico:style id="default">
       <ico:folder url="icons/shapes" />
+      <ico:suffix>png</ico:suffix>
     </ico:style>
   </extensions>
 </metadata>
@@ -56,6 +63,7 @@ The metadata can be summarised as follows:
 
 - `<ico:style>` defines the default style for `<ico:icon>` elements.
 - `<ico:folder>` specifies the folder containing the icon file(s).
+- `<ico:suffix>` specifies the image format of the icon file(s).
 
 The information in this first example allows an app to easily display the dining icon, centered over a `<wpt>` / `<trkpt>` / `<rtept>`.
 
@@ -201,6 +209,22 @@ The majority of GPX / GPZ files using icons are expected to use a single `defaul
 
 
 
+#### Folder URLs
+
+URLs may be relative paths to icons that are held locally (e.g. local folder or inside GPZ), or a `http` / `https` URL.
+
+In the case of relative paths they may (or may not) start with `./` and they may (or may not) end with `/`. Applications should ensure that they can handle the presence or absence of a leading `./` and trailing `/`.
+
+Remote files should be cached locally by the application, thus avoiding repeat downloads and providing an offline capability.
+
+
+
+#### Default Suffixes
+
+The creator of a GPX / GPZ file is advised to include one or more `<suffix>` elements in the icon style. However, In the absence of one or more `<suffix>` elements the application should search for image files with a suffix of `png`, `gif`, or `svg`.
+
+
+
 #### Default Hotspots
 
 In the absence of an anchor point / hotspot the icons should simply be centered over the `<wpt>` / `<trkpt>` / `<rtept>`.
@@ -213,7 +237,7 @@ Icon styles may reference multiple folders, multiple image formats / suffixes, a
 
 Applications will ultimately have the ability to choose the most appropriate icons for their display resolution / device.
 
-It is also conceivable that icons may be acquired from external sources (e.g. URL in `<ico:folder>`) and cached locally, described later.
+It is also conceivable that icons may be acquired from external sources (e.g. URL in `<ico:folder>`) and should be cached locally.
 
 
 
@@ -221,9 +245,11 @@ It is also conceivable that icons may be acquired from external sources (e.g. UR
 
 #### Icon Styles
 
-The examples above used a single icon style called `icon`, but the creator of the GPX / GPZ may name the icon style however they desire.
+The examples above used a default icon style, but the creator of the GPX / GPZ may include several different icon styles.
 
 Different creators of GPX / GPZ files may have different requirements, including the desire for multiple icon styles within a single GPX file.
+
+It is highly recommended that icon styles in a GPX / GPZ file list the appropriate file suffixes.
 
 
 
@@ -233,19 +259,44 @@ It has been shown that metadata allows for icon sizes to be specified for indivi
 
 One of the main benefits of explicit sizes is the provision for different icon sizes for various display resolutions and devices.
 
-Applications can decide for themselves how the folders should be searched for the most suitable icons available.
+```xml
+<metadata>
+  <extensions>
+    <ico:style id="default">
+      <ico:folder url="icons/flags/64x64">
+        <ico:size x="64" y="64" />
+      </ico:folder>
+      <ico:folder url="icons/flags/32x32">
+        <ico:size x="32" y="32" />
+      </ico:folder>
+      <ico:folder url="icons/flags/16x16">
+        <ico:size x="16" y="16" />
+      </ico:folder>
+      <ico:suffix>png</ico:suffix>
+    </ico:style>
+  </extensions>
+</metadata>
+```
+
+Notes:
+
+- 16 x 16, 32 x 32, 64 x 64 are the most common / popular.
+- 24 x 24 and 48 x 48 are also quite common / popular.
+- 18 x 18, 20 x 20, 36 x 36 and 40 x 40 are somewhat less common.
+
+Applications can decide for themselves how the folders should be searched, according to the most suitable icon sizes.
 
 
 
-#### Anchor Points / Hotspots
+#### Image Formats
 
-This extension only supports pixel units for icon sizes and the specification of anchor points / hotspots.
+The icon extension supports PNG, GIF and SVG files. 32-bit PNG (including an alpha channel) or SVG are recommended.
 
-KML supports pixels or percentages (and combinations) for hotspots, but it should always be possible to determine pixel units.
+Legacy icons sets in BMP format should be converted to PNG, ensuring that transparency (magenta / cyan / white background) is converted to full transparency via an alpha channel.
 
-The decision to only use pixel units for anchor points / hotspots keeps things simple and avoids unnecessary complexity in the schema.
+TIFF is not supported by GPX / GPZ, although the TIFF format does allow for an alpha channel. Any icons in TIFF format should also be converted to PNG format, ensuring the alpha channel is retained.
 
-If you know the percentage (e.g. 50%) then just do the math to determine the pixel equivalent.
+The JPEG format is not suitable for icons. Miniature versions of photos are [thumbnails](https://en.wikipedia.org/wiki/Thumbnail) and a separate discussion. 
 
 
 
@@ -267,13 +318,46 @@ GPX / GPZ files that use SVG icons may also wish to include PNG (or GIF) icons, 
 
 
 
+#### Transparency
+
+Icons are typically square but some of the pixels may be transparent, or semi-transparent.
+
+The use of an alpha channel results in excellent results when the icon is displayed over a variety of different backgrounds / colors. It is therefore recommended that [raster](https://en.wikipedia.org/wiki/Raster_graphics) icons with transparent / semi-transparent pixels are 32-bit PNG files (or SVG files), thus including an [alpha](https://en.wikipedia.org/wiki/Alpha_compositing) channel.
+
+PNG files with indexed colors can have an alpha value for each palette index which may suffice, as per the [specification](https://www.w3.org/TR/2003/REC-PNG-20031110/#6AlphaRepresentation). GIF files can also mark a single palette index as transparent which is not the same as an alpha channel, but does support transparency as per the [specification](https://www.w3.org/Graphics/GIF/spec-gif89a.txt)
+
+Image files which use solid colors such as magenta, cyan, or white to indicate transparency are not endorsed for GPX / GPZ files. Such images should be converted into PNG or GIF files that includes an alpha channel, or alpha value / transparency for the specific palette index (or RGB value).
+
+
+
+#### Anchor Points / Hotspots
+
+Anchor points / hotspots are most useful for icons that are transparent or semi-transparent. They will typically be used to ensure that a specific part of the image is aligned with a specific latitude and longitude, regardless of the level of zoom.
+
+This extension supports pixel units for icon sizes and the specification of anchor points / hotspots. KML also supports percentages for hotspots, but it should always be possible to determine pixel units.
+
+The decision to use pixel units for anchor points / hotspots keeps things simple and avoids unnecessary complexity within the schema. If a percentage is desired (e.g. 50%) then just do the math to determine the pixel equivalent.
+
+
+
+#### Folder URLs
+
+URLs may be relative paths to icons that are held locally (e.g. local folder or inside GPZ), or a `http` / `https` URL.
+
+In the case of relative paths they may (or may not) start with `./` and they may (or may not) end with `/`. The creator of the GPX / GPZ file may use a leading `./` and trailing `/` if desired but it is not mandated.
+
+There may be occasions when it is advantageous to provide remote links for icon folders in addition to the relative paths within a GPX / GPZ.
+
+
+
 #### External Links
 
-It is worth noting that external links for the icon files can also be provided within the metadata.
+External links have several possible uses but here are two examples:
 
-If applications wish to support external links (i.e. downloaded from a URL) then they should consider caching the files locally.
+- Icons sets can be hosted online so that individual icons can downloaded by applications as required and cached locally.
+- Icons can be re-acquired if the GPX somehow becomes detached from its icons, such as a GPX which was originally in a GPZ file.
 
-One of the benefits of external links would be when a GPX somehow becomes separated from its icons, outside of a GPZ file.
+Note: If applications wish to support external links they should seriously consider using a local cache of the icon files.
 
 ```xml
 <metadata>
@@ -293,7 +377,7 @@ One of the benefits of external links would be when a GPX somehow becomes separa
 </metadata>
 ```
 
-The above snipped shows what is possible using different folders, which could prove to be useful for a variety of application requirements.
+The above snipped shows what is possible using multiple folders, which could prove to be useful for a variety of application requirements.
 
 
 
