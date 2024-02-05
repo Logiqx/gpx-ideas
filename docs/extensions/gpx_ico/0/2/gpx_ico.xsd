@@ -19,7 +19,7 @@
       <xsd:documentation> Details of an icon collection within one or more folders. </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element name="folder" type="folderType" maxOccurs="unbounded">
+      <xsd:element name="folder" type="folderType" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
           <xsd:documentation> Folder containing a group / collection of icons. </xsd:documentation>
         </xsd:annotation>
@@ -38,6 +38,44 @@
     <xsd:attribute name="id" type="xsd:string" use="required">
 	  <xsd:annotation>
 	    <xsd:documentation> Icon style identifier. This will be referenced by icons via their style attribute. </xsd:documentation>
+	  </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="iconType">
+    <xsd:annotation>
+      <xsd:documentation> Details of an icon within a wpt / rtept / trkpt. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="folder" type="folderType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation> Folder containing a group / collection of icons. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="suffix" type="suffixType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation> File extension / suffix of the available icons. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="extensions" type="extensionsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation> You can add extend gpx_ico by adding your own elements from another schema here. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="name" type="xsd:string" use="required">
+	  <xsd:annotation>
+	    <xsd:documentation> Icon name (without the file suffix). </xsd:documentation>
+	  </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="style" type="xsd:string" default="default">
+	  <xsd:annotation>
+	    <xsd:documentation> Icon style identifier can be omitted when using the default style. </xsd:documentation>
+	  </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="scale" type="xsd:decimal" default="1.0">
+	  <xsd:annotation>
+	    <xsd:documentation> Icon scale can be omitted when using the default of 1.0. </xsd:documentation>
 	  </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -98,27 +136,6 @@
     <xsd:attribute name="y" type="offsetType" use="required">
 	  <xsd:annotation>
 	    <xsd:documentation> Number of pixels indicating the y component of the anchor point within the icon. </xsd:documentation>
-	  </xsd:annotation>
-    </xsd:attribute>
-  </xsd:complexType>
-
-  <xsd:complexType name="iconType">
-    <xsd:annotation>
-      <xsd:documentation> Details of an icon within a wpt / rtept / trkpt. </xsd:documentation>
-    </xsd:annotation>
-    <xsd:attribute name="name" type="xsd:string" use="required">
-	  <xsd:annotation>
-	    <xsd:documentation> Icon name (without the file suffix). </xsd:documentation>
-	  </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="style" type="xsd:string" default="default">
-	  <xsd:annotation>
-	    <xsd:documentation> Icon style identifier can be omitted when using the default style. </xsd:documentation>
-	  </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="scale" type="xsd:decimal" default="1.0">
-	  <xsd:annotation>
-	    <xsd:documentation> Icon scale can be omitted when using the default of 1.0. </xsd:documentation>
 	  </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>

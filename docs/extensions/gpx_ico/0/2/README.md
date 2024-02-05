@@ -17,8 +17,9 @@ All of the examples are GPX 1.1 compliant and can be validated against the stric
 
 #### 0.2
 
-- Switch from `<sym>` and `<type>` to dedicated `<icon>`.
-- Rename `<path href="...">` to `<folder url="...">`
+- Switch concept from `<sym>` and `<type>` to dedicated `<icon>` element.
+- Rename `<path href="...">` to `<folder url="...">`.
+- Support `<folder>` elements within `<icon>` elements.
 
 #### 0.1
 
