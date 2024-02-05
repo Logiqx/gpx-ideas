@@ -82,7 +82,7 @@ The waypoints themselves are no different to the first example, simply providing
     <ico:icon name="ylw-pushpin" />
   </extensions>
 </wpt>
-  
+
 <wpt lat="50.222776" lon="-3.642783">
   <name>Start Point</name>
   <extensions>
@@ -122,7 +122,7 @@ The two example waypoints only need to include `<ico:icon>ylw-pushpin</ico:icon>
 
 #### Example 3
 
-The final example demonstrates how multiple categories of icon (e.g. pushpins and paddles) can be defined within the default icon style.
+This example demonstrates how multiple categories of icon (e.g. pushpins and paddles) can be defined within the default icon style.
 
 ```xml
 <wpt lat="50.513380" lon="-2.456620">
@@ -131,7 +131,7 @@ The final example demonstrates how multiple categories of icon (e.g. pushpins an
     <ico:icon name="ylw-pushpin" />
   </extensions>
 </wpt>
-  
+
 <wpt lat="50.222776" lon="-3.642783">
   <name>Start Point</name>
   <extensions>
@@ -163,6 +163,40 @@ The `<metadata>` section includes all of the information for the pushpins and pa
 This default style demonstrates how it is possible to include multiple categories of icon (e.g. pushpins and paddles) within a single style.
 
 It should however be noted that the pushpin and paddle icons still have their own unique anchor points / hotspots.
+
+
+
+#### Example 4
+
+The final example demonstrates how icons can be implemented without using icon styles, should the need arise.
+
+```xml
+<wpt lat="50.513380" lon="-2.456620">
+  <name>Portland Bill</name>
+  <extensions>
+    <ico:icon name="ylw-pushpin">
+      <ico:folder url="icons/pushpin">
+        <ico:size x="64" y="64" />
+        <ico:hotspot x="20" y="2" />
+      </ico:folder>
+    </ico:icon>
+  </extensions>
+</wpt>
+
+<wpt lat="50.222776" lon="-3.642783">
+  <name>Start Point</name>
+  <extensions>
+    <ico:icon name="ylw-blank">
+      <ico:folder url="icons/paddle">
+        <ico:size x="64" y="64" />
+        <ico:hotspot x="32" y="1" />
+      </ico:folder>
+    </ico:icon>
+  </extensions>
+</wpt>
+```
+
+The `<ico:icon>` elements simply include `<ico:folder>` elements, rather than using `<ico:style>` in `<metadata>`.
 
 
 
