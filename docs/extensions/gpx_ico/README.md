@@ -91,7 +91,7 @@ The waypoints themselves are no different to the first example, simply providing
 </wpt>
 ```
 
-The `<metadata>` includes a single icon style providing not only the folder, but also the size of the icons an anchor point / hotspot:
+The `<metadata>` includes a single icon style providing not only the folder, but also the size of the icons and point / hotspot:
 
 ```xml
 <metadata>
@@ -337,7 +337,7 @@ One of the main benefits of explicit sizes is the provision of different icon si
 Notes:
 
 - 16 x 16, 32 x 32, 64 x 64 are the most common sizes for multiple platforms.
-- 24 x 24 and 48 x 48 are also common fixes for multiple platforms.
+- 24 x 24 and 48 x 48 are also common sizesfor multiple platforms.
 - 18 x 18, 20 x 20, 36 x 36 and 40 x 40 are less common but often found.
 
 Applications can decide for themselves how the folders should be searched, according to the most suitable icon sizes for the display.
@@ -348,11 +348,11 @@ Applications can decide for themselves how the folders should be searched, accor
 
 The icon extension supports PNG, GIF and SVG files. 32-bit PNG files (including an alpha channel) or SVG are recommended.
 
-Legacy icons in BMP format should be converted to PNG, ensuring that relevant transparency information is present in the PNG. Use of magenta / cyan / white backgrounds to represent transparency is not going to be supported, hence the conversion from BMP.
+Legacy icons in BMP format should be converted to PNG, ensuring that relevant transparency information is present in the PNG. Use of magenta / cyan / white backgrounds to represent transparency are not supported by this extension, hence the conversion from BMP.
 
 TIFF will not be supported by GPX / GPZ, although the TIFF format does allow for an alpha channel. Any icons in TIFF format should also be converted to PNG format, ensuring the alpha channel is preserved.
 
-The JPEG format is not suitable for icons. Miniature versions of JPEG photos are [thumbnails](https://en.wikipedia.org/wiki/Thumbnail) and should not be considered icons. 
+The JPEG format is great for photos but is not suitable for icons. Miniature versions of JPEG photos are [thumbnails](https://en.wikipedia.org/wiki/Thumbnail) and should not be considered icons. Applications are free to display thumbnails of JPG images found in the GPX `<link>` elements.
 
 
 
@@ -382,7 +382,7 @@ The use of an alpha channel results in excellent results when the icon is displa
 
 PNG files with indexed colors can also have an alpha value for each palette index which may suffice, as per the [specification](https://www.w3.org/TR/2003/REC-PNG-20031110/#6AlphaRepresentation). GIF files can only mark a single palette index as transparent which is not the same as an alpha channel, but does facilitate transparency as per the [specification](https://www.w3.org/Graphics/GIF/spec-gif89a.txt)
 
-Image files that use solid colors such as magenta, cyan, or white to indicate transparency are not to be supported. Such images should be converted to PNG or GIF files that include an alpha channel, or transparency information / alpha value for the specific palette index (or RGB value).
+Image files that use solid colors such as magenta, cyan, or white to indicate transparency are not supported by this extension. Such images should be converted to PNG or GIF files that include an alpha channel, or transparency information / alpha value for the specific palette index (or RGB value).
 
 
 
