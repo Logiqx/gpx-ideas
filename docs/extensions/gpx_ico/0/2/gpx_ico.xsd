@@ -73,11 +73,6 @@
 	    <xsd:documentation> Icon style identifier can be omitted when using the default style. </xsd:documentation>
 	  </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="scale" type="xsd:decimal" default="1.0">
-	  <xsd:annotation>
-	    <xsd:documentation> Icon scale can be omitted when using the default of 1.0. </xsd:documentation>
-	  </xsd:annotation>
-    </xsd:attribute>
   </xsd:complexType>
 
   <xsd:complexType name="folderType">
