@@ -337,7 +337,7 @@ One of the main benefits of explicit sizes is the provision of different icon si
 Notes:
 
 - 16 x 16, 32 x 32, 64 x 64 are the most common sizes for multiple platforms.
-- 24 x 24 and 48 x 48 are also common sizesfor multiple platforms.
+- 24 x 24 and 48 x 48 are also common sizes for multiple platforms.
 - 18 x 18, 20 x 20, 36 x 36 and 40 x 40 are less common but often found.
 
 Applications can decide for themselves how the folders should be searched, according to the most suitable icon sizes for the display.
@@ -346,7 +346,7 @@ Applications can decide for themselves how the folders should be searched, accor
 
 #### Image Formats
 
-The icon extension supports PNG, GIF and SVG files. 32-bit PNG files (including an alpha channel) or SVG are recommended.
+The icon extension supports PNG, GIF and SVG files. 32-bit PNG files (including an [alpha](https://en.wikipedia.org/wiki/Alpha_compositing) channel) or SVG are recommended.
 
 Legacy icons in BMP format should be converted to PNG, ensuring that relevant transparency information is present in the PNG. Use of magenta / cyan / white backgrounds to represent transparency are not supported by this extension, hence the conversion from BMP.
 
@@ -378,9 +378,9 @@ GPX / GPZ files that use SVG icons may also wish to include PNG (or GIF) icons, 
 
 Icons are typically square and often opaque but individual pixels may sometimes be transparent, or semi-transparent.
 
-The use of an alpha channel results in excellent results when the icon is displayed over a variety of different backgrounds / colors. It is therefore recommended that [raster](https://en.wikipedia.org/wiki/Raster_graphics) icons with transparent / semi-transparent pixels are 32-bit PNG files or SVG files, thus including an [alpha](https://en.wikipedia.org/wiki/Alpha_compositing) channel.
+The use of an [alpha](https://en.wikipedia.org/wiki/Alpha_compositing) channel results in excellent results when the icon is displayed over a variety of different backgrounds / colors. It is therefore recommended that [raster](https://en.wikipedia.org/wiki/Raster_graphics) icons with transparent / semi-transparent pixels are 32-bit PNG files or SVG files, thus including an alpha channel.
 
-PNG files with indexed colors can also have an alpha value for each palette index which may suffice, as per the [specification](https://www.w3.org/TR/2003/REC-PNG-20031110/#6AlphaRepresentation). GIF files can only mark a single palette index as transparent which is not the same as an alpha channel, but does facilitate transparency as per the [specification](https://www.w3.org/Graphics/GIF/spec-gif89a.txt)
+PNG files with indexed colors can also have an alpha value for each palette index which may suffice (see PNG [specification](https://www.w3.org/TR/2003/REC-PNG-20031110/#6AlphaRepresentation)). GIF files can only mark a single palette index as transparent which is not the same as an alpha channel, but does facilitate transparency (see GIF [specification](https://www.w3.org/Graphics/GIF/spec-gif89a.txt)).
 
 Image files that use solid colors such as magenta, cyan, or white to indicate transparency are not supported by this extension. Such images should be converted to PNG or GIF files that include an alpha channel, or transparency information / alpha value for the specific palette index (or RGB value).
 
