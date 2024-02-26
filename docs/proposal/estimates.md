@@ -162,9 +162,7 @@ This document provides some basic information about the 1-sigma accuracy estimat
 
 These accuracy estimates are typically available via NMEA sentences and / or binary protocols. Around 2016 or 2017, speed accuracy estimates were added to the location services of Apple and Android devices, which probably account for the majority of GPS / GNSS receivers in use today.
 
-The vast majority of the available documentation refers to accuracy estimates being 1-sigma. A 68% confidence level is mentioned in the Android documentation but is absent in the Apple documentation.
-
-I suspect that Apple are multiplying the 1-sigma value provided by the GNSS chipset (e.g. Broadcom, Qualcomm or Intel) by a constant value to produce an estimate that is more intuitive to end users; e.g. 2-sigma (95% confidence) or 4-sigma (99.99% confidence).
+The vast majority of the available documentation refers to accuracy estimates being 1-sigma. A 68% confidence level is mentioned in the Android documentation and is also mentioned in the Apple documentation (see [vertical accuracy](https://developer.apple.com/documentation/corelocation/cllocation/1423550-verticalaccuracy)).
 
 There is a separate page about the accuracy estimates available from the Android and Apple [location services](../apis/location.md).
 
@@ -173,6 +171,4 @@ There is a separate page about the accuracy estimates available from the Android
 ### Proposal
 
 There is an opportunity to add accuracy estimates to the GPX standard so that people can make use of them when exchanging GPS / GNSS data. The phrasing used in the GPX schema documentation is obviously a topic for discussion.
-
-I feel that accuracy estimates should probably be stored without any adjustments, typically 1-sigma. Device manufacturers may adjust the 1-sigma values (e.g. Apple), but I think the estimates are best stored in the GPX file without modification.
 
